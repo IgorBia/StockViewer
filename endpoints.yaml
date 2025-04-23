@@ -1,0 +1,171 @@
+openapi: 3.0.3
+info:
+  title: StockViewer
+  version: 1.0.0
+  description: API for data analysis, trades and logging.
+servers:
+  - url: http://localhost:8080/api
+
+paths:
+  /auth/login:
+    post:
+      summary: Log in user
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                password:
+                  type: string
+      responses:
+        '200':
+          description: Logged in successfully
+        '401':
+          description: Authentication error
+          
+  /auth/register:
+    post:
+      summary: Register user
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  example: user
+                password:
+                  type: string
+                  example: password
+                walletValue:
+                  type: number
+                  example: 1000.00
+      responses:
+        '201':
+          description: Registered successfully
+        '400':
+          description: Bad input
+        '401':
+          description: Authentication error
+
+  /stocks/{symbol}/historical:
+    get:
+      summary: Fetch historical data
+      parameters:
+        - in: path
+          name: symbol
+          required: true
+          schema:
+            type: string
+            example: AAPL
+        - in: query
+          name: startDate
+          schema:
+            type: string
+            format: date
+            example: 2024-01-01
+        - in: query
+          name: endDate
+          schema:
+            type: string
+            format: date
+            example: 2024-12-31
+      responses:
+        '200':
+          description: Historical data
+
+  /trades:
+    post:
+      summary: Add new trade
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                pair:
+                  type: string
+                  example: BTC/USD
+                price:
+                  type: number
+                  format: float
+                  example: 27500.50
+                amount:
+                  type: number
+                  format: float
+                  example: 0.5
+                side:
+                  type: string
+                  enum: [buy, sell]
+                  example: buy
+      responses:
+        '201':
+          description: Trade added successfully
+        '400':
+          description: Bad input
+        '401':
+          description: Unauthorized access
+          
+  /trades/history:
+    get:
+      summary: Fetch trade history
+      responses:
+        '200':
+          description: History fetched successfully
+        '400':
+          description: Bad input
+        '401':
+          description: Unauthorized access
+          
+  /wishlist:
+    post:
+      summary: Add new pair to watchlist
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                pair:
+                  type: string
+                  example: BTCUSD
+      responses:
+        '201':
+          description: Pair added successfully
+        '400':
+          description: Bad input
+        '401':
+          description: Unauthorized access
+          
+  /wishlist/{pair}:
+    delete:
+      summary: Delete a pair from watchlist
+      parameters:
+        - in: path
+          name: pair
+          required: true
+          schema:
+            type: string
+            example: BTCUSD
+      responses:
+        '200':
+          description: Pair deleted successfully
+        '400':
+          description: Bad input
+        '401':
+          description: Unauthorized access
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
