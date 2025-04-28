@@ -12,7 +12,7 @@ CREATE TABLE wallets (
 
 CREATE TABLE pairs (
         pair_id INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
-        symbol VARCHAR(10) NOT NULL,git
+        symbol VARCHAR(10) NOT NULL,
         base VARCHAR(5) NOT NULL,
         quote VARCHAR(5),
         market VARCHAR(10) NOT NULL,
