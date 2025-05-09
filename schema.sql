@@ -17,7 +17,6 @@ CREATE TABLE pair (
     quote VARCHAR(5),
     market VARCHAR(10) NOT NULL,
     exchange VARCHAR(15) NOT NULL
-);
 
 CREATE TABLE owned_asset (
     owned_asset_id INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
