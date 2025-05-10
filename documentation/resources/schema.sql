@@ -53,6 +53,7 @@ CREATE TABLE candle (
     trades INT NOT NULL,
     taker_base_vol DECIMAL(18,8) NOT NULL,
     taker_quote_vol DECIMAL(18,8) NOT NULL,
+    timeframe VARCHAR(10) NOT NULL, 
     FOREIGN KEY (pair_id) REFERENCES pair(pair_id) ON DELETE CASCADE
 );
 
