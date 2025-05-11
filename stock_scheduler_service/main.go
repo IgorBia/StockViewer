@@ -3,12 +3,12 @@ package main
 import (
 	"database/sql"
 	"encoding/json"
+	"errors"
 	"fmt"
 	"github.com/joho/godotenv"
 	_ "github.com/lib/pq"
 	log "github.com/sirupsen/logrus"
 	"io"
-	"io/ioutil"
 	"net/http"
 	"os"
 	"strings"
@@ -42,7 +42,7 @@ func getRequiredEnvVars() (map[string]string, error) {
 	}
 
 	if len(missingVars) > 0 {
-		return nil, fmt.Errorf("Missing required environment variables: %s", strings.Join(missingVars, ", "))
+		return nil, fmt.Errorf("missing required environment variables: %s", strings.Join(missingVars, ", "))
 	}
 
 	return envVars, nil
@@ -54,11 +54,11 @@ func getPairId(db *sql.DB, symbol string) (int, error) {
 
 	err := db.QueryRow(query, symbol).Scan(&pairId)
 	if err != nil {
-		if err == sql.ErrNoRows {
+		if errors.Is(err, sql.ErrNoRows) {
 			log.WithFields(log.Fields{
 				"symbol": symbol,
 			}).Error("Symbol not found in pair table")
-			return 0, fmt.Errorf("Symbol %s not found in pair table", symbol)
+			return 0, fmt.Errorf("symbol %s not found in pair table", symbol)
 		}
 		log.WithFields(log.Fields{
 			"symbol": symbol,
@@ -91,7 +91,7 @@ func fetchCandleData(symbol string, interval string) [][]interface{} {
 		}
 	}(response.Body)
 
-	body, err := ioutil.ReadAll(response.Body)
+	body, err := io.ReadAll(response.Body)
 	if err != nil {
 		log.WithError(err).Error("Failed to read the response")
 	}
@@ -125,14 +125,24 @@ func insertCandleData(db *sql.DB, data [][]interface{}, interval string, symbol 
 		log.WithError(err).Error("Failed to begin transaction")
 		return err
 	}
-	defer tx.Rollback()
+	defer func(tx *sql.Tx) {
+		err := tx.Rollback()
+		if err != nil {
+			log.WithError(err).Error("Failed to rollback transaction")
+		}
+	}(tx)
 
 	stmt, err := tx.Prepare(query)
 	if err != nil {
 		log.WithError(err).Error("Failed to prepare statement")
 		return err
 	}
-	defer stmt.Close()
+	defer func(stmt *sql.Stmt) {
+		err := stmt.Close()
+		if err != nil {
+			log.WithError(err).Error("Failed to close statement")
+		}
+	}(stmt)
 
 	for _, candle := range data {
 
@@ -205,7 +215,7 @@ func main() {
 		log.WithError(err).Fatal("Environment configuration error")
 	}
 
-	SUPPORTED_SYMBOLS := []string{"ETHUSDC", "BTCUSDC", "SOLUSDC", "ETHBTC"}
+	SupportedSymbols := []string{"ETHUSDC", "BTCUSDC", "SOLUSDC", "ETHBTC"}
 
 	psqlInfo := fmt.Sprintf("host=%s port=%s user=%s "+
 		"password=%s dbname=%s sslmode=disable",
@@ -229,7 +239,7 @@ func main() {
 
 	log.Info("Successfully connected to the database")
 
-	for _, symbol := range SUPPORTED_SYMBOLS {
+	for _, symbol := range SupportedSymbols {
 		scheduleCandleUpdates(db, symbol, "1m", 1*time.Minute)
 		scheduleCandleUpdates(db, symbol, "15m", 15*time.Minute)
 		scheduleCandleUpdates(db, symbol, "4h", 4*time.Hour)
