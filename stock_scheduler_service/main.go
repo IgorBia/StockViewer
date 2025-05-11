@@ -42,7 +42,7 @@ func getRequiredEnvVars() (map[string]string, error) {
 	}
 
 	if len(missingVars) > 0 {
-		return nil, fmt.Errorf("missing required environment variables: %s", strings.Join(missingVars, ", "))
+		return nil, fmt.Errorf("Missing required environment variables: %s", strings.Join(missingVars, ", "))
 	}
 
 	return envVars, nil
@@ -58,7 +58,7 @@ func getPairId(db *sql.DB, symbol string) (int, error) {
 			log.WithFields(log.Fields{
 				"symbol": symbol,
 			}).Error("Symbol not found in pair table")
-			return 0, fmt.Errorf("symbol %s not found in pair table", symbol)
+			return 0, fmt.Errorf("Symbol %s not found in pair table", symbol)
 		}
 		log.WithFields(log.Fields{
 			"symbol": symbol,
@@ -75,10 +75,10 @@ func getPairId(db *sql.DB, symbol string) (int, error) {
 	return pairId, nil
 }
 
-func fetchCandleData(symbol string, interval string, limit int) [][]interface{} {
+func fetchCandleData(symbol string, interval string) [][]interface{} {
 	// TODO: Implement fetching candle data logic here
 
-	url := fmt.Sprintf("https://api.binance.com/api/v3/klines?symbol=%s&interval=%s&limit=%d", symbol, interval, limit)
+	url := fmt.Sprintf("https://api.binance.com/api/v3/klines?symbol=%s&interval=%s&limit=%d", symbol, interval, 1)
 
 	response, err := http.Get(url)
 	if err != nil {
@@ -180,26 +180,23 @@ func insertCandleData(db *sql.DB, data [][]interface{}, interval string, symbol 
 	return nil
 }
 
-func updateCandleDataBySymbol(db *sql.DB, symbol string) error {
-	// TODO: Implement updating candle data logic here
+func scheduleCandleUpdates(db *sql.DB, symbol string, interval string, duration time.Duration) {
+	ticker := time.NewTicker(duration)
 
-	// Intervals map
-	// key: interval time
-	// value: amount of candles to be fetched (every one day)
-	INTERVALS := map[string]int{
-		"15m": 96,
-		"1h":  24,
-		"4h":  6,
-		"1d":  1,
-	}
-
-	for interval, limit := range INTERVALS {
-		err := insertCandleData(db, fetchCandleData(symbol, interval, limit), interval, symbol)
-		if err != nil {
-			return err
+	go func() {
+		for {
+			select {
+			case <-ticker.C:
+				log.Infof("Updating %s for %s", interval, symbol)
+				err := insertCandleData(db, fetchCandleData(symbol, interval), interval, symbol)
+				if err != nil {
+					log.WithError(err).Errorf("Failed to update %s for %s", interval, symbol)
+				} else {
+					log.Infof("Updated %s for %s", interval, symbol)
+				}
+			}
 		}
-	}
-	return db.Ping() //fake return
+	}()
 }
 
 func main() {
@@ -230,24 +227,15 @@ func main() {
 		log.WithError(err).Fatal("Failed to ping database")
 	}
 
-	log.Info("Successfully connected!")
+	log.Info("Successfully connected to the database")
 
 	for _, symbol := range SUPPORTED_SYMBOLS {
-		log.WithFields(log.Fields{
-			"symbol": symbol,
-		}).Info("Processing symbol")
-
-		for retries := 0; retries < 3; retries++ {
-			err = updateCandleDataBySymbol(db, symbol)
-			if err != nil {
-				//log.WithError(err).Error("Failed to update candle data")
-			} else {
-				log.WithFields(log.Fields{
-					"symbol": symbol,
-				}).Info("Candles updated")
-				break
-			}
-		}
+		scheduleCandleUpdates(db, symbol, "1m", 1*time.Minute)
+		scheduleCandleUpdates(db, symbol, "15m", 15*time.Minute)
+		scheduleCandleUpdates(db, symbol, "4h", 4*time.Hour)
+		scheduleCandleUpdates(db, symbol, "1d", 24*time.Hour)
 	}
+
+	select {}
 
 }
