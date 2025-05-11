@@ -10,6 +10,7 @@ import (
 	log "github.com/sirupsen/logrus"
 	"io"
 	"net/http"
+	"net/url"
 	"os"
 	"strings"
 	"time"
@@ -78,9 +79,20 @@ func getPairId(db *sql.DB, symbol string) (int, error) {
 func fetchCandleData(symbol string, interval string) [][]interface{} {
 	// TODO: Implement fetching candle data logic here
 
-	url := fmt.Sprintf("https://api.binance.com/api/v3/klines?symbol=%s&interval=%s&limit=%d", symbol, interval, 1)
+	baseURL := "https://api.binance.com/api/v3/klines"
+	params := url.Values{}
+	params.Add("symbol", symbol)
+	params.Add("interval", interval)
+	params.Add("limit", "1")
 
-	response, err := http.Get(url)
+	parsedURL, err := url.Parse(baseURL)
+	if err != nil {
+		log.WithError(err).Error("Failed to parse URL")
+		return nil
+	}
+	parsedURL.RawQuery = params.Encode()
+
+	response, err := http.Get(parsedURL.String())
 	if err != nil {
 		log.WithError(err).Error("Failed request")
 	}
