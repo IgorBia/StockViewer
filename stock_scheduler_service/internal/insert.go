@@ -27,12 +27,6 @@ func insertCandleData(db *sql.DB, data [][]interface{}, interval string, symbol 
 		log.WithError(err).Error("Failed to begin transaction")
 		return err
 	}
-	defer func(tx *sql.Tx) {
-		err := tx.Rollback()
-		if err != nil {
-			log.WithError(err).Error("Failed to rollback transaction")
-		}
-	}(tx)
 
 	stmt, err := tx.Prepare(query)
 	if err != nil {
@@ -80,6 +74,7 @@ func insertCandleData(db *sql.DB, data [][]interface{}, interval string, symbol 
 
 	if err = tx.Commit(); err != nil {
 		log.WithError(err).Error("Failed to commit transaction")
+		_ = tx.Rollback()
 		return err
 	}
 
