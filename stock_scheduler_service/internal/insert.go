@@ -20,6 +20,7 @@ func insertCandleData(db *sql.DB, data [][]interface{}, interval string, symbol 
 	pairId, err := getPairId(db, symbol)
 	if err != nil {
 		log.WithError(err).Error("Failed to get pair_id")
+		return err
 	}
 
 	tx, err := db.Begin()
