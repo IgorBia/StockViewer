@@ -1,7 +1,6 @@
 package com.stockviewer.stockapi.controller;
 
 import com.stockviewer.stockapi.dto.CandleDTO;
-import com.stockviewer.stockapi.entity.Candle;
 import com.stockviewer.stockapi.service.CandleService;
 import org.springframework.web.bind.annotation.*;
 
