@@ -8,7 +8,6 @@ import (
 )
 
 func insertCandleData(db *sql.DB, data [][]interface{}, interval string, symbol string) error {
-	// TODO: Implement inserting candle data logic here
 	query := `
         INSERT INTO candle (
             pair_id, open_time, open, high, low, close, 

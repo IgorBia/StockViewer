@@ -10,7 +10,6 @@ import (
 )
 
 func fetchCandleData(symbol string, interval string) [][]interface{} {
-	// TODO: Implement fetching candle data logic here
 
 	baseURL := "https://api.binance.com/api/v3/klines"
 	params := url.Values{}
