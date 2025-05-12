@@ -27,6 +27,7 @@ func fetchCandleData(symbol string, interval string) [][]interface{} {
 	response, err := http.Get(parsedURL.String())
 	if err != nil {
 		log.WithError(err).Error("Failed request")
+		return nil
 	}
 	defer func(Body io.ReadCloser) {
 		err := Body.Close()
