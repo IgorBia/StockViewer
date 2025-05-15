@@ -9,6 +9,12 @@ import (
 	log "github.com/sirupsen/logrus"
 )
 
+type FetchConfig struct {
+	BaseURL  string
+	Symbol   string
+	Interval string
+}
+
 func buildURL(base string, symbol string, interval string) (*url.URL, error) {
 
 	if base == "" {
@@ -40,9 +46,13 @@ func buildURL(base string, symbol string, interval string) (*url.URL, error) {
 	return parsedURL, nil
 }
 
-func fetchCandleData(symbol string, interval string) [][]interface{} {
+func fetchCandleData(cfg FetchConfig) [][]interface{} {
 
-	apiURL, err := buildURL("https://api.binance.com/api/v3/klines", symbol, interval)
+	if cfg.BaseURL == "" {
+		cfg.BaseURL = "https://api.binance.com/api/v3/klines"
+	}
+
+	apiURL, err := buildURL(cfg.BaseURL, cfg.Symbol, cfg.Interval)
 	if apiURL == nil {
 		log.Error("Failed to build URL")
 		return nil

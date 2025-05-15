@@ -1,7 +1,6 @@
 package internal
 
 import (
-	"encoding/json"
 	"net/http"
 	"net/http/httptest"
 	"net/url"
@@ -100,47 +99,81 @@ func TestBuildURL(t *testing.T) {
 }
 
 func TestFetchCandleData(t *testing.T) {
-	// Mockowanie odpowiedzi serwera
-	mockResponse := `[ [1620990000000, "60000", "60500", "61000", "59500", "1000", 1620993599999, "60000", "500", "0", "0", "0"] ]`
-	handler := func(w http.ResponseWriter, r *http.Request) {
-		// Symulujemy odpowiedź serwera
-		w.WriteHeader(http.StatusOK)
-		w.Write([]byte(mockResponse))
-	}
-	server := httptest.NewServer(http.HandlerFunc(handler))
-	defer server.Close()
-
-	// Zamień URL w funkcji buildURL na ten mockowy serwer
-	_, err := buildURL(server.URL, "BTCUSDT", "1m")
-	if err != nil {
-		t.Fatalf("Failed to build URL: %v", err)
-	}
-
-	// Wywołaj funkcję fetchCandleData
-	klines := fetchCandleData("BTCUSDT", "1m")
-
-	// Sprawdzamy, czy dane zostały poprawnie sparsowane
-	if len(klines) == 0 {
-		t.Errorf("Expected klines data, got empty")
-	}
-
-	// Sprawdzamy, czy dane świecy są poprawne
-	expectedCandle := Candle{
-		Time:      1620990000000,
-		Open:      "60000",
-		Close:     "60500",
-		High:      "61000",
-		Low:       "59500",
-		Volume:    "1000",
-		CloseTime: 1620993599999,
-	}
-
-	var actualCandle Candle
-	if err := json.Unmarshal([]byte(mockResponse), &actualCandle); err != nil {
-		t.Fatalf("Failed to unmarshal mock response: %v", err)
+	tests := []struct {
+		name         string
+		mockResponse string
+		config       FetchConfig
+		expected     Candle
+		expectEmpty  bool
+	}{
+		{
+			name:         "Valid candle data",
+			mockResponse: `[ [1620990000000, "60000", "60500", "61000", "59500", "1000", 1620993599999, "60000", "500", "0", "0", "0"] ]`,
+			config: FetchConfig{
+				Symbol:   "BTCUSDT",
+				Interval: "1m",
+			},
+			expected: Candle{
+				Time:      1620990000000,
+				Open:      "60000",
+				Close:     "60500",
+				High:      "61000",
+				Low:       "59500",
+				Volume:    "1000",
+				CloseTime: 1620993599999,
+			},
+			expectEmpty: false,
+		},
+		{
+			name:         "Empty response",
+			mockResponse: `[]`,
+			config: FetchConfig{
+				Symbol:   "BTCUSDT",
+				Interval: "1m",
+			},
+			expectEmpty: true,
+		},
 	}
 
-	if actualCandle != expectedCandle {
-		t.Errorf("Expected candle %v, but got %v", expectedCandle, actualCandle)
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+				w.WriteHeader(http.StatusOK)
+				_, err := w.Write([]byte(tt.mockResponse))
+				if err != nil {
+					return
+				}
+			}))
+			defer server.Close()
+
+			tt.config.BaseURL = server.URL
+			klines := fetchCandleData(tt.config)
+
+			if tt.expectEmpty {
+				if len(klines) != 0 {
+					t.Errorf("Expected empty result, got %v", klines)
+				}
+				return
+			}
+
+			if len(klines) != 1 {
+				t.Fatalf("Expected 1 candle, got %d", len(klines))
+			}
+
+			k := klines[0]
+			actual := Candle{
+				Time:      int64(k[0].(float64)),
+				Open:      k[1].(string),
+				Close:     k[2].(string),
+				High:      k[3].(string),
+				Low:       k[4].(string),
+				Volume:    k[5].(string),
+				CloseTime: int64(k[6].(float64)),
+			}
+
+			if actual != tt.expected {
+				t.Errorf("Expected %+v, got %+v", tt.expected, actual)
+			}
+		})
 	}
 }

@@ -15,7 +15,7 @@ func ScheduleCandleUpdates(db *sql.DB, symbol string, interval string, duration 
 			select {
 			case <-ticker.C:
 				log.Infof("Updating %s for %s", interval, symbol)
-				err := insertCandleData(db, fetchCandleData(symbol, interval), interval, symbol)
+				err := insertCandleData(db, fetchCandleData(FetchConfig{Symbol: symbol, Interval: interval}), interval, symbol)
 				if err != nil {
 					log.WithError(err).Errorf("Failed to update %s for %s", interval, symbol)
 				} else {
