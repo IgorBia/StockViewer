@@ -11,7 +11,7 @@ func main() {
 	db, err := config.GetDataBase()
 
 	if err == nil {
-		internal.BuildRoutines(db)
+		internal.BuildRoutines(db, internal.ScheduleCandleUpdates)
 	}
 
 	select {}

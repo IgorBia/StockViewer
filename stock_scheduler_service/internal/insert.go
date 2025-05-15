@@ -63,6 +63,7 @@ func insertCandleData(db *sql.DB, data [][]interface{}, interval string, symbol 
 		)
 
 		if err != nil {
+			_ = tx.Rollback()
 			log.WithFields(log.Fields{
 				"pair_id":   pairId,
 				"timeframe": interval,

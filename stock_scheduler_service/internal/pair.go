@@ -13,7 +13,7 @@ func getPairId(db *sql.DB, symbol string) (int, error) {
 	query := `SELECT pair_id FROM pair WHERE symbol = $1`
 
 	err := db.QueryRow(query, symbol).Scan(&pairId)
-	if err != nil {
+	if err != nil || pairId == 0 {
 		if errors.Is(err, sql.ErrNoRows) {
 			log.WithFields(log.Fields{
 				"symbol": symbol,
