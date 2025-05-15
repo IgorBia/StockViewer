@@ -73,7 +73,7 @@ func TestInsertCandleData(t *testing.T) {
 				// getPairId query
 				mock.ExpectQuery(regexp.QuoteMeta("SELECT pair_id FROM pair WHERE symbol = $1")).
 					WithArgs("BTCUSDT").
-					WillReturnRows(sqlmock.NewRows([]string{"id"}).AddRow(1))
+					WillReturnRows(sqlmock.NewRows([]string{"pair_id"}).AddRow(1))
 
 				mock.ExpectBegin()
 				mock.ExpectPrepare(regexp.QuoteMeta(
