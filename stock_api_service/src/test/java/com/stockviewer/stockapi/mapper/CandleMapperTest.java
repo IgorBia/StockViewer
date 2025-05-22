@@ -2,8 +2,6 @@ package com.stockviewer.stockapi.mapper;
 
 import com.stockviewer.stockapi.dto.CandleDTO;
 import com.stockviewer.stockapi.entity.Candle;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;

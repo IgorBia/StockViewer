@@ -28,6 +28,7 @@ class CandleControllerTest {
     @Autowired
     private MockMvc mockMvc;
 
+    // TODO: resolve the issue with @MockBean being deprecated.
     @MockBean
     private CandleService candleService;
 

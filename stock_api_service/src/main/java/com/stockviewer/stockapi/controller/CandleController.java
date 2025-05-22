@@ -2,6 +2,7 @@ package com.stockviewer.stockapi.controller;
 
 import com.stockviewer.stockapi.dto.CandleDTO;
 import com.stockviewer.stockapi.service.CandleService;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -22,7 +23,8 @@ public class CandleController {
     }
 
     @GetMapping("/{symbol}")
-    public List<CandleDTO> getCandlesBySymbol(@PathVariable String symbol) {
+    @Validated
+    public List<CandleDTO> getCandlesBySymbol(@PathVariable @RequestParam(required = true) String symbol) {
         return candleService.getCandlesBySymbol(symbol);
     }
 }
