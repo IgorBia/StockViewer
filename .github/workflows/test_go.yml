@@ -1,0 +1,23 @@
+name: Go CI - Test only
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up Go 1.21
+      uses: actions/setup-go@v4
+      with:
+        go-version: 1.21
+
+    - name: Run Go tests
+      working-directory: stock_scheduler_service
+      run: go test ./...
