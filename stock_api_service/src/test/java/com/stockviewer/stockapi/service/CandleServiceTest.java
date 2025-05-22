@@ -46,6 +46,21 @@ public class CandleServiceTest {
         return List.of(candle);
     }
 
+    private void assertCandleListValid(List<Candle> expected, List<CandleDTO> actual) {
+        assertAll("CandleDTO vs Candle",
+                () -> assertEquals(expected.size(), actual.size()),
+                () -> {
+                    Candle firstExpected = expected.get(0);
+                    CandleDTO firstActual = actual.get(0);
+                    assertEquals(firstExpected.getOpenTime(), firstActual.getTimestamp());
+                    assertEquals(firstExpected.getOpen(), firstActual.getOpen());
+                    assertEquals(firstExpected.getHigh(), firstActual.getHigh());
+                    assertEquals(firstExpected.getLow(), firstActual.getLow());
+                    assertEquals(firstExpected.getClose(), firstActual.getClose());
+                }
+        );
+    }
+
     @Test
     void getAllCandlesTest() {
 
@@ -57,14 +72,7 @@ public class CandleServiceTest {
         List<CandleDTO> result = candleService.getAllCandles();
 
         // then
-        assertAll("CandleDTO vs Candle",
-                () -> assertEquals(result.size(), candleList.size()),
-                () -> assertEquals(candleList.getFirst().getOpenTime(), result.getFirst().getTimestamp()),
-                () -> assertEquals(candleList.getFirst().getOpen(), result.getFirst().getOpen()),
-                () -> assertEquals(candleList.getFirst().getHigh(), result.getFirst().getHigh()),
-                () -> assertEquals(candleList.getFirst().getLow(), result.getFirst().getLow()),
-                () -> assertEquals(candleList.getFirst().getClose(), result.getFirst().getClose())
-        );
+        assertCandleListValid(candleList, result);
     }
 
     @Test
@@ -78,14 +86,7 @@ public class CandleServiceTest {
         List<CandleDTO> result = candleService.getCandlesBySymbol("ETHUSDC");
 
         // then
-        assertAll("CandleDTO vs Candle",
-                () -> assertEquals(result.size(), candleList.size()),
-                () -> assertEquals(candleList.getFirst().getOpenTime(), result.getFirst().getTimestamp()),
-                () -> assertEquals(candleList.getFirst().getOpen(), result.getFirst().getOpen()),
-                () -> assertEquals(candleList.getFirst().getHigh(), result.getFirst().getHigh()),
-                () -> assertEquals(candleList.getFirst().getLow(), result.getFirst().getLow()),
-                () -> assertEquals(candleList.getFirst().getClose(), result.getFirst().getClose())
-        );
+        assertCandleListValid(candleList, result);
     }
 
 }
