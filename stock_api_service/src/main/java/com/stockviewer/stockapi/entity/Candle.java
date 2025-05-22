@@ -8,6 +8,14 @@ import java.time.LocalDateTime;
 @Table(name = "candle")
 public class Candle {
 
+    public Candle(LocalDateTime openTime, BigDecimal open, BigDecimal close, BigDecimal high, BigDecimal low) {
+        this.openTime = openTime;
+        this.open = open;
+        this.close = close;
+        this.high = high;
+        this.low = low;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "candle_id")
@@ -52,6 +60,10 @@ public class Candle {
 
     @Column(name = "timeframe", nullable = false, length = 10)
     private String timeframe;
+
+    public Candle() {
+
+    }
 
     // Getters and Setters
 

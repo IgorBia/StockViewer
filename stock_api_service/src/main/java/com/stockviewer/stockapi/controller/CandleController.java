@@ -2,6 +2,7 @@ package com.stockviewer.stockapi.controller;
 
 import com.stockviewer.stockapi.dto.CandleDTO;
 import com.stockviewer.stockapi.service.CandleService;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -16,7 +17,7 @@ public class CandleController {
         this.candleService = candleService;
     }
 
-    @GetMapping
+    @GetMapping("/all")
     public List<CandleDTO> getAllCandles() {
         return candleService.getAllCandles();
     }

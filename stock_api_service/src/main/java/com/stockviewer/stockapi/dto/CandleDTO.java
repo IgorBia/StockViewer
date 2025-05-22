@@ -10,6 +10,14 @@ public class CandleDTO {
     private BigDecimal high;
     private BigDecimal low;
 
+    public CandleDTO(LocalDateTime timestamp, BigDecimal open, BigDecimal close, BigDecimal high, BigDecimal low) {
+        this.timestamp = timestamp;
+        this.open = open;
+        this.close = close;
+        this.high = high;
+        this.low = low;
+    }
+
     // Getters and Setters
 
     public BigDecimal getOpen() {
