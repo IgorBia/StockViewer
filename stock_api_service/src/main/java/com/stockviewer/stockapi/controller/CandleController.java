@@ -17,14 +17,13 @@ public class CandleController {
         this.candleService = candleService;
     }
 
-    @GetMapping
+    @GetMapping("/all")
     public List<CandleDTO> getAllCandles() {
         return candleService.getAllCandles();
     }
 
     @GetMapping("/{symbol}")
-    @Validated
-    public List<CandleDTO> getCandlesBySymbol(@PathVariable @RequestParam(required = true) String symbol) {
+    public List<CandleDTO> getCandlesBySymbol(@PathVariable String symbol) {
         return candleService.getCandlesBySymbol(symbol);
     }
 }

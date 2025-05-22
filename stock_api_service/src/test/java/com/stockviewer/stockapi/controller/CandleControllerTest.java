@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -28,8 +28,7 @@ class CandleControllerTest {
     @Autowired
     private MockMvc mockMvc;
 
-    // TODO: resolve the issue with @MockBean being deprecated.
-    @MockBean
+    @MockitoBean
     private CandleService candleService;
 
     private List<CandleDTO> getSampleCandleDTOList() {
@@ -60,7 +59,7 @@ class CandleControllerTest {
         when(candleService.getAllCandles()).thenReturn(candleDto);
 
         // when + then
-        assertCandleFields("/api/v1/candles");
+        assertCandleFields("/api/v1/candles/all");
     }
 
     @Test
