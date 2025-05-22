@@ -11,10 +11,11 @@ import java.util.List;
 public class CandleService {
 
     private final CandleRepository candleRepository;
-    private final CandleMapper candleMapper = new CandleMapper();
+    private final CandleMapper candleMapper;
 
-    public CandleService(CandleRepository candleRepository) {
+    public CandleService(CandleRepository candleRepository, CandleMapper candleMapper) {
         this.candleRepository = candleRepository;
+        this.candleMapper = candleMapper;
     }
 
     public List<CandleDTO> getAllCandles() {
