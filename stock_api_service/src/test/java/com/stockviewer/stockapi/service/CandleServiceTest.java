@@ -50,8 +50,8 @@ public class CandleServiceTest {
         assertAll("CandleDTO vs Candle",
                 () -> assertEquals(expected.size(), actual.size()),
                 () -> {
-                    Candle firstExpected = expected.get(0);
-                    CandleDTO firstActual = actual.get(0);
+                    Candle firstExpected = expected.getFirst();
+                    CandleDTO firstActual = actual.getFirst();
                     assertEquals(firstExpected.getOpenTime(), firstActual.getTimestamp());
                     assertEquals(firstExpected.getOpen(), firstActual.getOpen());
                     assertEquals(firstExpected.getHigh(), firstActual.getHigh());
