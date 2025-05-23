@@ -16,7 +16,7 @@ public class CandleController {
 
     private final CandleService candleService;
 
-    Logger logger = (Logger) LoggerFactory.getLogger(CandleController.class);
+    private static final Logger logger = (Logger) LoggerFactory.getLogger(CandleController.class);
 
     public CandleController(CandleService candleService) {
         this.candleService = candleService;
