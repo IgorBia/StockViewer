@@ -3,6 +3,7 @@ package com.stockviewer.stockapi.controller;
 import ch.qos.logback.classic.Logger;
 import com.stockviewer.stockapi.dto.CandleDTO;
 import com.stockviewer.stockapi.service.CandleService;
+import com.stockviewer.stockapi.utility.HttpHelper;
 import jakarta.servlet.http.HttpServletRequest;
 import org.slf4j.LoggerFactory;
 import org.springframework.validation.annotation.Validated;
@@ -24,14 +25,14 @@ public class CandleController {
 
 
     @GetMapping("/all")
-    public List<CandleDTO> getAllCandles() {
-        // TODO: logging about receiving a request from IP
+    public List<CandleDTO> getAllCandles(HttpServletRequest request) {
+        logger.info("Received request from IP: {}", HttpHelper.getClientIP(request));
         return candleService.getAllCandles();
     }
 
     @GetMapping("/{symbol}")
-    public List<CandleDTO> getCandlesBySymbol(@PathVariable String symbol) {
-        // TODO: logging about receiving a request for a symbol from IP
+    public List<CandleDTO> getCandlesBySymbol(@PathVariable String symbol, HttpServletRequest request) {
+        logger.info("Received request for symbol {} from IP: {}", symbol, HttpHelper.getClientIP(request));
         return candleService.getCandlesBySymbol(symbol);
     }
 }
