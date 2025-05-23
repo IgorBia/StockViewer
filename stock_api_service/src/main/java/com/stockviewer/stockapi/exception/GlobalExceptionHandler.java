@@ -8,6 +8,7 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(ResourceNotFoundException.class)
     public String handleResourceNotFound(ResourceNotFoundException ex) {
+        // TODO: log about an error
         return ex.getMessage();
     }
 }
