@@ -6,7 +6,6 @@ import com.stockviewer.stockapi.service.CandleService;
 import com.stockviewer.stockapi.utility.HttpHelper;
 import jakarta.servlet.http.HttpServletRequest;
 import org.slf4j.LoggerFactory;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
