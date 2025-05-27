@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Run GitHub Metrics
-        uses: lowlighter/metrics@latest
+        uses: lowlighter/metrics@v3.34.0
         with:
           token: ${{ secrets.METRICS_TOKEN }}
           user: ${{ github.repository_owner }}
