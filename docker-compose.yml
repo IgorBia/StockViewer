@@ -1,0 +1,49 @@
+services:
+  postgres:
+    image: postgres:15
+    container_name: stockviewer-postgres
+    restart: always
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: stockviewer
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: [ "CMD", "pg_isready", "-U", "user", "-d", "stockviewer" ]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+
+  spring:
+    build:
+      context: ./stock_api_service
+      dockerfile: Dockerfile
+    container_name: stockviewer-spring
+    restart: on-failure
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/stockviewer
+      SPRING_DATASOURCE_USERNAME: user
+      SPRING_DATASOURCE_PASSWORD: password
+    depends_on:
+      postgres:
+        condition: service_healthy
+    ports:
+      - "8080:8080"
+
+  go:
+    build:
+      context: ./stock_scheduler_service
+      dockerfile: Dockerfile
+    container_name: stockviewer-go
+    restart: on-failure
+    depends_on:
+      postgres:
+        condition: service_healthy
+
+volumes:
+  pgdata:
