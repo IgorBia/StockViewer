@@ -2,18 +2,15 @@ package com.stockviewer.stockapi.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.Column;
+import lombok.Getter;
 
+@Getter
 @Entity
 public class Pair {
+
     @Id
-    private Long pair_id;
+    @Column(name="pair_id")
+    private Long pairId;
     private String symbol;
-
-    public Long getPairId() {
-        return pair_id;
-    }
-    public String getSymbol() {
-        return symbol;
-    }
-
 }
