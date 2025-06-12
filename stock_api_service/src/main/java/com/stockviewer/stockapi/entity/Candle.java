@@ -3,10 +3,15 @@ package com.stockviewer.stockapi.entity;
 import jakarta.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import lombok.Getter;
 
+
+@Getter
 @Entity
 @Table(name = "candle")
 public class Candle {
+
+    public Candle() {}
 
     public Candle(LocalDateTime openTime, BigDecimal open, BigDecimal close, BigDecimal high, BigDecimal low) {
         this.openTime = openTime;
@@ -61,73 +66,7 @@ public class Candle {
     @Column(name = "timeframe", nullable = false, length = 10)
     private String timeframe;
 
-    public Candle() {
-
-    }
-
-    // Getters and Setters
-
-    public Integer getCandleId() {
-        return candleId;
-    }
-
-    public void setCandleId(Integer candleId) {
-        this.candleId = candleId;
-    }
-
-    public Pair getPair() {
-        return pair;
-    }
-
     public Long getPairId() {
         return getPair().getPairId();
-    }
-
-    public LocalDateTime getOpenTime() {
-        return openTime;
-    }
-
-    public BigDecimal getOpen() {
-        return open;
-    }
-
-    public BigDecimal getHigh() {
-        return high;
-    }
-
-    public BigDecimal getLow() {
-        return low;
-    }
-
-    public BigDecimal getClose() {
-        return close;
-    }
-
-    public BigDecimal getVolume() {
-        return volume;
-    }
-
-    public LocalDateTime getCloseTime() {
-        return closeTime;
-    }
-
-    public BigDecimal getQuoteVolume() {
-        return quoteVolume;
-    }
-
-    public Integer getTrades() {
-        return trades;
-    }
-
-    public BigDecimal getTakerBaseVol() {
-        return takerBaseVol;
-    }
-
-    public BigDecimal getTakerQuoteVol() {
-        return takerQuoteVol;
-    }
-
-    public String getTimeframe() {
-        return timeframe;
     }
 }
