@@ -20,6 +20,26 @@ Lightweight asset market viewer for visualizing candlestick charts and paper tra
 
 **StockViewer** is a modular, cross-language application (Java and Go) designed for efficient visualization of market data and strategy prototyping. The project enables users to render candlestick charts and practice trading in a risk-free environment. 
 
+## Installation
+
+### Using Docker Compose
+
+1. Make sure you have Docker & docker-compose installed.
+
+2. Create a .env file with enviromental variables e.g.:
+
+    ```
+    DB_HOST=postgres
+    DB_PORT=5432
+    DB_USER=user
+    DB_PASSWORD=password
+    DB_NAME=stockviewer
+    ```
+
+3. Run:
+   ```bash
+   docker compose up --build -d
+   ```
 
 ## Features
 
