@@ -25,10 +25,8 @@ services:
       dockerfile: Dockerfile
     container_name: stockviewer-spring
     restart: on-failure
-    environment:
-      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/stockviewer
-      SPRING_DATASOURCE_USERNAME: user
-      SPRING_DATASOURCE_PASSWORD: password
+    env_file:
+      - .env
     depends_on:
       postgres:
         condition: service_healthy
@@ -41,6 +39,8 @@ services:
       dockerfile: Dockerfile
     container_name: stockviewer-go
     restart: on-failure
+    volumes:
+      - .env:/app/.env
     depends_on:
       postgres:
         condition: service_healthy
