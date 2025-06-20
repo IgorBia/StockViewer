@@ -1,16 +1,22 @@
-CREATE TABLE app_user (
+\set ON_ERROR_STOP on
+CREATE SCHEMA IF NOT EXISTS user_management AUTHORIZATION "user";
+CREATE SCHEMA IF NOT EXISTS stock_data AUTHORIZATION "user";
+
+SET search_path TO stock_data, user_management;
+
+CREATE TABLE user_management.app_user (
                           user_id INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
                           email VARCHAR(50) NOT NULL UNIQUE,
                           password VARCHAR(60) NOT NULL
 );
 
-CREATE TABLE wallet (
+CREATE TABLE user_management.wallet (
                         wallet_id INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
                         user_id INT NOT NULL,
                         FOREIGN KEY (user_id) REFERENCES app_user(user_id) ON DELETE CASCADE
 );
 
-CREATE TABLE pair (
+CREATE TABLE stock_data.pair (
                       pair_id INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
                       symbol VARCHAR(10) NOT NULL,
                       base VARCHAR(5) NOT NULL,
@@ -19,7 +25,7 @@ CREATE TABLE pair (
                       exchange VARCHAR(15) NOT NULL
 );
 
-INSERT INTO pair (symbol, base, quote, market, exchange)
+INSERT INTO stock_data.pair (symbol, base, quote, market, exchange)
 VALUES
     ('BTCUSDC', 'BTC', 'USDC', 'Spot', 'Binance'),
     ( 'ETHUSDC', 'ETH', 'USDC', 'Spot', 'Binance'),
@@ -27,7 +33,7 @@ VALUES
     ( 'SOLUSDC', 'SOL', 'USDC', 'Spot', 'Binance');
 
 
-CREATE TABLE owned_asset (
+CREATE TABLE user_management.owned_asset (
                              owned_asset_id INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
                              wallet_id INT NOT NULL,
                              pair_id INT NOT NULL,
@@ -36,7 +42,7 @@ CREATE TABLE owned_asset (
                              FOREIGN KEY (pair_id) REFERENCES pair(pair_id) ON DELETE CASCADE
 );
 
-CREATE TABLE trade (
+CREATE TABLE user_management.trade (
                        trade_id INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
                        user_id INT NOT NULL,
                        pair_id INT NOT NULL,
@@ -47,7 +53,7 @@ CREATE TABLE trade (
                        FOREIGN KEY (pair_id) REFERENCES pair(pair_id) ON DELETE CASCADE
 );
 
-CREATE TABLE candle (
+CREATE TABLE stock_data.candle (
                         candle_id INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
                         pair_id INT NOT NULL,
                         open_time TIMESTAMP NOT NULL,
@@ -65,13 +71,13 @@ CREATE TABLE candle (
                         FOREIGN KEY (pair_id) REFERENCES pair(pair_id) ON DELETE CASCADE
 );
 
-CREATE TABLE watchlist (
+CREATE TABLE user_management.watchlist (
                            watchlist_id INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
                            user_id INT NOT NULL,
                            FOREIGN KEY (user_id) REFERENCES app_user(user_id) ON DELETE CASCADE
 );
 
-CREATE TABLE watchlist_item (
+CREATE TABLE user_management.watchlist_item (
                                 watchlist_item_id INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
                                 watchlist_id INT NOT NULL,
                                 pair_id INT NOT NULL,

@@ -1,12 +1,11 @@
 package com.stockviewer.stockapi.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Column;
+import jakarta.persistence.*;
 import lombok.Getter;
 
 @Getter
 @Entity
+@Table(schema="stock_data", name="pair")
 public class Pair {
 
     @Id
