@@ -11,6 +11,7 @@ Lightweight asset market viewer for visualizing candlestick charts and paper tra
 ## Table of Contents
 
 - [Overview](#overview)
+- [Installation](#installation)
 - [Features](#features)
 - [Project Structure](#project-structure)
 - [Documentation](#documentation)
