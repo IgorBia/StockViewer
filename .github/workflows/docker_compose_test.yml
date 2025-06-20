@@ -1,0 +1,37 @@
+name: Docker Compose Build Check
+
+on:
+  push:
+    branches: main
+  pull_request:
+    branches: main
+
+jobs:
+  docker-build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Create .env file
+        run: |
+          echo "DB_HOST=postgres" >> .env
+          echo "DB_PORT=5432" >> .env
+          echo "DB_USER=user" >> .env
+          echo "DB_PASSWORD=password" >> .env
+          echo "DB_NAME=stockviewer" >> .env
+
+      - name: Docker Compose Up with Build
+        run: |
+          docker compose up --build -d
+          sleep 30 
+
+      - name: 🧪 Check running containers
+        run: docker compose ps
+
+      - name: 🧼 Tear down
+        run: docker compose down
