@@ -9,7 +9,7 @@ import (
 
 func insertCandleData(db *sql.DB, data [][]interface{}, interval string, symbol string) error {
 	query := `
-        INSERT INTO candle (
+        INSERT INTO stock_data.candle (
             pair_id, open_time, open, high, low, close, 
             volume, close_time, quote_volume, trades, 
             taker_base_vol, taker_quote_vol, timeframe

@@ -10,7 +10,7 @@ import (
 
 func getPairId(db *sql.DB, symbol string) (int, error) {
 	var pairId int
-	query := `SELECT pair_id FROM pair WHERE symbol = $1`
+	query := `SELECT pair_id FROM stock_data.pair WHERE symbol = $1`
 
 	err := db.QueryRow(query, symbol).Scan(&pairId)
 	if err != nil || pairId == 0 {
