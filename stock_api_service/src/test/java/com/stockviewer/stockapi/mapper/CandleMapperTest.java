@@ -2,6 +2,7 @@ package com.stockviewer.stockapi.mapper;
 
 import com.stockviewer.stockapi.dto.CandleDTO;
 import com.stockviewer.stockapi.entity.Candle;
+import org.mapstruct.factory.Mappers;
 import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
@@ -12,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class CandleMapperTest {
 
-    private final CandleMapper candleMapper = new CandleMapper();
+    CandleMapper candleMapper = Mappers.getMapper(CandleMapper.class);
 
     @Test
     void validCandleToDTOTest() {
@@ -31,7 +32,7 @@ public class CandleMapperTest {
 
         // then
         assertAll("CandleDTO vs Candle",
-                () -> assertEquals(candle.getOpenTime(), candleDTO.getTimestamp()),
+                () -> assertEquals(candle.getTimestamp(), candleDTO.getTimestamp()),
                 () -> assertEquals(candle.getOpen(), candleDTO.getOpen()),
                 () -> assertEquals(candle.getClose(), candleDTO.getClose()),
                 () -> assertEquals(candle.getHigh(), candleDTO.getHigh()),
