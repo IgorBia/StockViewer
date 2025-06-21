@@ -4,6 +4,7 @@ package com.stockviewer.stockapi.service;
 import com.stockviewer.stockapi.dto.CandleDTO;
 import com.stockviewer.stockapi.entity.Candle;
 import com.stockviewer.stockapi.mapper.CandleMapper;
+import org.mapstruct.factory.Mappers;
 import com.stockviewer.stockapi.repository.CandleRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -26,7 +27,7 @@ public class CandleServiceTest {
     @Mock
     private CandleRepository candleRepository;
 
-    private final CandleMapper candleMapper = new CandleMapper();
+    CandleMapper candleMapper = Mappers.getMapper(CandleMapper.class);
 
     private CandleService candleService;
 
@@ -52,7 +53,7 @@ public class CandleServiceTest {
                 () -> {
                     Candle firstExpected = expected.getFirst();
                     CandleDTO firstActual = actual.getFirst();
-                    assertEquals(firstExpected.getOpenTime(), firstActual.getTimestamp());
+                    assertEquals(firstExpected.getTimestamp(), firstActual.getTimestamp());
                     assertEquals(firstExpected.getOpen(), firstActual.getOpen());
                     assertEquals(firstExpected.getHigh(), firstActual.getHigh());
                     assertEquals(firstExpected.getLow(), firstActual.getLow());
