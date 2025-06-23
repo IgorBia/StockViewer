@@ -2,21 +2,17 @@ package com.stockviewer.stockapi.mapper;
 
 import com.stockviewer.stockapi.dto.CandleDTO;
 import com.stockviewer.stockapi.entity.Candle;
-import org.springframework.stereotype.Component;
+import org.mapstruct.Mapper;
+import org.mapstruct.BeforeMapping;
 
-@Component
-public class CandleMapper {
+@Mapper(componentModel = "spring")
+public interface CandleMapper {
+    CandleDTO toDTO(Candle candle);
 
-    public CandleDTO toDTO(Candle candle) {
+    @BeforeMapping
+    default void checkNull(Candle candle) {
         if (candle == null) {
-            throw new IllegalArgumentException("Candle cannot be null");
+            throw new IllegalArgumentException("Candle cannot be null.");
         }
-        return new CandleDTO(
-                candle.getOpenTime(),
-                candle.getOpen(),
-                candle.getClose(),
-                candle.getHigh(),
-                candle.getLow()
-        );
     }
 }

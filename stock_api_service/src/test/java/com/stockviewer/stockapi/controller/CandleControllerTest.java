@@ -3,9 +3,11 @@ package com.stockviewer.stockapi.controller;
 import com.stockviewer.stockapi.dto.CandleDTO;
 import com.stockviewer.stockapi.service.CandleService;
 import org.junit.jupiter.api.Test;
+import com.stockviewer.stockapi.config.SecurityConfig;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.context.annotation.Import;
 import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
@@ -23,6 +25,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @ExtendWith(SpringExtension.class)
 @WebMvcTest(CandleController.class)
+@Import(SecurityConfig.class)
 class CandleControllerTest {
 
     @Autowired

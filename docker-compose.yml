@@ -4,16 +4,16 @@ services:
     container_name: stockviewer-postgres
     restart: always
     environment:
-      POSTGRES_USER: user
-      POSTGRES_PASSWORD: password
-      POSTGRES_DB: stockviewer
+      POSTGRES_USER: ${DB_USER:-user}
+      POSTGRES_PASSWORD: ${DB_PASSWORD:-password}
+      POSTGRES_DB: ${DB_NAME:-stockviewer}
     volumes:
       - pgdata:/var/lib/postgresql/data
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
     ports:
-      - "5432:5432"
+      - "${DB_PORT:-5432}:${DB_PORT:-5432}"
     healthcheck:
-      test: [ "CMD", "pg_isready", "-U", "user", "-d", "stockviewer" ]
+      test: [ "CMD", "pg_isready", "-U", "${DB_USER:-user}", "-d", "${DB_NAME:-stockviewer}" ]
       interval: 5s
       timeout: 5s
       retries: 5

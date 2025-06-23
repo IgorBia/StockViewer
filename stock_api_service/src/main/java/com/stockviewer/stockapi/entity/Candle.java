@@ -14,7 +14,7 @@ public class Candle {
     public Candle() {}
 
     public Candle(LocalDateTime openTime, BigDecimal open, BigDecimal close, BigDecimal high, BigDecimal low) {
-        this.openTime = openTime;
+        this.timestamp = openTime;
         this.open = open;
         this.close = close;
         this.high = high;
@@ -31,7 +31,7 @@ public class Candle {
     private Pair pair;
 
     @Column(name = "open_time", nullable = false)
-    private LocalDateTime openTime;
+    private LocalDateTime timestamp;
 
     @Column(name = "open", nullable = false, precision = 18, scale = 8)
     private BigDecimal open;
