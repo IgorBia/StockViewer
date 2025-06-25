@@ -1,9 +1,8 @@
 package log
 
 import (
-	"os"
-
 	log "github.com/sirupsen/logrus"
+	"os"
 )
 
 func InitLogger() {

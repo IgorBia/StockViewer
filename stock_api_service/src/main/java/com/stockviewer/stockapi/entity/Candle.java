@@ -8,7 +8,7 @@ import lombok.Getter;
 
 @Getter
 @Entity
-@Table(name = "candle")
+@Table(schema="stock_data", name = "candle")
 public class Candle {
 
     public Candle() {}
