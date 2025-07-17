@@ -9,6 +9,7 @@ import lombok.Getter;
 public class Pair {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="pair_id")
     private Long pairId;
     private String symbol;
