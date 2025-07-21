@@ -43,7 +43,7 @@ public class UserController {
             String token = userService.login(userDTO);
             return ResponseEntity.status(HttpStatus.ACCEPTED).body(new LoginResponse("Logged in successfully", token));
         } catch(BadCredentialsException e){
-            return ResponseEntity.status(HttpStatus.NOT_ACCEPTABLE).body(new LoginResponse("Incorrect email address or password"));
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(new LoginResponse("Incorrect email address or password"));
         }
     }
 }
