@@ -34,6 +34,8 @@ func GetDataBase() (*sql.DB, error) {
 	}
 
 	log.Info("Connected to the database successfully")
+	db.Exec("SET search_path TO stock_data, public")
+
 	return db, nil
 }
 
