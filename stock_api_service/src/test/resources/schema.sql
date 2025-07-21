@@ -1,7 +1,7 @@
 CREATE SCHEMA IF NOT EXISTS user_management;
 CREATE SCHEMA IF NOT EXISTS stock_data;
 
--- Nie ma SET search_path w H2 – pomijamy
+-- H2 does not support SET search_path - skipping
 
 CREATE TABLE user_management.app_user (
                                           user_id INT PRIMARY KEY AUTO_INCREMENT,
