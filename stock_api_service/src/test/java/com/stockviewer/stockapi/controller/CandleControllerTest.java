@@ -1,16 +1,26 @@
 package com.stockviewer.stockapi.controller;
 
+import com.stockviewer.stockapi.TestSecurityConfig;
 import com.stockviewer.stockapi.dto.CandleDTO;
+import com.stockviewer.stockapi.exception.GlobalExceptionHandler;
 import com.stockviewer.stockapi.service.CandleService;
+import com.stockviewer.stockapi.utility.CustomUserDetailsService;
+import com.stockviewer.stockapi.utility.jwt.JwtFilter;
 import org.junit.jupiter.api.Test;
 import com.stockviewer.stockapi.config.SecurityConfig;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.FilterType;
 import org.springframework.context.annotation.Import;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.MvcResult;
+
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 
 
@@ -23,9 +33,10 @@ import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+@WebMvcTest(controllers = CandleController.class)
+@ActiveProfiles("test")
 @ExtendWith(SpringExtension.class)
-@WebMvcTest(CandleController.class)
-@Import(SecurityConfig.class)
+@Import({TestSecurityConfig.class, GlobalExceptionHandler.class})
 class CandleControllerTest {
 
     @Autowired
@@ -33,6 +44,15 @@ class CandleControllerTest {
 
     @MockitoBean
     private CandleService candleService;
+
+    @MockitoBean
+    private PasswordEncoder passwordEncoder;
+
+    @MockitoBean
+    private CustomUserDetailsService customUserDetailsService;
+
+    @MockitoBean
+    private JwtFilter jwtFilter;
 
     private List<CandleDTO> getSampleCandleDTOList() {
         CandleDTO candleDto = new CandleDTO(
@@ -46,12 +66,15 @@ class CandleControllerTest {
     }
 
     private void assertCandleFields(String url) throws Exception{
-        mockMvc.perform(get(url))
+        MvcResult result = mockMvc.perform(get(url))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$[0].open").value(2513.24))
                 .andExpect(jsonPath("$[0].close").value(2512.04))
                 .andExpect(jsonPath("$[0].high").value(2513.24))
-                .andExpect(jsonPath("$[0].low").value(2512.01));
+                .andExpect(jsonPath("$[0].low").value(2512.01))
+                        .andReturn();
+        System.out.println("Response JSON: " + result.getResponse().getContentAsString());
+
     }
 
     @Test

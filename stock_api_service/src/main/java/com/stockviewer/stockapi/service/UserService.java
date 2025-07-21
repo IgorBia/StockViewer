@@ -3,6 +3,7 @@ package com.stockviewer.stockapi.service;
 import com.stockviewer.stockapi.dto.UserDTO;
 import com.stockviewer.stockapi.entity.Role;
 import com.stockviewer.stockapi.entity.User;
+import com.stockviewer.stockapi.exception.CredentialsTakenException;
 import com.stockviewer.stockapi.mapper.UserMapper;
 import com.stockviewer.stockapi.repository.RoleRepository;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -35,17 +36,18 @@ public class UserService {
         this.authenticationManager = authenticationManager;
     }
 
-    public User register(UserDTO userDTO) throws Exception {
+    public User register(UserDTO userDTO) throws CredentialsTakenException, ResourceNotFoundException {
+
+        if(userRepository.existsByEmail(userDTO.getEmail())) throw new CredentialsTakenException("Email address is already taken");
+
         User user = userMapper.toEntity(userDTO);
-
-        if(userRepository.existsByEmail(user.getEmail())) throw new Exception("Email address is already taken");
-
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         Role userRole = roleRepository.findByName("ROLE_USER")
                 .orElseThrow(() -> new ResourceNotFoundException("Default role USER not found"));
 
         user.getRoles().add(userRole);
         return userRepository.save(user);
+        // TODO: account email activation
     }
 
     public String login(UserDTO userDTO){
