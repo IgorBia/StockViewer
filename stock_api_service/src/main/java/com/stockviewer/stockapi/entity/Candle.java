@@ -3,15 +3,18 @@ package com.stockviewer.stockapi.entity;
 import jakarta.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+
+import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 
 @Getter
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(schema="stock_data", name = "candle")
 public class Candle {
-
-    public Candle() {}
 
     public Candle(LocalDateTime openTime, BigDecimal open, BigDecimal close, BigDecimal high, BigDecimal low) {
         this.timestamp = openTime;

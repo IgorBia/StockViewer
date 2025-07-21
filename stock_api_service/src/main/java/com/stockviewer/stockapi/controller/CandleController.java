@@ -24,14 +24,14 @@ public class CandleController {
 
 
     @GetMapping("/all")
-    public List<CandleDTO> getAllCandles(HttpServletRequest request) {
-        logger.info("Received request from IP: {}", HttpHelper.getClientIP(request));
+    public List<CandleDTO> getAllCandles() {
+        //logger.info("Received request from IP: {}", HttpHelper.getClientIP(request));
         return candleService.getAllCandles();
     }
 
     @GetMapping("/{symbol}")
-    public List<CandleDTO> getCandlesBySymbol(@PathVariable String symbol, HttpServletRequest request) {
-        logger.info("Received request for symbol {} from IP: {}", symbol, HttpHelper.getClientIP(request));
+    public List<CandleDTO> getCandlesBySymbol(@PathVariable String symbol) {
+        //logger.info("Received request for symbol {} from IP: {}", symbol, HttpHelper.getClientIP(request));
         return candleService.getCandlesBySymbol(symbol);
     }
 }
