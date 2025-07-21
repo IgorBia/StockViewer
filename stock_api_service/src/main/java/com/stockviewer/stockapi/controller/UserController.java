@@ -33,7 +33,7 @@ public class UserController {
         } catch (ResourceNotFoundException e){
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
         } catch (CredentialsTakenException e){
-            return ResponseEntity.status(HttpStatus.ALREADY_REPORTED).body(e.getMessage());
+            return ResponseEntity.status(HttpStatus.CONFLICT).body(e.getMessage());
         }
     }
 
