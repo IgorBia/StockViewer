@@ -26,7 +26,6 @@ public class User {
     private String email;
 
     @Column(name="password")
-    @Getter
     private String password;
 
     @ManyToMany
