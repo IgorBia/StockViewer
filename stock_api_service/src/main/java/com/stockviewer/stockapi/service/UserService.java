@@ -6,8 +6,15 @@ import com.stockviewer.stockapi.entity.User;
 import com.stockviewer.stockapi.mapper.UserMapper;
 import com.stockviewer.stockapi.repository.RoleRepository;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import io.jsonwebtoken.Jwt;
+import com.stockviewer.stockapi.utility.jwt.JwtUtils;
 import org.springframework.stereotype.Service;
 import com.stockviewer.stockapi.repository.UserRepository;
+import com.stockviewer.stockapi.exception.ResourceNotFoundException;
 
 @Service
 public class UserService {
@@ -16,27 +23,40 @@ public class UserService {
     private final UserRepository userRepository;
     private final RoleRepository roleRepository;
     private final PasswordEncoder passwordEncoder;
+    private final JwtUtils jwtUtils;
+    private final AuthenticationManager authenticationManager;
 
-    public UserService(UserMapper userMapper, UserRepository userRepository, RoleRepository roleRepository, PasswordEncoder passwordEncoder){
+    public UserService(UserMapper userMapper, UserRepository userRepository, RoleRepository roleRepository, PasswordEncoder passwordEncoder, JwtUtils jwtUtils, AuthenticationManager authenticationManager){
         this.userMapper = userMapper;
         this.userRepository = userRepository;
         this.roleRepository = roleRepository;
         this.passwordEncoder = passwordEncoder;
+        this.jwtUtils = jwtUtils;
+        this.authenticationManager = authenticationManager;
     }
 
-    public User register(UserDTO userDTO) {
+    public User register(UserDTO userDTO) throws Exception {
         User user = userMapper.toEntity(userDTO);
+
+        if(userRepository.existsByEmail(user.getEmail())) throw new Exception("Email address is already taken");
+
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         Role userRole = roleRepository.findByName("ROLE_USER")
-                .orElseThrow(() -> new RuntimeException("Default role USER not found"));
+                .orElseThrow(() -> new ResourceNotFoundException("Default role USER not found"));
 
         user.getRoles().add(userRole);
         return userRepository.save(user);
     }
 
-//    public boolean login(UserDTO userDTO){
-//        User user = userMapper.toEntity(userDTO);
-//        user.setPassword(passwordEncoder.encode(user.getPassword()));
-//        return userRepository.exists();
-//    }
+    public String login(UserDTO userDTO){
+        Authentication authentication = authenticationManager.authenticate(
+                new UsernamePasswordAuthenticationToken(
+                        userDTO.getEmail(),
+                        userDTO.getPassword()
+                )
+        );
+
+        SecurityContextHolder.getContext().setAuthentication(authentication);
+        return jwtUtils.generateToken(authentication);
+    }
 }

@@ -14,6 +14,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import com.stockviewer.stockapi.utility.jwt.JwtFilter;
+import com.stockviewer.stockapi.utility.CustomUserDetailsService;
 
 import static org.springframework.security.config.Customizer.withDefaults;
 
