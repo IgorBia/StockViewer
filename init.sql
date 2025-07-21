@@ -17,6 +17,11 @@ CREATE TABLE user_management.role (
     name VARCHAR(50) NOT NULL UNIQUE
 );
 
+INSERT INTO user_management.role (name)
+VALUES
+    ('ROLE_ADMIN'),
+    ('ROLE_USER');
+
 CREATE TABLE user_management.user_role (
     user_id INT REFERENCES user_management.app_user(user_id) ON DELETE CASCADE,
     role_id INT REFERENCES user_management.role(role_id) ON DELETE CASCADE,
