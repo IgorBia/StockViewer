@@ -1,7 +1,7 @@
 package com.stockviewer.stockapi.utility;
 
-import com.stockviewer.stockapi.entity.User;
-import com.stockviewer.stockapi.repository.UserRepository;
+import com.stockviewer.stockapi.user.entity.User;
+import com.stockviewer.stockapi.user.repository.UserRepository;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -15,7 +15,7 @@ import java.util.stream.Collectors;
 @Service
 public class CustomUserDetailsService implements UserDetailsService {
 
-    private UserRepository userRepository;
+    private final UserRepository userRepository;
 
     public CustomUserDetailsService(UserRepository userRepository) {
         this.userRepository = userRepository;
