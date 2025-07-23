@@ -1,4 +1,4 @@
-package com.stockviewer.stockapi.dto;
+package com.stockviewer.stockapi.candle.dto;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;

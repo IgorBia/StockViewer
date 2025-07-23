@@ -1,4 +1,4 @@
-package com.stockviewer.stockapi.entity;
+package com.stockviewer.stockapi.user.entity;
 
 import jakarta.persistence.*;
 import lombok.*;

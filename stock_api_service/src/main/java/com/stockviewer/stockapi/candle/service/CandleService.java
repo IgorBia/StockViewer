@@ -1,8 +1,8 @@
-package com.stockviewer.stockapi.service;
+package com.stockviewer.stockapi.candle.service;
 
-import com.stockviewer.stockapi.dto.CandleDTO;
-import com.stockviewer.stockapi.mapper.CandleMapper;
-import com.stockviewer.stockapi.repository.CandleRepository;
+import com.stockviewer.stockapi.candle.dto.CandleDTO;
+import com.stockviewer.stockapi.candle.mapper.CandleMapper;
+import com.stockviewer.stockapi.candle.repository.CandleRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

@@ -1,6 +1,6 @@
-package com.stockviewer.stockapi.repository;
+package com.stockviewer.stockapi.candle.repository;
 
-import com.stockviewer.stockapi.entity.Candle;
+import com.stockviewer.stockapi.candle.entity.Candle;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

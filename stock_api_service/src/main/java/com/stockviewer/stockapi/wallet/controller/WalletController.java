@@ -1,4 +1,4 @@
-package com.stockviewer.stockapi.controller;
+package com.stockviewer.stockapi.wallet.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

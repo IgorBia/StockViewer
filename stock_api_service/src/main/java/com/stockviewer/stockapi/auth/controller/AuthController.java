@@ -1,10 +1,10 @@
-package com.stockviewer.stockapi.controller;
+package com.stockviewer.stockapi.auth.controller;
 
 import ch.qos.logback.classic.Logger;
 import com.stockviewer.stockapi.exception.CredentialsTakenException;
-import com.stockviewer.stockapi.utility.LoginResponse;
-import com.stockviewer.stockapi.dto.UserDTO;
-import com.stockviewer.stockapi.service.UserService;
+import com.stockviewer.stockapi.auth.dto.LoginResponse;
+import com.stockviewer.stockapi.user.dto.UserDTO;
+import com.stockviewer.stockapi.auth.service.AuthService;
 import jakarta.validation.Valid;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
@@ -15,13 +15,13 @@ import com.stockviewer.stockapi.exception.ResourceNotFoundException;
 
 @RestController
 @RequestMapping("/api/v1/users")
-public class UserController {
+public class AuthController {
 
-    private final UserService userService;
+    private final AuthService userService;
 
-    private static final Logger logger = (Logger) LoggerFactory.getLogger(UserController.class);
+    private static final Logger logger = (Logger) LoggerFactory.getLogger(AuthController.class);
 
-    public UserController(UserService userService) {
+    public AuthController(AuthService userService) {
         this.userService = userService;
     }
 

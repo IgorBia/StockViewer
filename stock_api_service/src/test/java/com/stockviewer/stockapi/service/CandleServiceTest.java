@@ -1,11 +1,12 @@
 package com.stockviewer.stockapi.service;
 
 
-import com.stockviewer.stockapi.dto.CandleDTO;
-import com.stockviewer.stockapi.entity.Candle;
-import com.stockviewer.stockapi.mapper.CandleMapper;
+import com.stockviewer.stockapi.candle.service.CandleService;
+import com.stockviewer.stockapi.candle.dto.CandleDTO;
+import com.stockviewer.stockapi.candle.entity.Candle;
+import com.stockviewer.stockapi.candle.mapper.CandleMapper;
 import org.mapstruct.factory.Mappers;
-import com.stockviewer.stockapi.repository.CandleRepository;
+import com.stockviewer.stockapi.candle.repository.CandleRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

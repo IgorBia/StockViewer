@@ -1,20 +1,16 @@
 package com.stockviewer.stockapi.controller;
 
 import com.stockviewer.stockapi.TestSecurityConfig;
-import com.stockviewer.stockapi.dto.CandleDTO;
+import com.stockviewer.stockapi.candle.controller.CandleController;
+import com.stockviewer.stockapi.candle.dto.CandleDTO;
 import com.stockviewer.stockapi.exception.GlobalExceptionHandler;
-import com.stockviewer.stockapi.service.CandleService;
-import com.stockviewer.stockapi.utility.CustomUserDetailsService;
+import com.stockviewer.stockapi.candle.service.CandleService;
 import com.stockviewer.stockapi.utility.jwt.JwtFilter;
 import org.junit.jupiter.api.Test;
-import com.stockviewer.stockapi.config.SecurityConfig;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.FilterType;
 import org.springframework.context.annotation.Import;
-import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.bean.override.mockito.MockitoBean;
 import org.springframework.test.context.junit.jupiter.SpringExtension;

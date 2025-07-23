@@ -1,6 +1,6 @@
-package com.stockviewer.stockapi.repository;
+package com.stockviewer.stockapi.user.repository;
 
-import com.stockviewer.stockapi.entity.User;
+import com.stockviewer.stockapi.user.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

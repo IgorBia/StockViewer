@@ -1,4 +1,4 @@
-package com.stockviewer.stockapi.dto;
+package com.stockviewer.stockapi.user.dto;
 
 import jakarta.validation.constraints.*;
 import lombok.Data;

@@ -1,10 +1,8 @@
-package com.stockviewer.stockapi.controller;
+package com.stockviewer.stockapi.candle.controller;
 
 import ch.qos.logback.classic.Logger;
-import com.stockviewer.stockapi.dto.CandleDTO;
-import com.stockviewer.stockapi.service.CandleService;
-import com.stockviewer.stockapi.utility.HttpHelper;
-import jakarta.servlet.http.HttpServletRequest;
+import com.stockviewer.stockapi.candle.dto.CandleDTO;
+import com.stockviewer.stockapi.candle.service.CandleService;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
 

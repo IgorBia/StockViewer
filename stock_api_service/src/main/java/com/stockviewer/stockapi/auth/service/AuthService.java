@@ -1,24 +1,23 @@
-package com.stockviewer.stockapi.service;
+package com.stockviewer.stockapi.auth.service;
 
-import com.stockviewer.stockapi.dto.UserDTO;
-import com.stockviewer.stockapi.entity.Role;
-import com.stockviewer.stockapi.entity.User;
+import com.stockviewer.stockapi.user.dto.UserDTO;
+import com.stockviewer.stockapi.user.entity.Role;
+import com.stockviewer.stockapi.user.entity.User;
 import com.stockviewer.stockapi.exception.CredentialsTakenException;
-import com.stockviewer.stockapi.mapper.UserMapper;
-import com.stockviewer.stockapi.repository.RoleRepository;
+import com.stockviewer.stockapi.user.mapper.UserMapper;
+import com.stockviewer.stockapi.user.repository.RoleRepository;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
-import io.jsonwebtoken.Jwt;
 import com.stockviewer.stockapi.utility.jwt.JwtUtils;
 import org.springframework.stereotype.Service;
-import com.stockviewer.stockapi.repository.UserRepository;
+import com.stockviewer.stockapi.user.repository.UserRepository;
 import com.stockviewer.stockapi.exception.ResourceNotFoundException;
 
 @Service
-public class UserService {
+public class AuthService {
 
     private final UserMapper userMapper;
     private final UserRepository userRepository;
@@ -27,7 +26,7 @@ public class UserService {
     private final JwtUtils jwtUtils;
     private final AuthenticationManager authenticationManager;
 
-    public UserService(UserMapper userMapper, UserRepository userRepository, RoleRepository roleRepository, PasswordEncoder passwordEncoder, JwtUtils jwtUtils, AuthenticationManager authenticationManager){
+    public AuthService(UserMapper userMapper, UserRepository userRepository, RoleRepository roleRepository, PasswordEncoder passwordEncoder, JwtUtils jwtUtils, AuthenticationManager authenticationManager){
         this.userMapper = userMapper;
         this.userRepository = userRepository;
         this.roleRepository = roleRepository;
