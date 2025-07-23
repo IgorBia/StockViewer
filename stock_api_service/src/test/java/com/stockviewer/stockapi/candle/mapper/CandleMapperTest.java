@@ -1,6 +1,5 @@
-package com.stockviewer.stockapi.mapper;
+package com.stockviewer.stockapi.candle.mapper;
 
-import com.stockviewer.stockapi.candle.mapper.CandleMapper;
 import com.stockviewer.stockapi.candle.dto.CandleDTO;
 import com.stockviewer.stockapi.candle.entity.Candle;
 import org.mapstruct.factory.Mappers;

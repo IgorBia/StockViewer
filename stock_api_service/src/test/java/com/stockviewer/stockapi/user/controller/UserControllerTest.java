@@ -1,4 +1,4 @@
-package com.stockviewer.stockapi.controller;
+package com.stockviewer.stockapi.user.controller;
 
 import com.stockviewer.stockapi.TestSecurityConfig;
 import com.stockviewer.stockapi.auth.controller.AuthController;

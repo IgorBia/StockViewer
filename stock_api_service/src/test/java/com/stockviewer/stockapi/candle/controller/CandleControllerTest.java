@@ -1,7 +1,6 @@
-package com.stockviewer.stockapi.controller;
+package com.stockviewer.stockapi.candle.controller;
 
 import com.stockviewer.stockapi.TestSecurityConfig;
-import com.stockviewer.stockapi.candle.controller.CandleController;
 import com.stockviewer.stockapi.candle.dto.CandleDTO;
 import com.stockviewer.stockapi.exception.GlobalExceptionHandler;
 import com.stockviewer.stockapi.candle.service.CandleService;

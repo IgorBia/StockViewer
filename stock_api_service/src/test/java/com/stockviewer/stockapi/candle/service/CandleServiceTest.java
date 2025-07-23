@@ -1,7 +1,6 @@
-package com.stockviewer.stockapi.service;
+package com.stockviewer.stockapi.candle.service;
 
 
-import com.stockviewer.stockapi.candle.service.CandleService;
 import com.stockviewer.stockapi.candle.dto.CandleDTO;
 import com.stockviewer.stockapi.candle.entity.Candle;
 import com.stockviewer.stockapi.candle.mapper.CandleMapper;
