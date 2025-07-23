@@ -1,4 +1,4 @@
-package com.stockviewer.stockapi.user.controller;
+package com.stockviewer.stockapi.auth.controller;
 
 import com.stockviewer.stockapi.TestSecurityConfig;
 import com.stockviewer.stockapi.auth.controller.AuthController;
@@ -29,13 +29,13 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @ExtendWith(SpringExtension.class)
 @AutoConfigureMockMvc
 @Import({TestSecurityConfig.class, GlobalExceptionHandler.class, ValidationAutoConfiguration.class})
-class UserControllerTest {
+class AuthControllerTest {
 
     @Autowired
     private MockMvc mockMvc;
 
     @MockitoBean
-    private AuthService userService;
+    private AuthService authService;
 
     @MockitoBean
     private JwtFilter jwtFilter;
@@ -55,7 +55,7 @@ class UserControllerTest {
                 .andExpect(status().isOk());
                 //.andExpect(content().string("User created"));
 
-        verify(userService, never()).register(any(UserDTO.class));
+        verify(authService, never()).register(any(UserDTO.class));
     }
 
 

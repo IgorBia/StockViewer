@@ -17,18 +17,18 @@ import com.stockviewer.stockapi.exception.ResourceNotFoundException;
 @RequestMapping("/api/v1/users")
 public class AuthController {
 
-    private final AuthService userService;
+    private final AuthService authService;
 
     private static final Logger logger = (Logger) LoggerFactory.getLogger(AuthController.class);
 
-    public AuthController(AuthService userService) {
-        this.userService = userService;
+    public AuthController(AuthService authService) {
+        this.authService = authService;
     }
 
     @PostMapping("/register")
     public ResponseEntity<String> register(@Valid @RequestBody UserDTO userDTO){
         try{
-            userService.register(userDTO);
+            authService.register(userDTO);
             return ResponseEntity.status(HttpStatus.CREATED).body("User created");
         } catch (ResourceNotFoundException e){
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
@@ -40,7 +40,7 @@ public class AuthController {
     @PostMapping("/login")
     public ResponseEntity<LoginResponse> authenticateUser(@RequestBody UserDTO userDTO) {
         try{
-            String token = userService.login(userDTO);
+            String token = authService.login(userDTO);
             return ResponseEntity.status(HttpStatus.ACCEPTED).body(new LoginResponse("Logged in successfully", token));
         } catch(BadCredentialsException e){
             return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(new LoginResponse("Incorrect email address or password"));
