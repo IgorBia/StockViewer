@@ -4,11 +4,13 @@ import jakarta.servlet.*;
 import jakarta.servlet.http.HttpServletRequest;
 
 import java.io.IOException;
-import java.util.logging.Logger;
+
+import org.slf4j.LoggerFactory;
+import org.slf4j.Logger;
 
 public class RequestLoggingFilter implements Filter {
 
-    private static final Logger logger = Logger.getLogger(RequestLoggingFilter.class.getName());
+    private static final Logger logger = LoggerFactory.getLogger(RequestLoggingFilter.class.getName());
 
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
