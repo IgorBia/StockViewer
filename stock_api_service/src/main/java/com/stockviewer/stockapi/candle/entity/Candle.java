@@ -3,6 +3,7 @@ package com.stockviewer.stockapi.candle.entity;
 import jakarta.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.List;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -68,6 +69,9 @@ public class Candle {
 
     @Column(name = "timeframe", nullable = false, length = 10)
     private String timeframe;
+
+    @OneToMany(mappedBy = "candle", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Indicator> indicators;
 
     public Long getPairId() {
         return getPair().getPairId();

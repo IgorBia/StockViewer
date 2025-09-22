@@ -1,4 +1,4 @@
-package com.stockviewer.stockapi.utility;
+package com.stockviewer.stockapi.logging;
 
 import jakarta.servlet.*;
 import jakarta.servlet.http.HttpServletRequest;
@@ -20,7 +20,7 @@ public class RequestLoggingFilter implements Filter {
         String url = httpRequest.getRequestURL().toString();
         String clientIp = HttpHelper.getClientIP(httpRequest);
 
-        logger.info(String.format("Incoming request from IP: %s to URL: %s", clientIp, url));
+        logger.info("Incoming request from IP: {} to URL: {}", clientIp, url);
 
         chain.doFilter(request, response);
     }

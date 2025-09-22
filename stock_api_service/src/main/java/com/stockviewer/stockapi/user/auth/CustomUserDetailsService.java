@@ -1,4 +1,4 @@
-package com.stockviewer.stockapi.utility;
+package com.stockviewer.stockapi.user.auth;
 
 import com.stockviewer.stockapi.user.entity.User;
 import com.stockviewer.stockapi.user.repository.UserRepository;

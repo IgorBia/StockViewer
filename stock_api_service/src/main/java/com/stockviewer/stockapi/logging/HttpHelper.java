@@ -1,4 +1,4 @@
-package com.stockviewer.stockapi.utility;
+package com.stockviewer.stockapi.logging;
 
 import jakarta.servlet.http.HttpServletRequest;
 

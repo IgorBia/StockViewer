@@ -1,12 +1,11 @@
-package com.stockviewer.stockapi.config;
+package com.stockviewer.stockapi.logging;
 
-import com.stockviewer.stockapi.utility.RequestLoggingFilter;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class FilterConfig {
+public class LoggingConfig {
 
     @Bean
     public FilterRegistrationBean<RequestLoggingFilter> loggingFilter() {

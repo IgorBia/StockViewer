@@ -23,13 +23,11 @@ public class CandleController {
 
     @GetMapping("/all")
     public List<CandleDTO> getAllCandles() {
-        //logger.info("Received request from IP: {}", HttpHelper.getClientIP(request));
         return candleService.getAllCandles();
     }
 
-    @GetMapping("/{symbol}")
-    public List<CandleDTO> getCandlesBySymbol(@PathVariable String symbol) {
-        //logger.info("Received request for symbol {} from IP: {}", symbol, HttpHelper.getClientIP(request));
-        return candleService.getCandlesBySymbol(symbol);
+    @GetMapping("/{symbol}/{timeframe}")
+    public List<CandleDTO> getCandlesBySymbolAndTimeframe(@PathVariable String symbol, @PathVariable String timeframe) {
+        return candleService.getCandlesBySymbolAndTimeframe(symbol, timeframe);
     }
 }

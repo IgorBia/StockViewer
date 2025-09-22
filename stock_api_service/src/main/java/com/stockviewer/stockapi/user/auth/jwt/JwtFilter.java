@@ -1,6 +1,6 @@
-package com.stockviewer.stockapi.utility.jwt;
+package com.stockviewer.stockapi.user.auth.jwt;
 
-import com.stockviewer.stockapi.utility.CustomUserDetailsService;
+import com.stockviewer.stockapi.user.auth.CustomUserDetailsService;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

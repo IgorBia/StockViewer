@@ -31,4 +31,11 @@ public class CandleService {
                 .map(candleMapper::toDTO)
                 .toList();
     }
+
+    public List<CandleDTO> getCandlesBySymbolAndTimeframe(String symbol, String timeframe) {
+        return candleRepository.findByPair_SymbolAndTimeframe(symbol, timeframe)
+                .stream()
+                .map(candleMapper::toDTO)
+                .toList();
+    }
 }

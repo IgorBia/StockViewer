@@ -1,4 +1,4 @@
-package com.stockviewer.stockapi.config;
+package com.stockviewer.stockapi.user.auth.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

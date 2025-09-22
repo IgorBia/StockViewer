@@ -1,10 +1,10 @@
-package com.stockviewer.stockapi.auth.controller;
+package com.stockviewer.stockapi.user.auth.controller;
 
 import ch.qos.logback.classic.Logger;
 import com.stockviewer.stockapi.exception.CredentialsTakenException;
-import com.stockviewer.stockapi.auth.dto.LoginResponse;
+import com.stockviewer.stockapi.user.auth.dto.LoginResponse;
 import com.stockviewer.stockapi.user.dto.UserDTO;
-import com.stockviewer.stockapi.auth.service.AuthService;
+import com.stockviewer.stockapi.user.auth.service.AuthService;
 import jakarta.validation.Valid;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;

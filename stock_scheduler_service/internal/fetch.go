@@ -6,6 +6,7 @@ import (
 	"net/http"
 	"net/url"
 
+	"github.com/igorbia/stock_scheduler_service/model"
 	log "github.com/sirupsen/logrus"
 )
 
@@ -46,7 +47,7 @@ func buildURL(base string, symbol string, interval string) (*url.URL, error) {
 	return parsedURL, nil
 }
 
-func fetchCandleData(cfg FetchConfig) [][]interface{} {
+func fetchCandleData(cfg FetchConfig) []model.Candle {
 
 	if cfg.BaseURL == "" {
 		cfg.BaseURL = "https://api.binance.com/api/v3/klines"
@@ -79,5 +80,5 @@ func fetchCandleData(cfg FetchConfig) [][]interface{} {
 		log.WithError(err).Error("Failed to parse JSON")
 	}
 
-	return klines
+	return ConvertRawKlinesToCandles(klines)
 }

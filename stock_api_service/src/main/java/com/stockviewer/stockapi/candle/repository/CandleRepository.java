@@ -9,4 +9,6 @@ import java.util.List;
 @Repository
 public interface CandleRepository extends JpaRepository<Candle, Long> {
     List<Candle> findByPair_Symbol(String symbol);
+    List<Candle> findByPair_SymbolAndTimeframe(String symbol, String timeframe);
+
 }

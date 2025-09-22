@@ -1,11 +1,11 @@
 package com.stockviewer.stockapi.auth.controller;
 
 import com.stockviewer.stockapi.TestSecurityConfig;
-import com.stockviewer.stockapi.auth.controller.AuthController;
+import com.stockviewer.stockapi.user.auth.controller.AuthController;
 import com.stockviewer.stockapi.user.dto.UserDTO;
 import com.stockviewer.stockapi.exception.GlobalExceptionHandler;
-import com.stockviewer.stockapi.auth.service.AuthService;
-import com.stockviewer.stockapi.utility.jwt.JwtFilter;
+import com.stockviewer.stockapi.user.auth.service.AuthService;
+import com.stockviewer.stockapi.user.auth.jwt.JwtFilter;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;

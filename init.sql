@@ -89,6 +89,14 @@ CREATE TABLE stock_data.candle (
     FOREIGN KEY (pair_id) REFERENCES pair(pair_id) ON DELETE CASCADE
 );
 
+CREATE TABLE stock_data.indicator (
+    id SERIAL PRIMARY KEY,
+    candle_id INT REFERENCES candle(id) ON DELETE CASCADE,
+    name TEXT NOT NULL,
+    value NUMERIC,
+    ts TIMESTAMP NOT NULL
+);
+
 CREATE TABLE user_management.watchlist (
     watchlist_id INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     user_id INT NOT NULL,

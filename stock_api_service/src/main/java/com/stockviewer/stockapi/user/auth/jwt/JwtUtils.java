@@ -1,4 +1,4 @@
-package com.stockviewer.stockapi.utility.jwt;
+package com.stockviewer.stockapi.user.auth.jwt;
 
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;

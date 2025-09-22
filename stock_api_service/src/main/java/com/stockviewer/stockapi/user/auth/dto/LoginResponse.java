@@ -1,4 +1,4 @@
-package com.stockviewer.stockapi.auth.dto;
+package com.stockviewer.stockapi.user.auth.dto;
 
 import lombok.Getter;
 

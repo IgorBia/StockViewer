@@ -2,37 +2,40 @@ package internal
 
 import (
 	"database/sql"
-	"time"
+	_ "time"
 
+	"github.com/igorbia/stock_scheduler_service/model"
 	log "github.com/sirupsen/logrus"
+
+	_ "github.com/sirupsen/logrus"
 )
 
-func insertCandleData(db *sql.DB, data [][]interface{}, interval string, symbol string) error {
+func insertCandleData(db *sql.DB, data []model.Candle, interval string, symbol string) ([]int64, error) {
+	ids := make([]int64, 0, len(data))
 	query := `
         INSERT INTO stock_data.candle (
             pair_id, open_time, open, high, low, close, 
             volume, close_time, quote_volume, trades, 
             taker_base_vol, taker_quote_vol, timeframe
         ) 
-        VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13)
-    `
+        VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING pair_id`
 
 	pairId, err := getPairId(db, symbol)
 	if err != nil {
 		log.WithError(err).Error("Failed to get pair_id")
-		return err
+		return nil, nil
 	}
 
 	tx, err := db.Begin()
 	if err != nil {
 		log.WithError(err).Error("Failed to begin transaction")
-		return err
+		return nil, err
 	}
 
 	stmt, err := tx.Prepare(query)
 	if err != nil {
 		log.WithError(err).Error("Failed to prepare statement")
-		return err
+		return nil, err
 	}
 	defer func(stmt *sql.Stmt) {
 		err := stmt.Close()
@@ -41,43 +44,29 @@ func insertCandleData(db *sql.DB, data [][]interface{}, interval string, symbol 
 		}
 	}(stmt)
 
-	for _, candle := range data {
-
-		candle[0] = time.UnixMilli(int64(candle[0].(float64))).Format("2006-01-02 15:04:05")
-		candle[6] = time.UnixMilli(int64(candle[6].(float64))).Format("2006-01-02 15:04:05")
-
-		_, err = stmt.Exec(
-			pairId,
-			candle[0],
-			candle[1], // open
-			candle[2], // high
-			candle[3], // low
-			candle[4], // close
-			candle[5], // volume
-			candle[6],
-			candle[7],  // quote_volume
-			candle[8],  // trades
-			candle[9],  // taker_base_vol
-			candle[10], // taker_quote_vol
-			interval,   // timeframe (e.g., "15m", "1h", "4h", "1d")
-		)
-
+	for _, c := range data {
+		var id int64
+		err := db.QueryRow(query,
+			pairId, c.OpenTime, c.Open, c.High, c.Low, c.Close, c.Volume, c.CloseTime,
+			c.QuoteVolume, c.Trades, c.TakerBaseVol, c.TakerQuoteVol, interval,
+		).Scan(&id)
 		if err != nil {
 			_ = tx.Rollback()
 			log.WithFields(log.Fields{
 				"pair_id":   pairId,
 				"timeframe": interval,
-				"open_time": candle[0],
+				"open_time": c.OpenTime,
 				"error":     err,
 			}).Error("Failed to insert candle")
-			return err
+			return nil, err
 		}
+		ids = append(ids, id)
 	}
 
 	if err = tx.Commit(); err != nil {
 		log.WithError(err).Error("Failed to commit transaction")
 		_ = tx.Rollback()
-		return err
+		return nil, err
 	}
 
 	log.WithFields(log.Fields{
@@ -86,5 +75,5 @@ func insertCandleData(db *sql.DB, data [][]interface{}, interval string, symbol 
 		"candles_count": len(data),
 	}).Info("Successfully inserted candle data")
 
-	return nil
+	return ids, nil
 }

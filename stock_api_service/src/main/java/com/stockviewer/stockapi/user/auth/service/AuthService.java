@@ -1,4 +1,4 @@
-package com.stockviewer.stockapi.auth.service;
+package com.stockviewer.stockapi.user.auth.service;
 
 import com.stockviewer.stockapi.user.dto.UserDTO;
 import com.stockviewer.stockapi.user.entity.Role;
@@ -11,7 +11,7 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
-import com.stockviewer.stockapi.utility.jwt.JwtUtils;
+import com.stockviewer.stockapi.user.auth.jwt.JwtUtils;
 import org.springframework.stereotype.Service;
 import com.stockviewer.stockapi.user.repository.UserRepository;
 import com.stockviewer.stockapi.exception.ResourceNotFoundException;
