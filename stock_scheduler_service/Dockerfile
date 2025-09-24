@@ -1,7 +1,14 @@
-FROM golang:1.24-alpine
+FROM golang:1.24-bullseye
 
-# Instalacja git
-RUN apk add --no-cache git
+# Instalacja zależności do builda Confluent Kafka
+RUN apt-get update && apt-get install -y \
+    git \
+    librdkafka-dev \
+    gcc \
+    make \
+    libc6-dev \
+    pkg-config \
+    && rm -rf /var/lib/apt/lists/*
 
 # Ustawienie katalogu roboczego
 WORKDIR /app

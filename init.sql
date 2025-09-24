@@ -35,7 +35,7 @@ CREATE TABLE user_management.wallet (
 );
 
 CREATE TABLE stock_data.pair (
-    pair_id INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+    pair_id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     symbol VARCHAR(10) NOT NULL,
     base VARCHAR(5) NOT NULL,
     quote VARCHAR(5),
@@ -54,7 +54,7 @@ VALUES
 CREATE TABLE user_management.owned_asset (
     owned_asset_id INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     wallet_id INT NOT NULL,
-    pair_id INT NOT NULL,
+    pair_id UUID NOT NULL,
     amount DECIMAL(18,8) NOT NULL,
     FOREIGN KEY (wallet_id) REFERENCES wallet(wallet_id) ON DELETE CASCADE,
     FOREIGN KEY (pair_id) REFERENCES pair(pair_id) ON DELETE CASCADE
@@ -63,7 +63,7 @@ CREATE TABLE user_management.owned_asset (
 CREATE TABLE user_management.trade (
     trade_id INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     user_id INT NOT NULL,
-    pair_id INT NOT NULL,
+    pair_id UUID NOT NULL,
     time TIMESTAMP NOT NULL,
     price DECIMAL(18,8) NOT NULL,
     amount DECIMAL(18,8) NOT NULL,
@@ -72,8 +72,8 @@ CREATE TABLE user_management.trade (
 );
 
 CREATE TABLE stock_data.candle (
-    candle_id INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
-    pair_id INT NOT NULL,
+    candle_id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    pair_id UUID NOT NULL,
     open_time TIMESTAMP NOT NULL,
     open DECIMAL(18,8) NOT NULL,
     high DECIMAL(18,8) NOT NULL,
@@ -91,7 +91,7 @@ CREATE TABLE stock_data.candle (
 
 CREATE TABLE stock_data.indicator (
     id SERIAL PRIMARY KEY,
-    candle_id INT REFERENCES candle(id) ON DELETE CASCADE,
+    candle_id UUID REFERENCES candle(candle_id) ON DELETE CASCADE,
     name TEXT NOT NULL,
     value NUMERIC,
     ts TIMESTAMP NOT NULL
@@ -106,7 +106,7 @@ CREATE TABLE user_management.watchlist (
 CREATE TABLE user_management.watchlist_item (
     watchlist_item_id INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
     watchlist_id INT NOT NULL,
-    pair_id INT NOT NULL,
+    pair_id UUID NOT NULL,
     FOREIGN KEY (watchlist_id) REFERENCES watchlist(watchlist_id) ON DELETE CASCADE,
     FOREIGN KEY (pair_id) REFERENCES pair(pair_id) ON DELETE CASCADE
 );

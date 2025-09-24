@@ -1,26 +1,44 @@
 package internal
 
 import (
-	"context"
 	"encoding/json"
+	"fmt"
+	"strings"
 
-	"github.com/segmentio/kafka-go"
+	"github.com/confluentinc/confluent-kafka-go/kafka"
+	"github.com/gofrs/uuid"
 )
 
-func publishCandleEvent(brokers []string, topic string, payload []int64) error {
-	w := kafka.NewWriter(kafka.WriterConfig{
-		Brokers: brokers,
-		Topic:   topic,
+func publishCandleEvent(brokers []string, topic string, payload []uuid.UUID) error {
+	p, err := kafka.NewProducer(&kafka.ConfigMap{
+		"bootstrap.servers": strings.Join(brokers, ","),
 	})
-	defer w.Close()
 
 	msgBytes, err := json.Marshal(payload)
 	if err != nil {
 		return err
 	}
 
-	msg := kafka.Message{
-		Value: msgBytes,
+	deliveryChan := make(chan kafka.Event)
+
+	msg := &kafka.Message{
+		TopicPartition: kafka.TopicPartition{Topic: &topic, Partition: kafka.PartitionAny},
+		Value:          msgBytes,
 	}
-	return w.WriteMessages(context.Background(), msg)
+	err = p.Produce(msg, deliveryChan)
+	if err != nil {
+		return err
+	}
+	defer p.Close()
+
+	e := <-deliveryChan
+	m := e.(*kafka.Message)
+	if m.TopicPartition.Error != nil {
+		fmt.Printf("Delivery failed: %v\n", m.TopicPartition.Error)
+	} else {
+		fmt.Printf("Delivered message to %v\n", m.TopicPartition)
+	}
+	close(deliveryChan)
+	p.Flush(5000)
+	return nil
 }

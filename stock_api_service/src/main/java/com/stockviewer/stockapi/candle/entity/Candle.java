@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.UUID;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -28,7 +29,7 @@ public class Candle {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "candle_id")
-    private Integer candleId;
+    private UUID candleId;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "pair_id")
@@ -73,7 +74,7 @@ public class Candle {
     @OneToMany(mappedBy = "candle", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Indicator> indicators;
 
-    public Long getPairId() {
+    public UUID getPairId() {
         return getPair().getPairId();
     }
 }

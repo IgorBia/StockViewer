@@ -4,21 +4,22 @@ import (
 	"database/sql"
 	_ "time"
 
+	"github.com/gofrs/uuid"
 	"github.com/igorbia/stock_scheduler_service/model"
 	log "github.com/sirupsen/logrus"
 
 	_ "github.com/sirupsen/logrus"
 )
 
-func insertCandleData(db *sql.DB, data []model.Candle, interval string, symbol string) ([]int64, error) {
-	ids := make([]int64, 0, len(data))
+func insertCandleData(db *sql.DB, data []model.Candle, interval string, symbol string) ([]uuid.UUID, error) {
+	ids := make([]uuid.UUID, 0, len(data))
 	query := `
         INSERT INTO stock_data.candle (
             pair_id, open_time, open, high, low, close, 
             volume, close_time, quote_volume, trades, 
             taker_base_vol, taker_quote_vol, timeframe
         ) 
-        VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING pair_id`
+        VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING candle_id`
 
 	pairId, err := getPairId(db, symbol)
 	if err != nil {
@@ -45,7 +46,7 @@ func insertCandleData(db *sql.DB, data []model.Candle, interval string, symbol s
 	}(stmt)
 
 	for _, c := range data {
-		var id int64
+		var id uuid.UUID
 		err := db.QueryRow(query,
 			pairId, c.OpenTime, c.Open, c.High, c.Low, c.Close, c.Volume, c.CloseTime,
 			c.QuoteVolume, c.Trades, c.TakerBaseVol, c.TakerQuoteVol, interval,
