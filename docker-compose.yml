@@ -54,6 +54,8 @@ services:
       - .env
     ports:
       - "9092:9092"
+      - "9093:9093"
+      - "9094:9094"
     healthcheck:
       test: ["CMD", "kafka-topics.sh", "--bootstrap-server", "kafka:9092", "--list"]
       interval: 10s
