@@ -19,7 +19,9 @@ func insertCandleData(db *sql.DB, data []model.Candle, interval string, symbol s
             volume, close_time, quote_volume, trades, 
             taker_base_vol, taker_quote_vol, timeframe
         ) 
-        VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING candle_id`
+        VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13)
+		ON CONFLICT (pair_id, timeframe, close_time) DO NOTHING
+		RETURNING candle_id`
 
 	pairId, err := getPairId(db, symbol)
 	if err != nil {

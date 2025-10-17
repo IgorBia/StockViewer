@@ -1,0 +1,97 @@
+.auth-container {
+  max-width: 400px;
+  margin: 80px auto;
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  font-family: "Segoe UI", sans-serif;
+  transition: all 0.3s ease;
+}
+
+.toggle {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 1.5rem;
+}
+
+.toggle button {
+  flex: 1;
+  padding: 0.75rem;
+  margin: 0 0.25rem;
+  background: #f0f0f0;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.toggle button:hover:not(:disabled) {
+  background: #007bff;
+  color: white;
+}
+
+.toggle button:disabled {
+  background: #007bff;
+  color: white;
+  cursor: default;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+label {
+  font-weight: 600;
+  color: #333;
+}
+
+input {
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+}
+
+input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+button[type="submit"] {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button[type="submit"]:hover {
+  background: #0056b3;
+}
+
+.error {
+  margin-top: 1rem;
+  color: #dc3545;
+  background: #ffe0e0;
+  padding: 0.75rem;
+  border-radius: 8px;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* Responsywność */
+@media (max-width: 480px) {
+  .auth-container {
+    margin: 40px 1rem;
+    padding: 1.5rem;
+  }
+}

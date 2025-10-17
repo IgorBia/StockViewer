@@ -29,11 +29,13 @@ public class CandleServiceTest {
 
     CandleMapper candleMapper = Mappers.getMapper(CandleMapper.class);
 
+    private CandleConfig candleConfig;
+
     private CandleService candleService;
 
     @BeforeEach
     void setUp() {
-        candleService = new CandleService(candleRepository, candleMapper);
+        candleService = new CandleService(candleRepository, candleMapper, candleConfig);
     }
 
     private List<Candle> getSampleCandleList() {
@@ -53,38 +55,38 @@ public class CandleServiceTest {
                 () -> {
                     Candle firstExpected = expected.getFirst();
                     CandleDTO firstActual = actual.getFirst();
-                    assertEquals(firstExpected.getTimestamp(), firstActual.getTimestamp());
-                    assertEquals(firstExpected.getOpen(), firstActual.getOpen());
-                    assertEquals(firstExpected.getHigh(), firstActual.getHigh());
-                    assertEquals(firstExpected.getLow(), firstActual.getLow());
-                    assertEquals(firstExpected.getClose(), firstActual.getClose());
+                    assertEquals(firstExpected.getTimestamp(), firstActual.timestamp());
+                    assertEquals(firstExpected.getOpen(), firstActual.open());
+                    assertEquals(firstExpected.getHigh(), firstActual.high());
+                    assertEquals(firstExpected.getLow(), firstActual.low());
+                    assertEquals(firstExpected.getClose(), firstActual.close());
                 }
         );
     }
 
     @Test
-    void getAllCandlesTest() {
+    void getAllCandleDTOsTest() {
 
         // given
         List<Candle> candleList = getSampleCandleList();
         when(candleRepository.findAll()).thenReturn(candleList);
 
         // when
-        List<CandleDTO> result = candleService.getAllCandles();
+        List<CandleDTO> result = candleService.getAllCandleDTOs();
 
         // then
         assertCandleListValid(candleList, result);
     }
 
     @Test
-    void getCandlesBySymbolTest() {
+    void getCandleDTOsBySymbolTest() {
 
         // given
         List<Candle> candleList = getSampleCandleList();
         when(candleRepository.findByPair_Symbol(any())).thenReturn(candleList);
 
         // when
-        List<CandleDTO> result = candleService.getCandlesBySymbol("ETHUSDC");
+        List<CandleDTO> result = candleService.getCandleDTOsBySymbol("ETHUSDC");
 
         // then
         assertCandleListValid(candleList, result);

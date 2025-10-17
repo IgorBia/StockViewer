@@ -1,5 +1,6 @@
 package com.stockviewer.stockapi.user.auth;
 
+import com.stockviewer.stockapi.user.auth.dto.CustomUserDetails;
 import com.stockviewer.stockapi.user.entity.User;
 import com.stockviewer.stockapi.user.repository.UserRepository;
 import org.springframework.security.core.GrantedAuthority;
@@ -32,8 +33,6 @@ public class CustomUserDetailsService implements UserDetailsService {
                 .stream()
                 .map((role) -> new SimpleGrantedAuthority(role.getName())).collect(Collectors.toSet());
 
-        return new org.springframework.security.core.userdetails.User(user.getEmail(),
-                user.getPassword(),
-                authorities);
+        return new CustomUserDetails(user);
     }
 }

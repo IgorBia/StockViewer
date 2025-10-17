@@ -15,6 +15,8 @@ RUN mvn clean package -DskipTests
 # Stage 2: runtime
 FROM eclipse-temurin:21-jre-alpine
 
+RUN apk add --no-cache curl
+
 WORKDIR /app
 
 COPY --from=builder /app/target/*.jar app.jar

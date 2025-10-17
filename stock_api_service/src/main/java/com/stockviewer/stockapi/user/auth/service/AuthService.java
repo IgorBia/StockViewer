@@ -3,18 +3,19 @@ package com.stockviewer.stockapi.user.auth.service;
 import com.stockviewer.stockapi.user.dto.UserDTO;
 import com.stockviewer.stockapi.user.entity.Role;
 import com.stockviewer.stockapi.user.entity.User;
-import com.stockviewer.stockapi.exception.CredentialsTakenException;
 import com.stockviewer.stockapi.user.mapper.UserMapper;
 import com.stockviewer.stockapi.user.repository.RoleRepository;
+import com.stockviewer.stockapi.user.auth.jwt.JwtUtils;
+import com.stockviewer.stockapi.user.repository.UserRepository;
+import com.stockviewer.stockapi.exception.ResourceNotFoundException;
+import com.stockviewer.stockapi.exception.CredentialsTakenException;
+
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
-import com.stockviewer.stockapi.user.auth.jwt.JwtUtils;
 import org.springframework.stereotype.Service;
-import com.stockviewer.stockapi.user.repository.UserRepository;
-import com.stockviewer.stockapi.exception.ResourceNotFoundException;
 
 @Service
 public class AuthService {
@@ -35,7 +36,7 @@ public class AuthService {
         this.authenticationManager = authenticationManager;
     }
 
-    public User register(UserDTO userDTO) throws CredentialsTakenException, ResourceNotFoundException {
+    public void register(UserDTO userDTO) throws CredentialsTakenException, ResourceNotFoundException {
 
         if(userRepository.existsByEmail(userDTO.getEmail())) throw new CredentialsTakenException("Email address is already taken");
 
@@ -45,7 +46,7 @@ public class AuthService {
                 .orElseThrow(() -> new ResourceNotFoundException("Default role USER not found"));
 
         user.getRoles().add(userRole);
-        return userRepository.save(user);
+        userRepository.save(user);
         // TODO: account email activation
     }
 

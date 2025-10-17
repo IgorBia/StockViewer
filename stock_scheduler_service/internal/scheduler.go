@@ -8,10 +8,9 @@ import (
 )
 
 func ScheduleCandleUpdates(db *sql.DB, symbol string, interval string, duration time.Duration) {
-	ticker := time.NewTicker(duration)
+	ticker := alignedTicker(duration)
 
 	go func() {
-		Update(db, symbol, interval)
 		for {
 			select {
 			case <-ticker.C:
@@ -19,6 +18,13 @@ func ScheduleCandleUpdates(db *sql.DB, symbol string, interval string, duration 
 			}
 		}
 	}()
+}
+
+func alignedTicker(duration time.Duration) *time.Ticker {
+	now := time.Now()
+	next := now.Truncate(duration).Add(duration)
+	time.Sleep(time.Until(next.Add(2*time.Second))) // Adding a small buffer to ensure alignment
+	return time.NewTicker(duration)
 }
 
 func Update(db *sql.DB, symbol string, interval string) {

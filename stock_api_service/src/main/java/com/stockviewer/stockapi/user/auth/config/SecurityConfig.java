@@ -29,7 +29,7 @@ public class SecurityConfig {
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class)
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/api/v1/candles/**", "/api/v1/users/**").permitAll()
+                        .requestMatchers("candles/**", "users/**", "/actuator/health").permitAll()
                         .anyRequest().authenticated()
                 )
                 .exceptionHandling(ex -> ex

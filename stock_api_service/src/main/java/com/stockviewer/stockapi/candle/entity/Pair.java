@@ -13,6 +13,6 @@ public class Pair {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="pair_id")
-    private UUID pairId;
+    private UUID id;
     private String symbol;
 }

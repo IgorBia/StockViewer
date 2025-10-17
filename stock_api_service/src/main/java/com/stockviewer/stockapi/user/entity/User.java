@@ -1,5 +1,7 @@
 package com.stockviewer.stockapi.user.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.stockviewer.stockapi.watchlist.entity.Watchlist;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
@@ -8,6 +10,7 @@ import org.hibernate.annotations.UpdateTimestamp;
 import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.UUID;
 
 @Setter
 @Getter
@@ -20,14 +23,16 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "user_id")
-    private Integer userId;
+    private UUID userId;
 
     @Column(name="email")
     private String email;
 
+    @JsonIgnore
     @Column(name="password")
     private String password;
 
+    @JsonIgnore
     @ManyToMany
     @JoinTable(
             name = "user_role",
@@ -37,6 +42,9 @@ public class User {
     )
     private Set<Role> roles = new HashSet<>();
 
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<Watchlist> watchlists = new HashSet<>();
+
     @CreationTimestamp
     @Column(name="created_at", updatable = false)
     private LocalDateTime createdAt;
@@ -44,4 +52,12 @@ public class User {
     @UpdateTimestamp
     @Column(name="updated_at")
     private LocalDateTime updatedAt;
+
+    @PrePersist
+    private void createDefaultWatchlist() {
+        Watchlist defaultWatchlist = new Watchlist();
+        defaultWatchlist.setUser(this);
+        defaultWatchlist.setName("Default");
+        watchlists.add(defaultWatchlist);
+    }
 }

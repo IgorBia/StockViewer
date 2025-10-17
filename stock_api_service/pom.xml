@@ -69,6 +69,11 @@
 			<artifactId>spring-kafka</artifactId>
 			<version>3.3.10</version>
 		</dependency>
+        <dependency>
+            <groupId>org.ta4j</groupId>
+            <artifactId>ta4j-core</artifactId>
+            <version>0.17</version>
+        </dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jpa</artifactId>
@@ -99,7 +104,7 @@
 		</dependency>
 		<dependency>
 			<groupId>io.jsonwebtoken</groupId>
-			<artifactId>jjwt-jackson</artifactId> <!-- albo gson -->
+			<artifactId>jjwt-jackson</artifactId>
 			<version>0.11.5</version>
 			<scope>runtime</scope>
 		</dependency>

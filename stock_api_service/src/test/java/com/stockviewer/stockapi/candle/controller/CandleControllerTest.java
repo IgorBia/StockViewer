@@ -51,11 +51,14 @@ class CandleControllerTest {
 
     private List<CandleDTO> getSampleCandleDTOList() {
         CandleDTO candleDto = new CandleDTO(
-                LocalDateTime.of(2025, 5, 22, 12, 0),
-                new BigDecimal("2513.24"),
-                new BigDecimal("2512.04"),
-                new BigDecimal("2513.24"),
-                new BigDecimal("2512.01")
+                LocalDateTime.of(2025, 5, 22, 12, 0), // timestamp
+                null, // closeTime
+                new BigDecimal("2513.24"), // open
+                new BigDecimal("2512.04"), // close
+                new BigDecimal("2513.24"), // high
+                new BigDecimal("2512.01"), // low
+                new BigDecimal("10000"), // volume
+                List.of() // indicators
         );
         return List.of(candleDto);
     }
@@ -78,7 +81,7 @@ class CandleControllerTest {
 
         // given
         List<CandleDTO> candleDto = getSampleCandleDTOList();
-        when(candleService.getAllCandles()).thenReturn(candleDto);
+        when(candleService.getAllCandleDTOs()).thenReturn(candleDto);
 
         // when + then
         assertCandleFields("/api/v1/candles/all");
@@ -89,7 +92,7 @@ class CandleControllerTest {
 
         // given
         List<CandleDTO> candleDto = getSampleCandleDTOList();
-        when(candleService.getCandlesBySymbol(any(String.class))).thenReturn(candleDto);
+        when(candleService.getCandleDTOsBySymbol(any(String.class))).thenReturn(candleDto);
 
         // when + then
         assertCandleFields("/api/v1/candles/ETHUSDC");

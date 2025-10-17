@@ -5,7 +5,7 @@ CREATE SCHEMA IF NOT EXISTS stock_data AUTHORIZATION "user";
 SET search_path TO stock_data, user_management;
 
 CREATE TABLE user_management.app_user (
-    user_id INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+    user_id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     email VARCHAR(50) NOT NULL UNIQUE,
     password VARCHAR(60) NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
@@ -13,7 +13,7 @@ CREATE TABLE user_management.app_user (
 );
 
 CREATE TABLE user_management.role (
-    role_id INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
+    role_id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     name VARCHAR(50) NOT NULL UNIQUE
 );
 
@@ -23,14 +23,14 @@ VALUES
     ('ROLE_USER');
 
 CREATE TABLE user_management.user_role (
-    user_id INT REFERENCES user_management.app_user(user_id) ON DELETE CASCADE,
-    role_id INT REFERENCES user_management.role(role_id) ON DELETE CASCADE,
+    user_id UUID REFERENCES user_management.app_user(user_id) ON DELETE CASCADE,
+    role_id UUID REFERENCES user_management.role(role_id) ON DELETE CASCADE,
     PRIMARY KEY (user_id, role_id)
 );
 
 CREATE TABLE user_management.wallet (
-    wallet_id INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
-    user_id INT NOT NULL,
+    wallet_id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    user_id UUID NOT NULL,
     FOREIGN KEY (user_id) REFERENCES app_user(user_id) ON DELETE CASCADE
 );
 
@@ -52,8 +52,8 @@ VALUES
 
 
 CREATE TABLE user_management.owned_asset (
-    owned_asset_id INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
-    wallet_id INT NOT NULL,
+    owned_asset_id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    wallet_id UUID NOT NULL,
     pair_id UUID NOT NULL,
     amount DECIMAL(18,8) NOT NULL,
     FOREIGN KEY (wallet_id) REFERENCES wallet(wallet_id) ON DELETE CASCADE,
@@ -61,8 +61,8 @@ CREATE TABLE user_management.owned_asset (
 );
 
 CREATE TABLE user_management.trade (
-    trade_id INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
-    user_id INT NOT NULL,
+    trade_id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    user_id UUID NOT NULL,
     pair_id UUID NOT NULL,
     time TIMESTAMP NOT NULL,
     price DECIMAL(18,8) NOT NULL,
@@ -86,27 +86,27 @@ CREATE TABLE stock_data.candle (
     taker_base_vol DECIMAL(18,8) NOT NULL,
     taker_quote_vol DECIMAL(18,8) NOT NULL,
     timeframe VARCHAR(10) NOT NULL,
+    CONSTRAINT uniq_candle UNIQUE (pair_id, timeframe, close_time),
     FOREIGN KEY (pair_id) REFERENCES pair(pair_id) ON DELETE CASCADE
 );
 
 CREATE TABLE stock_data.indicator (
-    id SERIAL PRIMARY KEY,
     candle_id UUID REFERENCES candle(candle_id) ON DELETE CASCADE,
     name TEXT NOT NULL,
     value NUMERIC,
-    ts TIMESTAMP NOT NULL
+    ts TIMESTAMP NOT NULL,
+    PRIMARY KEY (candle_id, name)
 );
 
 CREATE TABLE user_management.watchlist (
-    watchlist_id INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
-    user_id INT NOT NULL,
+    watchlist_id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    name TEXT NOT NULL,
+    user_id UUID NOT NULL,
     FOREIGN KEY (user_id) REFERENCES app_user(user_id) ON DELETE CASCADE
 );
 
 CREATE TABLE user_management.watchlist_item (
-    watchlist_item_id INT PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
-    watchlist_id INT NOT NULL,
-    pair_id UUID NOT NULL,
-    FOREIGN KEY (watchlist_id) REFERENCES watchlist(watchlist_id) ON DELETE CASCADE,
-    FOREIGN KEY (pair_id) REFERENCES pair(pair_id) ON DELETE CASCADE
+    watchlist_id UUID NOT NULL REFERENCES watchlist(watchlist_id) ON DELETE CASCADE,
+    pair_id UUID NOT NULL REFERENCES pair(pair_id) ON DELETE CASCADE,
+    PRIMARY KEY (watchlist_id, pair_id)
 );

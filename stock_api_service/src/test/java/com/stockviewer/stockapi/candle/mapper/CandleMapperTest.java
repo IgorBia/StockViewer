@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -26,17 +27,20 @@ public class CandleMapperTest {
                 new BigDecimal("1260.90"),
                 new BigDecimal("1220.33")
         );
+        candle.setIndicators(List.of()); // pusty dla testu
+        candle.setVolume(BigDecimal.ZERO);
+        candle.setCloseTime(LocalDateTime.of(2024, 11, 7, 15, 31));
 
         // when
         CandleDTO candleDTO = candleMapper.toDTO(candle);
 
         // then
         assertAll("CandleDTO vs Candle",
-                () -> assertEquals(candle.getTimestamp(), candleDTO.getTimestamp()),
-                () -> assertEquals(candle.getOpen(), candleDTO.getOpen()),
-                () -> assertEquals(candle.getClose(), candleDTO.getClose()),
-                () -> assertEquals(candle.getHigh(), candleDTO.getHigh()),
-                () -> assertEquals(candle.getLow(), candleDTO.getLow())
+                () -> assertEquals(candle.getTimestamp(), candleDTO.timestamp()),
+                () -> assertEquals(candle.getOpen(), candleDTO.open()),
+                () -> assertEquals(candle.getClose(), candleDTO.close()),
+                () -> assertEquals(candle.getHigh(), candleDTO.high()),
+                () -> assertEquals(candle.getLow(), candleDTO.low())
         );
     }
 

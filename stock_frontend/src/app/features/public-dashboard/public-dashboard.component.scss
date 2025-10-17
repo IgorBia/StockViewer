@@ -1,0 +1,15 @@
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem;
+}
+
+.search-section,
+.chart-section,
+.auth-section {
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+}
