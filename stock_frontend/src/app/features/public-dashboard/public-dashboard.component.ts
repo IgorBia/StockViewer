@@ -14,7 +14,6 @@ import {AuthComponent} from '../../core/auth/auth.component';
   styleUrls: ['./public-dashboard.component.scss']
 })
 export class PublicDashboardComponent {
-  // przykładowe dane wykresu i wyszukiwarki
   searchQuery = '';
   selectedSymbol = '';
   showAuth: boolean | undefined;
