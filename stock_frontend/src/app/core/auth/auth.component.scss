@@ -38,23 +38,6 @@
   cursor: default;
 }
 
-.close_button {
-  position: absolute;
-  top: 7px;
-  right: 7px;
-  width: 15px;
-  height: 15px;
-  background-color: red;   /* czerwone tło */
-  color: white;            /* znak × na biało */
-  border: none;
-  border-radius: 54%;      /* okrągły przycisk */
-  font-size: 30px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 form {
   display: flex;
   flex-direction: column;
