@@ -1,31 +1,33 @@
-<div class="auth-container">
-  <div class="toggle">
-    <button (click)="toggleMode()" [disabled]="isLogin">Login</button>
-    <button (click)="toggleMode()" [disabled]="!isLogin">Register</button>
+<div class="overlay" (click)="close()">
+  <div class="auth-container" (click)="$event.stopPropagation()">
+    <div class="toggle">
+      <button (click)="toggleMode()" [disabled]="isLogin">Login</button>
+      <button (click)="toggleMode()" [disabled]="!isLogin">Register</button>
+    </div>
+
+    <form *ngIf="isLogin" [formGroup]="loginForm" (ngSubmit)="submitLogin()">
+      <label>Email</label>
+      <input formControlName="email" placeholder="Enter email">
+
+      <label>Password</label>
+      <input type="password" formControlName="password" placeholder="Enter password">
+
+      <button type="submit">Login</button>
+    </form>
+
+    <form *ngIf="!isLogin" [formGroup]="registerForm" (ngSubmit)="submitRegister()">
+      <label>Username</label>
+      <input formControlName="email" placeholder="Enter email">
+
+      <label>Password</label>
+      <input type="password" formControlName="password" placeholder="Enter password">
+
+      <label>Confirm Password</label>
+      <input type="password" formControlName="confirmPassword" placeholder="Confirm password">
+
+      <button type="submit">Register</button>
+    </form>
+
+    <div *ngIf="error" class="error">{{ error }}</div>
   </div>
-
-  <form *ngIf="isLogin" [formGroup]="loginForm" (ngSubmit)="submitLogin()">
-    <label>Email</label>
-    <input formControlName="email" placeholder="Enter email">
-
-    <label>Password</label>
-    <input type="password" formControlName="password" placeholder="Enter password">
-
-    <button type="submit">Login</button>
-  </form>
-
-  <form *ngIf="!isLogin" [formGroup]="registerForm" (ngSubmit)="submitRegister()">
-    <label>Username</label>
-    <input formControlName="email" placeholder="Enter email">
-
-    <label>Password</label>
-    <input type="password" formControlName="password" placeholder="Enter password">
-
-    <label>Confirm Password</label>
-    <input type="password" formControlName="confirmPassword" placeholder="Confirm password">
-
-    <button type="submit">Register</button>
-  </form>
-
-  <div *ngIf="error" class="error">{{ error }}</div>
 </div>

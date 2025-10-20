@@ -1,13 +1,11 @@
 .auth-container {
-  max-width: 400px;
-  margin: 80px auto;
+  background: white;
   padding: 2rem;
-  background: #ffffff;
-  border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
-  font-family: "Segoe UI", sans-serif;
-  transition: all 0.3s ease;
+  border-radius: 8px;
+  min-width: 300px;
+  z-index: 1001;  /* nad overlay */
 }
+
 
 .toggle {
   display: flex;
@@ -94,4 +92,27 @@ button[type="submit"]:hover {
     margin: 40px 1rem;
     padding: 1.5rem;
   }
+  .overlay {
+    position: fixed;   /* nakłada się na cały ekran */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: #333333;
+    border-radius: 3px;
+    background: rgba(0,0,0,0.5);  /* zaciemnienie tła */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;    /* nad całą resztą */
+  }
+
+
+  .popup {
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    min-width: 300px;
+  }
+
 }

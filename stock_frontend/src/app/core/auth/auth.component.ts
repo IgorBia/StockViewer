@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import {EventEmitter, Component, Output} from '@angular/core';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from './auth.service';
 import { Router } from '@angular/router';
@@ -17,6 +17,12 @@ export class AuthComponent {
   registerForm: FormGroup;
   isLogin = true; // toggle login/register
   error: string = '';
+
+  @Output() closed = new EventEmitter<void>();
+
+  close() {
+    this.closed.emit();
+  }
 
   constructor(private fb: FormBuilder, private auth: AuthService, private router: Router) {
     this.loginForm = this.fb.group({

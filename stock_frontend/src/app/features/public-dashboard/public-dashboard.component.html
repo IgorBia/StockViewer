@@ -15,6 +15,7 @@
   </div>
 
   <div class="auth-section">
-    <button routerLink="/login">Zaloguj / Zarejestruj</button>
+    <button (click)="showAuth = true">Open Auth</button>
+    <app-auth *ngIf="showAuth" (closed)="showAuth = false"></app-auth>
   </div>
 </div>
