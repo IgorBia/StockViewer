@@ -1,9 +1,10 @@
 .auth-container {
   background: white;
+  position: relative;
   padding: 2rem;
   border-radius: 8px;
   min-width: 300px;
-  z-index: 1001;  /* nad overlay */
+  z-index: 1001;
 }
 
 
@@ -34,6 +35,23 @@
   background: #007bff;
   color: white;
   cursor: default;
+}
+
+.close_button {
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  width: 15px;
+  height: 15px;
+  background-color: red;   /* czerwone tło */
+  color: white;            /* znak × na biało */
+  border: none;
+  border-radius: 54%;      /* okrągły przycisk */
+  font-size: 30px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 form {
@@ -87,18 +105,18 @@ button[type="submit"]:hover {
 }
 
 .overlay {
-  position: fixed;   /* nakłada się na cały ekran */
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   border: #333333;
   border-radius: 3px;
-  background: rgba(0,0,0,0.5);  /* zaciemnienie tła */
+  background: rgba(0,0,0,0.5);
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000;    /* nad całą resztą */
+  z-index: 1000;
 }
 
 
@@ -109,7 +127,6 @@ button[type="submit"]:hover {
   min-width: 300px;
 }
 
-/* Responsywność */
 @media (max-width: 480px) {
   .auth-container {
     margin: 40px 1rem;

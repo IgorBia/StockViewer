@@ -1,5 +1,6 @@
 <div class="overlay" (click)="close()">
   <div class="auth-container" (click)="$event.stopPropagation()">
+    <button class="close_button" (click)="close()">×</button>
     <div class="toggle">
       <button (click)="toggleMode()" [disabled]="isLogin">Login</button>
       <button (click)="toggleMode()" [disabled]="!isLogin">Register</button>
