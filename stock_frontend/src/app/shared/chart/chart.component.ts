@@ -19,8 +19,8 @@ type BusinessDay = { year: number; month: number; day: number };
 export class ChartComponent implements AfterViewInit, OnDestroy {
   @Input() symbol!: string;
   @ViewChild('chartContainer') chartContainer!: ElementRef;
-  private refreshInterval = 60;
-  private refreshIntervalName = '1m';
+  private refreshInterval = 1;
+  private refreshIntervalName = '1s';
   private chart!: IChartApi;
   private candleSeries!: ISeriesApi<'Candlestick'>;
   private candleData: Candlestick[] = [];
