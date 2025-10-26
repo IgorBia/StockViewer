@@ -27,11 +27,5 @@ func getPairId(db *sql.DB, symbol string) (uuid.UUID, error) {
 		}).Error("Failed to query pair_id")
 		return uuid.Nil, err
 	}
-
-	log.WithFields(log.Fields{
-		"symbol":  symbol,
-		"pair_id": pairId,
-	}).Debug("Retrieved pair_id successfully")
-
 	return pairId, nil
 }

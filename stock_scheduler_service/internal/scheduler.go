@@ -29,7 +29,7 @@ func alignedTicker(duration time.Duration) *time.Ticker {
 
 func Update(db *sql.DB, symbol string, interval string) {
 	log.Infof("Updating %s for %s", interval, symbol)
-	candleData := fetchCandleData(FetchConfig{Symbol: symbol, Interval: interval})
+	candleData := fetchCandleData(FetchConfig{Symbol: symbol, Interval: interval, Open_Time: nil, Limit:2})
 	log.WithFields(log.Fields{"symbol": symbol, "interval": interval, "count": len(candleData)}).Debug("Update: fetched candles count")
 	if len(candleData) > 0 {
 		log.WithFields(log.Fields{"symbol": symbol, "interval": interval, "first_candle": candleData[0]}).Debug("Update: first fetched candle")

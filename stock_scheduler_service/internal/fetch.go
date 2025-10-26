@@ -6,6 +6,8 @@ import (
 	"io"
 	"net/http"
 	"net/url"
+	"time"
+	"fmt"
 
 	"github.com/igorbia/stock_scheduler_service/model"
 	log "github.com/sirupsen/logrus"
@@ -15,9 +17,11 @@ type FetchConfig struct {
 	BaseURL  string
 	Symbol   string
 	Interval string
+	Open_Time *time.Time
+	Limit	int
 }
 
-func buildURL(base string, symbol string, interval string) (*url.URL, error) {
+func buildURL(base string, symbol string, interval string, openTime *time.Time, limit int) (*url.URL, error) {
 
 	if base == "" {
 		log.Error("Base URL is empty")
@@ -36,7 +40,10 @@ func buildURL(base string, symbol string, interval string) (*url.URL, error) {
 	params := url.Values{}
 	params.Add("symbol", symbol)
 	params.Add("interval", interval)
-	params.Add("limit", "2")
+	params.Add("limit", fmt.Sprintf("%d", limit))
+	if openTime != nil {
+		params.Add("startTime", fmt.Sprintf("%d", openTime.UnixMilli()))
+	}
 
 	parsedURL, err := url.Parse(base)
 	if err != nil {
@@ -53,8 +60,13 @@ func fetchCandleData(cfg FetchConfig) []model.Candle {
 	if cfg.BaseURL == "" {
 		cfg.BaseURL = "https://api.binance.com/api/v3/klines"
 	}
-
-	apiURL, err := buildURL(cfg.BaseURL, cfg.Symbol, cfg.Interval)
+	var apiURL *url.URL
+	var err error
+	if( cfg.Open_Time != nil ){
+		apiURL, err = buildURL(cfg.BaseURL, cfg.Symbol, cfg.Interval, cfg.Open_Time, cfg.Limit)
+	} else {
+		apiURL, err = buildURL(cfg.BaseURL, cfg.Symbol, cfg.Interval, nil, cfg.Limit)
+	}
 	if err != nil {
 		log.WithError(err).Error("Failed to build URL")
 		return nil
@@ -98,19 +110,19 @@ func fetchCandleData(cfg FetchConfig) []model.Candle {
 
 	// Log first raw kline as string-like JSON for easier reading
 	// marshal the first kline back to JSON for clear logging
-	if first, err := json.Marshal(klines[0]); err == nil {
-		log.WithFields(log.Fields{
-			"symbol":  cfg.Symbol,
-			"interval": cfg.Interval,
-			"raw0":    string(first),
-		}).Debug("fetchCandleData: first raw kline")
-	} else {
-		log.WithFields(log.Fields{"symbol": cfg.Symbol, "interval": cfg.Interval}).WithError(err).Debug("fetchCandleData: failed to marshal first kline for logging")
-	}
+	// if first, err := json.Marshal(klines[0]); err == nil {
+	// 	log.WithFields(log.Fields{
+	// 		"symbol":  cfg.Symbol,
+	// 		"interval": cfg.Interval,
+	// 		"raw0":    string(first),
+	// 	}).Debug("fetchCandleData: first raw kline")
+	// } else {
+	// 	log.WithFields(log.Fields{"symbol": cfg.Symbol, "interval": cfg.Interval}).WithError(err).Debug("fetchCandleData: failed to marshal first kline for logging")
+	// }
 
-	if all, err := json.Marshal(klines); err == nil {
-		log.WithFields(log.Fields{"symbol": cfg.Symbol, "interval": cfg.Interval, "klines": string(all)}).Debug("fetchCandleData: full klines payload")
-	}
+	// if all, err := json.Marshal(klines); err == nil {
+	// 	log.WithFields(log.Fields{"symbol": cfg.Symbol, "interval": cfg.Interval, "klines": string(all)}).Debug("fetchCandleData: full klines payload")
+	// }
 
 	var kline [][]interface{}
 	kline = append(kline, klines[0])
