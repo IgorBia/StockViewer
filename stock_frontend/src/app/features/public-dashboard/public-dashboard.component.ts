@@ -1,10 +1,12 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterLink } from '@angular/router';
 import {ChartComponent} from '../../shared/chart/chart.component';
 import {AuthComponent} from '../../core/auth/auth.component';
+import { ChartService } from '../../shared/chart/chart.service';
+import { Subscription } from 'rxjs/internal/Subscription';
 
 @Component({
   selector: 'app-public-dashboard',
@@ -13,11 +15,27 @@ import {AuthComponent} from '../../core/auth/auth.component';
   templateUrl: './public-dashboard.component.html',
   styleUrls: ['./public-dashboard.component.scss']
 })
-export class PublicDashboardComponent {
+export class PublicDashboardComponent implements OnInit, OnDestroy {
   searchQuery = '';
-  selectedSymbol = '';
+  selectedSymbol = 'BTCUSDC';
   showAuth: boolean | undefined;
   @Input() showAuthControl = true; 
+
+  private sub?: Subscription;
+
+  constructor(private chartService: ChartService) {}
+
+  ngOnInit(): void {
+    this.sub = this.chartService.currentSymbol$.subscribe(sym => {
+      if (sym) {
+        this.selectedSymbol = sym;
+      }
+    });
+  }
+
+  ngOnDestroy(): void {
+    this.sub?.unsubscribe();
+  }
 
   onSearch() {
     console.log('Wyszukano:', this.searchQuery);

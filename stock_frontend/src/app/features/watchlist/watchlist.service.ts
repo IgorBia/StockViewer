@@ -6,13 +6,20 @@ import { AuthService } from '../../core/auth/auth.service';
 
 @Injectable({ providedIn: 'root' })
 export class WatchlistService {
-  private apiUrl = '/api/v1/watchlist/all';
+  private getUrl = '/api/v1/watchlist/all';
+  private addUrl = '/api/v1/watchlist/item';
 
   constructor(private http: HttpClient, private auth: AuthService) {}
 
   getWatchlists(): Observable<Watchlist[]> {
     const token = this.auth.getToken();
     const headers = token ? new HttpHeaders({ Authorization: `Bearer ${token}` }) : undefined;
-    return this.http.get<Watchlist[]>(this.apiUrl, { headers });
+    return this.http.get<Watchlist[]>(this.getUrl, { headers });
+  }
+
+  addItemToWatchlist(symbol: string): void {
+    const token = this.auth.getToken();
+    const headers = token ? new HttpHeaders({ Authorization: `Bearer ${token}` }) : undefined;
+    this.http.post<Watchlist[]>(this.addUrl, { symbol:symbol , watchlistName:'Default'}, { headers }).subscribe();
   }
 }

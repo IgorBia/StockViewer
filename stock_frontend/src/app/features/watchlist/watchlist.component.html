@@ -7,15 +7,19 @@
         <div *ngIf="!loading && watchlists.length === 0">No watchlists</div>
 
         <div *ngFor="let wl of watchlists" class="watchlist">
-            <div class="watchlist-grid">
-            <app-watchlist-button
+        <div class="watchlist-grid">
+            <button
+                class="watchlist-item"
                 *ngFor="let item of wl.watchlistItems"
-                [symbol]="item.symbol"
-                [active]="item.symbol === selectedSymbol"
-                (select)="selectSymbol($event)"
-            ></app-watchlist-button>
+                type="button"
+                (click)="selectSymbol(item.symbol)"
+                aria-label="Select {{ item.symbol }}"
+            >
+                {{ item.symbol }}
+            </button>
 
-            <button class="watchlist-add-btn" type="button" (click)="openAdd(wl)" style="grid-column: 1 / -1">
+            <!-- Add button spanning full row -->
+            <button class="watchlist-add-btn" type="button" (click)="add()">
                 + Dodaj
             </button>
         </div>

@@ -3,9 +3,16 @@ import { Candlestick } from './candlestick';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/internal/Observable';
 import { map } from 'rxjs/internal/operators/map';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class ChartService {
+    private symbol$ = new BehaviorSubject<string | null>(null);
+    currentSymbol$ = this.symbol$.asObservable();
+
+    setSymbol(sym: string | null) { this.symbol$.next(sym); }
+    getSymbol(): string | null { return this.symbol$.getValue(); }
+
     private apiUrl = '/api/v1/candles';
 
     constructor(private http: HttpClient) { }

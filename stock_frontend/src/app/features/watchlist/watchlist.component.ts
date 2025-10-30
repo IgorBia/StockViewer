@@ -1,10 +1,11 @@
-import { Component, Inject, ChangeDetectorRef, NgZone} from '@angular/core';
+import { Component, Inject, ChangeDetectorRef, NgZone, Output, EventEmitter} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {WatchlistService} from './watchlist.service'
 import { Watchlist } from './watchlist';
 import { AuthService } from '../../core/auth/auth.service';
 import { Router } from '@angular/router';
+import { ChartService } from '../../shared/chart/chart.service';
 
 @Component({
   selector: 'watchlist',
@@ -17,15 +18,23 @@ export class WatchlistComponent {
   watchlists: Watchlist[] = [];
   loading = false;
   error = '';
+  selectedSymbol: string = 'BTCUSDC';
+  sub: any;
 
   constructor(
     private watchlistService: WatchlistService,
+    private chartService: ChartService,
     private cd: ChangeDetectorRef,
     private ngZone: NgZone
   ) {}
 
   ngOnInit(): void {
     this.loadWatchlists();
+    this.sub = this.chartService.currentSymbol$.subscribe(sym => {
+      if (sym) {
+        this.selectedSymbol = sym;
+      }
+    });
   }
 
   loadWatchlists(): void {
@@ -63,4 +72,13 @@ export class WatchlistComponent {
     });
   }
 
+  selectSymbol(sym: string) {
+    this.selectedSymbol = sym;
+    // notify charts that care
+    this.chartService.setSymbol(sym);
+  }
+  
+  add(){
+    this.watchlistService.addItemToWatchlist(this.selectedSymbol);
+  }
 }
