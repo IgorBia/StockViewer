@@ -19,8 +19,8 @@ type BusinessDay = { year: number; month: number; day: number };
 export class ChartComponent implements AfterViewInit, OnDestroy {
   @Input() symbol!: string;
   @ViewChild('chartContainer') chartContainer!: ElementRef;
-  private refreshInterval = 60;
-  private refreshIntervalName = '1m';
+  private refreshInterval = 60*15;
+  private refreshIntervalName = '15m';
   private chart!: IChartApi;
   private candleSeries!: ISeriesApi<'Candlestick'>;
   private candleData: Candlestick[] = [];
@@ -36,28 +36,28 @@ export class ChartComponent implements AfterViewInit, OnDestroy {
   }
 
   ngOnChanges() {
-    this.loadChartData();
+    this.loadChartData(this.refreshIntervalName);
   }
 
   ngAfterViewInit() {
     this.chart = createChart(this.chartContainer.nativeElement, {
       width: this.chartContainer.nativeElement.offsetWidth,
-      height: 500,
-      layout: { background: { color: '#0f0f1a' }, textColor: '#d1d4dc' },
-      grid: { vertLines: { color: '#2a2b3b' }, horzLines: { color: '#2a2b3b' } },
-      rightPriceScale: { borderColor: '#2a2b3b' },
-      timeScale: { borderColor: '#2a2b3b' },
+      height: this.chartContainer.nativeElement.offsetHeight,
+      layout: { background: { color: '#000D1B' }, textColor: '#d1d4dc' },
+      grid: { vertLines: { color: '#001226' }, horzLines: { color: '#001226' } },
+      rightPriceScale: { borderColor: '#001226' },
+      timeScale: { borderColor: '#001226', timeVisible: true, secondsVisible: false},
     });
 
     // assign to the class field and use the correct API
     // Support multiple lightweight-charts versions at runtime: prefer addCandlestickSeries, fallback to addSeries
     const seriesOptions: DeepPartial<CandlestickSeriesOptions> = {
-      upColor: '#4bffb5',
-      downColor: '#ff4976',
-      borderUpColor: '#4bffb5',
-      borderDownColor: '#ff4976',
-      wickUpColor: '#4bffb5',
-      wickDownColor: '#ff4976',
+      upColor: '#FFFFFF',
+      downColor: '#B68308',
+      borderUpColor: '#FFFFFF',
+      borderDownColor: '#B68308',
+      wickUpColor: '#FFFFFF',
+      wickDownColor: '#B68308',
       borderVisible: true,
       wickVisible: true,
     };
@@ -110,18 +110,21 @@ export class ChartComponent implements AfterViewInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    // stop periodic refresh
-    this.refreshSub?.unsubscribe();
-    // remove chart and its DOM to free resources
+    if (this.refreshSub) {
+      this.refreshSub.unsubscribe();
+      this.refreshSub = undefined;
+    }
     try {
-      this.chart?.remove();
+      if (this.chart && typeof (this.chart as any).remove === 'function') {
+        (this.chart as any).remove();
+      }
     } catch (e) {
-      // ignore
+      console.warn('chart cleanup warning:', e);
     }
   }
 
-  loadChartData(interval: string = '1m') {
-    // ensure series exists before fetching/applying data
+
+  loadChartData(interval: string) {
     if (!this.candleSeries) {
       return;
     }
@@ -133,8 +136,8 @@ export class ChartComponent implements AfterViewInit, OnDestroy {
       console.log('[chart] loaded candlestick data', data.length, 'points for symbol', this.symbol);
       console.log(data);
       const candlesticks = data.map(d => {
-        const t = (d as any).timestamp ?? (d as any).openTime; // support both names
-        const time = Math.floor(new Date(t).getTime() / 1000); // seconds UNIX
+        const t = (d as any).timestamp ?? (d as any).openTime; 
+        const time = Math.floor(new Date(t).getTime() / 1000); 
         return {
           time,
           open: Number((d as any).open),

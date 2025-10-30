@@ -13,6 +13,7 @@ func main() {
 	db, err := config.GetDataBase()
 
 	if err == nil {
+		internal.SetupDB(db)
 		internal.EnsureDataIntegrity(db)
 		internal.BuildRoutines(db, internal.ScheduleCandleUpdates)
 	}

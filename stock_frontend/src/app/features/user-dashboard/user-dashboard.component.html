@@ -1,0 +1,17 @@
+<div class="user-dashboard">
+  <header class="ud-header">
+    <h2>Dashboard użytkownika</h2>
+    <div class="ud-actions">
+      <button class="btn-logout" (click)="logout()">Wyloguj</button>
+    </div>
+  </header>
+
+  <main class="ud-main">
+    <section class="ud-public">
+      <app-public-dashboard [showAuthControl]="false"></app-public-dashboard>
+    </section>
+    <aside class="ud-watchlist">
+      <watchlist></watchlist>
+    </aside>
+  </main>
+</div>

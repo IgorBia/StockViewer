@@ -6,7 +6,6 @@ import (
 	"time"
 
 	"github.com/igorbia/stock_scheduler_service/model"
-	log "github.com/sirupsen/logrus"
 )
 
 func ConvertRawKlinesToCandles(raw [][]interface{}) []model.Candle {
@@ -16,7 +15,7 @@ func ConvertRawKlinesToCandles(raw [][]interface{}) []model.Candle {
 	}
 
 	// debug: log first raw kline for inspection
-	log.WithField("raw0", raw[0]).Debug("ConvertRawKlinesToCandles: first raw kline")
+	// log.WithField("raw0", raw[0]).Debug("ConvertRawKlinesToCandles: first raw kline")
 
 	for _, k := range raw {
 		if len(k) < 12 {
@@ -43,9 +42,9 @@ func ConvertRawKlinesToCandles(raw [][]interface{}) []model.Candle {
 		candles = append(candles, candle)
 	}
 
-	if len(candles) > 0 {
-		log.WithField("first_candle", candles[0]).Debug("ConvertRawKlinesToCandles: first converted candle")
-	}
+	// if len(candles) > 0 {
+	// 	log.WithField("first_candle", candles[0]).Debug("ConvertRawKlinesToCandles: first converted candle")
+	// }
 
 	return candles
 }

@@ -1,6 +1,7 @@
 .auth-container {
   position: relative;
-  background: white;
+  background: #000D1B;
+  color: white;
   position: relative;
   padding: 2rem;
   border-radius: 8px;
@@ -28,12 +29,12 @@
 }
 
 .toggle button:hover:not(:disabled) {
-  background: #007bff;
+  background: #B68308;
   color: white;
 }
 
 .toggle button:disabled {
-  background: #007bff;
+  background: #B68308;
   color: white;
   cursor: default;
 }
@@ -46,7 +47,7 @@ form {
 
 label {
   font-weight: 600;
-  color: #333;
+  color: white;
 }
 
 .close-btn {
@@ -61,21 +62,23 @@ label {
 
 input {
   padding: 0.75rem;
-  border: 1px solid #ccc;
+  border: 1px solid #00193D;
+  background-color: #000D1B;
+  color: white;
   border-radius: 8px;
   font-size: 1rem;
   transition: border-color 0.2s;
 }
 
 input:focus {
-  border-color: #007bff;
+  border-color: #B68308;
   outline: none;
 }
 
 button[type="submit"] {
   margin-top: 1rem;
   padding: 0.75rem;
-  background: #007bff;
+  background: #B68308;
   color: white;
   border: none;
   border-radius: 8px;
@@ -85,13 +88,13 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-  background: #0056b3;
+  background: #B68308;
 }
 
 .error {
   margin-top: 1rem;
   color: #dc3545;
-  background: #ffe0e0;
+  background: #000D1B;
   padding: 0.75rem;
   border-radius: 8px;
   font-weight: 500;
@@ -115,7 +118,7 @@ button[type="submit"]:hover {
 
 
 .popup {
-  background: white;
+  background: #000D1B;
   padding: 1rem;
   border-radius: 8px;
   min-width: 300px;

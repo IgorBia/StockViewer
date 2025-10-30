@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -17,6 +17,7 @@ export class PublicDashboardComponent {
   searchQuery = '';
   selectedSymbol = '';
   showAuth: boolean | undefined;
+  @Input() showAuthControl = true; 
 
   onSearch() {
     console.log('Wyszukano:', this.searchQuery);

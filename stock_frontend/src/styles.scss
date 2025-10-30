@@ -1,1 +1,25 @@
+html, body, app-root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #000D1B; 
+  color: #d1d4dc; 
+  margin: 0;
+}
+
+app-root {
+  display: flex;
+  flex-direction: column;
+  flex: 1 0 auto;
+  min-height: 100vh;
+  /* center children vertically and horizontally so dashboard appears centered */
+  justify-content: center;
+  align-items: center;
+}
 

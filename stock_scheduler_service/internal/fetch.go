@@ -106,24 +106,6 @@ func fetchCandleData(cfg FetchConfig) []model.Candle {
 		return nil
 	}
 
-	// take only first kline to further proccessing
-
-	// Log first raw kline as string-like JSON for easier reading
-	// marshal the first kline back to JSON for clear logging
-	// if first, err := json.Marshal(klines[0]); err == nil {
-	// 	log.WithFields(log.Fields{
-	// 		"symbol":  cfg.Symbol,
-	// 		"interval": cfg.Interval,
-	// 		"raw0":    string(first),
-	// 	}).Debug("fetchCandleData: first raw kline")
-	// } else {
-	// 	log.WithFields(log.Fields{"symbol": cfg.Symbol, "interval": cfg.Interval}).WithError(err).Debug("fetchCandleData: failed to marshal first kline for logging")
-	// }
-
-	// if all, err := json.Marshal(klines); err == nil {
-	// 	log.WithFields(log.Fields{"symbol": cfg.Symbol, "interval": cfg.Interval, "klines": string(all)}).Debug("fetchCandleData: full klines payload")
-	// }
-
 	var kline [][]interface{}
 	kline = append(kline, klines[0])
 

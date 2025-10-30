@@ -1,4 +1,4 @@
-import { Watchlist } from "./watchlist";
+import { Watchlist } from "../../features/watchlist/watchlist";
 
 export interface User{
     email: string;
