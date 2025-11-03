@@ -18,8 +18,6 @@ export class WatchlistComponent {
   watchlists: Watchlist[] = [];
   loading = false;
   error = '';
-  selectedSymbol: string = 'BTCUSDC';
-  sub: any;
 
   constructor(
     private watchlistService: WatchlistService,
@@ -30,11 +28,6 @@ export class WatchlistComponent {
 
   ngOnInit(): void {
     this.loadWatchlists();
-    this.sub = this.chartService.currentSymbol$.subscribe(sym => {
-      if (sym) {
-        this.selectedSymbol = sym;
-      }
-    });
   }
 
   loadWatchlists(): void {
@@ -73,12 +66,10 @@ export class WatchlistComponent {
   }
 
   selectSymbol(sym: string) {
-    this.selectedSymbol = sym;
-    // notify charts that care
     this.chartService.setSymbol(sym);
   }
   
   add(){
-    this.watchlistService.addItemToWatchlist(this.selectedSymbol);
+    this.watchlistService.addItemToWatchlist(this.chartService.getSymbol());
   }
 }

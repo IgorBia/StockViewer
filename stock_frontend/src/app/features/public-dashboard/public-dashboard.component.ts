@@ -17,29 +17,20 @@ import { Subscription } from 'rxjs/internal/Subscription';
 })
 export class PublicDashboardComponent implements OnInit, OnDestroy {
   searchQuery = '';
-  selectedSymbol = 'BTCUSDC';
   showAuth: boolean | undefined;
   @Input() showAuthControl = true; 
 
-  private sub?: Subscription;
-
-  constructor(private chartService: ChartService) {}
+  constructor(public chartService: ChartService) {}
 
   ngOnInit(): void {
-    this.sub = this.chartService.currentSymbol$.subscribe(sym => {
-      if (sym) {
-        this.selectedSymbol = sym;
-      }
-    });
   }
 
   ngOnDestroy(): void {
-    this.sub?.unsubscribe();
   }
 
   onSearch() {
     console.log('Wyszukano:', this.searchQuery);
-    this.selectedSymbol = this.searchQuery;
+    this.chartService.setSymbol(this.searchQuery);
     // TODO: logika pobierania danych wykresu
   }
 

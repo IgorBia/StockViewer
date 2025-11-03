@@ -10,7 +10,7 @@
 
   <div class="chart-section">
     <div class="chart-wrapper"> 
-      <app-chart [symbol]="selectedSymbol"></app-chart>
+      <app-chart [symbol]="this.chartService.getSymbol()"></app-chart>
     </div>
   </div>
 

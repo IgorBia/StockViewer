@@ -22,7 +22,7 @@ public class WatchlistController {
     }
 
     @GetMapping("/all")
-    public List<Watchlist> getWatchlist(){
+    public List<WatchlistResponse> getWatchlist(){
         return watchlistService.getWatchlists();
     }
 

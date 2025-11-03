@@ -33,8 +33,10 @@ public class WatchlistService {
         this.watchlistMapper = watchlistMapper;
     }
 
-    public List<Watchlist> getWatchlists() {
-        return watchlistRepository.findByUser(userService.getUserFromContext());
+    public List<WatchlistResponse> getWatchlists() {
+        return watchlistMapper.toDTOList(
+                watchlistRepository.findByUser(userService.getUserFromContext())
+        );
     }
 
     public WatchlistResponse addWatchlist(WatchlistRequest watchlistRequest) {

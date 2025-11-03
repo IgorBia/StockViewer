@@ -32,6 +32,7 @@ export class ChartComponent implements AfterViewInit, OnDestroy {
   }
 
   ngOnInit() {
+    if(!this.symbol) this.chartService.setSymbol("BTCUSDC");
     if(!this.symbol) this.symbol = "BTCUSDC";
   }
 
@@ -129,11 +130,11 @@ export class ChartComponent implements AfterViewInit, OnDestroy {
       return;
     }
 
-    this.chartService.getCandlestickData(this.symbol, interval).subscribe((data: Candlestick[]) => {
+    this.chartService.getCandlestickData(interval).subscribe((data: Candlestick[]) => {
       if (!Array.isArray(data)) {
         return;
       }
-      console.log('[chart] loaded candlestick data', data.length, 'points for symbol', this.symbol);
+      console.log('[chart] loaded candlestick data', data.length, 'points for symbol', this.chartService.getSymbol());
       console.log(data);
       const candlesticks = data.map(d => {
         const t = (d as any).timestamp ?? (d as any).openTime; 
