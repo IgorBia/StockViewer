@@ -25,7 +25,46 @@
   overflow: auto;
 }
 
+/* --- added: two buttons per row grid --- */
+.watchlist-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+  align-items: start;
+}
+
+/* make buttons fill the grid cell */
+.watchlist-grid button {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+// ...existing code...
 button {
-  margin-top: 1rem;
-  
+  position: relative;
+  aspect-ratio: 1;
+  display: inline-block;
+  padding: 12px 24px;
+  background: #0b1220;
+  color: #dbeafe;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  z-index: 2;
+  /* allow the blurred border to spill slightly if you want glow outside */
+  overflow: hidden;
+}
+
+/* blurred ring that acts as border */
+button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  /* create a solid ring then blur it */
+  box-shadow: 0 0 0 2px #000D1B;
+  filter: blur(5px);
+  pointer-events: none;
+  z-index: 0;
 }
