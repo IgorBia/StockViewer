@@ -2,11 +2,11 @@ import { Component, AfterViewInit, ElementRef, ViewChild, Input, OnDestroy } fro
 import { ChartService } from './chart.service';
 import { interval, Subscription } from 'rxjs';
 import * as lwc from 'lightweight-charts';
-import {CandlestickSeriesOptions, createChart, DeepPartial, IChartApi, ISeriesApi, PriceLineSource, SeriesDefinition, SeriesOptionsCommon, SeriesOptionsMap} from 'lightweight-charts';
+import {CandlestickSeriesOptions, createChart, DeepPartial, IChartApi, ISeriesApi} from 'lightweight-charts';
 import { Candlestick } from './candlestick';
 
 type Time = UTCTimestamp | BusinessDay;
-type UTCTimestamp = number;       // sekundy od 1970-01-01
+type UTCTimestamp = number; 
 type BusinessDay = { year: number; month: number; day: number };
 
 
@@ -20,12 +20,11 @@ export class ChartComponent implements AfterViewInit, OnDestroy {
   @Input() symbol!: string;
   @ViewChild('chartContainer') chartContainer!: ElementRef;
   private refreshInterval = 60*15;
-  private refreshIntervalName = '15m';
   private chart!: IChartApi;
   private candleSeries!: ISeriesApi<'Candlestick'>;
-  private candleData: Candlestick[] = [];
   chartService: ChartService;
   private refreshSub?: Subscription;
+  private timeoutId?: number;
 
   constructor(chartService: ChartService) {
     this.chartService = chartService;
@@ -37,10 +36,93 @@ export class ChartComponent implements AfterViewInit, OnDestroy {
   }
 
   ngOnChanges() {
-    this.loadChartData(this.refreshIntervalName);
+    this.loadChartData();
   }
 
   ngAfterViewInit() {
+    this.buildChart();
+    this.buildSeries();
+    this.loadAndListen();
+  }
+
+  ngOnDestroy(): void {
+    if (this.refreshSub) {
+      this.refreshSub.unsubscribe();
+      this.refreshSub = undefined;
+    }
+    try {
+      if (this.chart && typeof (this.chart as any).remove === 'function') {
+        (this.chart as any).remove();
+      }
+    } catch (e) {
+      console.warn('chart cleanup warning:', e);
+    }
+  }
+
+  changeInterval(newInterval: string) {
+    this.chartService.setInterval(newInterval);
+
+    if(newInterval[newInterval.length -1] === 'm') {
+      this.refreshInterval = 60 * (newInterval.slice(0, newInterval.length -1) as unknown as number); 
+    } else if(newInterval[newInterval.length -1] === 'h') {
+      this.refreshInterval = 60 * 60 * (newInterval.slice(0, newInterval.length -1) as unknown as number); 
+    } else if(newInterval[newInterval.length -1] === 'd') {
+      this.refreshInterval = 60 * 60 * 24 * (newInterval.slice(0, newInterval.length -1) as unknown as number); 
+    }
+
+    this.loadAndListen();
+  }
+
+  loadChartData() {
+    if (!this.candleSeries) {
+      return;
+    }
+
+    this.chartService.getCandlestickData().subscribe((data: Candlestick[]) => {
+      if (!Array.isArray(data)) {
+        return;
+      }
+      console.log('[chart] loaded candlestick data', data.length, 'points for symbol', this.chartService.getSymbol());
+      console.log(data);
+      const candlesticks = data.map(d => {
+        const t = (d as any).timestamp ?? (d as any).openTime; 
+        const time = Math.floor(new Date(t).getTime() / 1000); 
+        return {
+          time,
+          open: Number((d as any).open),
+          high: Number((d as any).high),
+          low: Number((d as any).low),
+          close: Number((d as any).close),
+        };
+      });
+
+      this.candleSeries.setData(candlesticks as any);
+    });
+  }
+
+  loadAndListen() {
+
+    if (this.timeoutId) {
+      clearTimeout(this.timeoutId);
+    }
+    if (this.refreshSub) {
+      this.refreshSub.unsubscribe();
+    }
+
+    const now = new Date();
+    const seconds = now.getSeconds();
+    const delay = ((60 - seconds) + 3) % 60;
+
+    this.timeoutId = window.setTimeout(() => {
+      this.loadChartData();
+      this.refreshSub = interval(this.refreshInterval * 1000).subscribe(() => this.loadChartData());
+    }, delay * 1000);
+
+    this.loadChartData();
+    this.refreshSub = interval(this.refreshInterval * 1000).subscribe(() => this.loadChartData());
+  }
+
+  buildChart() {
     this.chart = createChart(this.chartContainer.nativeElement, {
       width: this.chartContainer.nativeElement.offsetWidth,
       height: this.chartContainer.nativeElement.offsetHeight,
@@ -49,9 +131,9 @@ export class ChartComponent implements AfterViewInit, OnDestroy {
       rightPriceScale: { borderColor: '#001226' },
       timeScale: { borderColor: '#001226', timeVisible: true, secondsVisible: false},
     });
+  }
 
-    // assign to the class field and use the correct API
-    // Support multiple lightweight-charts versions at runtime: prefer addCandlestickSeries, fallback to addSeries
+  buildSeries() {
     const seriesOptions: DeepPartial<CandlestickSeriesOptions> = {
       upColor: '#FFFFFF',
       downColor: '#B68308',
@@ -96,59 +178,5 @@ export class ChartComponent implements AfterViewInit, OnDestroy {
     ];
 
     this.candleSeries.setData(initialData as any);
-
-    // Load real data immediately and start a refresh every round minute +3 seconds e.g. 15:00:03, 15:01:03 etc.
-    const now = new Date();
-    const seconds = now.getSeconds();
-    const delay = ((60 - seconds) + 3) % 60;
-    setTimeout(() => {
-      this.loadChartData(this.refreshIntervalName);
-      this.refreshSub = interval(this.refreshInterval * 1000).subscribe(() => this.loadChartData(this.refreshIntervalName));
-    }, delay * 1000);
-
-    this.loadChartData(this.refreshIntervalName);
-    this.refreshSub = interval(this.refreshInterval * 1000).subscribe(() => this.loadChartData(this.refreshIntervalName));
-  }
-
-  ngOnDestroy(): void {
-    if (this.refreshSub) {
-      this.refreshSub.unsubscribe();
-      this.refreshSub = undefined;
-    }
-    try {
-      if (this.chart && typeof (this.chart as any).remove === 'function') {
-        (this.chart as any).remove();
-      }
-    } catch (e) {
-      console.warn('chart cleanup warning:', e);
-    }
-  }
-
-
-  loadChartData(interval: string) {
-    if (!this.candleSeries) {
-      return;
-    }
-
-    this.chartService.getCandlestickData(interval).subscribe((data: Candlestick[]) => {
-      if (!Array.isArray(data)) {
-        return;
-      }
-      console.log('[chart] loaded candlestick data', data.length, 'points for symbol', this.chartService.getSymbol());
-      console.log(data);
-      const candlesticks = data.map(d => {
-        const t = (d as any).timestamp ?? (d as any).openTime; 
-        const time = Math.floor(new Date(t).getTime() / 1000); 
-        return {
-          time,
-          open: Number((d as any).open),
-          high: Number((d as any).high),
-          low: Number((d as any).low),
-          close: Number((d as any).close),
-        };
-      });
-
-      this.candleSeries.setData(candlesticks as any);
-    });
   }
 }
