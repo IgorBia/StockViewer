@@ -1,5 +1,17 @@
 <div class="watchlist-container">
-    <h3>Watchlists</h3>
+    <div class="watchlist-header">
+        <h3>Watchlists</h3>
+          <!-- changed: icon-only logout button (accessible) -->
+        <button class="btn-logout" type="button" aria-label="Wyloguj" (click)="logout()">
+            <!-- simple "door + arrow" SVG, kolor bierze currentColor -->
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+            <rect x="2.5" y="3.5" width="11" height="17" rx="1.2" stroke="currentColor" stroke-width="1.4" fill="none"/>
+            <path d="M15 12h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M18 9l3 3-3 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span class="visually-hidden">Wyloguj</span>
+        </button>
+    </div>
 
     <div class="watchlist-list" *ngIf="loading">Loading...</div>
         <div *ngIf="error" class="error">{{ error }}</div>

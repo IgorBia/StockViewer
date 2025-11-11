@@ -1,3 +1,78 @@
 #tv-attr-logo {
   display: none !important;
 }
+
+:host {
+  display: block;
+  height: 100%;   /* fill parent column */
+  min-height: 0;
+  box-sizing: border-box;
+}
+
+.chart-root {
+  position: relative;
+  width: 100%;
+  height: 100%;   /* ensure chart fills parent */
+  isolation: isolate;
+}
+
+/* chart area relative so canvas can size to parent */
+.chart-area {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+/* overlays (title / buttons) */
+.chart-overlay {
+  position: absolute;
+  z-index: 20;        /* above the chart canvas */
+  pointer-events: auto;
+  display: flex;
+  gap: 8px;
+  margin-right: 6%;
+  align-items: center;
+}
+
+/* title in top-left */
+.chart-title {
+  top: 12px;
+  left: 16px;
+  color: white;
+  font-weight: 700;
+  padding: 6px 10px;
+  border-radius: 6px;
+  backdrop-filter: blur(4px);
+}
+
+/* interval buttons in top-right */
+.interval-buttons {
+  top: 12px;
+  right: 16px;
+}
+
+.interval-buttons button {
+  background: rgba(255,255,255,0.04);
+  color: #dbeafe;
+  border: 1px solid rgba(255,255,255,0.06);
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.interval-buttons button:hover {
+  background: rgba(255,255,255,0.06);
+}
+
+/* highlight for active interval */
+.interval-buttons button.active {
+  border-color: #001226;
+}
+
+/* ensure chart canvas itself doesn't capture overlays visually */
+.chart-area canvas {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}

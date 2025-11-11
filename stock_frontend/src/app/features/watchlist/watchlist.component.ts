@@ -23,7 +23,9 @@ export class WatchlistComponent {
     private watchlistService: WatchlistService,
     private chartService: ChartService,
     private cd: ChangeDetectorRef,
-    private ngZone: NgZone
+    private ngZone: NgZone,
+    private auth: AuthService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -71,5 +73,11 @@ export class WatchlistComponent {
   
   add(){
     this.watchlistService.addItemToWatchlist(this.chartService.getSymbol());
+    this.loadWatchlists();
+  }
+
+  logout(): void {
+  this.auth.logout();
+  this.router.navigate(['/']);
   }
 }

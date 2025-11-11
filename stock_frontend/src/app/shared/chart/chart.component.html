@@ -1,11 +1,14 @@
-<div id="chart-title" style="position: relative; top: 10px; left: 20px; color: white; font-weight: bold;">
-{{ chartService.getSymbol() }} — {{ chartService.getInterval() }}
-</div>
+<div class="chart-root">
+  <div class="chart-overlay chart-title">
+    {{ chartService.getSymbol() }}
+  </div>
 
-<div id="interval-buttons" style="position: relative; top: 10px; right: 20px;">
-<button (click)="changeInterval('15m')">15m</button>
-<button (click)="changeInterval('1h')">1h</button>
-<button (click)="changeInterval('4h')">4h</button>
-<button (click)="changeInterval('1d')">1d</button>
+  <div class="chart-overlay interval-buttons" role="toolbar" aria-label="Chart intervals">
+    <button (click)="changeInterval('15m')" [class.active]="chartService.getInterval() === '15m'">15m</button>
+    <button (click)="changeInterval('1h')"  [class.active]="chartService.getInterval() === '1h'">1h</button>
+    <button (click)="changeInterval('4h')"  [class.active]="chartService.getInterval() === '4h'">4h</button>
+    <button (click)="changeInterval('1d')"  [class.active]="chartService.getInterval() === '1d'">1d</button>
+  </div>
+
+  <div #chartContainer class="chart-area"></div>
 </div>
-<div #chartContainer style="height: 100%; width: 100%;"></div>

@@ -1,5 +1,9 @@
 .user-dashboard {
+  /* używaj full-width/height względem viewportu (minus nagłówek) */
   width: 100%;
+  height: 100%;
+  min-height: 0;
+  min-width: 0;
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -7,30 +11,45 @@
   box-sizing: border-box;
 }
 
-.ud-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
+/* main area must stretch and maintain gap between columns */
 .ud-main {
   display: flex;
-  gap: 1rem;
-  width: 100%;
-  align-items: stretch;
+  gap: 1.5rem;               /* spacing between chart and watchlist */
+  flex: 1 1 0%;
+  min-height: 0;
+  align-items: stretch;      /* children take full height */
+  justify-content: flex-start; /* don't center horizontally */
+  position: relative;   /* zapewnia kontekst dla dzieci */
+  flex-wrap: nowrap; 
 }
 
+/* columns: keep proportional widths and full height */
 .ud-public {
-  flex: 1 1 auto;
+  flex: 5 1 0%;
   min-width: 0;
+  height: 100%;
+  position: relative;   /* containment dla absolutnych elementów (canvas) */
+  overflow: hidden; 
 }
 
 .ud-watchlist {
-  /* fixed sidebar width = 20% of viewport width */
-  flex: 0 0 20vw;
+  flex: 1 1 0%;
+  height: 100%;
+}
+
+/* ensure direct children fill their columns */
+.ud-public > *,
+.ud-watchlist > * {
+  height: 100%;
   min-height: 0;
   display: flex;
-  align-items: stretch;
+  flex-direction: column;
+}
+
+.watchlist-list {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: auto;
 }
 
 .btn-logout {
