@@ -34,6 +34,23 @@ CREATE TABLE user_management.wallet (
     FOREIGN KEY (user_id) REFERENCES app_user(user_id) ON DELETE CASCADE
 );
 
+CREATE TABLE stock_data.asset (
+  asset_id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  symbol VARCHAR(32) NOT NULL UNIQUE,
+  display_name VARCHAR(128),
+  precision INT DEFAULT 8,
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT now(),
+);
+
+CREATE TABLE user_management.owned_asset (
+    owned_asset_id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    wallet_id UUID NOT NULL,
+    pair_id UUID NOT NULL,
+    amount DECIMAL(18,8) NOT NULL,
+    FOREIGN KEY (wallet_id) REFERENCES wallet(wallet_id) ON DELETE CASCADE,
+    FOREIGN KEY (pair_id) REFERENCES pair(pair_id) ON DELETE CASCADE
+);
+
 CREATE TABLE stock_data.pair (
     pair_id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     symbol VARCHAR(10) NOT NULL,
@@ -50,15 +67,6 @@ VALUES
     ( 'ETHBTC', 'ETH', 'BTC', 'Spot', 'Binance'),
     ( 'SOLUSDC', 'SOL', 'USDC', 'Spot', 'Binance');
 
-
-CREATE TABLE user_management.owned_asset (
-    owned_asset_id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    wallet_id UUID NOT NULL,
-    pair_id UUID NOT NULL,
-    amount DECIMAL(18,8) NOT NULL,
-    FOREIGN KEY (wallet_id) REFERENCES wallet(wallet_id) ON DELETE CASCADE,
-    FOREIGN KEY (pair_id) REFERENCES pair(pair_id) ON DELETE CASCADE
-);
 
 CREATE TABLE user_management.trade (
     trade_id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
