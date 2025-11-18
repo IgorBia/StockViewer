@@ -10,6 +10,7 @@ import com.stockviewer.stockapi.user.repository.UserRepository;
 import com.stockviewer.stockapi.exception.ResourceNotFoundException;
 import com.stockviewer.stockapi.exception.CredentialsTakenException;
 
+import com.stockviewer.stockapi.wallet.service.WalletService;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -26,14 +27,16 @@ public class AuthService {
     private final PasswordEncoder passwordEncoder;
     private final JwtUtils jwtUtils;
     private final AuthenticationManager authenticationManager;
+    private final WalletService walletService;
 
-    public AuthService(UserMapper userMapper, UserRepository userRepository, RoleRepository roleRepository, PasswordEncoder passwordEncoder, JwtUtils jwtUtils, AuthenticationManager authenticationManager){
+    public AuthService(UserMapper userMapper, UserRepository userRepository, RoleRepository roleRepository, PasswordEncoder passwordEncoder, JwtUtils jwtUtils, AuthenticationManager authenticationManager, WalletService walletService){
         this.userMapper = userMapper;
         this.userRepository = userRepository;
         this.roleRepository = roleRepository;
         this.passwordEncoder = passwordEncoder;
         this.jwtUtils = jwtUtils;
         this.authenticationManager = authenticationManager;
+        this.walletService = walletService;
     }
 
     public void register(UserDTO userDTO) throws CredentialsTakenException, ResourceNotFoundException {
@@ -47,6 +50,16 @@ public class AuthService {
 
         user.getRoles().add(userRole);
         userRepository.save(user);
+
+        walletService.createWalletForUser(user);
+
+        // log the user information e.g. wallet data, email etc.
+        System.out.println("User registered: " + user.getEmail());
+        System.out.println("User wallets: " + user.getWallets());
+        System.out.println("User assets: " + user.getWallets().stream()
+                .flatMap(wallet -> wallet.getOwnedAssets().stream())
+                .toList());
+
         // TODO: account email activation
     }
 

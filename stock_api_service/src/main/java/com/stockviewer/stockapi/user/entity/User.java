@@ -6,6 +6,7 @@ import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
+import com.stockviewer.stockapi.wallet.entity.Wallet;
 
 import java.time.LocalDateTime;
 import java.util.HashSet;
@@ -52,6 +53,9 @@ public class User {
     @UpdateTimestamp
     @Column(name="updated_at")
     private LocalDateTime updatedAt;
+
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+    private Set<Wallet> wallets = new HashSet<>();
 
     @PrePersist
     private void createDefaultWatchlist() {

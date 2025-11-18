@@ -28,44 +28,54 @@ CREATE TABLE user_management.user_role (
     PRIMARY KEY (user_id, role_id)
 );
 
-CREATE TABLE user_management.wallet (
-    wallet_id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    user_id UUID NOT NULL,
-    FOREIGN KEY (user_id) REFERENCES app_user(user_id) ON DELETE CASCADE
-);
 
 CREATE TABLE stock_data.asset (
   asset_id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   symbol VARCHAR(32) NOT NULL UNIQUE,
-  display_name VARCHAR(128),
-  precision INT DEFAULT 8,
-  created_at TIMESTAMP WITH TIME ZONE DEFAULT now(),
+  display_name VARCHAR(128) NOT NULL
+);
+
+INSERT INTO stock_data.asset (symbol, display_name)
+VALUES
+    ('BTC', 'Bitcoin'),
+    ('ETH', 'Ethereum'),
+    ('USDC', 'USD Coin'),
+    ('SOL', 'Solana');
+
+CREATE TABLE user_management.wallet (
+    wallet_id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    user_id UUID NOT NULL,
+    managed_asset_id UUID DEFAULT NULL,
+    FOREIGN KEY (managed_asset_id) REFERENCES stock_data.asset(asset_id) ON DELETE SET NULL,
+    FOREIGN KEY (user_id) REFERENCES app_user(user_id) ON DELETE CASCADE
 );
 
 CREATE TABLE user_management.owned_asset (
     owned_asset_id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     wallet_id UUID NOT NULL,
-    pair_id UUID NOT NULL,
+    asset_id UUID NOT NULL,
     amount DECIMAL(18,8) NOT NULL,
     FOREIGN KEY (wallet_id) REFERENCES wallet(wallet_id) ON DELETE CASCADE,
-    FOREIGN KEY (pair_id) REFERENCES pair(pair_id) ON DELETE CASCADE
+    FOREIGN KEY (asset_id) REFERENCES asset(asset_id) ON DELETE CASCADE
 );
 
 CREATE TABLE stock_data.pair (
     pair_id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    symbol VARCHAR(10) NOT NULL,
-    base VARCHAR(5) NOT NULL,
-    quote VARCHAR(5),
+    symbol VARCHAR(20) NOT NULL,
+    base_asset_id UUID NOT NULL,
+    quote_asset_id UUID NOT NULL,
     market VARCHAR(10) NOT NULL,
-    exchange VARCHAR(15) NOT NULL
+    exchange VARCHAR(15) NOT NULL,
+    FOREIGN KEY (base_asset_id) REFERENCES asset(asset_id) ON DELETE CASCADE,
+    FOREIGN KEY (quote_asset_id) REFERENCES asset(asset_id) ON DELETE CASCADE
 );
 
-INSERT INTO stock_data.pair (symbol, base, quote, market, exchange)
+INSERT INTO stock_data.pair (symbol, base_asset_id, quote_asset_id, market, exchange)
 VALUES
-    ('BTCUSDC', 'BTC', 'USDC', 'Spot', 'Binance'),
-    ( 'ETHUSDC', 'ETH', 'USDC', 'Spot', 'Binance'),
-    ( 'ETHBTC', 'ETH', 'BTC', 'Spot', 'Binance'),
-    ( 'SOLUSDC', 'SOL', 'USDC', 'Spot', 'Binance');
+    ('BTCUSDC', (SELECT asset_id FROM asset WHERE symbol = 'BTC'), (SELECT asset_id FROM asset WHERE symbol = 'USDC'), 'Spot', 'Binance'),
+    ('ETHUSDC', (SELECT asset_id FROM asset WHERE symbol = 'ETH'), (SELECT asset_id FROM asset WHERE symbol = 'USDC'), 'Spot', 'Binance'),
+    ('ETHBTC', (SELECT asset_id FROM asset WHERE symbol = 'ETH'), (SELECT asset_id FROM asset WHERE symbol = 'BTC'), 'Spot', 'Binance'),
+    ('SOLUSDC', (SELECT asset_id FROM asset WHERE symbol = 'SOL'), (SELECT asset_id FROM asset WHERE symbol = 'USDC'), 'Spot', 'Binance');
 
 
 CREATE TABLE user_management.trade (
