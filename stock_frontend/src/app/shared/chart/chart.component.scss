@@ -84,6 +84,7 @@
 
 /* ensure chart canvas itself doesn't capture overlays visually */
 .chart-area canvas {
+  width: 100% !important;
   position: absolute;
   inset: 0;
   z-index: 0;
