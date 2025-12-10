@@ -14,14 +14,26 @@
   width: 100%;
   height: 100%;   /* ensure chart fills parent */
   isolation: isolate;
+  display: flex;
+  flex-direction: column;
 }
 
 /* chart area relative so canvas can size to parent */
 .chart-area {
   position: relative;
   width: 100%;
-  height: 100%;
+  flex: 1;
   z-index: 0;
+}
+
+/* MACD area (nowy) */
+.macd-area {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  flex: 0 0 200px;
+  z-index: 0;
+  border-top: 1px solid rgba(255,255,255,0.06);
 }
 
 /* overlays (title / buttons) */

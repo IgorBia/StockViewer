@@ -82,9 +82,11 @@ CREATE TABLE user_management.trade (
     trade_id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
     user_id UUID NOT NULL,
     pair_id UUID NOT NULL,
-    time TIMESTAMP NOT NULL,
+    timestamp TIMESTAMP NOT NULL,
     price DECIMAL(18,8) NOT NULL,
-    amount DECIMAL(18,8) NOT NULL,
+    transaction_type VARCHAR(10) NOT NULL,
+    base_amount DECIMAL(18,8) NOT NULL,
+    quote_amount DECIMAL(18,8) NOT NULL,        
     FOREIGN KEY (user_id) REFERENCES app_user(user_id) ON DELETE CASCADE,
     FOREIGN KEY (pair_id) REFERENCES pair(pair_id) ON DELETE CASCADE
 );

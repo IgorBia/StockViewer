@@ -10,5 +10,9 @@
     <button (click)="changeInterval('1d')"  [class.active]="chartService.getInterval() === '1d'">1d</button>
   </div>
 
+  <!-- Główny wykres (świece + EMA9) -->
   <div #chartContainer class="chart-area"></div>
+
+  <!-- Panel MACD (osobny wykres) -->
+  <div #macdContainer class="macd-area"></div>
 </div>

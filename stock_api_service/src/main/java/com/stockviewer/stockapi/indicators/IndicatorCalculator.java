@@ -58,6 +58,22 @@ public class IndicatorCalculator {
         return ema9.getValue(series.getEndIndex()).bigDecimalValue();
     }
 
+    public Indicator calculateMACDSignal(Candle candle) {
+        return new Indicator("MACD_SIGNAL", candle, calculateMACDSignalValue(candle), LocalDateTime.now());
+    }
+
+    private BigDecimal calculateMACDSignalValue(Candle candle) {
+        BarSeries series = getBarSeries("macd_signal_series", candle);
+        if(series.getBarCount() < 26) return BigDecimal.ZERO;
+
+        ClosePriceIndicator closePrice = new ClosePriceIndicator(series);
+        MACDIndicator macd = new MACDIndicator(closePrice, 12, 26);
+        
+        EMAIndicator signal = new EMAIndicator(macd, 9);
+
+        return signal.getValue(series.getEndIndex()).bigDecimalValue();
+    }
+
     private BarSeries getBarSeries(String seriesName, Candle candle){
         List<Candle> candles = candleService.getCandlesBySymbolAndTimeframe(candle.getPair().getSymbol(), candle.getTimeframe());
 

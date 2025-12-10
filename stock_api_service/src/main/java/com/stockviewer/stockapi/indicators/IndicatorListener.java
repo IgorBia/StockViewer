@@ -43,6 +43,8 @@ public class IndicatorListener {
         indicatorRepository.save(macd);
         Indicator ema9 = indicatorCalculator.calculateEMA9(candle);
         indicatorRepository.save(ema9);
+        Indicator macdSignal = indicatorCalculator.calculateMACDSignal(candle);
+        indicatorRepository.save(macdSignal);
         logger.info("Saved Indicator Event in group stockapi");
     }
 }

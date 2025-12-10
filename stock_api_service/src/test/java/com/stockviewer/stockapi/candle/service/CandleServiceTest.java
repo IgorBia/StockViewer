@@ -6,6 +6,10 @@ import com.stockviewer.stockapi.candle.entity.Candle;
 import com.stockviewer.stockapi.candle.mapper.CandleMapper;
 import org.mapstruct.factory.Mappers;
 import com.stockviewer.stockapi.candle.repository.CandleRepository;
+import com.stockviewer.stockapi.candle.repository.PairRepository;
+
+import ch.qos.logback.core.joran.sanity.Pair;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -27,6 +31,8 @@ public class CandleServiceTest {
     @Mock
     private CandleRepository candleRepository;
 
+    @Mock PairRepository pairRepository;
+
     CandleMapper candleMapper = Mappers.getMapper(CandleMapper.class);
 
     private CandleConfig candleConfig;
@@ -35,7 +41,7 @@ public class CandleServiceTest {
 
     @BeforeEach
     void setUp() {
-        candleService = new CandleService(candleRepository, candleMapper, candleConfig);
+        candleService = new CandleService(candleRepository, candleMapper, candleConfig, pairRepository);
     }
 
     private List<Candle> getSampleCandleList() {

@@ -1,5 +1,6 @@
 package com.stockviewer.stockapi.candle.controller;
 
+import com.stockviewer.stockapi.candle.dto.CandleDTO;
 import com.stockviewer.stockapi.candle.dto.CandleResponse;
 import com.stockviewer.stockapi.candle.service.CandleService;
 import org.springframework.http.ResponseEntity;
@@ -28,5 +29,12 @@ public class CandleController {
         return ResponseEntity
                 .status(200)
                 .body(new CandleResponse(candleService.getCandlesDTOBySymbolAndTimeframe(symbol, timeframe)));
+    }
+
+    @GetMapping("/{symbol}/{timeframe}/refresh")
+    public ResponseEntity<CandleDTO> refreshCandleData(@PathVariable String symbol, @PathVariable String timeframe) {
+        return ResponseEntity
+                .status(200)
+                .body(candleService.getActualCandleData(symbol, timeframe));
     }
 }
