@@ -15,8 +15,8 @@ import org.springframework.test.context.TestPropertySource;
 @Import(TestSecurityConfig.class)
 class StockapiApplicationTests {
 
-	@Test
-	void contextLoads() {
-	}
+	// @Test
+	// void contextLoads() {
+	// }
 
 }

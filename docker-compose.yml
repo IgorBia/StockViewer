@@ -24,6 +24,8 @@ services:
       dockerfile: Dockerfile
     container_name: stockviewer-spring
     restart: on-failure
+    environment:
+      - TZ=Europe/Warsaw
     env_file:
       - .env
     depends_on:
@@ -35,6 +37,8 @@ services:
       - "8080:8080"
     networks:
       - app-network
+    volumes:
+      - ./logs:/app/logs
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8080/actuator/health"]
       interval: 5s

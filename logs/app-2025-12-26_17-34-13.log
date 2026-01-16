@@ -1,0 +1,273 @@
+2025-12-26 17:34:13.687 INFO  [background-preinit] o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-12-26 17:34:13.725 INFO  [main] c.s.stockapi.StockapiApplication - Starting StockapiApplication v0.0.1-SNAPSHOT using Java 21.0.9 with PID 1 (/app/app.jar started by root in /app)
+2025-12-26 17:34:13.726 INFO  [main] c.s.stockapi.StockapiApplication - The following 1 profile is active: "dev"
+2025-12-26 17:34:14.422 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-26 17:34:14.478 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 49 ms. Found 10 JPA repository interfaces.
+2025-12-26 17:34:15.178 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-12-26 17:34:15.194 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-12-26 17:34:15.197 INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-12-26 17:34:15.198 INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.40]
+2025-12-26 17:34:15.225 INFO  [main] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-12-26 17:34:15.226 INFO  [main] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1458 ms
+2025-12-26 17:34:15.481 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-12-26 17:34:15.625 INFO  [main] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@6d3ad37a
+2025-12-26 17:34:15.627 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-12-26 17:34:15.657 INFO  [main] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-12-26 17:34:15.718 INFO  [main] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.13.Final
+2025-12-26 17:34:15.750 INFO  [main] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-12-26 17:34:15.982 INFO  [main] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-26 17:34:16.027 WARN  [main] org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-12-26 17:34:16.038 INFO  [main] o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 15.15
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-12-26 17:34:16.867 INFO  [main] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-12-26 17:34:16.869 INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-26 17:34:17.176 INFO  [main] o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-12-26 17:34:18.036 INFO  [main] o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-12-26 17:34:18.178 WARN  [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-26 17:34:18.287 WARN  [main] o.s.s.c.a.w.c.AuthorizeHttpRequestsConfigurer$AuthorizationManagerRequestMatcherRegistry - One of the patterns in [candles/**, users/**, /actuator/health] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-12-26 17:34:18.569 INFO  [main] o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoints beneath base path '/actuator'
+2025-12-26 17:34:19.086 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-12-26 17:34:19.095 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-12-26 17:34:19.122 INFO  [main] o.a.k.c.consumer.ConsumerConfig - ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = latest
+	bootstrap.servers = [kafka:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-stockapi-1
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = stockapi
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+
+2025-12-26 17:34:19.159 INFO  [main] o.a.k.c.t.i.KafkaMetricsCollector - initializing Kafka metrics collector
+2025-12-26 17:34:19.259 INFO  [main] o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.8.1
+2025-12-26 17:34:19.259 INFO  [main] o.a.kafka.common.utils.AppInfoParser - Kafka commitId: 70d6ff42debf7e17
+2025-12-26 17:34:19.259 INFO  [main] o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1766770459258
+2025-12-26 17:34:19.266 INFO  [main] o.a.k.c.c.i.LegacyKafkaConsumer - [Consumer clientId=consumer-stockapi-1, groupId=stockapi] Subscribed to topic(s): indicator_events
+2025-12-26 17:34:19.283 INFO  [main] c.s.stockapi.StockapiApplication - Started StockapiApplication in 5.961 seconds (process running for 6.266)
+2025-12-26 17:34:19.539 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.clients.Metadata - [Consumer clientId=consumer-stockapi-1, groupId=stockapi] Cluster ID: 5L6g3nShT-eMCtK--X86sw
+2025-12-26 17:34:19.540 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-stockapi-1, groupId=stockapi] Discovered group coordinator kafka:9092 (id: 2147483646 rack: null)
+2025-12-26 17:34:19.541 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-stockapi-1, groupId=stockapi] (Re-)joining group
+2025-12-26 17:34:19.557 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-stockapi-1, groupId=stockapi] Request joining group due to: need to re-join with the given member-id: consumer-stockapi-1-6676ec8f-8e8c-4704-bd6e-b048342d4ed1
+2025-12-26 17:34:19.557 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-stockapi-1, groupId=stockapi] (Re-)joining group
+2025-12-26 17:34:22.566 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-stockapi-1, groupId=stockapi] Successfully joined group with generation Generation{generationId=25, memberId='consumer-stockapi-1-6676ec8f-8e8c-4704-bd6e-b048342d4ed1', protocol='range'}
+2025-12-26 17:34:22.570 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-stockapi-1, groupId=stockapi] Finished assignment for group at generation 25: {consumer-stockapi-1-6676ec8f-8e8c-4704-bd6e-b048342d4ed1=Assignment(partitions=[indicator_events-0])}
+2025-12-26 17:34:22.581 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-stockapi-1, groupId=stockapi] Successfully synced group in generation Generation{generationId=25, memberId='consumer-stockapi-1-6676ec8f-8e8c-4704-bd6e-b048342d4ed1', protocol='range'}
+2025-12-26 17:34:22.582 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-stockapi-1, groupId=stockapi] Notifying assignor about the new Assignment(partitions=[indicator_events-0])
+2025-12-26 17:34:22.584 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.i.ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-stockapi-1, groupId=stockapi] Adding newly assigned partitions: indicator_events-0
+2025-12-26 17:34:22.595 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerUtils - Setting offset for partition indicator_events-0 to the committed offset FetchPosition{offset=3648, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[kafka:9092 (id: 1 rack: null)], epoch=24}}
+2025-12-26 17:34:22.596 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer - stockapi: partitions assigned: [indicator_events-0]
+2025-12-26 17:34:22.634 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Received Message in group stockapi: ["06cee3b0-95ee-4c6b-b085-ae70d3209138"]
+2025-12-26 17:34:22.865 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 311
+2025-12-26 17:34:22.866 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2025-12-26 17:34:22.969 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 311
+2025-12-26 17:34:22.969 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2025-12-26 17:34:23.002 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 311
+2025-12-26 17:34:23.003 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2025-12-26 17:34:23.009 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Saved Indicator Event in group stockapi
+2025-12-26 17:34:23.010 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Received Message in group stockapi: ["ba00faa3-9403-440b-98cb-02bb332fae61"]
+2025-12-26 17:34:23.042 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 311
+2025-12-26 17:34:23.043 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2025-12-26 17:34:23.083 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 311
+2025-12-26 17:34:23.084 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2025-12-26 17:34:23.125 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 311
+2025-12-26 17:34:23.126 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2025-12-26 17:34:23.133 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Saved Indicator Event in group stockapi
+2025-12-26 17:34:23.133 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Received Message in group stockapi: ["eb37304d-ae9d-4d36-befb-26fa4ee1d6b0"]
+2025-12-26 17:34:23.163 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 311
+2025-12-26 17:34:23.164 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2025-12-26 17:34:23.178 INFO  [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-26 17:34:23.179 INFO  [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-12-26 17:34:23.180 INFO  [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-12-26 17:34:23.198 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 311
+2025-12-26 17:34:23.198 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2025-12-26 17:34:23.232 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 311
+2025-12-26 17:34:23.232 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2025-12-26 17:34:23.240 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Saved Indicator Event in group stockapi
+2025-12-26 17:34:23.241 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Received Message in group stockapi: ["3e0bbc95-d026-4f68-9076-b3ecbb80de0b"]
+2025-12-26 17:34:23.276 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 311
+2025-12-26 17:34:23.276 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2025-12-26 17:34:23.310 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 311
+2025-12-26 17:34:23.310 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2025-12-26 17:34:23.338 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 311
+2025-12-26 17:34:23.338 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2025-12-26 17:34:23.344 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Saved Indicator Event in group stockapi
+2025-12-26 17:34:23.344 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Received Message in group stockapi: ["50f93299-22aa-4211-8f9c-99f089a5cd34"]
+2025-12-26 17:34:23.373 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 311
+2025-12-26 17:34:23.374 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2025-12-26 17:34:23.404 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 311
+2025-12-26 17:34:23.404 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2025-12-26 17:34:23.431 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 311
+2025-12-26 17:34:23.432 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2025-12-26 17:34:23.443 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Saved Indicator Event in group stockapi
+2025-12-26 17:34:23.443 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Received Message in group stockapi: ["1d6d2009-82be-4002-a3fe-10dfe5f9a63f"]
+2025-12-26 17:34:23.455 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 311
+2025-12-26 17:34:23.455 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2025-12-26 17:34:23.468 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 311
+2025-12-26 17:34:23.469 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2025-12-26 17:34:23.490 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 311
+2025-12-26 17:34:23.490 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2025-12-26 17:34:23.497 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Saved Indicator Event in group stockapi
+2025-12-26 17:34:23.497 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Received Message in group stockapi: ["d470cb59-ed93-4a2d-ad41-7ee410644a3b"]
+2025-12-26 17:34:23.518 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 311
+2025-12-26 17:34:23.518 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2025-12-26 17:34:23.540 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 311
+2025-12-26 17:34:23.541 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2025-12-26 17:34:23.562 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 311
+2025-12-26 17:34:23.562 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2025-12-26 17:34:23.567 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Saved Indicator Event in group stockapi
+2025-12-26 17:34:23.567 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Received Message in group stockapi: ["d5916ff3-3cc6-44a3-ab5b-b182b955cac8"]
+2025-12-26 17:34:23.586 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 311
+2025-12-26 17:34:23.587 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2025-12-26 17:34:23.607 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 311
+2025-12-26 17:34:23.608 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2025-12-26 17:34:23.628 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 311
+2025-12-26 17:34:23.629 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2025-12-26 17:34:23.632 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Saved Indicator Event in group stockapi
+2025-12-26 17:35:00.011 INFO  [scheduling-1] c.s.s.w.s.WalletWorthSnapshotScheduler - Taking wallet worth snapshot for wallet from user: igor.bialas@gmail.com
+2025-12-26 17:36:00.004 INFO  [scheduling-1] c.s.s.w.s.WalletWorthSnapshotScheduler - Taking wallet worth snapshot for wallet from user: igor.bialas@gmail.com
+2025-12-26 17:36:02.344 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Received Message in group stockapi: ["6d5bf417-d427-43a5-87ab-db0ac9c80b87"]
+2025-12-26 17:36:02.359 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 312
+2025-12-26 17:36:02.359 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2025-12-26 17:36:02.382 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 312
+2025-12-26 17:36:02.382 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2025-12-26 17:36:02.398 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 312
+2025-12-26 17:36:02.398 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2025-12-26 17:36:02.402 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Saved Indicator Event in group stockapi
+2025-12-26 17:36:02.406 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Received Message in group stockapi: ["1bc43552-2ec9-4b25-882a-edf36d9fbc57"]
+2025-12-26 17:36:02.424 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 312
+2025-12-26 17:36:02.424 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2025-12-26 17:36:02.447 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 312
+2025-12-26 17:36:02.447 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2025-12-26 17:36:02.461 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 312
+2025-12-26 17:36:02.461 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2025-12-26 17:36:02.466 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Saved Indicator Event in group stockapi
+2025-12-26 17:36:02.469 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Received Message in group stockapi: ["291237df-0b67-4596-8ab2-b777775d70b3"]
+2025-12-26 17:36:02.480 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 312
+2025-12-26 17:36:02.481 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2025-12-26 17:36:02.494 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 312
+2025-12-26 17:36:02.494 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2025-12-26 17:36:02.508 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 312
+2025-12-26 17:36:02.508 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2025-12-26 17:36:02.512 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Saved Indicator Event in group stockapi
+2025-12-26 17:36:02.512 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Received Message in group stockapi: ["67fdaa4a-6a65-4b09-98e8-d58e3479ffb7"]
+2025-12-26 17:36:02.527 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 312
+2025-12-26 17:36:02.527 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2025-12-26 17:36:02.541 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 312
+2025-12-26 17:36:02.541 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2025-12-26 17:36:02.552 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 312
+2025-12-26 17:36:02.552 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2025-12-26 17:36:02.556 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Saved Indicator Event in group stockapi
+2025-12-26 17:36:08.529 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.i.ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-stockapi-1, groupId=stockapi] Revoke previously assigned partitions indicator_events-0
+2025-12-26 17:36:08.529 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer - stockapi: partitions revoked: [indicator_events-0]
+2025-12-26 17:36:08.529 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-stockapi-1, groupId=stockapi] Member consumer-stockapi-1-6676ec8f-8e8c-4704-bd6e-b048342d4ed1 sending LeaveGroup request to coordinator kafka:9092 (id: 2147483646 rack: null) due to the consumer unsubscribed from all topics
+2025-12-26 17:36:08.530 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-stockapi-1, groupId=stockapi] Resetting generation and member id due to: consumer pro-actively leaving the group
+2025-12-26 17:36:08.530 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-stockapi-1, groupId=stockapi] Request joining group due to: consumer pro-actively leaving the group
+2025-12-26 17:36:08.530 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.i.LegacyKafkaConsumer - [Consumer clientId=consumer-stockapi-1, groupId=stockapi] Unsubscribed all topics or patterns and assigned partitions
+2025-12-26 17:36:08.532 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-stockapi-1, groupId=stockapi] Resetting generation and member id due to: consumer pro-actively leaving the group
+2025-12-26 17:36:08.532 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-stockapi-1, groupId=stockapi] Request joining group due to: consumer pro-actively leaving the group
+2025-12-26 17:36:09.000 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.kafka.common.metrics.Metrics - Metrics scheduler closed
+2025-12-26 17:36:09.001 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2025-12-26 17:36:09.001 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2025-12-26 17:36:09.001 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.kafka.common.metrics.Metrics - Metrics reporters closed
+2025-12-26 17:36:09.006 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.kafka.common.utils.AppInfoParser - App info kafka.consumer for consumer-stockapi-1 unregistered
+2025-12-26 17:36:09.007 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer - stockapi: Consumer stopped
+2025-12-26 17:36:09.008 INFO  [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-12-26 17:36:09.011 INFO  [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-12-26 17:36:09.018 INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-26 17:36:09.020 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-12-26 17:36:09.022 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.

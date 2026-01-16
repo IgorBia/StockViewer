@@ -1,0 +1,622 @@
+2026-01-03 19:06:14.685 INFO  [background-preinit] o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2026-01-03 19:06:14.750 INFO  [main] c.s.stockapi.StockapiApplication - Starting StockapiApplication v0.0.1-SNAPSHOT using Java 21.0.9 with PID 1 (/app/app.jar started by root in /app)
+2026-01-03 19:06:14.750 INFO  [main] c.s.stockapi.StockapiApplication - The following 1 profile is active: "dev"
+2026-01-03 19:06:15.377 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-03 19:06:15.430 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 46 ms. Found 11 JPA repository interfaces.
+2026-01-03 19:06:16.054 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-01-03 19:06:16.063 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-01-03 19:06:16.064 INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-01-03 19:06:16.065 INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.40]
+2026-01-03 19:06:16.084 INFO  [main] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-01-03 19:06:16.084 INFO  [main] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1300 ms
+2026-01-03 19:06:16.351 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-03 19:06:16.484 INFO  [main] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@21a5b599
+2026-01-03 19:06:16.485 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-01-03 19:06:16.516 INFO  [main] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-03 19:06:16.575 INFO  [main] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.13.Final
+2026-01-03 19:06:16.602 INFO  [main] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-01-03 19:06:16.784 INFO  [main] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-03 19:06:16.821 WARN  [main] org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-01-03 19:06:16.830 INFO  [main] o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 15.15
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-03 19:06:17.608 INFO  [main] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-03 19:06:17.610 INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-03 19:06:17.824 INFO  [main] o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-01-03 19:06:18.672 INFO  [main] o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2026-01-03 19:06:18.747 WARN  [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-01-03 19:06:18.807 WARN  [main] o.s.s.c.a.w.c.AuthorizeHttpRequestsConfigurer$AuthorizationManagerRequestMatcherRegistry - One of the patterns in [candles/**, users/**, /actuator/health] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2026-01-03 19:06:19.016 INFO  [main] o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoints beneath base path '/actuator'
+2026-01-03 19:06:19.386 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-01-03 19:06:19.394 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-01-03 19:06:19.424 INFO  [main] o.a.k.c.consumer.ConsumerConfig - ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = latest
+	bootstrap.servers = [kafka:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-stockapi-1
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = stockapi
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+
+2026-01-03 19:06:19.467 INFO  [main] o.a.k.c.t.i.KafkaMetricsCollector - initializing Kafka metrics collector
+2026-01-03 19:06:19.558 INFO  [main] o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.8.1
+2026-01-03 19:06:19.558 INFO  [main] o.a.kafka.common.utils.AppInfoParser - Kafka commitId: 70d6ff42debf7e17
+2026-01-03 19:06:19.558 INFO  [main] o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1767463579557
+2026-01-03 19:06:19.573 INFO  [main] o.a.k.c.c.i.LegacyKafkaConsumer - [Consumer clientId=consumer-stockapi-1, groupId=stockapi] Subscribed to topic(s): indicator_events
+2026-01-03 19:06:19.594 INFO  [main] c.s.stockapi.StockapiApplication - Started StockapiApplication in 5.228 seconds (process running for 5.507)
+2026-01-03 19:06:19.787 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.clients.Metadata - [Consumer clientId=consumer-stockapi-1, groupId=stockapi] Cluster ID: 5L6g3nShT-eMCtK--X86sw
+2026-01-03 19:06:19.788 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-stockapi-1, groupId=stockapi] Discovered group coordinator kafka:9092 (id: 2147483646 rack: null)
+2026-01-03 19:06:19.789 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-stockapi-1, groupId=stockapi] (Re-)joining group
+2026-01-03 19:06:19.808 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-stockapi-1, groupId=stockapi] Request joining group due to: need to re-join with the given member-id: consumer-stockapi-1-09bda90f-d08d-47d5-bdb2-6116cb76c3d6
+2026-01-03 19:06:19.809 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-stockapi-1, groupId=stockapi] (Re-)joining group
+2026-01-03 19:06:22.819 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-stockapi-1, groupId=stockapi] Successfully joined group with generation Generation{generationId=5, memberId='consumer-stockapi-1-09bda90f-d08d-47d5-bdb2-6116cb76c3d6', protocol='range'}
+2026-01-03 19:06:22.824 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-stockapi-1, groupId=stockapi] Finished assignment for group at generation 5: {consumer-stockapi-1-09bda90f-d08d-47d5-bdb2-6116cb76c3d6=Assignment(partitions=[indicator_events-0])}
+2026-01-03 19:06:22.836 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-stockapi-1, groupId=stockapi] Successfully synced group in generation Generation{generationId=5, memberId='consumer-stockapi-1-09bda90f-d08d-47d5-bdb2-6116cb76c3d6', protocol='range'}
+2026-01-03 19:06:22.836 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-stockapi-1, groupId=stockapi] Notifying assignor about the new Assignment(partitions=[indicator_events-0])
+2026-01-03 19:06:22.838 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.i.ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-stockapi-1, groupId=stockapi] Adding newly assigned partitions: indicator_events-0
+2026-01-03 19:06:22.847 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerUtils - Setting offset for partition indicator_events-0 to the committed offset FetchPosition{offset=3240, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[kafka:9092 (id: 1 rack: null)], epoch=4}}
+2026-01-03 19:06:22.848 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer - stockapi: partitions assigned: [indicator_events-0]
+2026-01-03 19:06:22.888 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Received Message in group stockapi: ["18c09a5d-fa8f-4956-b82f-4efa612a92bd"]
+2026-01-03 19:06:23.082 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 216
+2026-01-03 19:06:23.082 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-03 19:06:23.170 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 216
+2026-01-03 19:06:23.170 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-03 19:06:23.191 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 216
+2026-01-03 19:06:23.191 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-03 19:06:23.199 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Saved Indicator Event in group stockapi
+2026-01-03 19:06:23.201 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Received Message in group stockapi: ["d9661f66-8ff6-453b-85fa-e7ec1a0f8ede"]
+2026-01-03 19:06:23.217 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 216
+2026-01-03 19:06:23.217 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-03 19:06:23.239 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 216
+2026-01-03 19:06:23.239 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-03 19:06:23.263 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 216
+2026-01-03 19:06:23.264 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-03 19:06:23.268 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Saved Indicator Event in group stockapi
+2026-01-03 19:06:23.268 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Received Message in group stockapi: ["a39bcfcd-a7c0-4331-9180-ee8fe3f7e9fb"]
+2026-01-03 19:06:23.292 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 215
+2026-01-03 19:06:23.292 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-03 19:06:23.322 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 215
+2026-01-03 19:06:23.322 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-03 19:06:23.343 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 215
+2026-01-03 19:06:23.344 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-03 19:06:23.348 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Saved Indicator Event in group stockapi
+2026-01-03 19:06:23.349 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Received Message in group stockapi: ["17382e41-43ab-454f-902e-e8e86619bb6e"]
+2026-01-03 19:06:23.368 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 216
+2026-01-03 19:06:23.368 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-03 19:06:23.388 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 216
+2026-01-03 19:06:23.388 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-03 19:06:23.412 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 216
+2026-01-03 19:06:23.412 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-03 19:06:23.419 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Saved Indicator Event in group stockapi
+2026-01-03 19:06:23.420 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Received Message in group stockapi: ["b5bbe96b-9255-4688-820c-93c4748dea40"]
+2026-01-03 19:06:23.433 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 216
+2026-01-03 19:06:23.433 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-03 19:06:23.449 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 216
+2026-01-03 19:06:23.449 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-03 19:06:23.465 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 216
+2026-01-03 19:06:23.466 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-03 19:06:23.472 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Saved Indicator Event in group stockapi
+2026-01-03 19:06:23.473 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Received Message in group stockapi: ["73ec17f8-2dc9-4ca8-a504-8f2a8a46b1d7"]
+2026-01-03 19:06:23.485 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 216
+2026-01-03 19:06:23.486 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-03 19:06:23.502 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 216
+2026-01-03 19:06:23.502 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-03 19:06:23.512 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 216
+2026-01-03 19:06:23.512 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-03 19:06:23.515 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Saved Indicator Event in group stockapi
+2026-01-03 19:06:23.515 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Received Message in group stockapi: ["50c88c7d-7824-4c9f-84b2-5db76ceb6e15"]
+2026-01-03 19:06:23.523 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 216
+2026-01-03 19:06:23.523 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-03 19:06:23.535 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 216
+2026-01-03 19:06:23.535 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-03 19:06:23.548 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 216
+2026-01-03 19:06:23.548 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-03 19:06:23.552 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Saved Indicator Event in group stockapi
+2026-01-03 19:06:23.552 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Received Message in group stockapi: ["fdfcb725-e41f-41b4-a289-ed0e2ba1a91f"]
+2026-01-03 19:06:23.562 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 215
+2026-01-03 19:06:23.562 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-03 19:06:23.571 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 215
+2026-01-03 19:06:23.572 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-03 19:06:23.581 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 215
+2026-01-03 19:06:23.582 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-03 19:06:23.585 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Saved Indicator Event in group stockapi
+2026-01-03 19:06:23.585 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Received Message in group stockapi: ["8d621dad-7bb9-488b-b910-f2388d3a3e29"]
+2026-01-03 19:06:23.594 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 216
+2026-01-03 19:06:23.594 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-03 19:06:23.609 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 216
+2026-01-03 19:06:23.609 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-03 19:06:23.624 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 216
+2026-01-03 19:06:23.625 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-03 19:06:23.635 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Saved Indicator Event in group stockapi
+2026-01-03 19:06:23.636 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Received Message in group stockapi: ["72006306-792f-4eff-a932-b50969bbd794"]
+2026-01-03 19:06:23.647 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 216
+2026-01-03 19:06:23.647 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-03 19:06:23.659 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 216
+2026-01-03 19:06:23.659 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-03 19:06:23.670 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 216
+2026-01-03 19:06:23.670 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-03 19:06:23.675 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Saved Indicator Event in group stockapi
+2026-01-03 19:06:23.676 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Received Message in group stockapi: ["09b96afe-153a-41bd-92d5-678ad43485f2"]
+2026-01-03 19:06:23.686 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 216
+2026-01-03 19:06:23.686 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-03 19:06:23.700 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 216
+2026-01-03 19:06:23.700 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-03 19:06:23.710 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 216
+2026-01-03 19:06:23.710 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-03 19:06:23.713 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Saved Indicator Event in group stockapi
+2026-01-03 19:06:23.714 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Received Message in group stockapi: ["e4f8c709-8813-4af8-9c78-7d36947f85ce"]
+2026-01-03 19:06:23.721 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 216
+2026-01-03 19:06:23.721 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-03 19:06:23.730 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 216
+2026-01-03 19:06:23.730 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-03 19:06:23.738 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 216
+2026-01-03 19:06:23.739 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-03 19:06:23.743 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Saved Indicator Event in group stockapi
+2026-01-03 19:06:23.743 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Received Message in group stockapi: ["b9b6c591-5ed5-452f-a7e2-5de9feabaadb"]
+2026-01-03 19:06:23.754 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 216
+2026-01-03 19:06:23.754 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-03 19:06:23.764 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 216
+2026-01-03 19:06:23.764 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-03 19:06:23.773 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 216
+2026-01-03 19:06:23.773 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-03 19:06:23.776 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Saved Indicator Event in group stockapi
+2026-01-03 19:06:23.776 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Received Message in group stockapi: ["667650cd-fa74-4c57-905b-8b10ae556b1a"]
+2026-01-03 19:06:23.784 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 216
+2026-01-03 19:06:23.785 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-03 19:06:23.793 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 216
+2026-01-03 19:06:23.794 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-03 19:06:23.802 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 216
+2026-01-03 19:06:23.802 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-03 19:06:23.804 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Saved Indicator Event in group stockapi
+2026-01-03 19:06:23.805 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Received Message in group stockapi: ["312bcef9-1907-4003-9ad8-e53f4710eac0"]
+2026-01-03 19:06:23.812 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 216
+2026-01-03 19:06:23.812 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-03 19:06:23.821 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 216
+2026-01-03 19:06:23.822 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-03 19:06:23.829 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 216
+2026-01-03 19:06:23.829 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-03 19:06:23.833 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Saved Indicator Event in group stockapi
+2026-01-03 19:06:23.848 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Received Message in group stockapi: ["cbc55c54-d391-47c5-91db-8c6ee0143900"]
+2026-01-03 19:06:23.856 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 216
+2026-01-03 19:06:23.856 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-03 19:06:23.865 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 216
+2026-01-03 19:06:23.865 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-03 19:06:23.872 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 216
+2026-01-03 19:06:23.872 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-03 19:06:23.875 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Saved Indicator Event in group stockapi
+2026-01-03 19:06:24.227 INFO  [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-01-03 19:06:24.227 INFO  [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-01-03 19:06:24.228 INFO  [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-01-03 19:06:30.013 INFO  [scheduling-1] c.s.s.trade.service.TradeExecutor - [BTCUSDC] Executing trades for managed accounts...
+2026-01-03 19:06:30.016 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing trades for managed assets for pair BTCUSDC
+2026-01-03 19:06:30.016 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Found 0 users with managed assets for pair BTCUSDC
+2026-01-03 19:06:30.496 INFO  [scheduling-1] c.s.s.trade.service.TradeExecutor - [ETHBTC] Executing trades for managed accounts...
+2026-01-03 19:06:30.499 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing trades for managed assets for pair ETHBTC
+2026-01-03 19:06:30.499 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Found 0 users with managed assets for pair ETHBTC
+2026-01-03 19:06:30.903 INFO  [scheduling-1] c.s.s.trade.service.TradeExecutor - [SOLUSDC] Executing trades for managed accounts...
+2026-01-03 19:06:30.906 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing trades for managed assets for pair SOLUSDC
+2026-01-03 19:06:30.906 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Found 1 users with managed assets for pair SOLUSDC
+2026-01-03 19:06:31.316 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Checking user igor.bialas@gmail.com for managed asset trades...
+2026-01-03 19:06:31.332 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing SELL trade for user d7c42ede-7779-4f55-8afb-1d64d8e2ed98 on pair SOLUSDC
+2026-01-03 19:06:32.550 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Calculated PnL for SELL trade: asset=SOL, soldAmount=0.0303283038, avgPurchasePrice=131.89000000, sellPrice=131.61000000, PnL=-0.008491925064000000
+2026-01-03 19:06:32.579 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing SELL trade for user igor.bialas@gmail.com on pair SOLUSDC: baseAmount=0.0303283038, quoteAmount=3.991508063118000000
+2026-01-03 19:06:32.601 ERROR [scheduling-1] c.s.s.trade.service.TradeService - Error processing managed asset trades for user igor.bialas@gmail.com: Could not initialize proxy [com.stockviewer.stockapi.wallet.entity.Asset#49e26e2e-58b2-4041-b7e5-37396bcdd75d] - no session
+org.hibernate.LazyInitializationException: Could not initialize proxy [com.stockviewer.stockapi.wallet.entity.Asset#49e26e2e-58b2-4041-b7e5-37396bcdd75d] - no session
+	at org.hibernate.proxy.AbstractLazyInitializer.initialize(AbstractLazyInitializer.java:174)
+	at org.hibernate.proxy.AbstractLazyInitializer.getImplementation(AbstractLazyInitializer.java:328)
+	at org.hibernate.proxy.pojo.bytebuddy.ByteBuddyInterceptor.intercept(ByteBuddyInterceptor.java:44)
+	at org.hibernate.proxy.ProxyConfiguration$InterceptorDispatcher.intercept(ProxyConfiguration.java:102)
+	at com.stockviewer.stockapi.wallet.entity.Asset$HibernateProxy.getSymbol(Unknown Source)
+	at com.stockviewer.stockapi.wallet.mapper.OwnedAssetMapperImpl.ownedAssetAssetSymbol(OwnedAssetMapperImpl.java:40)
+	at com.stockviewer.stockapi.wallet.mapper.OwnedAssetMapperImpl.toDTO(OwnedAssetMapperImpl.java:25)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(Unknown Source)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(Unknown Source)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(Unknown Source)
+	at java.base/java.util.stream.ReferencePipeline.collect(Unknown Source)
+	at com.stockviewer.stockapi.wallet.service.WalletService.getOwnedAssetsByUser(WalletService.java:86)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:724)
+	at com.stockviewer.stockapi.wallet.service.WalletService$$SpringCGLIB$$0.getOwnedAssetsByUser(<generated>)
+	at com.stockviewer.stockapi.trade.service.TradeService.executeTradeForUser(TradeService.java:113)
+	at com.stockviewer.stockapi.trade.service.TradeService.executeTradeForUser(TradeService.java:64)
+	at com.stockviewer.stockapi.trade.service.TradeService.executeTradeForManagedAssets(TradeService.java:181)
+	at com.stockviewer.stockapi.trade.service.TradeExecutor.executeTradesForManagedAssets(TradeExecutor.java:44)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.runInternal(ScheduledMethodRunnable.java:130)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.lambda$run$2(ScheduledMethodRunnable.java:124)
+	at io.micrometer.observation.Observation.observe(Observation.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:124)
+	at org.springframework.scheduling.config.Task$OutcomeTrackingRunnable.run(Task.java:85)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:96)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.base/java.lang.Thread.run(Unknown Source)
+2026-01-03 19:06:32.602 INFO  [scheduling-1] c.s.s.trade.service.TradeExecutor - [ETHUSDC] Executing trades for managed accounts...
+2026-01-03 19:06:32.604 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing trades for managed assets for pair ETHUSDC
+2026-01-03 19:06:32.604 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Found 0 users with managed assets for pair ETHUSDC
+2026-01-03 19:07:00.006 INFO  [scheduling-1] c.s.s.w.s.WalletWorthSnapshotScheduler - Taking wallet worth snapshot for wallet from user: igor.bialas@gmail.com
+2026-01-03 19:07:15.015 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing Stop Loss / Take Profit for pair BTCUSDC on candle 2026-01-03T18:05
+2026-01-03 19:07:15.017 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Found 0 trades with Stop Loss/Take Profit for user igor.bialas@gmail.com on pair BTCUSDC
+2026-01-03 19:07:15.019 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing Stop Loss / Take Profit for pair ETHBTC on candle 2026-01-03T18:05
+2026-01-03 19:07:15.020 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Found 0 trades with Stop Loss/Take Profit for user igor.bialas@gmail.com on pair ETHBTC
+2026-01-03 19:07:15.022 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing Stop Loss / Take Profit for pair SOLUSDC on candle 2026-01-03T18:05
+2026-01-03 19:07:15.023 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Found 1 trades with Stop Loss/Take Profit for user igor.bialas@gmail.com on pair SOLUSDC
+2026-01-03 19:07:15.029 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing Stop Loss / Take Profit for pair ETHUSDC on candle 2026-01-03T18:05
+2026-01-03 19:07:15.030 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Found 0 trades with Stop Loss/Take Profit for user igor.bialas@gmail.com on pair ETHUSDC
+2026-01-03 19:07:30.004 INFO  [scheduling-1] c.s.s.trade.service.TradeExecutor - [BTCUSDC] Executing trades for managed accounts...
+2026-01-03 19:07:30.007 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing trades for managed assets for pair BTCUSDC
+2026-01-03 19:07:30.007 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Found 0 users with managed assets for pair BTCUSDC
+2026-01-03 19:07:30.398 INFO  [scheduling-1] c.s.s.trade.service.TradeExecutor - [ETHBTC] Executing trades for managed accounts...
+2026-01-03 19:07:30.402 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing trades for managed assets for pair ETHBTC
+2026-01-03 19:07:30.402 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Found 0 users with managed assets for pair ETHBTC
+2026-01-03 19:07:30.910 INFO  [scheduling-1] c.s.s.trade.service.TradeExecutor - [SOLUSDC] Executing trades for managed accounts...
+2026-01-03 19:07:30.914 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing trades for managed assets for pair SOLUSDC
+2026-01-03 19:07:30.914 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Found 1 users with managed assets for pair SOLUSDC
+2026-01-03 19:07:32.039 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Checking user igor.bialas@gmail.com for managed asset trades...
+2026-01-03 19:07:32.054 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing SELL trade for user d7c42ede-7779-4f55-8afb-1d64d8e2ed98 on pair SOLUSDC
+2026-01-03 19:07:32.962 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Calculated PnL for SELL trade: asset=SOL, soldAmount=0.0297217378, avgPurchasePrice=131.89000000, sellPrice=131.59000000, PnL=-0.008916521340000000
+2026-01-03 19:07:32.973 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing SELL trade for user igor.bialas@gmail.com on pair SOLUSDC: baseAmount=0.0297217378, quoteAmount=3.911083477102000000
+2026-01-03 19:07:32.977 ERROR [scheduling-1] c.s.s.trade.service.TradeService - Error processing managed asset trades for user igor.bialas@gmail.com: Could not initialize proxy [com.stockviewer.stockapi.wallet.entity.Asset#49e26e2e-58b2-4041-b7e5-37396bcdd75d] - no session
+org.hibernate.LazyInitializationException: Could not initialize proxy [com.stockviewer.stockapi.wallet.entity.Asset#49e26e2e-58b2-4041-b7e5-37396bcdd75d] - no session
+	at org.hibernate.proxy.AbstractLazyInitializer.initialize(AbstractLazyInitializer.java:174)
+	at org.hibernate.proxy.AbstractLazyInitializer.getImplementation(AbstractLazyInitializer.java:328)
+	at org.hibernate.proxy.pojo.bytebuddy.ByteBuddyInterceptor.intercept(ByteBuddyInterceptor.java:44)
+	at org.hibernate.proxy.ProxyConfiguration$InterceptorDispatcher.intercept(ProxyConfiguration.java:102)
+	at com.stockviewer.stockapi.wallet.entity.Asset$HibernateProxy.getSymbol(Unknown Source)
+	at com.stockviewer.stockapi.wallet.mapper.OwnedAssetMapperImpl.ownedAssetAssetSymbol(OwnedAssetMapperImpl.java:40)
+	at com.stockviewer.stockapi.wallet.mapper.OwnedAssetMapperImpl.toDTO(OwnedAssetMapperImpl.java:25)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(Unknown Source)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(Unknown Source)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(Unknown Source)
+	at java.base/java.util.stream.ReferencePipeline.collect(Unknown Source)
+	at com.stockviewer.stockapi.wallet.service.WalletService.getOwnedAssetsByUser(WalletService.java:86)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:724)
+	at com.stockviewer.stockapi.wallet.service.WalletService$$SpringCGLIB$$0.getOwnedAssetsByUser(<generated>)
+	at com.stockviewer.stockapi.trade.service.TradeService.executeTradeForUser(TradeService.java:113)
+	at com.stockviewer.stockapi.trade.service.TradeService.executeTradeForUser(TradeService.java:64)
+	at com.stockviewer.stockapi.trade.service.TradeService.executeTradeForManagedAssets(TradeService.java:181)
+	at com.stockviewer.stockapi.trade.service.TradeExecutor.executeTradesForManagedAssets(TradeExecutor.java:44)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.runInternal(ScheduledMethodRunnable.java:130)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.lambda$run$2(ScheduledMethodRunnable.java:124)
+	at io.micrometer.observation.Observation.observe(Observation.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:124)
+	at org.springframework.scheduling.config.Task$OutcomeTrackingRunnable.run(Task.java:85)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:96)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.base/java.lang.Thread.run(Unknown Source)
+2026-01-03 19:07:32.978 INFO  [scheduling-1] c.s.s.trade.service.TradeExecutor - [ETHUSDC] Executing trades for managed accounts...
+2026-01-03 19:07:32.979 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing trades for managed assets for pair ETHUSDC
+2026-01-03 19:07:32.979 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Found 0 users with managed assets for pair ETHUSDC
+2026-01-03 19:08:00.004 INFO  [scheduling-1] c.s.s.w.s.WalletWorthSnapshotScheduler - Taking wallet worth snapshot for wallet from user: igor.bialas@gmail.com
+2026-01-03 19:08:03.695 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Received Message in group stockapi: ["b32cd1be-a477-454f-99f6-6419a14e805d"]
+2026-01-03 19:08:03.703 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 217
+2026-01-03 19:08:03.703 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-03 19:08:03.711 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 217
+2026-01-03 19:08:03.711 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-03 19:08:03.720 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 217
+2026-01-03 19:08:03.720 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-03 19:08:03.722 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Saved Indicator Event in group stockapi
+2026-01-03 19:08:03.727 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Received Message in group stockapi: ["9bbcedad-36e4-4585-8618-0c6ed6551e28"]
+2026-01-03 19:08:03.737 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 217
+2026-01-03 19:08:03.737 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-03 19:08:03.747 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 217
+2026-01-03 19:08:03.747 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-03 19:08:03.755 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 217
+2026-01-03 19:08:03.755 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-03 19:08:03.758 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Saved Indicator Event in group stockapi
+2026-01-03 19:08:03.758 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Received Message in group stockapi: ["17defc77-39c2-4066-941a-bb6b324bd7b7"]
+2026-01-03 19:08:03.766 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 217
+2026-01-03 19:08:03.766 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-03 19:08:03.774 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 217
+2026-01-03 19:08:03.774 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-03 19:08:03.783 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 217
+2026-01-03 19:08:03.783 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-03 19:08:03.786 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Saved Indicator Event in group stockapi
+2026-01-03 19:08:03.789 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Received Message in group stockapi: ["dbb5d21c-8558-43fd-8d09-e3bf9da2446d"]
+2026-01-03 19:08:03.801 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 217
+2026-01-03 19:08:03.802 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-03 19:08:03.811 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 217
+2026-01-03 19:08:03.811 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-03 19:08:03.818 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 217
+2026-01-03 19:08:03.818 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-03 19:08:03.820 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Saved Indicator Event in group stockapi
+2026-01-03 19:08:15.006 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing Stop Loss / Take Profit for pair BTCUSDC on candle 2026-01-03T18:07
+2026-01-03 19:08:15.007 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Found 0 trades with Stop Loss/Take Profit for user igor.bialas@gmail.com on pair BTCUSDC
+2026-01-03 19:08:15.009 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing Stop Loss / Take Profit for pair ETHBTC on candle 2026-01-03T18:07
+2026-01-03 19:08:15.010 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Found 0 trades with Stop Loss/Take Profit for user igor.bialas@gmail.com on pair ETHBTC
+2026-01-03 19:08:15.011 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing Stop Loss / Take Profit for pair SOLUSDC on candle 2026-01-03T18:07
+2026-01-03 19:08:15.011 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Found 1 trades with Stop Loss/Take Profit for user igor.bialas@gmail.com on pair SOLUSDC
+2026-01-03 19:08:15.015 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing Stop Loss / Take Profit for pair ETHUSDC on candle 2026-01-03T18:07
+2026-01-03 19:08:15.016 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Found 0 trades with Stop Loss/Take Profit for user igor.bialas@gmail.com on pair ETHUSDC
+2026-01-03 19:08:30.004 INFO  [scheduling-1] c.s.s.trade.service.TradeExecutor - [BTCUSDC] Executing trades for managed accounts...
+2026-01-03 19:08:30.007 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing trades for managed assets for pair BTCUSDC
+2026-01-03 19:08:30.007 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Found 0 users with managed assets for pair BTCUSDC
+2026-01-03 19:08:31.037 INFO  [scheduling-1] c.s.s.trade.service.TradeExecutor - [ETHBTC] Executing trades for managed accounts...
+2026-01-03 19:08:31.039 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing trades for managed assets for pair ETHBTC
+2026-01-03 19:08:31.039 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Found 0 users with managed assets for pair ETHBTC
+2026-01-03 19:08:31.576 INFO  [scheduling-1] c.s.s.trade.service.TradeExecutor - [SOLUSDC] Executing trades for managed accounts...
+2026-01-03 19:08:31.579 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing trades for managed assets for pair SOLUSDC
+2026-01-03 19:08:31.580 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Found 1 users with managed assets for pair SOLUSDC
+2026-01-03 19:08:32.156 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Checking user igor.bialas@gmail.com for managed asset trades...
+2026-01-03 19:08:32.169 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing SELL trade for user d7c42ede-7779-4f55-8afb-1d64d8e2ed98 on pair SOLUSDC
+2026-01-03 19:08:33.481 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Calculated PnL for SELL trade: asset=SOL, soldAmount=0.029127303, avgPurchasePrice=131.89000000, sellPrice=131.65000000, PnL=-0.00699055272000000
+2026-01-03 19:08:33.492 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing SELL trade for user igor.bialas@gmail.com on pair SOLUSDC: baseAmount=0.029127303, quoteAmount=3.83460943995000000
+2026-01-03 19:08:33.496 ERROR [scheduling-1] c.s.s.trade.service.TradeService - Error processing managed asset trades for user igor.bialas@gmail.com: Could not initialize proxy [com.stockviewer.stockapi.wallet.entity.Asset#49e26e2e-58b2-4041-b7e5-37396bcdd75d] - no session
+org.hibernate.LazyInitializationException: Could not initialize proxy [com.stockviewer.stockapi.wallet.entity.Asset#49e26e2e-58b2-4041-b7e5-37396bcdd75d] - no session
+	at org.hibernate.proxy.AbstractLazyInitializer.initialize(AbstractLazyInitializer.java:174)
+	at org.hibernate.proxy.AbstractLazyInitializer.getImplementation(AbstractLazyInitializer.java:328)
+	at org.hibernate.proxy.pojo.bytebuddy.ByteBuddyInterceptor.intercept(ByteBuddyInterceptor.java:44)
+	at org.hibernate.proxy.ProxyConfiguration$InterceptorDispatcher.intercept(ProxyConfiguration.java:102)
+	at com.stockviewer.stockapi.wallet.entity.Asset$HibernateProxy.getSymbol(Unknown Source)
+	at com.stockviewer.stockapi.wallet.mapper.OwnedAssetMapperImpl.ownedAssetAssetSymbol(OwnedAssetMapperImpl.java:40)
+	at com.stockviewer.stockapi.wallet.mapper.OwnedAssetMapperImpl.toDTO(OwnedAssetMapperImpl.java:25)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(Unknown Source)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(Unknown Source)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(Unknown Source)
+	at java.base/java.util.stream.ReferencePipeline.collect(Unknown Source)
+	at com.stockviewer.stockapi.wallet.service.WalletService.getOwnedAssetsByUser(WalletService.java:86)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:724)
+	at com.stockviewer.stockapi.wallet.service.WalletService$$SpringCGLIB$$0.getOwnedAssetsByUser(<generated>)
+	at com.stockviewer.stockapi.trade.service.TradeService.executeTradeForUser(TradeService.java:113)
+	at com.stockviewer.stockapi.trade.service.TradeService.executeTradeForUser(TradeService.java:64)
+	at com.stockviewer.stockapi.trade.service.TradeService.executeTradeForManagedAssets(TradeService.java:181)
+	at com.stockviewer.stockapi.trade.service.TradeExecutor.executeTradesForManagedAssets(TradeExecutor.java:44)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.runInternal(ScheduledMethodRunnable.java:130)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.lambda$run$2(ScheduledMethodRunnable.java:124)
+	at io.micrometer.observation.Observation.observe(Observation.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:124)
+	at org.springframework.scheduling.config.Task$OutcomeTrackingRunnable.run(Task.java:85)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:96)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.base/java.lang.Thread.run(Unknown Source)
+2026-01-03 19:08:33.497 INFO  [scheduling-1] c.s.s.trade.service.TradeExecutor - [ETHUSDC] Executing trades for managed accounts...
+2026-01-03 19:08:33.498 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing trades for managed assets for pair ETHUSDC
+2026-01-03 19:08:33.498 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Found 0 users with managed assets for pair ETHUSDC
+2026-01-03 19:09:00.003 INFO  [scheduling-1] c.s.s.w.s.WalletWorthSnapshotScheduler - Taking wallet worth snapshot for wallet from user: igor.bialas@gmail.com
+2026-01-03 19:09:02.371 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Received Message in group stockapi: ["3fc013fa-c85a-45a6-92b5-3ec10df239d5"]
+2026-01-03 19:09:02.381 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 218
+2026-01-03 19:09:02.381 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-03 19:09:02.389 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 218
+2026-01-03 19:09:02.389 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-03 19:09:02.400 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 218
+2026-01-03 19:09:02.400 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-03 19:09:02.407 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Saved Indicator Event in group stockapi
+2026-01-03 19:09:02.410 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Received Message in group stockapi: ["8735a3cb-ddc7-43dd-a11b-65dcb45c0fa8"]
+2026-01-03 19:09:02.417 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 218
+2026-01-03 19:09:02.417 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-03 19:09:02.425 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 218
+2026-01-03 19:09:02.425 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-03 19:09:02.436 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 218
+2026-01-03 19:09:02.436 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-03 19:09:02.439 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Saved Indicator Event in group stockapi
+2026-01-03 19:09:02.442 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Received Message in group stockapi: ["7ae8ffd1-5a9c-457e-8f9c-f55e8a43a546"]
+2026-01-03 19:09:02.453 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 218
+2026-01-03 19:09:02.453 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-03 19:09:02.464 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 218
+2026-01-03 19:09:02.464 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-03 19:09:02.474 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 218
+2026-01-03 19:09:02.474 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-03 19:09:02.476 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Saved Indicator Event in group stockapi
+2026-01-03 19:09:02.477 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Received Message in group stockapi: ["587bbbc5-009b-4cd4-a618-ca1c83288e5d"]
+2026-01-03 19:09:02.485 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 218
+2026-01-03 19:09:02.485 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-03 19:09:02.495 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 218
+2026-01-03 19:09:02.495 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-03 19:09:02.506 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 218
+2026-01-03 19:09:02.506 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-03 19:09:02.510 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Saved Indicator Event in group stockapi
+2026-01-03 19:09:15.007 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing Stop Loss / Take Profit for pair BTCUSDC on candle 2026-01-03T18:08
+2026-01-03 19:09:15.008 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Found 0 trades with Stop Loss/Take Profit for user igor.bialas@gmail.com on pair BTCUSDC
+2026-01-03 19:09:15.009 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing Stop Loss / Take Profit for pair ETHBTC on candle 2026-01-03T18:08
+2026-01-03 19:09:15.010 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Found 0 trades with Stop Loss/Take Profit for user igor.bialas@gmail.com on pair ETHBTC
+2026-01-03 19:09:15.011 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing Stop Loss / Take Profit for pair SOLUSDC on candle 2026-01-03T18:08
+2026-01-03 19:09:15.011 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Found 1 trades with Stop Loss/Take Profit for user igor.bialas@gmail.com on pair SOLUSDC
+2026-01-03 19:09:15.017 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing Stop Loss / Take Profit for pair ETHUSDC on candle 2026-01-03T18:08
+2026-01-03 19:09:15.017 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Found 0 trades with Stop Loss/Take Profit for user igor.bialas@gmail.com on pair ETHUSDC
+2026-01-03 19:09:30.005 INFO  [scheduling-1] c.s.s.trade.service.TradeExecutor - [BTCUSDC] Executing trades for managed accounts...
+2026-01-03 19:09:30.008 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing trades for managed assets for pair BTCUSDC
+2026-01-03 19:09:30.008 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Found 0 users with managed assets for pair BTCUSDC
+2026-01-03 19:09:31.026 INFO  [scheduling-1] c.s.s.trade.service.TradeExecutor - [ETHBTC] Executing trades for managed accounts...
+2026-01-03 19:09:31.029 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing trades for managed assets for pair ETHBTC
+2026-01-03 19:09:31.029 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Found 0 users with managed assets for pair ETHBTC
+2026-01-03 19:09:31.537 INFO  [scheduling-1] c.s.s.trade.service.TradeExecutor - [SOLUSDC] Executing trades for managed accounts...
+2026-01-03 19:09:31.541 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing trades for managed assets for pair SOLUSDC
+2026-01-03 19:09:31.541 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Found 1 users with managed assets for pair SOLUSDC
+2026-01-03 19:09:32.372 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Checking user igor.bialas@gmail.com for managed asset trades...
+2026-01-03 19:09:32.386 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing SELL trade for user d7c42ede-7779-4f55-8afb-1d64d8e2ed98 on pair SOLUSDC
+2026-01-03 19:09:34.103 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Calculated PnL for SELL trade: asset=SOL, soldAmount=0.028544757, avgPurchasePrice=131.89000000, sellPrice=131.65000000, PnL=-0.00685074168000000
+2026-01-03 19:09:34.114 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing SELL trade for user igor.bialas@gmail.com on pair SOLUSDC: baseAmount=0.028544757, quoteAmount=3.75791725905000000
+2026-01-03 19:09:34.118 ERROR [scheduling-1] c.s.s.trade.service.TradeService - Error processing managed asset trades for user igor.bialas@gmail.com: Could not initialize proxy [com.stockviewer.stockapi.wallet.entity.Asset#49e26e2e-58b2-4041-b7e5-37396bcdd75d] - no session
+org.hibernate.LazyInitializationException: Could not initialize proxy [com.stockviewer.stockapi.wallet.entity.Asset#49e26e2e-58b2-4041-b7e5-37396bcdd75d] - no session
+	at org.hibernate.proxy.AbstractLazyInitializer.initialize(AbstractLazyInitializer.java:174)
+	at org.hibernate.proxy.AbstractLazyInitializer.getImplementation(AbstractLazyInitializer.java:328)
+	at org.hibernate.proxy.pojo.bytebuddy.ByteBuddyInterceptor.intercept(ByteBuddyInterceptor.java:44)
+	at org.hibernate.proxy.ProxyConfiguration$InterceptorDispatcher.intercept(ProxyConfiguration.java:102)
+	at com.stockviewer.stockapi.wallet.entity.Asset$HibernateProxy.getSymbol(Unknown Source)
+	at com.stockviewer.stockapi.wallet.mapper.OwnedAssetMapperImpl.ownedAssetAssetSymbol(OwnedAssetMapperImpl.java:40)
+	at com.stockviewer.stockapi.wallet.mapper.OwnedAssetMapperImpl.toDTO(OwnedAssetMapperImpl.java:25)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(Unknown Source)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(Unknown Source)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(Unknown Source)
+	at java.base/java.util.stream.ReferencePipeline.collect(Unknown Source)
+	at com.stockviewer.stockapi.wallet.service.WalletService.getOwnedAssetsByUser(WalletService.java:86)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:724)
+	at com.stockviewer.stockapi.wallet.service.WalletService$$SpringCGLIB$$0.getOwnedAssetsByUser(<generated>)
+	at com.stockviewer.stockapi.trade.service.TradeService.executeTradeForUser(TradeService.java:113)
+	at com.stockviewer.stockapi.trade.service.TradeService.executeTradeForUser(TradeService.java:64)
+	at com.stockviewer.stockapi.trade.service.TradeService.executeTradeForManagedAssets(TradeService.java:181)
+	at com.stockviewer.stockapi.trade.service.TradeExecutor.executeTradesForManagedAssets(TradeExecutor.java:44)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.runInternal(ScheduledMethodRunnable.java:130)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.lambda$run$2(ScheduledMethodRunnable.java:124)
+	at io.micrometer.observation.Observation.observe(Observation.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:124)
+	at org.springframework.scheduling.config.Task$OutcomeTrackingRunnable.run(Task.java:85)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:96)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.base/java.lang.Thread.run(Unknown Source)
+2026-01-03 19:09:34.118 INFO  [scheduling-1] c.s.s.trade.service.TradeExecutor - [ETHUSDC] Executing trades for managed accounts...
+2026-01-03 19:09:34.119 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing trades for managed assets for pair ETHUSDC
+2026-01-03 19:09:34.119 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Found 0 users with managed assets for pair ETHUSDC
+2026-01-03 19:09:50.217 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.i.ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-stockapi-1, groupId=stockapi] Revoke previously assigned partitions indicator_events-0
+2026-01-03 19:09:50.217 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer - stockapi: partitions revoked: [indicator_events-0]
+2026-01-03 19:09:50.218 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-stockapi-1, groupId=stockapi] Member consumer-stockapi-1-09bda90f-d08d-47d5-bdb2-6116cb76c3d6 sending LeaveGroup request to coordinator kafka:9092 (id: 2147483646 rack: null) due to the consumer unsubscribed from all topics
+2026-01-03 19:09:50.218 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-stockapi-1, groupId=stockapi] Resetting generation and member id due to: consumer pro-actively leaving the group
+2026-01-03 19:09:50.218 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-stockapi-1, groupId=stockapi] Request joining group due to: consumer pro-actively leaving the group
+2026-01-03 19:09:50.218 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.i.LegacyKafkaConsumer - [Consumer clientId=consumer-stockapi-1, groupId=stockapi] Unsubscribed all topics or patterns and assigned partitions
+2026-01-03 19:09:50.219 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-stockapi-1, groupId=stockapi] Resetting generation and member id due to: consumer pro-actively leaving the group
+2026-01-03 19:09:50.219 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-stockapi-1, groupId=stockapi] Request joining group due to: consumer pro-actively leaving the group
+2026-01-03 19:09:50.608 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.kafka.common.metrics.Metrics - Metrics scheduler closed
+2026-01-03 19:09:50.608 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2026-01-03 19:09:50.608 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2026-01-03 19:09:50.608 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.kafka.common.metrics.Metrics - Metrics reporters closed
+2026-01-03 19:09:50.613 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.kafka.common.utils.AppInfoParser - App info kafka.consumer for consumer-stockapi-1 unregistered
+2026-01-03 19:09:50.614 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer - stockapi: Consumer stopped
+2026-01-03 19:09:50.615 INFO  [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-01-03 19:09:50.618 INFO  [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-01-03 19:09:50.626 INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-03 19:09:50.627 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-01-03 19:09:50.629 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.

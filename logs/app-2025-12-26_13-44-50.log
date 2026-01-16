@@ -1,0 +1,335 @@
+2025-12-26 13:44:50.663 INFO  [background-preinit] o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2025-12-26 13:44:50.735 INFO  [main] c.s.stockapi.StockapiApplication - Starting StockapiApplication v0.0.1-SNAPSHOT using Java 21.0.9 with PID 1 (/app/app.jar started by root in /app)
+2025-12-26 13:44:50.736 INFO  [main] c.s.stockapi.StockapiApplication - The following 1 profile is active: "dev"
+2025-12-26 13:44:51.927 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-26 13:44:52.018 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 79 ms. Found 10 JPA repository interfaces.
+2025-12-26 13:44:53.061 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-12-26 13:44:53.075 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-12-26 13:44:53.079 INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-12-26 13:44:53.079 INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.40]
+2025-12-26 13:44:53.117 INFO  [main] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-12-26 13:44:53.117 INFO  [main] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2327 ms
+2025-12-26 13:44:53.555 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-12-26 13:44:53.777 INFO  [main] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@175ac243
+2025-12-26 13:44:53.780 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-12-26 13:44:53.829 INFO  [main] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-12-26 13:44:53.929 INFO  [main] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.13.Final
+2025-12-26 13:44:53.986 INFO  [main] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-12-26 13:44:54.343 INFO  [main] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-26 13:44:54.431 WARN  [main] org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-12-26 13:44:54.452 INFO  [main] o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 15.15
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-12-26 13:44:55.815 INFO  [main] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-12-26 13:44:55.819 INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-26 13:44:56.230 INFO  [main] o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-12-26 13:44:57.243 INFO  [main] o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2025-12-26 13:44:57.354 WARN  [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-26 13:44:57.469 WARN  [main] o.s.s.c.a.w.c.AuthorizeHttpRequestsConfigurer$AuthorizationManagerRequestMatcherRegistry - One of the patterns in [candles/**, users/**, /actuator/health] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-12-26 13:44:57.808 INFO  [main] o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoints beneath base path '/actuator'
+2025-12-26 13:44:58.498 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-12-26 13:44:58.513 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-12-26 13:44:58.558 INFO  [main] o.a.k.c.consumer.ConsumerConfig - ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = latest
+	bootstrap.servers = [kafka:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-stockapi-1
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = stockapi
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+
+2025-12-26 13:44:58.632 INFO  [main] o.a.k.c.t.i.KafkaMetricsCollector - initializing Kafka metrics collector
+2025-12-26 13:44:58.813 INFO  [main] o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.8.1
+2025-12-26 13:44:58.813 INFO  [main] o.a.kafka.common.utils.AppInfoParser - Kafka commitId: 70d6ff42debf7e17
+2025-12-26 13:44:58.813 INFO  [main] o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1766756698812
+2025-12-26 13:44:58.829 INFO  [main] o.a.k.c.c.i.LegacyKafkaConsumer - [Consumer clientId=consumer-stockapi-1, groupId=stockapi] Subscribed to topic(s): indicator_events
+2025-12-26 13:44:58.861 INFO  [main] c.s.stockapi.StockapiApplication - Started StockapiApplication in 8.765 seconds (process running for 9.243)
+2025-12-26 13:44:59.248 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.clients.Metadata - [Consumer clientId=consumer-stockapi-1, groupId=stockapi] Cluster ID: 5L6g3nShT-eMCtK--X86sw
+2025-12-26 13:44:59.249 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-stockapi-1, groupId=stockapi] Discovered group coordinator kafka:9092 (id: 2147483646 rack: null)
+2025-12-26 13:44:59.251 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-stockapi-1, groupId=stockapi] (Re-)joining group
+2025-12-26 13:44:59.276 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-stockapi-1, groupId=stockapi] Request joining group due to: need to re-join with the given member-id: consumer-stockapi-1-bb4507fb-656d-460b-b813-33877de24750
+2025-12-26 13:44:59.277 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-stockapi-1, groupId=stockapi] (Re-)joining group
+2025-12-26 13:44:59.809 INFO  [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-26 13:44:59.809 INFO  [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-12-26 13:44:59.811 INFO  [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-12-26 13:45:02.292 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-stockapi-1, groupId=stockapi] Successfully joined group with generation Generation{generationId=9, memberId='consumer-stockapi-1-bb4507fb-656d-460b-b813-33877de24750', protocol='range'}
+2025-12-26 13:45:02.304 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-stockapi-1, groupId=stockapi] Finished assignment for group at generation 9: {consumer-stockapi-1-bb4507fb-656d-460b-b813-33877de24750=Assignment(partitions=[indicator_events-0])}
+2025-12-26 13:45:02.325 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-stockapi-1, groupId=stockapi] Successfully synced group in generation Generation{generationId=9, memberId='consumer-stockapi-1-bb4507fb-656d-460b-b813-33877de24750', protocol='range'}
+2025-12-26 13:45:02.326 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-stockapi-1, groupId=stockapi] Notifying assignor about the new Assignment(partitions=[indicator_events-0])
+2025-12-26 13:45:02.336 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.i.ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-stockapi-1, groupId=stockapi] Adding newly assigned partitions: indicator_events-0
+2025-12-26 13:45:02.389 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerUtils - Setting offset for partition indicator_events-0 to the committed offset FetchPosition{offset=3240, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[kafka:9092 (id: 1 rack: null)], epoch=8}}
+2025-12-26 13:45:02.394 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer - stockapi: partitions assigned: [indicator_events-0]
+2025-12-26 13:45:02.469 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Received Message in group stockapi: ["23de49c3-296a-45fe-95c6-7904075ccef4"]
+2025-12-26 13:45:02.681 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Candle Found: 23de49c3-296a-45fe-95c6-7904075ccef4
+2025-12-26 13:45:02.681 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Candle with values: Open: 124.09000000, Close: 124.10000000, High: 124.11000000, Low: 124.09000000, OpenTime: 2025-12-26T12:44, CloseTime: 2025-12-26T12:44:59
+2025-12-26 13:45:02.819 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 211
+2025-12-26 13:45:02.819 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2025-12-26 13:45:02.819 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 123.70000000, Close: 123.68000000, High: 123.70000000, Low: 123.68000000, OpenTime: 2025-12-26T09:14, CloseTime: 2025-12-26T09:14:59
+2025-12-26 13:45:02.819 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 123.69000000, Close: 123.57000000, High: 123.69000000, Low: 123.57000000, OpenTime: 2025-12-26T09:15, CloseTime: 2025-12-26T09:15:59
+2025-12-26 13:45:02.819 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 123.58000000, Close: 123.55000000, High: 123.61000000, Low: 123.53000000, OpenTime: 2025-12-26T09:16, CloseTime: 2025-12-26T09:16:59
+2025-12-26 13:45:02.819 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 123.55000000, Close: 123.50000000, High: 123.55000000, Low: 123.50000000, OpenTime: 2025-12-26T09:17, CloseTime: 2025-12-26T09:17:59
+2025-12-26 13:45:02.819 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 123.50000000, Close: 123.46000000, High: 123.50000000, Low: 123.44000000, OpenTime: 2025-12-26T09:18, CloseTime: 2025-12-26T09:18:59
+2025-12-26 13:45:02.820 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 123.46000000, Close: 123.46000000, High: 123.47000000, Low: 123.39000000, OpenTime: 2025-12-26T09:19, CloseTime: 2025-12-26T09:19:59
+2025-12-26 13:45:02.820 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 123.47000000, Close: 123.50000000, High: 123.52000000, Low: 123.47000000, OpenTime: 2025-12-26T09:20, CloseTime: 2025-12-26T09:20:59
+2025-12-26 13:45:02.820 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 123.50000000, Close: 123.46000000, High: 123.50000000, Low: 123.46000000, OpenTime: 2025-12-26T09:21, CloseTime: 2025-12-26T09:21:59
+2025-12-26 13:45:02.821 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 123.44000000, Close: 123.42000000, High: 123.46000000, Low: 123.40000000, OpenTime: 2025-12-26T09:22, CloseTime: 2025-12-26T09:22:59
+2025-12-26 13:45:02.821 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 123.42000000, Close: 123.47000000, High: 123.47000000, Low: 123.42000000, OpenTime: 2025-12-26T09:23, CloseTime: 2025-12-26T09:23:59
+2025-12-26 13:45:02.948 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 211
+2025-12-26 13:45:02.949 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2025-12-26 13:45:02.949 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 123.70000000, Close: 123.68000000, High: 123.70000000, Low: 123.68000000, OpenTime: 2025-12-26T09:14, CloseTime: 2025-12-26T09:14:59
+2025-12-26 13:45:02.949 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 123.69000000, Close: 123.57000000, High: 123.69000000, Low: 123.57000000, OpenTime: 2025-12-26T09:15, CloseTime: 2025-12-26T09:15:59
+2025-12-26 13:45:02.949 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 123.58000000, Close: 123.55000000, High: 123.61000000, Low: 123.53000000, OpenTime: 2025-12-26T09:16, CloseTime: 2025-12-26T09:16:59
+2025-12-26 13:45:02.949 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 123.55000000, Close: 123.50000000, High: 123.55000000, Low: 123.50000000, OpenTime: 2025-12-26T09:17, CloseTime: 2025-12-26T09:17:59
+2025-12-26 13:45:02.949 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 123.50000000, Close: 123.46000000, High: 123.50000000, Low: 123.44000000, OpenTime: 2025-12-26T09:18, CloseTime: 2025-12-26T09:18:59
+2025-12-26 13:45:02.949 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 123.46000000, Close: 123.46000000, High: 123.47000000, Low: 123.39000000, OpenTime: 2025-12-26T09:19, CloseTime: 2025-12-26T09:19:59
+2025-12-26 13:45:02.950 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 123.47000000, Close: 123.50000000, High: 123.52000000, Low: 123.47000000, OpenTime: 2025-12-26T09:20, CloseTime: 2025-12-26T09:20:59
+2025-12-26 13:45:02.950 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 123.50000000, Close: 123.46000000, High: 123.50000000, Low: 123.46000000, OpenTime: 2025-12-26T09:21, CloseTime: 2025-12-26T09:21:59
+2025-12-26 13:45:02.950 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 123.44000000, Close: 123.42000000, High: 123.46000000, Low: 123.40000000, OpenTime: 2025-12-26T09:22, CloseTime: 2025-12-26T09:22:59
+2025-12-26 13:45:02.950 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 123.42000000, Close: 123.47000000, High: 123.47000000, Low: 123.42000000, OpenTime: 2025-12-26T09:23, CloseTime: 2025-12-26T09:23:59
+2025-12-26 13:45:02.999 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 211
+2025-12-26 13:45:02.999 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2025-12-26 13:45:02.999 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 123.70000000, Close: 123.68000000, High: 123.70000000, Low: 123.68000000, OpenTime: 2025-12-26T09:14, CloseTime: 2025-12-26T09:14:59
+2025-12-26 13:45:02.999 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 123.69000000, Close: 123.57000000, High: 123.69000000, Low: 123.57000000, OpenTime: 2025-12-26T09:15, CloseTime: 2025-12-26T09:15:59
+2025-12-26 13:45:02.999 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 123.58000000, Close: 123.55000000, High: 123.61000000, Low: 123.53000000, OpenTime: 2025-12-26T09:16, CloseTime: 2025-12-26T09:16:59
+2025-12-26 13:45:02.999 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 123.55000000, Close: 123.50000000, High: 123.55000000, Low: 123.50000000, OpenTime: 2025-12-26T09:17, CloseTime: 2025-12-26T09:17:59
+2025-12-26 13:45:02.999 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 123.50000000, Close: 123.46000000, High: 123.50000000, Low: 123.44000000, OpenTime: 2025-12-26T09:18, CloseTime: 2025-12-26T09:18:59
+2025-12-26 13:45:02.999 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 123.46000000, Close: 123.46000000, High: 123.47000000, Low: 123.39000000, OpenTime: 2025-12-26T09:19, CloseTime: 2025-12-26T09:19:59
+2025-12-26 13:45:02.999 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 123.47000000, Close: 123.50000000, High: 123.52000000, Low: 123.47000000, OpenTime: 2025-12-26T09:20, CloseTime: 2025-12-26T09:20:59
+2025-12-26 13:45:02.999 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 123.50000000, Close: 123.46000000, High: 123.50000000, Low: 123.46000000, OpenTime: 2025-12-26T09:21, CloseTime: 2025-12-26T09:21:59
+2025-12-26 13:45:03.000 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 123.44000000, Close: 123.42000000, High: 123.46000000, Low: 123.40000000, OpenTime: 2025-12-26T09:22, CloseTime: 2025-12-26T09:22:59
+2025-12-26 13:45:03.000 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 123.42000000, Close: 123.47000000, High: 123.47000000, Low: 123.42000000, OpenTime: 2025-12-26T09:23, CloseTime: 2025-12-26T09:23:59
+2025-12-26 13:45:03.012 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Saved Indicator Event in group stockapi
+2025-12-26 13:45:03.012 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Received Message in group stockapi: ["79e3ae62-4e8c-4f23-953e-1d544657a55e"]
+2025-12-26 13:45:03.020 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Candle Found: 79e3ae62-4e8c-4f23-953e-1d544657a55e
+2025-12-26 13:45:03.021 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Candle with values: Open: 2979.19000000, Close: 2979.11000000, High: 2979.31000000, Low: 2979.10000000, OpenTime: 2025-12-26T12:44, CloseTime: 2025-12-26T12:44:59
+2025-12-26 13:45:03.048 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 211
+2025-12-26 13:45:03.048 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2025-12-26 13:45:03.048 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 2970.22000000, Close: 2969.80000000, High: 2970.51000000, Low: 2969.80000000, OpenTime: 2025-12-26T09:14, CloseTime: 2025-12-26T09:14:59
+2025-12-26 13:45:03.048 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 2969.73000000, Close: 2968.51000000, High: 2969.89000000, Low: 2968.51000000, OpenTime: 2025-12-26T09:15, CloseTime: 2025-12-26T09:15:59
+2025-12-26 13:45:03.048 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 2968.50000000, Close: 2967.70000000, High: 2969.00000000, Low: 2967.61000000, OpenTime: 2025-12-26T09:16, CloseTime: 2025-12-26T09:16:59
+2025-12-26 13:45:03.049 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 2967.70000000, Close: 2967.75000000, High: 2967.91000000, Low: 2967.37000000, OpenTime: 2025-12-26T09:17, CloseTime: 2025-12-26T09:17:59
+2025-12-26 13:45:03.049 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 2967.76000000, Close: 2967.35000000, High: 2967.76000000, Low: 2967.06000000, OpenTime: 2025-12-26T09:18, CloseTime: 2025-12-26T09:18:59
+2025-12-26 13:45:03.049 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 2967.35000000, Close: 2967.99000000, High: 2968.00000000, Low: 2966.62000000, OpenTime: 2025-12-26T09:19, CloseTime: 2025-12-26T09:19:59
+2025-12-26 13:45:03.049 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 2967.99000000, Close: 2967.66000000, High: 2968.18000000, Low: 2967.66000000, OpenTime: 2025-12-26T09:20, CloseTime: 2025-12-26T09:20:59
+2025-12-26 13:45:03.049 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 2967.66000000, Close: 2966.88000000, High: 2967.75000000, Low: 2966.82000000, OpenTime: 2025-12-26T09:21, CloseTime: 2025-12-26T09:21:59
+2025-12-26 13:45:03.049 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 2967.03000000, Close: 2966.19000000, High: 2967.03000000, Low: 2965.63000000, OpenTime: 2025-12-26T09:22, CloseTime: 2025-12-26T09:22:59
+2025-12-26 13:45:03.049 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 2966.20000000, Close: 2967.50000000, High: 2967.50000000, Low: 2966.20000000, OpenTime: 2025-12-26T09:23, CloseTime: 2025-12-26T09:23:59
+2025-12-26 13:45:03.093 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 211
+2025-12-26 13:45:03.093 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2025-12-26 13:45:03.093 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 2970.22000000, Close: 2969.80000000, High: 2970.51000000, Low: 2969.80000000, OpenTime: 2025-12-26T09:14, CloseTime: 2025-12-26T09:14:59
+2025-12-26 13:45:03.094 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 2969.73000000, Close: 2968.51000000, High: 2969.89000000, Low: 2968.51000000, OpenTime: 2025-12-26T09:15, CloseTime: 2025-12-26T09:15:59
+2025-12-26 13:45:03.094 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 2968.50000000, Close: 2967.70000000, High: 2969.00000000, Low: 2967.61000000, OpenTime: 2025-12-26T09:16, CloseTime: 2025-12-26T09:16:59
+2025-12-26 13:45:03.094 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 2967.70000000, Close: 2967.75000000, High: 2967.91000000, Low: 2967.37000000, OpenTime: 2025-12-26T09:17, CloseTime: 2025-12-26T09:17:59
+2025-12-26 13:45:03.094 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 2967.76000000, Close: 2967.35000000, High: 2967.76000000, Low: 2967.06000000, OpenTime: 2025-12-26T09:18, CloseTime: 2025-12-26T09:18:59
+2025-12-26 13:45:03.094 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 2967.35000000, Close: 2967.99000000, High: 2968.00000000, Low: 2966.62000000, OpenTime: 2025-12-26T09:19, CloseTime: 2025-12-26T09:19:59
+2025-12-26 13:45:03.094 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 2967.99000000, Close: 2967.66000000, High: 2968.18000000, Low: 2967.66000000, OpenTime: 2025-12-26T09:20, CloseTime: 2025-12-26T09:20:59
+2025-12-26 13:45:03.094 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 2967.66000000, Close: 2966.88000000, High: 2967.75000000, Low: 2966.82000000, OpenTime: 2025-12-26T09:21, CloseTime: 2025-12-26T09:21:59
+2025-12-26 13:45:03.094 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 2967.03000000, Close: 2966.19000000, High: 2967.03000000, Low: 2965.63000000, OpenTime: 2025-12-26T09:22, CloseTime: 2025-12-26T09:22:59
+2025-12-26 13:45:03.095 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 2966.20000000, Close: 2967.50000000, High: 2967.50000000, Low: 2966.20000000, OpenTime: 2025-12-26T09:23, CloseTime: 2025-12-26T09:23:59
+2025-12-26 13:45:03.138 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 211
+2025-12-26 13:45:03.138 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2025-12-26 13:45:03.138 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 2970.22000000, Close: 2969.80000000, High: 2970.51000000, Low: 2969.80000000, OpenTime: 2025-12-26T09:14, CloseTime: 2025-12-26T09:14:59
+2025-12-26 13:45:03.138 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 2969.73000000, Close: 2968.51000000, High: 2969.89000000, Low: 2968.51000000, OpenTime: 2025-12-26T09:15, CloseTime: 2025-12-26T09:15:59
+2025-12-26 13:45:03.139 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 2968.50000000, Close: 2967.70000000, High: 2969.00000000, Low: 2967.61000000, OpenTime: 2025-12-26T09:16, CloseTime: 2025-12-26T09:16:59
+2025-12-26 13:45:03.139 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 2967.70000000, Close: 2967.75000000, High: 2967.91000000, Low: 2967.37000000, OpenTime: 2025-12-26T09:17, CloseTime: 2025-12-26T09:17:59
+2025-12-26 13:45:03.139 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 2967.76000000, Close: 2967.35000000, High: 2967.76000000, Low: 2967.06000000, OpenTime: 2025-12-26T09:18, CloseTime: 2025-12-26T09:18:59
+2025-12-26 13:45:03.139 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 2967.35000000, Close: 2967.99000000, High: 2968.00000000, Low: 2966.62000000, OpenTime: 2025-12-26T09:19, CloseTime: 2025-12-26T09:19:59
+2025-12-26 13:45:03.139 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 2967.99000000, Close: 2967.66000000, High: 2968.18000000, Low: 2967.66000000, OpenTime: 2025-12-26T09:20, CloseTime: 2025-12-26T09:20:59
+2025-12-26 13:45:03.139 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 2967.66000000, Close: 2966.88000000, High: 2967.75000000, Low: 2966.82000000, OpenTime: 2025-12-26T09:21, CloseTime: 2025-12-26T09:21:59
+2025-12-26 13:45:03.139 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 2967.03000000, Close: 2966.19000000, High: 2967.03000000, Low: 2965.63000000, OpenTime: 2025-12-26T09:22, CloseTime: 2025-12-26T09:22:59
+2025-12-26 13:45:03.139 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 2966.20000000, Close: 2967.50000000, High: 2967.50000000, Low: 2966.20000000, OpenTime: 2025-12-26T09:23, CloseTime: 2025-12-26T09:23:59
+2025-12-26 13:45:03.146 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Saved Indicator Event in group stockapi
+2025-12-26 13:45:03.147 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Received Message in group stockapi: ["84eef530-e6fd-4217-8d0c-1d8eaae17f9b"]
+2025-12-26 13:45:03.151 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Candle Found: 84eef530-e6fd-4217-8d0c-1d8eaae17f9b
+2025-12-26 13:45:03.151 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Candle with values: Open: 0.03351000, Close: 0.03351000, High: 0.03351000, Low: 0.03351000, OpenTime: 2025-12-26T12:44, CloseTime: 2025-12-26T12:44:59
+2025-12-26 13:45:03.167 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 211
+2025-12-26 13:45:03.168 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2025-12-26 13:45:03.168 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 0.03344000, Close: 0.03344000, High: 0.03344000, Low: 0.03344000, OpenTime: 2025-12-26T09:14, CloseTime: 2025-12-26T09:14:59
+2025-12-26 13:45:03.168 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 0.03344000, Close: 0.03344000, High: 0.03345000, Low: 0.03343000, OpenTime: 2025-12-26T09:15, CloseTime: 2025-12-26T09:15:59
+2025-12-26 13:45:03.168 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 0.03344000, Close: 0.03345000, High: 0.03345000, Low: 0.03343000, OpenTime: 2025-12-26T09:16, CloseTime: 2025-12-26T09:16:59
+2025-12-26 13:45:03.168 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 0.03344000, Close: 0.03344000, High: 0.03344000, Low: 0.03344000, OpenTime: 2025-12-26T09:17, CloseTime: 2025-12-26T09:17:59
+2025-12-26 13:45:03.168 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 0.03345000, Close: 0.03345000, High: 0.03345000, Low: 0.03345000, OpenTime: 2025-12-26T09:18, CloseTime: 2025-12-26T09:18:59
+2025-12-26 13:45:03.168 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 0.03345000, Close: 0.03345000, High: 0.03345000, Low: 0.03345000, OpenTime: 2025-12-26T09:19, CloseTime: 2025-12-26T09:19:59
+2025-12-26 13:45:03.168 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 0.03346000, Close: 0.03346000, High: 0.03346000, Low: 0.03346000, OpenTime: 2025-12-26T09:20, CloseTime: 2025-12-26T09:20:59
+2025-12-26 13:45:03.168 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 0.03345000, Close: 0.03345000, High: 0.03345000, Low: 0.03345000, OpenTime: 2025-12-26T09:21, CloseTime: 2025-12-26T09:21:59
+2025-12-26 13:45:03.168 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 0.03346000, Close: 0.03346000, High: 0.03346000, Low: 0.03346000, OpenTime: 2025-12-26T09:22, CloseTime: 2025-12-26T09:22:59
+2025-12-26 13:45:03.168 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 0.03346000, Close: 0.03346000, High: 0.03346000, Low: 0.03346000, OpenTime: 2025-12-26T09:23, CloseTime: 2025-12-26T09:23:59
+2025-12-26 13:45:03.191 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 211
+2025-12-26 13:45:03.191 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2025-12-26 13:45:03.191 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 0.03344000, Close: 0.03344000, High: 0.03344000, Low: 0.03344000, OpenTime: 2025-12-26T09:14, CloseTime: 2025-12-26T09:14:59
+2025-12-26 13:45:03.191 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 0.03344000, Close: 0.03344000, High: 0.03345000, Low: 0.03343000, OpenTime: 2025-12-26T09:15, CloseTime: 2025-12-26T09:15:59
+2025-12-26 13:45:03.191 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 0.03344000, Close: 0.03345000, High: 0.03345000, Low: 0.03343000, OpenTime: 2025-12-26T09:16, CloseTime: 2025-12-26T09:16:59
+2025-12-26 13:45:03.191 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 0.03344000, Close: 0.03344000, High: 0.03344000, Low: 0.03344000, OpenTime: 2025-12-26T09:17, CloseTime: 2025-12-26T09:17:59
+2025-12-26 13:45:03.191 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 0.03345000, Close: 0.03345000, High: 0.03345000, Low: 0.03345000, OpenTime: 2025-12-26T09:18, CloseTime: 2025-12-26T09:18:59
+2025-12-26 13:45:03.191 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 0.03345000, Close: 0.03345000, High: 0.03345000, Low: 0.03345000, OpenTime: 2025-12-26T09:19, CloseTime: 2025-12-26T09:19:59
+2025-12-26 13:45:03.191 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 0.03346000, Close: 0.03346000, High: 0.03346000, Low: 0.03346000, OpenTime: 2025-12-26T09:20, CloseTime: 2025-12-26T09:20:59
+2025-12-26 13:45:03.191 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 0.03345000, Close: 0.03345000, High: 0.03345000, Low: 0.03345000, OpenTime: 2025-12-26T09:21, CloseTime: 2025-12-26T09:21:59
+2025-12-26 13:45:03.191 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 0.03346000, Close: 0.03346000, High: 0.03346000, Low: 0.03346000, OpenTime: 2025-12-26T09:22, CloseTime: 2025-12-26T09:22:59
+2025-12-26 13:45:03.191 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 0.03346000, Close: 0.03346000, High: 0.03346000, Low: 0.03346000, OpenTime: 2025-12-26T09:23, CloseTime: 2025-12-26T09:23:59
+2025-12-26 13:45:03.218 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 211
+2025-12-26 13:45:03.218 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2025-12-26 13:45:03.219 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 0.03344000, Close: 0.03344000, High: 0.03344000, Low: 0.03344000, OpenTime: 2025-12-26T09:14, CloseTime: 2025-12-26T09:14:59
+2025-12-26 13:45:03.219 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 0.03344000, Close: 0.03344000, High: 0.03345000, Low: 0.03343000, OpenTime: 2025-12-26T09:15, CloseTime: 2025-12-26T09:15:59
+2025-12-26 13:45:03.219 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 0.03344000, Close: 0.03345000, High: 0.03345000, Low: 0.03343000, OpenTime: 2025-12-26T09:16, CloseTime: 2025-12-26T09:16:59
+2025-12-26 13:45:03.219 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 0.03344000, Close: 0.03344000, High: 0.03344000, Low: 0.03344000, OpenTime: 2025-12-26T09:17, CloseTime: 2025-12-26T09:17:59
+2025-12-26 13:45:03.219 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 0.03345000, Close: 0.03345000, High: 0.03345000, Low: 0.03345000, OpenTime: 2025-12-26T09:18, CloseTime: 2025-12-26T09:18:59
+2025-12-26 13:45:03.219 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 0.03345000, Close: 0.03345000, High: 0.03345000, Low: 0.03345000, OpenTime: 2025-12-26T09:19, CloseTime: 2025-12-26T09:19:59
+2025-12-26 13:45:03.219 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 0.03346000, Close: 0.03346000, High: 0.03346000, Low: 0.03346000, OpenTime: 2025-12-26T09:20, CloseTime: 2025-12-26T09:20:59
+2025-12-26 13:45:03.219 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 0.03345000, Close: 0.03345000, High: 0.03345000, Low: 0.03345000, OpenTime: 2025-12-26T09:21, CloseTime: 2025-12-26T09:21:59
+2025-12-26 13:45:03.219 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 0.03346000, Close: 0.03346000, High: 0.03346000, Low: 0.03346000, OpenTime: 2025-12-26T09:22, CloseTime: 2025-12-26T09:22:59
+2025-12-26 13:45:03.219 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 0.03346000, Close: 0.03346000, High: 0.03346000, Low: 0.03346000, OpenTime: 2025-12-26T09:23, CloseTime: 2025-12-26T09:23:59
+2025-12-26 13:45:03.228 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Saved Indicator Event in group stockapi
+2025-12-26 13:45:03.228 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Received Message in group stockapi: ["6b05ba42-87e9-42f7-b4aa-9f715671724a"]
+2025-12-26 13:45:03.234 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Candle Found: 6b05ba42-87e9-42f7-b4aa-9f715671724a
+2025-12-26 13:45:03.234 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Candle with values: Open: 88885.99000000, Close: 88877.91000000, High: 88886.00000000, Low: 88876.81000000, OpenTime: 2025-12-26T12:44, CloseTime: 2025-12-26T12:44:59
+2025-12-26 13:45:03.259 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 211
+2025-12-26 13:45:03.260 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2025-12-26 13:45:03.260 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 88828.55000000, Close: 88835.26000000, High: 88839.00000000, Low: 88828.54000000, OpenTime: 2025-12-26T09:14, CloseTime: 2025-12-26T09:14:59
+2025-12-26 13:45:03.260 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 88835.26000000, Close: 88786.18000000, High: 88835.26000000, Low: 88786.18000000, OpenTime: 2025-12-26T09:15, CloseTime: 2025-12-26T09:15:59
+2025-12-26 13:45:03.260 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 88786.18000000, Close: 88753.03000000, High: 88796.97000000, Low: 88753.02000000, OpenTime: 2025-12-26T09:16, CloseTime: 2025-12-26T09:16:59
+2025-12-26 13:45:03.260 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 88753.02000000, Close: 88735.00000000, High: 88753.02000000, Low: 88732.35000000, OpenTime: 2025-12-26T09:17, CloseTime: 2025-12-26T09:17:59
+2025-12-26 13:45:03.260 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 88735.00000000, Close: 88712.01000000, High: 88735.00000000, Low: 88706.38000000, OpenTime: 2025-12-26T09:18, CloseTime: 2025-12-26T09:18:59
+2025-12-26 13:45:03.260 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 88712.00000000, Close: 88719.02000000, High: 88719.03000000, Low: 88671.06000000, OpenTime: 2025-12-26T09:19, CloseTime: 2025-12-26T09:19:59
+2025-12-26 13:45:03.260 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 88719.02000000, Close: 88695.99000000, High: 88719.03000000, Low: 88694.23000000, OpenTime: 2025-12-26T09:20, CloseTime: 2025-12-26T09:20:59
+2025-12-26 13:45:03.261 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 88695.98000000, Close: 88680.99000000, High: 88695.99000000, Low: 88678.23000000, OpenTime: 2025-12-26T09:21, CloseTime: 2025-12-26T09:21:59
+2025-12-26 13:45:03.261 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 88681.00000000, Close: 88650.00000000, High: 88681.00000000, Low: 88649.19000000, OpenTime: 2025-12-26T09:22, CloseTime: 2025-12-26T09:22:59
+2025-12-26 13:45:03.261 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 88650.00000000, Close: 88664.60000000, High: 88664.60000000, Low: 88649.99000000, OpenTime: 2025-12-26T09:23, CloseTime: 2025-12-26T09:23:59
+2025-12-26 13:45:03.288 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 211
+2025-12-26 13:45:03.289 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2025-12-26 13:45:03.289 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 88828.55000000, Close: 88835.26000000, High: 88839.00000000, Low: 88828.54000000, OpenTime: 2025-12-26T09:14, CloseTime: 2025-12-26T09:14:59
+2025-12-26 13:45:03.289 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 88835.26000000, Close: 88786.18000000, High: 88835.26000000, Low: 88786.18000000, OpenTime: 2025-12-26T09:15, CloseTime: 2025-12-26T09:15:59
+2025-12-26 13:45:03.289 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 88786.18000000, Close: 88753.03000000, High: 88796.97000000, Low: 88753.02000000, OpenTime: 2025-12-26T09:16, CloseTime: 2025-12-26T09:16:59
+2025-12-26 13:45:03.289 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 88753.02000000, Close: 88735.00000000, High: 88753.02000000, Low: 88732.35000000, OpenTime: 2025-12-26T09:17, CloseTime: 2025-12-26T09:17:59
+2025-12-26 13:45:03.290 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 88735.00000000, Close: 88712.01000000, High: 88735.00000000, Low: 88706.38000000, OpenTime: 2025-12-26T09:18, CloseTime: 2025-12-26T09:18:59
+2025-12-26 13:45:03.290 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 88712.00000000, Close: 88719.02000000, High: 88719.03000000, Low: 88671.06000000, OpenTime: 2025-12-26T09:19, CloseTime: 2025-12-26T09:19:59
+2025-12-26 13:45:03.290 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 88719.02000000, Close: 88695.99000000, High: 88719.03000000, Low: 88694.23000000, OpenTime: 2025-12-26T09:20, CloseTime: 2025-12-26T09:20:59
+2025-12-26 13:45:03.290 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 88695.98000000, Close: 88680.99000000, High: 88695.99000000, Low: 88678.23000000, OpenTime: 2025-12-26T09:21, CloseTime: 2025-12-26T09:21:59
+2025-12-26 13:45:03.290 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 88681.00000000, Close: 88650.00000000, High: 88681.00000000, Low: 88649.19000000, OpenTime: 2025-12-26T09:22, CloseTime: 2025-12-26T09:22:59
+2025-12-26 13:45:03.290 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 88650.00000000, Close: 88664.60000000, High: 88664.60000000, Low: 88649.99000000, OpenTime: 2025-12-26T09:23, CloseTime: 2025-12-26T09:23:59
+2025-12-26 13:45:03.310 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 211
+2025-12-26 13:45:03.310 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2025-12-26 13:45:03.310 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 88828.55000000, Close: 88835.26000000, High: 88839.00000000, Low: 88828.54000000, OpenTime: 2025-12-26T09:14, CloseTime: 2025-12-26T09:14:59
+2025-12-26 13:45:03.311 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 88835.26000000, Close: 88786.18000000, High: 88835.26000000, Low: 88786.18000000, OpenTime: 2025-12-26T09:15, CloseTime: 2025-12-26T09:15:59
+2025-12-26 13:45:03.311 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 88786.18000000, Close: 88753.03000000, High: 88796.97000000, Low: 88753.02000000, OpenTime: 2025-12-26T09:16, CloseTime: 2025-12-26T09:16:59
+2025-12-26 13:45:03.311 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 88753.02000000, Close: 88735.00000000, High: 88753.02000000, Low: 88732.35000000, OpenTime: 2025-12-26T09:17, CloseTime: 2025-12-26T09:17:59
+2025-12-26 13:45:03.311 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 88735.00000000, Close: 88712.01000000, High: 88735.00000000, Low: 88706.38000000, OpenTime: 2025-12-26T09:18, CloseTime: 2025-12-26T09:18:59
+2025-12-26 13:45:03.311 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 88712.00000000, Close: 88719.02000000, High: 88719.03000000, Low: 88671.06000000, OpenTime: 2025-12-26T09:19, CloseTime: 2025-12-26T09:19:59
+2025-12-26 13:45:03.311 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 88719.02000000, Close: 88695.99000000, High: 88719.03000000, Low: 88694.23000000, OpenTime: 2025-12-26T09:20, CloseTime: 2025-12-26T09:20:59
+2025-12-26 13:45:03.311 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 88695.98000000, Close: 88680.99000000, High: 88695.99000000, Low: 88678.23000000, OpenTime: 2025-12-26T09:21, CloseTime: 2025-12-26T09:21:59
+2025-12-26 13:45:03.311 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 88681.00000000, Close: 88650.00000000, High: 88681.00000000, Low: 88649.19000000, OpenTime: 2025-12-26T09:22, CloseTime: 2025-12-26T09:22:59
+2025-12-26 13:45:03.311 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Open: 88650.00000000, Close: 88664.60000000, High: 88664.60000000, Low: 88649.99000000, OpenTime: 2025-12-26T09:23, CloseTime: 2025-12-26T09:23:59
+2025-12-26 13:45:03.320 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Saved Indicator Event in group stockapi
+2025-12-26 13:46:02.080 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.i.ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-stockapi-1, groupId=stockapi] Revoke previously assigned partitions indicator_events-0
+2025-12-26 13:46:02.080 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer - stockapi: partitions revoked: [indicator_events-0]
+2025-12-26 13:46:02.081 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-stockapi-1, groupId=stockapi] Member consumer-stockapi-1-bb4507fb-656d-460b-b813-33877de24750 sending LeaveGroup request to coordinator kafka:9092 (id: 2147483646 rack: null) due to the consumer unsubscribed from all topics
+2025-12-26 13:46:02.082 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-stockapi-1, groupId=stockapi] Resetting generation and member id due to: consumer pro-actively leaving the group
+2025-12-26 13:46:02.082 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-stockapi-1, groupId=stockapi] Request joining group due to: consumer pro-actively leaving the group
+2025-12-26 13:46:02.082 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.i.LegacyKafkaConsumer - [Consumer clientId=consumer-stockapi-1, groupId=stockapi] Unsubscribed all topics or patterns and assigned partitions
+2025-12-26 13:46:02.084 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-stockapi-1, groupId=stockapi] Resetting generation and member id due to: consumer pro-actively leaving the group
+2025-12-26 13:46:02.084 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-stockapi-1, groupId=stockapi] Request joining group due to: consumer pro-actively leaving the group
+2025-12-26 13:46:02.360 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.kafka.common.metrics.Metrics - Metrics scheduler closed
+2025-12-26 13:46:02.360 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2025-12-26 13:46:02.360 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2025-12-26 13:46:02.360 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.kafka.common.metrics.Metrics - Metrics reporters closed
+2025-12-26 13:46:02.369 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.kafka.common.utils.AppInfoParser - App info kafka.consumer for consumer-stockapi-1 unregistered
+2025-12-26 13:46:02.370 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer - stockapi: Consumer stopped
+2025-12-26 13:46:02.372 INFO  [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-12-26 13:46:02.375 INFO  [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-12-26 13:46:02.387 INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-26 13:46:02.390 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-12-26 13:46:02.395 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.

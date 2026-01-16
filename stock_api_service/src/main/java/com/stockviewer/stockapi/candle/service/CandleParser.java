@@ -5,8 +5,9 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import java.util.List;
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
 import java.time.ZoneOffset;
+import java.time.Instant;
 
 public class CandleParser{
 
@@ -24,8 +25,8 @@ public class CandleParser{
         
         List<CandleDTO> candles = klines.stream()
         .map(r -> new CandleDTO(
-            LocalDateTime.ofEpochSecond(((Number) r.get(0)).longValue() / 1000, 0, ZoneOffset.UTC), //LocalDateTime
-            LocalDateTime.ofEpochSecond(((Number) r.get(6)).longValue() / 1000, 0, ZoneOffset.UTC), //LocalDateTime
+            Instant.ofEpochMilli(((Number) r.get(0)).longValue()).atOffset(ZoneOffset.UTC), //OffsetDateTime
+            Instant.ofEpochMilli(((Number) r.get(6)).longValue()).atOffset(ZoneOffset.UTC), //OffsetDateTime
             new BigDecimal((String) r.get(1)),
             new BigDecimal((String) r.get(4)),
             new BigDecimal((String) r.get(2)),

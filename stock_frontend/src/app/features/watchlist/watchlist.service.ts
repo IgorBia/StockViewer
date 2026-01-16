@@ -17,9 +17,15 @@ export class WatchlistService {
     return this.http.get<Watchlist[]>(this.getUrl, { headers });
   }
 
-  addItemToWatchlist(symbol: string): void {
+  addItemToWatchlist(symbol: string) {
     const token = this.auth.getToken();
     const headers = token ? new HttpHeaders({ Authorization: `Bearer ${token}` }) : undefined;
-    this.http.post<Watchlist[]>(this.addUrl, { symbol:symbol , watchlistName:'Default'}, { headers }).subscribe();
+    return this.http.post<Watchlist[]>(this.addUrl, { symbol: symbol, watchlistName: 'Default' }, { headers });
+  }
+
+  removeItemFromWatchlist(watchlistName: string, symbol: string) {
+    const token = this.auth.getToken();
+    const headers = token ? new HttpHeaders({ Authorization: `Bearer ${token}` }) : undefined;
+    return this.http.delete(`${this.addUrl}`, { headers, body: { symbol: symbol, watchlistName: watchlistName } });
   }
 }

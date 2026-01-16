@@ -42,4 +42,13 @@ public class Trade {
 
     @Column(name = "quote_amount", nullable = false, precision = 18, scale = 8)
     private java.math.BigDecimal quoteAmount;
+
+    @Column(name = "pnl", precision = 18, scale = 8)
+    private java.math.BigDecimal pnl;
+
+    @Column(name = "stop_loss", precision = 18, scale = 8)
+    private java.math.BigDecimal stopLoss;
+
+    @Column(name = "take_profit", precision = 18, scale = 8)
+    private java.math.BigDecimal takeProfit;
 }

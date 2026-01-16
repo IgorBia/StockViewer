@@ -28,4 +28,7 @@ public class Pair {
 
     private String market;
     private String exchange;
+
+    @Column(name="risk_tolerance", nullable=false)
+    private int riskTolerance;
 }

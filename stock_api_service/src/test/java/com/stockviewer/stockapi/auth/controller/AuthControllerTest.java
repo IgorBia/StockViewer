@@ -16,8 +16,10 @@ import org.springframework.context.annotation.Import;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.bean.override.mockito.MockitoBean;
+import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
+import com.stockviewer.stockapi.user.service.UserService;
 
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
@@ -34,10 +36,13 @@ class AuthControllerTest {
     @Autowired
     private MockMvc mockMvc;
 
-    @MockitoBean
+    @MockBean
+    private UserService userService;
+
+    @MockBean
     private AuthService authService;
 
-    @MockitoBean
+    @MockBean
     private JwtFilter jwtFilter;
 
     @Test
@@ -74,4 +79,3 @@ class AuthControllerTest {
                 .andExpect(status().isOk());
     }
 }
-//TODO: fix tests; every request 200 code is returned.

@@ -1,0 +1,477 @@
+2026-01-06 22:35:52.923 INFO  [background-preinit] o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.2.Final
+2026-01-06 22:35:52.964 INFO  [main] c.s.stockapi.StockapiApplication - Starting StockapiApplication v0.0.1-SNAPSHOT using Java 21.0.9 with PID 1 (/app/app.jar started by root in /app)
+2026-01-06 22:35:52.965 INFO  [main] c.s.stockapi.StockapiApplication - The following 1 profile is active: "dev"
+2026-01-06 22:35:53.673 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-01-06 22:35:53.728 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 47 ms. Found 11 JPA repository interfaces.
+2026-01-06 22:35:54.349 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2026-01-06 22:35:54.358 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2026-01-06 22:35:54.360 INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-01-06 22:35:54.360 INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.40]
+2026-01-06 22:35:54.379 INFO  [main] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2026-01-06 22:35:54.380 INFO  [main] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1381 ms
+2026-01-06 22:35:54.585 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2026-01-06 22:35:54.742 INFO  [main] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@64f3991e
+2026-01-06 22:35:54.744 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2026-01-06 22:35:54.777 INFO  [main] o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-01-06 22:35:54.834 INFO  [main] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.13.Final
+2026-01-06 22:35:54.860 INFO  [main] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2026-01-06 22:35:55.053 INFO  [main] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-01-06 22:35:55.091 WARN  [main] org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-01-06 22:35:55.100 INFO  [main] o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 15.15
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-01-06 22:35:55.853 INFO  [main] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-01-06 22:35:55.855 INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-01-06 22:35:56.089 INFO  [main] o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-01-06 22:35:56.852 INFO  [main] o.s.s.c.a.a.c.InitializeAuthenticationProviderBeanManagerConfigurer$InitializeAuthenticationProviderManagerConfigurer - Global AuthenticationManager configured with AuthenticationProvider bean with name authenticationProvider
+2026-01-06 22:35:56.909 WARN  [main] o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-01-06 22:35:56.977 WARN  [main] o.s.s.c.a.w.c.AuthorizeHttpRequestsConfigurer$AuthorizationManagerRequestMatcherRegistry - One of the patterns in [candles/**, users/**, /actuator/health] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2026-01-06 22:35:57.215 INFO  [main] o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoints beneath base path '/actuator'
+2026-01-06 22:35:57.604 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2026-01-06 22:35:57.612 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2026-01-06 22:35:57.638 INFO  [main] o.a.k.c.consumer.ConsumerConfig - ConsumerConfig values: 
+	allow.auto.create.topics = true
+	auto.commit.interval.ms = 5000
+	auto.include.jmx.reporter = true
+	auto.offset.reset = latest
+	bootstrap.servers = [kafka:9092]
+	check.crcs = true
+	client.dns.lookup = use_all_dns_ips
+	client.id = consumer-stockapi-1
+	client.rack = 
+	connections.max.idle.ms = 540000
+	default.api.timeout.ms = 60000
+	enable.auto.commit = false
+	enable.metrics.push = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = stockapi
+	group.instance.id = null
+	group.protocol = classic
+	group.remote.assignor = null
+	heartbeat.interval.ms = 3000
+	interceptor.classes = []
+	internal.leave.group.on.close = true
+	internal.throw.on.fetch.stable.offset.unsupported = false
+	isolation.level = read_uncommitted
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metadata.recovery.strategy = none
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.recording.level = INFO
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor, class org.apache.kafka.clients.consumer.CooperativeStickyAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.max.ms = 1000
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retry.backoff.max.ms = 1000
+	retry.backoff.ms = 100
+	sasl.client.callback.handler.class = null
+	sasl.jaas.config = null
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.login.callback.handler.class = null
+	sasl.login.class = null
+	sasl.login.connect.timeout.ms = null
+	sasl.login.read.timeout.ms = null
+	sasl.login.refresh.buffer.seconds = 300
+	sasl.login.refresh.min.period.seconds = 60
+	sasl.login.refresh.window.factor = 0.8
+	sasl.login.refresh.window.jitter = 0.05
+	sasl.login.retry.backoff.max.ms = 10000
+	sasl.login.retry.backoff.ms = 100
+	sasl.mechanism = GSSAPI
+	sasl.oauthbearer.clock.skew.seconds = 30
+	sasl.oauthbearer.expected.audience = null
+	sasl.oauthbearer.expected.issuer = null
+	sasl.oauthbearer.jwks.endpoint.refresh.ms = 3600000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.max.ms = 10000
+	sasl.oauthbearer.jwks.endpoint.retry.backoff.ms = 100
+	sasl.oauthbearer.jwks.endpoint.url = null
+	sasl.oauthbearer.scope.claim.name = scope
+	sasl.oauthbearer.sub.claim.name = sub
+	sasl.oauthbearer.token.endpoint.url = null
+	security.protocol = PLAINTEXT
+	security.providers = null
+	send.buffer.bytes = 131072
+	session.timeout.ms = 45000
+	socket.connection.setup.timeout.max.ms = 30000
+	socket.connection.setup.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.3]
+	ssl.endpoint.identification.algorithm = https
+	ssl.engine.factory.class = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.certificate.chain = null
+	ssl.keystore.key = null
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLSv1.3
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.certificates = null
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+
+2026-01-06 22:35:57.669 INFO  [main] o.a.k.c.t.i.KafkaMetricsCollector - initializing Kafka metrics collector
+2026-01-06 22:35:57.755 INFO  [main] o.a.kafka.common.utils.AppInfoParser - Kafka version: 3.8.1
+2026-01-06 22:35:57.755 INFO  [main] o.a.kafka.common.utils.AppInfoParser - Kafka commitId: 70d6ff42debf7e17
+2026-01-06 22:35:57.755 INFO  [main] o.a.kafka.common.utils.AppInfoParser - Kafka startTimeMs: 1767735357754
+2026-01-06 22:35:57.768 INFO  [main] o.a.k.c.c.i.LegacyKafkaConsumer - [Consumer clientId=consumer-stockapi-1, groupId=stockapi] Subscribed to topic(s): indicator_events
+2026-01-06 22:35:57.787 INFO  [main] c.s.stockapi.StockapiApplication - Started StockapiApplication in 5.165 seconds (process running for 5.438)
+2026-01-06 22:35:58.007 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] org.apache.kafka.clients.Metadata - [Consumer clientId=consumer-stockapi-1, groupId=stockapi] Cluster ID: 5L6g3nShT-eMCtK--X86sw
+2026-01-06 22:35:58.008 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-stockapi-1, groupId=stockapi] Discovered group coordinator kafka:9092 (id: 2147483646 rack: null)
+2026-01-06 22:35:58.009 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-stockapi-1, groupId=stockapi] (Re-)joining group
+2026-01-06 22:35:58.020 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-stockapi-1, groupId=stockapi] Request joining group due to: need to re-join with the given member-id: consumer-stockapi-1-e99030db-dc4e-4782-9844-ed6461564300
+2026-01-06 22:35:58.021 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-stockapi-1, groupId=stockapi] (Re-)joining group
+2026-01-06 22:36:00.100 INFO  [scheduling-1] c.s.s.w.s.WalletWorthSnapshotScheduler - Taking wallet worth snapshot for wallet from user: igor.bialas@gmail.com
+2026-01-06 22:36:01.032 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-stockapi-1, groupId=stockapi] Successfully joined group with generation Generation{generationId=9, memberId='consumer-stockapi-1-e99030db-dc4e-4782-9844-ed6461564300', protocol='range'}
+2026-01-06 22:36:01.038 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-stockapi-1, groupId=stockapi] Finished assignment for group at generation 9: {consumer-stockapi-1-e99030db-dc4e-4782-9844-ed6461564300=Assignment(partitions=[indicator_events-0])}
+2026-01-06 22:36:01.054 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-stockapi-1, groupId=stockapi] Successfully synced group in generation Generation{generationId=9, memberId='consumer-stockapi-1-e99030db-dc4e-4782-9844-ed6461564300', protocol='range'}
+2026-01-06 22:36:01.055 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-stockapi-1, groupId=stockapi] Notifying assignor about the new Assignment(partitions=[indicator_events-0])
+2026-01-06 22:36:01.057 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.i.ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-stockapi-1, groupId=stockapi] Adding newly assigned partitions: indicator_events-0
+2026-01-06 22:36:01.070 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.internals.ConsumerUtils - Setting offset for partition indicator_events-0 to the committed offset FetchPosition{offset=10552, offsetEpoch=Optional.empty, currentLeader=LeaderAndEpoch{leader=Optional[kafka:9092 (id: 1 rack: null)], epoch=6}}
+2026-01-06 22:36:01.071 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer - stockapi: partitions assigned: [indicator_events-0]
+2026-01-06 22:36:02.487 INFO  [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-01-06 22:36:02.487 INFO  [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-01-06 22:36:02.488 INFO  [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2026-01-06 22:36:15.049 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing Stop Loss / Take Profit for pair BTCUSDC on candle 2026-01-06T21:34
+2026-01-06 22:36:15.053 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Found 0 trades with Stop Loss/Take Profit for user igor.bialas@gmail.com on pair BTCUSDC
+2026-01-06 22:36:15.058 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing Stop Loss / Take Profit for pair ETHBTC on candle 2026-01-06T21:34
+2026-01-06 22:36:15.060 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Found 0 trades with Stop Loss/Take Profit for user igor.bialas@gmail.com on pair ETHBTC
+2026-01-06 22:36:15.065 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing Stop Loss / Take Profit for pair SOLUSDC on candle 2026-01-06T21:34
+2026-01-06 22:36:15.079 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Found 90 trades with Stop Loss/Take Profit for user igor.bialas@gmail.com on pair SOLUSDC
+2026-01-06 22:36:15.093 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 5396f544-4e3b-4da3-bd7d-2e98ba57e40f: insufficient owned amount (owned=0.12754988, needed=1.51641519)
+2026-01-06 22:36:15.101 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 80c35efb-79cc-40e7-8d55-4873a6733d2a: insufficient owned amount (owned=0.12754988, needed=1.49264186)
+2026-01-06 22:36:15.107 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 117a5a0a-659f-4fec-bfdc-36ab90e8dd04: insufficient owned amount (owned=0.12754988, needed=1.46256709)
+2026-01-06 22:36:15.112 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade fc0baa54-e31a-4452-ac36-625535965b06: insufficient owned amount (owned=0.12754988, needed=1.43364202)
+2026-01-06 22:36:15.121 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 5d28129b-2e10-40d5-b999-0c3f935f3118: insufficient owned amount (owned=0.12754988, needed=1.40464943)
+2026-01-06 22:36:15.127 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 068699c4-ef4b-4c7a-9280-242c03e83350: insufficient owned amount (owned=0.12754988, needed=1.37634762)
+2026-01-06 22:36:15.135 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade b818aab4-c4d1-4cdd-973b-707f71a40c29: insufficient owned amount (owned=0.12754988, needed=1.34892298)
+2026-01-06 22:36:15.140 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade b115ebad-7e3d-4cde-bfc5-8f7aca5a2df8: insufficient owned amount (owned=0.12754988, needed=1.32094252)
+2026-01-06 22:36:15.145 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 0f7ccdc9-7224-40b9-b4c2-b43beb7fe79e: insufficient owned amount (owned=0.12754988, needed=1.29383718)
+2026-01-06 22:36:15.150 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 14d0cbb8-38d9-4040-9db4-4fd9cdb19761: insufficient owned amount (owned=0.12754988, needed=1.26757632)
+2026-01-06 22:36:15.157 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 5df8282e-087e-4350-a7e8-cb9a8873b329: insufficient owned amount (owned=0.12754988, needed=1.30122105)
+2026-01-06 22:36:15.164 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 767e3d1f-bd1f-4d3c-8d06-20cecc73c0d9: insufficient owned amount (owned=0.12754988, needed=1.27626026)
+2026-01-06 22:36:15.168 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 3163a1f2-b653-4769-b6b4-7be6c5049d40: insufficient owned amount (owned=0.12754988, needed=1.24969269)
+2026-01-06 22:36:15.171 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 25d3e5af-f233-48eb-aaab-78a342d79f9d: insufficient owned amount (owned=0.12754988, needed=1.22423508)
+2026-01-06 22:36:15.179 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 85cccb4f-b53d-4dde-ab05-129df7bbc10f: insufficient owned amount (owned=0.12754988, needed=1.20002303)
+2026-01-06 22:36:15.185 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 7ac4820e-fbab-443b-9a39-547f2da43360: insufficient owned amount (owned=0.12754988, needed=1.17628988)
+2026-01-06 22:36:15.188 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade a5becd50-f646-466c-80d8-913eca012067: insufficient owned amount (owned=0.12754988, needed=1.15276409)
+2026-01-06 22:36:15.190 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade cfe11c09-38b4-4c77-863d-ed8e6f3e86d8: insufficient owned amount (owned=0.12754988, needed=1.12936652)
+2026-01-06 22:36:15.193 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade d1c66447-c46d-4aa8-b443-d3cf5e316575: insufficient owned amount (owned=0.12754988, needed=1.10686303)
+2026-01-06 22:36:15.196 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade fb5a3675-832a-4b34-964a-a56b17ad15ea: insufficient owned amount (owned=0.12754988, needed=1.08489014)
+2026-01-06 22:36:15.201 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade ca9fe6dc-6f75-4b9f-a6d5-0c8e674e4b32: insufficient owned amount (owned=0.12754988, needed=1.06295073)
+2026-01-06 22:36:15.206 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 5455882e-2e93-4ebb-9089-73292081a498: insufficient owned amount (owned=0.12754988, needed=1.16459559)
+2026-01-06 22:36:15.209 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade e6f2bb83-4a7f-46ab-9e02-926c1605f6f6: insufficient owned amount (owned=0.12754988, needed=1.19983379)
+2026-01-06 22:36:15.213 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade f12d3875-da73-4c5d-b685-d8a21257b497: insufficient owned amount (owned=0.12754988, needed=1.46874582)
+2026-01-06 22:36:15.217 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 3507a95f-f8b0-4d53-8da2-1bea2a9b382c: insufficient owned amount (owned=0.12754988, needed=0.42434080)
+2026-01-06 22:36:15.221 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade b0b2903d-15da-4e42-adc5-7dae4afcb413: insufficient owned amount (owned=0.12754988, needed=0.44055897)
+2026-01-06 22:36:15.225 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade be68b986-2764-470e-977f-ac9a52c79b53: insufficient owned amount (owned=0.12754988, needed=0.43155686)
+2026-01-06 22:36:15.228 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade bf2a74b3-2c49-4107-a081-ce35bb8d812c: insufficient owned amount (owned=0.12754988, needed=0.42280108)
+2026-01-06 22:36:15.232 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade a1eed10e-595d-4408-afdf-32e811980fa6: insufficient owned amount (owned=0.12754988, needed=0.44057889)
+2026-01-06 22:36:15.236 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 36c031ac-9233-42aa-bb80-93803e57aaba: insufficient owned amount (owned=0.12754988, needed=0.43186285)
+2026-01-06 22:36:15.240 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 42814664-a0c9-4df1-ab4b-7892fc95dcc3: insufficient owned amount (owned=0.12754988, needed=0.42266445)
+2026-01-06 22:36:15.243 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 3c8f8811-2087-41a4-a59c-f9a8aebc7f87: insufficient owned amount (owned=0.12754988, needed=0.43969546)
+2026-01-06 22:36:15.247 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade d092643e-b162-4942-9a69-2e94bbeb15b0: insufficient owned amount (owned=0.12754988, needed=0.43828387)
+2026-01-06 22:36:15.251 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade d92a7579-60e3-485d-83c0-ab0811bee2e3: insufficient owned amount (owned=0.12754988, needed=0.43788454)
+2026-01-06 22:36:15.254 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade c85cc7fc-6727-4354-964a-c85a651f52bd: insufficient owned amount (owned=0.12754988, needed=0.43834038)
+2026-01-06 22:36:15.258 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 32f7d323-fbba-48df-8d4c-e007daad68e9: insufficient owned amount (owned=0.12754988, needed=0.43730829)
+2026-01-06 22:36:15.261 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 4e03c5a0-0c92-4736-b359-33b5009b46b0: insufficient owned amount (owned=0.12754988, needed=0.43701999)
+2026-01-06 22:36:15.265 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 037c5c96-bd13-4f35-9188-6da06ae41311: insufficient owned amount (owned=0.12754988, needed=0.43692793)
+2026-01-06 22:36:15.269 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 8e742e1a-b667-4517-bc6d-0d93df547462: insufficient owned amount (owned=0.12754988, needed=0.43787812)
+2026-01-06 22:36:15.273 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 5d18b521-11cf-444b-a38b-49778af72bec: insufficient owned amount (owned=0.12754988, needed=0.43700563)
+2026-01-06 22:36:15.276 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 2c36cefd-fc80-47d3-b477-dbe76ac24331: insufficient owned amount (owned=0.12754988, needed=0.43815549)
+2026-01-06 22:36:15.281 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 342e6a83-6b4a-4909-abd0-95a258411a01: insufficient owned amount (owned=0.12754988, needed=0.43884231)
+2026-01-06 22:36:15.286 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade f149bc8f-f6ef-4a87-8eea-a83727a910e9: insufficient owned amount (owned=0.12754988, needed=0.43881099)
+2026-01-06 22:36:15.289 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 14033498-f1c9-40a8-8f39-b0aa281a4df7: insufficient owned amount (owned=0.12754988, needed=0.43971562)
+2026-01-06 22:36:15.292 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade ea87fa0b-ce00-4927-856f-463ad6bbd358: insufficient owned amount (owned=0.12754988, needed=0.43977140)
+2026-01-06 22:36:15.295 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade a168de7a-6389-47b1-8bd9-fbe9b6a129ce: insufficient owned amount (owned=0.12754988, needed=0.43908414)
+2026-01-06 22:36:15.300 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 3ea43d9f-4d12-44a2-b54b-3900aa840b47: insufficient owned amount (owned=0.12754988, needed=0.43895392)
+2026-01-06 22:36:15.303 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade a5df1aed-4cae-4235-a303-588d61f09de2: insufficient owned amount (owned=0.12754988, needed=0.43912291)
+2026-01-06 22:36:15.306 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 39f80986-dade-4977-99d5-0e1ed2396f43: insufficient owned amount (owned=0.12754988, needed=0.43919345)
+2026-01-06 22:36:15.310 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 3f27104e-38ce-4685-a6e9-b81ce45ee244: insufficient owned amount (owned=0.12754988, needed=0.43995253)
+2026-01-06 22:36:15.314 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 6ba13421-c8c7-485a-bd0e-8a9ed49c5136: insufficient owned amount (owned=0.12754988, needed=0.43868230)
+2026-01-06 22:36:15.318 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade a525aa7f-8202-4a19-bd62-431ad2c189d1: insufficient owned amount (owned=0.12754988, needed=0.43885930)
+2026-01-06 22:36:15.322 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade ba553dbf-d3ea-4211-8fe2-e450b7338b86: insufficient owned amount (owned=0.12754988, needed=0.43914633)
+2026-01-06 22:36:15.326 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 12847348-e0d9-4931-87b7-54993915d90f: insufficient owned amount (owned=0.12754988, needed=0.43876580)
+2026-01-06 22:36:15.330 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 72dadea8-d547-470a-b867-a27f24feda66: insufficient owned amount (owned=0.12754988, needed=0.43889500)
+2026-01-06 22:36:15.334 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 1bf2eb25-73c3-4631-9964-17042d3a8313: insufficient owned amount (owned=0.12754988, needed=0.43883559)
+2026-01-06 22:36:15.337 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 62e58256-e488-4ffe-89cf-895569f706d2: insufficient owned amount (owned=0.12754988, needed=0.43887070)
+2026-01-06 22:36:15.340 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 8f131f70-2ad4-4c47-99b2-5b6a394715a4: insufficient owned amount (owned=0.12754988, needed=0.43885343)
+2026-01-06 22:36:15.345 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade ba2f25e6-e431-4beb-a228-ee2298273825: insufficient owned amount (owned=0.12754988, needed=0.43859789)
+2026-01-06 22:36:15.348 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 499d598e-9987-4481-ac4c-3ae0e4f0f198: insufficient owned amount (owned=0.12754988, needed=0.43888785)
+2026-01-06 22:36:15.352 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 7a83cc63-548a-4215-a776-76a8e1fa72a3: insufficient owned amount (owned=0.12754988, needed=0.43898483)
+2026-01-06 22:36:15.356 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 13cdca4f-5bf4-49e3-98a9-8c783502131b: insufficient owned amount (owned=0.12754988, needed=0.43861072)
+2026-01-06 22:36:15.359 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 11197474-1793-426f-bd3b-161adb918abf: insufficient owned amount (owned=0.12754988, needed=0.43900235)
+2026-01-06 22:36:15.362 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 7b8061b8-64e3-48b5-b126-34579753974e: insufficient owned amount (owned=0.12754988, needed=0.43826197)
+2026-01-06 22:36:15.365 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 7343d825-c686-4e8f-a5ad-a25ed9ac4628: insufficient owned amount (owned=0.12754988, needed=0.43801743)
+2026-01-06 22:36:15.368 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 56fbf1ae-6edb-4632-8c5d-66f5ad4a2d0e: insufficient owned amount (owned=0.12754988, needed=0.43790647)
+2026-01-06 22:36:15.371 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 4d865882-d61e-4dab-aee2-5972c362fc3d: insufficient owned amount (owned=0.12754988, needed=0.43823011)
+2026-01-06 22:36:15.374 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 544fce12-d5da-4976-b57b-2c94e8b15d11: insufficient owned amount (owned=0.12754988, needed=0.43772764)
+2026-01-06 22:36:15.377 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 6382fcce-edfe-41fc-8c5c-5509b0e44f67: insufficient owned amount (owned=0.12754988, needed=0.43736419)
+2026-01-06 22:36:15.383 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade f351e795-9bcc-4da7-8375-bc9109d0aede: insufficient owned amount (owned=0.12754988, needed=0.43764504)
+2026-01-06 22:36:15.386 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade ba5aa3c7-5c35-47c6-879f-6cdf2634aad2: insufficient owned amount (owned=0.12754988, needed=0.42868929)
+2026-01-06 22:36:15.388 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade fa20682e-a065-4f40-be78-661bbac38d45: insufficient owned amount (owned=0.12754988, needed=0.42008509)
+2026-01-06 22:36:15.390 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 220ca5b1-2e74-4942-936c-22aae347ef65: insufficient owned amount (owned=0.12754988, needed=0.42883117)
+2026-01-06 22:36:15.393 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade cacb8b11-1b0f-4400-af88-68012f49a5cd: insufficient owned amount (owned=0.12754988, needed=0.42837736)
+2026-01-06 22:36:15.395 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 8bddd768-6b37-4f51-81db-a89a21440722: insufficient owned amount (owned=0.12754988, needed=0.42847760)
+2026-01-06 22:36:15.397 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 30383a60-84f4-4208-ac32-f9f270899b7f: insufficient owned amount (owned=0.12754988, needed=0.42823998)
+2026-01-06 22:36:15.401 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade abf03a92-b03c-4561-97c2-0ff73dc0e09a: insufficient owned amount (owned=0.12754988, needed=0.41549916)
+2026-01-06 22:36:15.404 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade a46aabb1-5a39-4d16-a594-ad0172ad8ad2: insufficient owned amount (owned=0.12754988, needed=0.42375790)
+2026-01-06 22:36:15.409 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 08343181-f00c-4e4e-ab6f-8453c055f190: insufficient owned amount (owned=0.12754988, needed=0.42236138)
+2026-01-06 22:36:15.411 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade a97f1c56-60be-497a-bbb2-d810c6568ff6: insufficient owned amount (owned=0.12754988, needed=0.41976563)
+2026-01-06 22:36:15.413 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 53358114-a1ce-4645-be3d-2fa21656d54f: insufficient owned amount (owned=0.12754988, needed=0.42058686)
+2026-01-06 22:36:15.416 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade bf73b6bb-c5e5-4bd6-a3e0-7f1d15a64da4: insufficient owned amount (owned=0.12754988, needed=0.42108109)
+2026-01-06 22:36:15.419 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 3bb80af4-89a9-467e-a819-f9a2dcef484d: insufficient owned amount (owned=0.12754988, needed=0.42021849)
+2026-01-06 22:36:15.422 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 40d1f274-6d42-496a-8343-547ece6a2638: insufficient owned amount (owned=0.12754988, needed=0.42121830)
+2026-01-06 22:36:15.424 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 31c0cfc1-4baa-4140-a11a-b04fc519fb1e: insufficient owned amount (owned=0.12754988, needed=0.42101006)
+2026-01-06 22:36:15.427 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 2d7054fe-9a6b-43f7-8784-f71f1a7a0252: insufficient owned amount (owned=0.12754988, needed=0.42019895)
+2026-01-06 22:36:15.430 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 556ef29a-c8e2-43b8-ab0e-2ebdaf133da6: insufficient owned amount (owned=0.12754988, needed=0.42142271)
+2026-01-06 22:36:15.433 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 7f9119d2-a082-4682-8a05-cb97b14e2b04: insufficient owned amount (owned=0.12754988, needed=0.42133462)
+2026-01-06 22:36:15.436 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 79db47bc-ae0d-4dea-86b8-4e61c432990b: insufficient owned amount (owned=0.12754988, needed=0.42121971)
+2026-01-06 22:36:15.438 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 8338e952-f6a3-4a28-890b-e77d06f25c35: insufficient owned amount (owned=0.12754988, needed=0.42125528)
+2026-01-06 22:36:15.442 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing Stop Loss / Take Profit for pair ETHUSDC on candle 2026-01-06T21:34
+2026-01-06 22:36:15.443 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Found 0 trades with Stop Loss/Take Profit for user igor.bialas@gmail.com on pair ETHUSDC
+2026-01-06 22:36:30.009 INFO  [scheduling-1] c.s.s.trade.service.TradeExecutor - [BTCUSDC] Executing trades for managed accounts...
+2026-01-06 22:36:30.012 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing trades for managed assets for pair BTCUSDC
+2026-01-06 22:36:30.013 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Found 0 users with managed assets for pair BTCUSDC
+2026-01-06 22:36:30.452 INFO  [scheduling-1] c.s.s.trade.service.TradeExecutor - [ETHBTC] Executing trades for managed accounts...
+2026-01-06 22:36:30.455 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing trades for managed assets for pair ETHBTC
+2026-01-06 22:36:30.455 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Found 0 users with managed assets for pair ETHBTC
+2026-01-06 22:36:31.374 INFO  [scheduling-1] c.s.s.trade.service.TradeExecutor - [SOLUSDC] Executing trades for managed accounts...
+2026-01-06 22:36:31.378 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing trades for managed assets for pair SOLUSDC
+2026-01-06 22:36:31.379 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Found 1 users with managed assets for pair SOLUSDC
+2026-01-06 22:36:31.790 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Checking user igor.bialas@gmail.com for managed asset trades...
+2026-01-06 22:36:31.793 INFO  [scheduling-1] c.s.s.trade.service.TradeService - User igor.bialas@gmail.com wallet for pair SOLUSDC: baseAmount=0.12754988, quoteAmount=2974.07332974, totalValue=2992.1318417504000000
+2026-01-06 22:36:32.021 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing SELL trade for user d7c42ede-7779-4f55-8afb-1d64d8e2ed98 on pair SOLUSDC
+2026-01-06 22:36:32.428 ERROR [scheduling-1] c.s.s.trade.service.TradeService - Error processing managed asset trades for user igor.bialas@gmail.com: Insufficient assets for the transaction
+java.lang.IllegalArgumentException: Insufficient assets for the transaction
+	at com.stockviewer.stockapi.trade.service.TradeService.buildTrade(TradeService.java:82)
+	at com.stockviewer.stockapi.trade.service.TradeService.executeTradeForUser(TradeService.java:63)
+	at com.stockviewer.stockapi.trade.service.TradeService.executeTradeForManagedAssets(TradeService.java:184)
+	at com.stockviewer.stockapi.trade.service.TradeExecutor.executeTradesForManagedAssets(TradeExecutor.java:44)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.runInternal(ScheduledMethodRunnable.java:130)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.lambda$run$2(ScheduledMethodRunnable.java:124)
+	at io.micrometer.observation.Observation.observe(Observation.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:124)
+	at org.springframework.scheduling.config.Task$OutcomeTrackingRunnable.run(Task.java:85)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:96)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.base/java.lang.Thread.run(Unknown Source)
+2026-01-06 22:36:32.431 INFO  [scheduling-1] c.s.s.trade.service.TradeExecutor - [ETHUSDC] Executing trades for managed accounts...
+2026-01-06 22:36:32.433 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing trades for managed assets for pair ETHUSDC
+2026-01-06 22:36:32.433 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Found 0 users with managed assets for pair ETHUSDC
+2026-01-06 22:37:00.004 INFO  [scheduling-1] c.s.s.w.s.WalletWorthSnapshotScheduler - Taking wallet worth snapshot for wallet from user: igor.bialas@gmail.com
+2026-01-06 22:37:02.429 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Received Message in group stockapi: ["204625a9-9ae2-4cbd-b930-cc12dc013110"]
+2026-01-06 22:37:02.504 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 2003
+2026-01-06 22:37:02.504 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-06 22:37:02.661 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 2003
+2026-01-06 22:37:02.661 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-06 22:37:02.711 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 2003
+2026-01-06 22:37:02.712 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-06 22:37:02.727 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Saved Indicator Event in group stockapi
+2026-01-06 22:37:02.728 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Received Message in group stockapi: ["36b1b302-80d6-4a7d-9a42-c271afbba003"]
+2026-01-06 22:37:02.793 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 2003
+2026-01-06 22:37:02.793 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-06 22:37:02.842 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 2003
+2026-01-06 22:37:02.843 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-06 22:37:02.895 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 2003
+2026-01-06 22:37:02.895 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-06 22:37:02.903 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Saved Indicator Event in group stockapi
+2026-01-06 22:37:02.916 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Received Message in group stockapi: ["5f418926-0b04-47e2-a145-35fc24a5dbe5"]
+2026-01-06 22:37:02.948 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 2003
+2026-01-06 22:37:02.949 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-06 22:37:02.990 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 2003
+2026-01-06 22:37:02.990 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-06 22:37:03.038 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 2003
+2026-01-06 22:37:03.038 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-06 22:37:03.044 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Saved Indicator Event in group stockapi
+2026-01-06 22:37:03.044 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Received Message in group stockapi: ["c4fcfe0a-0ffd-407b-a94e-b3f70e773e6e"]
+2026-01-06 22:37:03.074 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 2003
+2026-01-06 22:37:03.074 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-06 22:37:03.118 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 2003
+2026-01-06 22:37:03.119 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-06 22:37:03.158 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 2003
+2026-01-06 22:37:03.158 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-06 22:37:03.168 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Saved Indicator Event in group stockapi
+2026-01-06 22:37:15.010 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing Stop Loss / Take Profit for pair BTCUSDC on candle 2026-01-06T21:36
+2026-01-06 22:37:15.010 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Found 0 trades with Stop Loss/Take Profit for user igor.bialas@gmail.com on pair BTCUSDC
+2026-01-06 22:37:15.013 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing Stop Loss / Take Profit for pair ETHBTC on candle 2026-01-06T21:36
+2026-01-06 22:37:15.013 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Found 0 trades with Stop Loss/Take Profit for user igor.bialas@gmail.com on pair ETHBTC
+2026-01-06 22:37:15.015 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing Stop Loss / Take Profit for pair SOLUSDC on candle 2026-01-06T21:36
+2026-01-06 22:37:15.017 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Found 90 trades with Stop Loss/Take Profit for user igor.bialas@gmail.com on pair SOLUSDC
+2026-01-06 22:37:15.020 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 5396f544-4e3b-4da3-bd7d-2e98ba57e40f: insufficient owned amount (owned=0.12754988, needed=1.51641519)
+2026-01-06 22:37:15.021 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 80c35efb-79cc-40e7-8d55-4873a6733d2a: insufficient owned amount (owned=0.12754988, needed=1.49264186)
+2026-01-06 22:37:15.023 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 117a5a0a-659f-4fec-bfdc-36ab90e8dd04: insufficient owned amount (owned=0.12754988, needed=1.46256709)
+2026-01-06 22:37:15.025 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade fc0baa54-e31a-4452-ac36-625535965b06: insufficient owned amount (owned=0.12754988, needed=1.43364202)
+2026-01-06 22:37:15.027 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 5d28129b-2e10-40d5-b999-0c3f935f3118: insufficient owned amount (owned=0.12754988, needed=1.40464943)
+2026-01-06 22:37:15.029 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 068699c4-ef4b-4c7a-9280-242c03e83350: insufficient owned amount (owned=0.12754988, needed=1.37634762)
+2026-01-06 22:37:15.032 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade b818aab4-c4d1-4cdd-973b-707f71a40c29: insufficient owned amount (owned=0.12754988, needed=1.34892298)
+2026-01-06 22:37:15.034 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade b115ebad-7e3d-4cde-bfc5-8f7aca5a2df8: insufficient owned amount (owned=0.12754988, needed=1.32094252)
+2026-01-06 22:37:15.036 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 0f7ccdc9-7224-40b9-b4c2-b43beb7fe79e: insufficient owned amount (owned=0.12754988, needed=1.29383718)
+2026-01-06 22:37:15.038 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 14d0cbb8-38d9-4040-9db4-4fd9cdb19761: insufficient owned amount (owned=0.12754988, needed=1.26757632)
+2026-01-06 22:37:15.040 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 5df8282e-087e-4350-a7e8-cb9a8873b329: insufficient owned amount (owned=0.12754988, needed=1.30122105)
+2026-01-06 22:37:15.043 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 767e3d1f-bd1f-4d3c-8d06-20cecc73c0d9: insufficient owned amount (owned=0.12754988, needed=1.27626026)
+2026-01-06 22:37:15.048 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 3163a1f2-b653-4769-b6b4-7be6c5049d40: insufficient owned amount (owned=0.12754988, needed=1.24969269)
+2026-01-06 22:37:15.051 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 25d3e5af-f233-48eb-aaab-78a342d79f9d: insufficient owned amount (owned=0.12754988, needed=1.22423508)
+2026-01-06 22:37:15.053 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 85cccb4f-b53d-4dde-ab05-129df7bbc10f: insufficient owned amount (owned=0.12754988, needed=1.20002303)
+2026-01-06 22:37:15.055 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 7ac4820e-fbab-443b-9a39-547f2da43360: insufficient owned amount (owned=0.12754988, needed=1.17628988)
+2026-01-06 22:37:15.057 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade a5becd50-f646-466c-80d8-913eca012067: insufficient owned amount (owned=0.12754988, needed=1.15276409)
+2026-01-06 22:37:15.060 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade cfe11c09-38b4-4c77-863d-ed8e6f3e86d8: insufficient owned amount (owned=0.12754988, needed=1.12936652)
+2026-01-06 22:37:15.064 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade d1c66447-c46d-4aa8-b443-d3cf5e316575: insufficient owned amount (owned=0.12754988, needed=1.10686303)
+2026-01-06 22:37:15.068 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade fb5a3675-832a-4b34-964a-a56b17ad15ea: insufficient owned amount (owned=0.12754988, needed=1.08489014)
+2026-01-06 22:37:15.071 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade ca9fe6dc-6f75-4b9f-a6d5-0c8e674e4b32: insufficient owned amount (owned=0.12754988, needed=1.06295073)
+2026-01-06 22:37:15.073 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 5455882e-2e93-4ebb-9089-73292081a498: insufficient owned amount (owned=0.12754988, needed=1.16459559)
+2026-01-06 22:37:15.075 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade e6f2bb83-4a7f-46ab-9e02-926c1605f6f6: insufficient owned amount (owned=0.12754988, needed=1.19983379)
+2026-01-06 22:37:15.078 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade f12d3875-da73-4c5d-b685-d8a21257b497: insufficient owned amount (owned=0.12754988, needed=1.46874582)
+2026-01-06 22:37:15.081 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 3507a95f-f8b0-4d53-8da2-1bea2a9b382c: insufficient owned amount (owned=0.12754988, needed=0.42434080)
+2026-01-06 22:37:15.084 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade b0b2903d-15da-4e42-adc5-7dae4afcb413: insufficient owned amount (owned=0.12754988, needed=0.44055897)
+2026-01-06 22:37:15.086 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade be68b986-2764-470e-977f-ac9a52c79b53: insufficient owned amount (owned=0.12754988, needed=0.43155686)
+2026-01-06 22:37:15.089 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade bf2a74b3-2c49-4107-a081-ce35bb8d812c: insufficient owned amount (owned=0.12754988, needed=0.42280108)
+2026-01-06 22:37:15.090 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade a1eed10e-595d-4408-afdf-32e811980fa6: insufficient owned amount (owned=0.12754988, needed=0.44057889)
+2026-01-06 22:37:15.092 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 36c031ac-9233-42aa-bb80-93803e57aaba: insufficient owned amount (owned=0.12754988, needed=0.43186285)
+2026-01-06 22:37:15.094 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 42814664-a0c9-4df1-ab4b-7892fc95dcc3: insufficient owned amount (owned=0.12754988, needed=0.42266445)
+2026-01-06 22:37:15.097 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 3c8f8811-2087-41a4-a59c-f9a8aebc7f87: insufficient owned amount (owned=0.12754988, needed=0.43969546)
+2026-01-06 22:37:15.100 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade d092643e-b162-4942-9a69-2e94bbeb15b0: insufficient owned amount (owned=0.12754988, needed=0.43828387)
+2026-01-06 22:37:15.104 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade d92a7579-60e3-485d-83c0-ab0811bee2e3: insufficient owned amount (owned=0.12754988, needed=0.43788454)
+2026-01-06 22:37:15.108 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade c85cc7fc-6727-4354-964a-c85a651f52bd: insufficient owned amount (owned=0.12754988, needed=0.43834038)
+2026-01-06 22:37:15.112 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 32f7d323-fbba-48df-8d4c-e007daad68e9: insufficient owned amount (owned=0.12754988, needed=0.43730829)
+2026-01-06 22:37:15.114 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 4e03c5a0-0c92-4736-b359-33b5009b46b0: insufficient owned amount (owned=0.12754988, needed=0.43701999)
+2026-01-06 22:37:15.117 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 037c5c96-bd13-4f35-9188-6da06ae41311: insufficient owned amount (owned=0.12754988, needed=0.43692793)
+2026-01-06 22:37:15.119 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 8e742e1a-b667-4517-bc6d-0d93df547462: insufficient owned amount (owned=0.12754988, needed=0.43787812)
+2026-01-06 22:37:15.120 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 5d18b521-11cf-444b-a38b-49778af72bec: insufficient owned amount (owned=0.12754988, needed=0.43700563)
+2026-01-06 22:37:15.122 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 2c36cefd-fc80-47d3-b477-dbe76ac24331: insufficient owned amount (owned=0.12754988, needed=0.43815549)
+2026-01-06 22:37:15.123 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 342e6a83-6b4a-4909-abd0-95a258411a01: insufficient owned amount (owned=0.12754988, needed=0.43884231)
+2026-01-06 22:37:15.124 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade f149bc8f-f6ef-4a87-8eea-a83727a910e9: insufficient owned amount (owned=0.12754988, needed=0.43881099)
+2026-01-06 22:37:15.126 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 14033498-f1c9-40a8-8f39-b0aa281a4df7: insufficient owned amount (owned=0.12754988, needed=0.43971562)
+2026-01-06 22:37:15.127 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade ea87fa0b-ce00-4927-856f-463ad6bbd358: insufficient owned amount (owned=0.12754988, needed=0.43977140)
+2026-01-06 22:37:15.128 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade a168de7a-6389-47b1-8bd9-fbe9b6a129ce: insufficient owned amount (owned=0.12754988, needed=0.43908414)
+2026-01-06 22:37:15.130 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 3ea43d9f-4d12-44a2-b54b-3900aa840b47: insufficient owned amount (owned=0.12754988, needed=0.43895392)
+2026-01-06 22:37:15.132 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade a5df1aed-4cae-4235-a303-588d61f09de2: insufficient owned amount (owned=0.12754988, needed=0.43912291)
+2026-01-06 22:37:15.134 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 39f80986-dade-4977-99d5-0e1ed2396f43: insufficient owned amount (owned=0.12754988, needed=0.43919345)
+2026-01-06 22:37:15.136 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 3f27104e-38ce-4685-a6e9-b81ce45ee244: insufficient owned amount (owned=0.12754988, needed=0.43995253)
+2026-01-06 22:37:15.137 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 6ba13421-c8c7-485a-bd0e-8a9ed49c5136: insufficient owned amount (owned=0.12754988, needed=0.43868230)
+2026-01-06 22:37:15.138 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade a525aa7f-8202-4a19-bd62-431ad2c189d1: insufficient owned amount (owned=0.12754988, needed=0.43885930)
+2026-01-06 22:37:15.140 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade ba553dbf-d3ea-4211-8fe2-e450b7338b86: insufficient owned amount (owned=0.12754988, needed=0.43914633)
+2026-01-06 22:37:15.141 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 12847348-e0d9-4931-87b7-54993915d90f: insufficient owned amount (owned=0.12754988, needed=0.43876580)
+2026-01-06 22:37:15.143 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 72dadea8-d547-470a-b867-a27f24feda66: insufficient owned amount (owned=0.12754988, needed=0.43889500)
+2026-01-06 22:37:15.144 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 1bf2eb25-73c3-4631-9964-17042d3a8313: insufficient owned amount (owned=0.12754988, needed=0.43883559)
+2026-01-06 22:37:15.146 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 62e58256-e488-4ffe-89cf-895569f706d2: insufficient owned amount (owned=0.12754988, needed=0.43887070)
+2026-01-06 22:37:15.147 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 8f131f70-2ad4-4c47-99b2-5b6a394715a4: insufficient owned amount (owned=0.12754988, needed=0.43885343)
+2026-01-06 22:37:15.149 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade ba2f25e6-e431-4beb-a228-ee2298273825: insufficient owned amount (owned=0.12754988, needed=0.43859789)
+2026-01-06 22:37:15.150 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 499d598e-9987-4481-ac4c-3ae0e4f0f198: insufficient owned amount (owned=0.12754988, needed=0.43888785)
+2026-01-06 22:37:15.151 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 7a83cc63-548a-4215-a776-76a8e1fa72a3: insufficient owned amount (owned=0.12754988, needed=0.43898483)
+2026-01-06 22:37:15.152 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 13cdca4f-5bf4-49e3-98a9-8c783502131b: insufficient owned amount (owned=0.12754988, needed=0.43861072)
+2026-01-06 22:37:15.154 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 11197474-1793-426f-bd3b-161adb918abf: insufficient owned amount (owned=0.12754988, needed=0.43900235)
+2026-01-06 22:37:15.155 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 7b8061b8-64e3-48b5-b126-34579753974e: insufficient owned amount (owned=0.12754988, needed=0.43826197)
+2026-01-06 22:37:15.157 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 7343d825-c686-4e8f-a5ad-a25ed9ac4628: insufficient owned amount (owned=0.12754988, needed=0.43801743)
+2026-01-06 22:37:15.158 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 56fbf1ae-6edb-4632-8c5d-66f5ad4a2d0e: insufficient owned amount (owned=0.12754988, needed=0.43790647)
+2026-01-06 22:37:15.159 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 4d865882-d61e-4dab-aee2-5972c362fc3d: insufficient owned amount (owned=0.12754988, needed=0.43823011)
+2026-01-06 22:37:15.160 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 544fce12-d5da-4976-b57b-2c94e8b15d11: insufficient owned amount (owned=0.12754988, needed=0.43772764)
+2026-01-06 22:37:15.162 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 6382fcce-edfe-41fc-8c5c-5509b0e44f67: insufficient owned amount (owned=0.12754988, needed=0.43736419)
+2026-01-06 22:37:15.164 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade f351e795-9bcc-4da7-8375-bc9109d0aede: insufficient owned amount (owned=0.12754988, needed=0.43764504)
+2026-01-06 22:37:15.165 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade ba5aa3c7-5c35-47c6-879f-6cdf2634aad2: insufficient owned amount (owned=0.12754988, needed=0.42868929)
+2026-01-06 22:37:15.166 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade fa20682e-a065-4f40-be78-661bbac38d45: insufficient owned amount (owned=0.12754988, needed=0.42008509)
+2026-01-06 22:37:15.168 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 220ca5b1-2e74-4942-936c-22aae347ef65: insufficient owned amount (owned=0.12754988, needed=0.42883117)
+2026-01-06 22:37:15.169 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade cacb8b11-1b0f-4400-af88-68012f49a5cd: insufficient owned amount (owned=0.12754988, needed=0.42837736)
+2026-01-06 22:37:15.170 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 8bddd768-6b37-4f51-81db-a89a21440722: insufficient owned amount (owned=0.12754988, needed=0.42847760)
+2026-01-06 22:37:15.171 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 30383a60-84f4-4208-ac32-f9f270899b7f: insufficient owned amount (owned=0.12754988, needed=0.42823998)
+2026-01-06 22:37:15.172 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade abf03a92-b03c-4561-97c2-0ff73dc0e09a: insufficient owned amount (owned=0.12754988, needed=0.41549916)
+2026-01-06 22:37:15.173 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade a46aabb1-5a39-4d16-a594-ad0172ad8ad2: insufficient owned amount (owned=0.12754988, needed=0.42375790)
+2026-01-06 22:37:15.174 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 08343181-f00c-4e4e-ab6f-8453c055f190: insufficient owned amount (owned=0.12754988, needed=0.42236138)
+2026-01-06 22:37:15.176 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade a97f1c56-60be-497a-bbb2-d810c6568ff6: insufficient owned amount (owned=0.12754988, needed=0.41976563)
+2026-01-06 22:37:15.177 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 53358114-a1ce-4645-be3d-2fa21656d54f: insufficient owned amount (owned=0.12754988, needed=0.42058686)
+2026-01-06 22:37:15.178 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade bf73b6bb-c5e5-4bd6-a3e0-7f1d15a64da4: insufficient owned amount (owned=0.12754988, needed=0.42108109)
+2026-01-06 22:37:15.182 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 3bb80af4-89a9-467e-a819-f9a2dcef484d: insufficient owned amount (owned=0.12754988, needed=0.42021849)
+2026-01-06 22:37:15.183 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 40d1f274-6d42-496a-8343-547ece6a2638: insufficient owned amount (owned=0.12754988, needed=0.42121830)
+2026-01-06 22:37:15.184 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 31c0cfc1-4baa-4140-a11a-b04fc519fb1e: insufficient owned amount (owned=0.12754988, needed=0.42101006)
+2026-01-06 22:37:15.188 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 2d7054fe-9a6b-43f7-8784-f71f1a7a0252: insufficient owned amount (owned=0.12754988, needed=0.42019895)
+2026-01-06 22:37:15.190 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 556ef29a-c8e2-43b8-ab0e-2ebdaf133da6: insufficient owned amount (owned=0.12754988, needed=0.42142271)
+2026-01-06 22:37:15.193 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 7f9119d2-a082-4682-8a05-cb97b14e2b04: insufficient owned amount (owned=0.12754988, needed=0.42133462)
+2026-01-06 22:37:15.196 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 79db47bc-ae0d-4dea-86b8-4e61c432990b: insufficient owned amount (owned=0.12754988, needed=0.42121971)
+2026-01-06 22:37:15.198 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 8338e952-f6a3-4a28-890b-e77d06f25c35: insufficient owned amount (owned=0.12754988, needed=0.42125528)
+2026-01-06 22:37:15.202 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing Stop Loss / Take Profit for pair ETHUSDC on candle 2026-01-06T21:36
+2026-01-06 22:37:15.202 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Found 0 trades with Stop Loss/Take Profit for user igor.bialas@gmail.com on pair ETHUSDC
+2026-01-06 22:37:30.003 INFO  [scheduling-1] c.s.s.trade.service.TradeExecutor - [BTCUSDC] Executing trades for managed accounts...
+2026-01-06 22:37:30.005 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing trades for managed assets for pair BTCUSDC
+2026-01-06 22:37:30.005 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Found 0 users with managed assets for pair BTCUSDC
+2026-01-06 22:37:30.006 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.i.ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-stockapi-1, groupId=stockapi] Revoke previously assigned partitions indicator_events-0
+2026-01-06 22:37:30.007 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer - stockapi: partitions revoked: [indicator_events-0]
+2026-01-06 22:37:30.007 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-stockapi-1, groupId=stockapi] Member consumer-stockapi-1-e99030db-dc4e-4782-9844-ed6461564300 sending LeaveGroup request to coordinator kafka:9092 (id: 2147483646 rack: null) due to the consumer unsubscribed from all topics
+2026-01-06 22:37:30.007 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-stockapi-1, groupId=stockapi] Resetting generation and member id due to: consumer pro-actively leaving the group
+2026-01-06 22:37:30.007 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-stockapi-1, groupId=stockapi] Request joining group due to: consumer pro-actively leaving the group
+2026-01-06 22:37:30.007 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.i.LegacyKafkaConsumer - [Consumer clientId=consumer-stockapi-1, groupId=stockapi] Unsubscribed all topics or patterns and assigned partitions
+2026-01-06 22:37:30.008 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-stockapi-1, groupId=stockapi] Resetting generation and member id due to: consumer pro-actively leaving the group
+2026-01-06 22:37:30.008 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-stockapi-1, groupId=stockapi] Request joining group due to: consumer pro-actively leaving the group
+2026-01-06 22:37:30.045 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.kafka.common.metrics.Metrics - Metrics scheduler closed
+2026-01-06 22:37:30.045 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2026-01-06 22:37:30.046 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2026-01-06 22:37:30.046 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.kafka.common.metrics.Metrics - Metrics reporters closed
+2026-01-06 22:37:30.050 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.kafka.common.utils.AppInfoParser - App info kafka.consumer for consumer-stockapi-1 unregistered
+2026-01-06 22:37:30.051 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer - stockapi: Consumer stopped
+2026-01-06 22:37:30.052 INFO  [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-01-06 22:37:30.054 INFO  [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-01-06 22:37:31.788 INFO  [scheduling-1] c.s.s.trade.service.TradeExecutor - [ETHBTC] Executing trades for managed accounts...
+2026-01-06 22:37:31.790 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing trades for managed assets for pair ETHBTC
+2026-01-06 22:37:31.790 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Found 0 users with managed assets for pair ETHBTC
+2026-01-06 22:37:32.196 INFO  [scheduling-1] c.s.s.trade.service.TradeExecutor - [SOLUSDC] Executing trades for managed accounts...
+2026-01-06 22:37:32.198 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing trades for managed assets for pair SOLUSDC
+2026-01-06 22:37:32.199 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Found 1 users with managed assets for pair SOLUSDC
+2026-01-06 22:37:32.610 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Checking user igor.bialas@gmail.com for managed asset trades...
+2026-01-06 22:37:32.613 INFO  [scheduling-1] c.s.s.trade.service.TradeService - User igor.bialas@gmail.com wallet for pair SOLUSDC: baseAmount=0.12754988, quoteAmount=2974.07332974, totalValue=2992.1012297792000000
+2026-01-06 22:37:32.685 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing SELL trade for user d7c42ede-7779-4f55-8afb-1d64d8e2ed98 on pair SOLUSDC
+2026-01-06 22:37:33.125 ERROR [scheduling-1] c.s.s.trade.service.TradeService - Error processing managed asset trades for user igor.bialas@gmail.com: Insufficient assets for the transaction
+java.lang.IllegalArgumentException: Insufficient assets for the transaction
+	at com.stockviewer.stockapi.trade.service.TradeService.buildTrade(TradeService.java:82)
+	at com.stockviewer.stockapi.trade.service.TradeService.executeTradeForUser(TradeService.java:63)
+	at com.stockviewer.stockapi.trade.service.TradeService.executeTradeForManagedAssets(TradeService.java:184)
+	at com.stockviewer.stockapi.trade.service.TradeExecutor.executeTradesForManagedAssets(TradeExecutor.java:44)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.runInternal(ScheduledMethodRunnable.java:130)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.lambda$run$2(ScheduledMethodRunnable.java:124)
+	at io.micrometer.observation.Observation.observe(Observation.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:124)
+	at org.springframework.scheduling.config.Task$OutcomeTrackingRunnable.run(Task.java:85)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:96)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.base/java.lang.Thread.run(Unknown Source)
+2026-01-06 22:37:33.125 INFO  [scheduling-1] c.s.s.trade.service.TradeExecutor - [ETHUSDC] Executing trades for managed accounts...
+2026-01-06 22:37:33.127 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing trades for managed assets for pair ETHUSDC
+2026-01-06 22:37:33.127 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Found 0 users with managed assets for pair ETHUSDC
+2026-01-06 22:37:33.537 INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-06 22:37:33.539 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-01-06 22:37:33.541 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.

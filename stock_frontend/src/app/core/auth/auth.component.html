@@ -17,7 +17,7 @@
     </form>
 
     <form *ngIf="!isLogin" [formGroup]="registerForm" (ngSubmit)="submitRegister()">
-      <label>Username</label>
+      <label>Email</label>
       <input formControlName="email" placeholder="Enter email">
 
       <label>Password</label>

@@ -1,0 +1,7 @@
+<div class="wallet-worth-chart" *ngIf="labels.length">
+  <h4>Wallet Worth Over Time</h4>
+  <div class="chart-wrapper">
+      <canvas #chartCanvas></canvas>
+  </div>
+</div>
+<div *ngIf="!labels.length" class="empty">No data</div>

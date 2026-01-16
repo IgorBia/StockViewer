@@ -31,6 +31,7 @@
     "@angular/platform-server": "^20.3.0",
     "@angular/router": "^20.3.0",
     "@angular/ssr": "^20.3.4",
+    "chart.js": "^4.5.1",
     "express": "^5.1.0",
     "lightweight-charts": "^5.0.9",
     "rxjs": "~7.8.0",
@@ -50,6 +51,6 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
-    "typescript": "~5.9.2"
+    "typescript": "^5.8.3"
   }
 }

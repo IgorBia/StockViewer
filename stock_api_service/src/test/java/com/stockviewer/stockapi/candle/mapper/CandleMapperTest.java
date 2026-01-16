@@ -36,11 +36,11 @@ public class CandleMapperTest {
 
         // then
         assertAll("CandleDTO vs Candle",
-                () -> assertEquals(candle.getTimestamp(), candleDTO.timestamp()),
-                () -> assertEquals(candle.getOpen(), candleDTO.open()),
-                () -> assertEquals(candle.getClose(), candleDTO.close()),
-                () -> assertEquals(candle.getHigh(), candleDTO.high()),
-                () -> assertEquals(candle.getLow(), candleDTO.low())
+            () -> assertEquals(candle.getTimestamp(), candleDTO.timestamp().toLocalDateTime()),
+            () -> assertEquals(candle.getOpen(), candleDTO.open()),
+            () -> assertEquals(candle.getClose(), candleDTO.close()),
+            () -> assertEquals(candle.getHigh(), candleDTO.high()),
+            () -> assertEquals(candle.getLow(), candleDTO.low())
         );
     }
 

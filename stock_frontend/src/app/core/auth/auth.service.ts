@@ -16,11 +16,13 @@ export class AuthService {
 
     login(credentials: {email: string, password: string}): Observable<any> {
         return this.http.post<any>(`${this.apiUrl}/login`, credentials).pipe(
-        tap(res => localStorage.setItem('token', res.token)));
+        tap(res => localStorage.setItem('token', res.token)),
+        tap(res => localStorage.setItem('userEmail',res.userDetails.email))
+        );
     }
 
     logout() {
-        localStorage.removeItem('token');
+        localStorage.clear();    
     }
 
     isLoggedIn(): boolean {

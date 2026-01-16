@@ -15,16 +15,15 @@ import { Candlestick } from './candlestick';
 export class ChartComponent implements AfterViewInit, OnDestroy {
   @Input() symbol!: string;
   @ViewChild('chartContainer') chartContainer!: ElementRef;
-  @ViewChild('macdContainer') macdContainer!: ElementRef; // Nowy kontener dla MACD
+  @ViewChild('macdContainer') macdContainer!: ElementRef; 
   
   private refreshInterval = 60*15;
-  private chart!: IChartApi; // Główny wykres (świece + EMA9)
-  private macdChart!: IChartApi; // Osobny wykres dla MACD
+  private chart!: IChartApi; 
+  private macdChart!: IChartApi; 
   
   private candleSeries!: ISeriesApi<'Candlestick'>;
   private ema9Series?: ISeriesApi<'Line'>;
   
-  // MACD na osobnym wykresie
   private macdLineSeries?: ISeriesApi<'Line'>;
   private macdSignalSeries?: ISeriesApi<'Line'>;
   private macdHistogramSeries?: ISeriesApi<'Histogram'>;
@@ -35,16 +34,36 @@ export class ChartComponent implements AfterViewInit, OnDestroy {
   private syncingVisibleRange = false;
   private syncingInitialized = false;
 
-
   constructor(chartService: ChartService) {
     this.chartService = chartService;
   }
 
-  // ...existing code...
+  private timezoneOffsetSeconds = -new Date().getTimezoneOffset() * 60; // e.g. CET => 3600
+
+  private parseToSeconds(value: any): number {
+    try {
+      if (value == null) return Math.floor(Date.now() / 1000);
+      if (typeof value === 'number') {
+        // if large number assume milliseconds
+        return value > 1e12 ? Math.floor(value / 1000) : Math.floor(value);
+      }
+      if (typeof value === 'string') {
+        const ms = Date.parse(value);
+        if (!isNaN(ms)) return Math.floor(ms / 1000);
+        const msZ = Date.parse(value + 'Z');
+        if (!isNaN(msZ)) return Math.floor(msZ / 1000);
+        return Math.floor(Date.now() / 1000);
+      }
+      if (value instanceof Date) return Math.floor(value.getTime() / 1000);
+      return Math.floor(Date.now() / 1000);
+    } catch (e) {
+      return Math.floor(Date.now() / 1000);
+    }
+  }
 
   ngAfterViewInit() {
     this.buildChart();
-    this.buildMACDChart(); // Nowy wykres dla MACD
+    this.buildMACDChart(); 
     this.buildSeries();
     this.loadAndListen();
   }
@@ -83,7 +102,6 @@ export class ChartComponent implements AfterViewInit, OnDestroy {
   }
 
 
-// metoda do zakładania subskrypcji (wywołać tylko raz, po wczytaniu danych)
 private setupLogicalSync() {
   if (this.syncingInitialized) return;
   if (!this.chart || !this.macdChart) return;
@@ -101,57 +119,42 @@ private setupLogicalSync() {
   this.syncingInitialized = true;
 }
 
-private almostEqual(a?: number | Time, b?: number | Time, eps = 1e-6): boolean {
-  if (a == null || b == null) return false;
-  const na = typeof a === 'number' ? a : (a as any).timestamp ?? NaN;
-  const nb = typeof b === 'number' ? b : (b as any).timestamp ?? NaN;
-  return Math.abs(na - nb) <= eps;
-}
-
-private almostEqualNumber(a?: number, b?: number, eps = 1e-6): boolean {
-  if (a == null || b == null) return false;
-  return Math.abs(a - b) <= eps;
-}
-
-private syncVisibleRange(fromChart: IChartApi, toChart: IChartApi | undefined, timeRange: IRange<Time> | null) {
-  if (!toChart || !timeRange) return;
-  if (this.syncingVisibleRange) return;
-
-  try {
-    const current = toChart.timeScale()?.getVisibleRange?.() as IRange<Time> | null;
-    if (current && this.almostEqual(current.from as any, timeRange.from as any) && this.almostEqual(current.to as any, timeRange.to as any)) {
-      return;
-    }
-
-    this.syncingVisibleRange = true;
-    try {
-      toChart.timeScale().setVisibleRange(timeRange as any);
-    } finally {
-      // zwolnij lock asynchronicznie, żeby callback po setVisibleRange mógł wykryć lock i nie echo-ować
-      setTimeout(() => { this.syncingVisibleRange = false; }, 0);
-    }
-  } catch (e) {
-    console.warn('[chart sync] setVisibleRange failed', e);
-    this.syncingVisibleRange = false;
-  }
-}
-
 private syncVisibleLogicalRange(fromChart: IChartApi, toChart: IChartApi | undefined, logicalRange: { from: number; to: number } | null) {
   if (!toChart || !logicalRange) return;
   if (this.syncingVisibleRange) return;
 
   const current = (toChart.timeScale() as any).getVisibleLogicalRange?.();
-  const eps = 0.001; // tolerancja drobnych różnic
+  const eps = 0.001; 
 
   if (current && Math.abs(current.from - logicalRange.from) <= eps && Math.abs(current.to - logicalRange.to) <= eps) {
     return;
   }
 
   this.syncingVisibleRange = true;
+  const offset = -2; 
+
+  const rawFrom = Number(logicalRange.from);
+  const rawTo = Number(logicalRange.to);
+  if (!isFinite(rawFrom) || !isFinite(rawTo)) {
+    console.warn('[chart] invalid logicalRange', logicalRange);
+    return;
+  }
+
+  const safeFrom = Math.round(rawFrom) + offset;
+  const safeTo = Math.round(rawTo) + offset;
+
+  if (safeTo <= safeFrom) {
+    console.warn('[chart] invalid shifted logical range', { safeFrom, safeTo, offset });
+    return;
+  }
+
   try {
-    (toChart.timeScale() as any).setVisibleLogicalRange({ from: logicalRange.from, to: logicalRange.to });
+    const ts = (toChart.timeScale() as any);
+    ts.setVisibleLogicalRange({ from: safeFrom, to: safeTo });
+  } catch (err) {
+    console.error('[chart] setVisibleLogicalRange (shifted) failed', err, { safeFrom, safeTo });
   } finally {
-    setTimeout(() => { this.syncingVisibleRange = false; }, 0);
+      setTimeout(() => { this.syncingVisibleRange = false; }, 0);
   }
 }
 
@@ -162,34 +165,26 @@ buildMACDChart() {
   }
 
   const el = this.macdContainer.nativeElement as HTMLElement;
-  // Utwórz MACD z IDENTYCZNYMI ustawieniami timeScale / rightPriceScale
   this.macdChart = createChart(el, {
     width: el.offsetWidth,
     height: el.offsetHeight,
     layout: { background: { color: '#000D1B' }, textColor: '#d1d4dc' },
     grid: { vertLines: { color: '#001226' }, horzLines: { color: '#001226' } },
     rightPriceScale: { visible: true, borderColor: '#001226' },
-    timeScale: { borderColor: '#001226', timeVisible: true, secondsVisible: false, rightOffset: 0, barSpacing: 10 },
+    timeScale: { visible: false, borderColor: '#001226', timeVisible: true, secondsVisible: false, rightOffset: -10, barSpacing: 10 },
   });
-
-  // upewnij się, że główny wykres ma te same opcje timeScale
-  try {
-    (this.chart as any)?.applyOptions?.({
-      timeScale: { rightOffset: 0, barSpacing: 10 }
-    });
-  } catch (e) {
-    // ignore
+  this.macdChart.applyOptions({
+  handleScroll: {
+    mouseWheel: false,       // wyłącza przewijanie kółkiem myszy
+    pressedMouseMove: false, // wyłącza panning (przeciąganie myszką)
+    horzTouchDrag: false     // wyłącza przesuwanie na dotykowych urządzeniach (opcjonalnie)
+  },
+  handleScale: {
+    axisPressedMouseMove: false, // wyłącza skalowanie/przeciąganie osi wciśniętym przyciskiem
+    mouseWheel: false,           // wyłącza zoom kółkiem myszy
+    pinch: false                 // wyłącza pinch-to-zoom
   }
-
-  // subskrybuj synchronizację LOGICAL RANGE dopiero gdy oba wykresy są gotowe
-  // if (this.chart && this.macdChart) {
-  //   (this.chart.timeScale() as any).subscribeVisibleLogicalRangeChange((logicalRange: any) => {
-  //     this.syncVisibleLogicalRange(this.chart, this.macdChart, logicalRange);
-  //   });
-  //   (this.macdChart.timeScale() as any).subscribeVisibleLogicalRangeChange((logicalRange: any) => {
-  //     this.syncVisibleLogicalRange(this.macdChart, this.chart, logicalRange);
-  //   });
-  // }
+});
 }
 
   buildSeries() {
@@ -286,8 +281,10 @@ buildMACDChart() {
       console.log('[chart] loaded candlestick data', data.length, 'points');
 
       const candlesticks = data.map(d => {
-        const t = (d as any).timestamp ?? (d as any).openTime; 
-        const time = Math.floor(new Date(t).getTime() / 1000); 
+        const t = (d as any).timestamp ?? (d as any).openTime;
+        let time = this.parseToSeconds(t);
+        // adjust by local timezone offset so chart axis shows local time when library formats in UTC
+        time = time + this.timezoneOffsetSeconds;
         return {
           time,
           open: Number((d as any).open),
@@ -297,45 +294,46 @@ buildMACDChart() {
         };
       });
 
-      this.candleSeries.setData(candlesticks as any);
+    this.candleSeries.setData(candlesticks as any);
 
-  const ema9Data: Array<{time:number,value:number}> = [];
-  const macdLineData: Array<{time:number,value:number}> = [];
-  const macdSignalData: Array<{time:number,value:number}> = [];
-  const macdHistogramData: Array<{time:number,value:number,color?:string}> = [];
+    const ema9Data: Array<{time:number,value:number}> = [];
+    const macdLineData: Array<{time:number,value:number}> = [];
+    const macdSignalData: Array<{time:number,value:number}> = [];
+    const macdHistogramData: Array<{time:number,value:number,color?:string}> = [];
+    
 
-  data.forEach(d => {
+    data.forEach(d => {
     const t = (d as any).timestamp ?? (d as any).openTime;
-    const time = Math.floor(new Date(t).getTime() / 1000);
+    let time = this.parseToSeconds(t);
+    time = time + this.timezoneOffsetSeconds;
 
-    let ema9Value: number | null = null;
-    let macdValue: number | null = null;
-    let signalValue: number | null = null;
+      let ema9Value: number | null = null;
+      let macdValue: number | null = null;
+      let signalValue: number | null = null;
 
-    if (d.indicators && Array.isArray(d.indicators)) {
-      d.indicators.forEach((indicator: any) => {
-        if (indicator.name === 'EMA9' && indicator.value != null) ema9Value = Number(indicator.value);
-        if (indicator.name === 'MACD' && indicator.value != null) macdValue = Number(indicator.value);
-        if (indicator.name === 'MACD_SIGNAL' && indicator.value != null) signalValue = Number(indicator.value);
-      });
-    }
+      if (d.indicators && Array.isArray(d.indicators)) {
+        d.indicators.forEach((indicator: any) => {
+          if (indicator.name === 'EMA9' && indicator.value != null) ema9Value = Number(indicator.value);
+          if (indicator.name === 'MACD' && indicator.value != null) macdValue = Number(indicator.value);
+          if (indicator.name === 'MACD_SIGNAL' && indicator.value != null) signalValue = Number(indicator.value);
+        });
+      }
 
-    if (ema9Value !== null) {
-      ema9Data.push({ time, value: ema9Value });
-    }
-    if (macdValue !== null) {
-      macdLineData.push({ time, value: macdValue });
-    }
-    if (signalValue !== null) {
-      macdSignalData.push({ time, value: signalValue });
-    }
-    if (macdValue !== null && signalValue !== null) {
-      const histValue = macdValue - signalValue;
-      macdHistogramData.push({ time, value: histValue, color: histValue >= 0 ? '#26a69a' : '#ef5350' });
-    }
-  });
+      if (ema9Value !== null) {
+        ema9Data.push({ time, value: ema9Value });
+      }
+      if (macdValue !== null) {
+        macdLineData.push({ time, value: macdValue });
+      }
+      if (signalValue !== null) {
+        macdSignalData.push({ time, value: signalValue });
+      }
+      if (macdValue !== null && signalValue !== null) {
+        const histValue = macdValue - signalValue;
+        macdHistogramData.push({ time, value: histValue, color: histValue >= 0 ? '#26a69a' : '#ef5350' });
+      }
+    });
 
-      // Aktualizuj serie
       if (this.ema9Series && ema9Data.length > 0) {
         this.ema9Series.setData(ema9Data as any);
       }
@@ -392,11 +390,62 @@ buildMACDChart() {
     this.chart = createChart(this.chartContainer.nativeElement, {
       width: this.chartContainer.nativeElement.offsetWidth,
       height: this.chartContainer.nativeElement.offsetHeight,
-      layout: { background: { color: '#000D1B' }, textColor: '#d1d4dc' },
-      grid: { vertLines: { color: '#001226' }, horzLines: { color: '#001226' } },
-      // jawnie ustaw prawą skalę i timeScale, tak aby macd można było wyrównać po prawej
-      rightPriceScale: { visible: true, borderColor: '#001226' },
-      timeScale: { borderColor: '#001226', timeVisible: true, secondsVisible: false, rightOffset: 0, barSpacing: 10 },
+      layout: { 
+        background: {
+          color: '#000D1B' 
+        },
+        textColor: '#d1d4dc' 
+      },
+      grid: { 
+        vertLines: { 
+          color: '#001226' 
+        }, 
+        horzLines: { 
+          color: '#001226'
+        } 
+      },
+      rightPriceScale: { 
+        visible: true, 
+        borderColor: '#001226' 
+      },
+      timeScale: {
+        visible: true, 
+        borderColor: '#001226', 
+        timeVisible: true, 
+        secondsVisible: false, 
+        rightOffset: 0, 
+        barSpacing: 10 
+      },
     });
+
+    // Format time axis labels in the user's local timezone
+    try {
+      this.chart.applyOptions({
+        timeScale: {
+          // lightweight-charts will call this with unix seconds (number) or business day
+          tickMarkFormatter: (time: any) => {
+            try {
+              // if time is an object like {year, month, day}
+              if (typeof time === 'object' && time !== null && time.year) {
+                const d = new Date(Date.UTC(time.year, (time.month ?? 1) - 1, time.day ?? 1));
+                return d.toLocaleDateString();
+              }
+              const secs = typeof time === 'number' ? time : Number(time);
+              if (!isFinite(secs)) return '';
+              const d = new Date(secs * 1000);
+              // show only time for intraday, date for daily
+              const hours = d.getHours();
+              const minutes = d.getMinutes();
+              return d.toLocaleTimeString(undefined, { hour: '2-digit', minute: '2-digit' }); // am pm format
+            } catch (e) {
+              return '';
+            }
+          }
+        }
+      });
+    } catch (e) {
+      // older lwc versions may not support tickMarkFormatter — ignore
+      console.debug('[chart] tickMarkFormatter not applied', e);
+    }
   }
 }

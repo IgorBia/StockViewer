@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true">
+
+  <!-- timestamp key for unique run file name -->
+  <timestamp key="runTs" datePattern="yyyy-MM-dd_HH-mm-ss"/>
+
+  <!-- directory for logs -->
+  <property name="LOG_DIR" value="logs" />
+  <!-- active per-run file -->
+  <property name="LOG_FILE" value="${LOG_DIR}/app-${runTs}.log" />
+
+  <!-- Console appender (stdout) -->
+  <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern>%d{HH:mm:ss.SSS} %-5level %logger{36} - %msg%n</pattern>
+    </encoder>
+  </appender>
+
+  <!-- RollingFile appender -->
+  <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+    <file>${LOG_FILE}</file>
+
+    <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+      <!-- archived files pattern: daily + index + gzip -->
+      <fileNamePattern>${LOG_DIR}/app-%d{yyyy-MM-dd}.%i.log.gz</fileNamePattern>
+      <!-- keep up to 30 days of archives -->
+      <maxHistory>30</maxHistory>
+      <!-- optionally cap total size -->
+      <totalSizeCap>2GB</totalSizeCap>
+
+      <!-- use size-and-time triggering to rotate when file gets big or day changes -->
+      <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+        <maxFileSize>100MB</maxFileSize>
+      </timeBasedFileNamingAndTriggeringPolicy>
+    </rollingPolicy>
+
+    <encoder>
+      <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [%thread] %logger{36} - %msg%n</pattern>
+    </encoder>
+  </appender>
+
+  <!-- root logger -->
+  <root level="INFO">
+    <appender-ref ref="CONSOLE" />
+    <appender-ref ref="FILE" />
+  </root>
+
+  <!-- optional: more granular levels -->
+  <!--
+  <logger name="com.stockviewer" level="DEBUG"/>
+  -->
+
+</configuration>

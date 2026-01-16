@@ -1,0 +1,1512 @@
+2026-01-07 00:00:00.002 INFO  [scheduling-1] c.s.s.w.s.WalletWorthSnapshotScheduler - Taking wallet worth snapshot for wallet from user: igor.bialas@gmail.com
+2026-01-07 00:00:02.958 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Received Message in group stockapi: ["daa4d446-0e73-4909-b9c9-563e067cd41c"]
+2026-01-07 00:00:02.963 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 242
+2026-01-07 00:00:02.964 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-07 00:00:02.968 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 242
+2026-01-07 00:00:02.968 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-07 00:00:02.972 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 242
+2026-01-07 00:00:02.972 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-07 00:00:02.973 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Saved Indicator Event in group stockapi
+2026-01-07 00:00:02.974 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Received Message in group stockapi: ["b3db2561-bb5f-4db2-bcc0-abfe6bd80c30"]
+2026-01-07 00:00:02.978 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 242
+2026-01-07 00:00:02.978 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-07 00:00:02.982 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 242
+2026-01-07 00:00:02.982 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-07 00:00:02.987 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 242
+2026-01-07 00:00:02.987 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-07 00:00:02.988 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Saved Indicator Event in group stockapi
+2026-01-07 00:00:02.989 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Received Message in group stockapi: ["8ff38161-74f1-41cb-850b-84c58b175735"]
+2026-01-07 00:00:02.994 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 242
+2026-01-07 00:00:02.994 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-07 00:00:02.998 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 242
+2026-01-07 00:00:02.999 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-07 00:00:03.004 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 242
+2026-01-07 00:00:03.004 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-07 00:00:03.005 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Saved Indicator Event in group stockapi
+2026-01-07 00:00:03.380 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Received Message in group stockapi: ["f1deac66-e9ef-4192-a404-cc8037dba6e3"]
+2026-01-07 00:00:03.386 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 242
+2026-01-07 00:00:03.387 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-07 00:00:03.391 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 242
+2026-01-07 00:00:03.391 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-07 00:00:03.396 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 242
+2026-01-07 00:00:03.396 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-07 00:00:03.397 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Saved Indicator Event in group stockapi
+2026-01-07 00:00:15.004 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing Stop Loss / Take Profit for pair BTCUSDC on candle 2026-01-06T22:59
+2026-01-07 00:00:15.005 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Found 18 trades with Stop Loss/Take Profit for user igor.bialas@gmail.com on pair BTCUSDC
+2026-01-07 00:00:15.008 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing Take Profit for user igor.bialas@gmail.com on trade f2cb0b69-d274-4ef9-9114-ac020464ba05
+2026-01-07 00:00:15.844 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Calculated PnL for SELL trade: asset=BTC, soldAmount=0.00215134, avgPurchasePrice=93074.36490244, sellPrice=93358.48000000, PnL=0.6112281739847304
+2026-01-07 00:00:15.850 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing SELL trade for user igor.bialas@gmail.com on pair BTCUSDC: baseAmount=0.00215134, quoteAmount=200.8458323632000000
+2026-01-07 00:00:15.852 ERROR [scheduling-1] c.s.s.trade.service.TradeService - Error executing StopLoss/TakeProfit for user igor.bialas@gmail.com trade f2cb0b69-d274-4ef9-9114-ac020464ba05: Could not initialize proxy [com.stockviewer.stockapi.wallet.entity.Asset#ec94e654-0761-4264-b87b-aaf67c59ae2c] - no session
+org.hibernate.LazyInitializationException: Could not initialize proxy [com.stockviewer.stockapi.wallet.entity.Asset#ec94e654-0761-4264-b87b-aaf67c59ae2c] - no session
+	at org.hibernate.proxy.AbstractLazyInitializer.initialize(AbstractLazyInitializer.java:174)
+	at org.hibernate.proxy.AbstractLazyInitializer.getImplementation(AbstractLazyInitializer.java:328)
+	at org.hibernate.proxy.pojo.bytebuddy.ByteBuddyInterceptor.intercept(ByteBuddyInterceptor.java:44)
+	at org.hibernate.proxy.ProxyConfiguration$InterceptorDispatcher.intercept(ProxyConfiguration.java:102)
+	at com.stockviewer.stockapi.wallet.entity.Asset$HibernateProxy.getSymbol(Unknown Source)
+	at com.stockviewer.stockapi.wallet.mapper.OwnedAssetMapperImpl.ownedAssetAssetSymbol(OwnedAssetMapperImpl.java:40)
+	at com.stockviewer.stockapi.wallet.mapper.OwnedAssetMapperImpl.toDTO(OwnedAssetMapperImpl.java:25)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(Unknown Source)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(Unknown Source)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(Unknown Source)
+	at java.base/java.util.stream.ReferencePipeline.collect(Unknown Source)
+	at com.stockviewer.stockapi.wallet.service.WalletService.getOwnedAssetsByUser(WalletService.java:86)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:724)
+	at com.stockviewer.stockapi.wallet.service.WalletService$$SpringCGLIB$$0.getOwnedAssetsByUser(<generated>)
+	at com.stockviewer.stockapi.trade.service.TradeService.executeTradeForUser(TradeService.java:113)
+	at com.stockviewer.stockapi.trade.service.TradeService.executeTradeForUser(TradeService.java:64)
+	at com.stockviewer.stockapi.trade.service.TradeService.executeStopLossTakeProfit(TradeService.java:344)
+	at com.stockviewer.stockapi.trade.service.TradeExecutor.checkStopLossTakeProfit(TradeExecutor.java:32)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.runInternal(ScheduledMethodRunnable.java:130)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.lambda$run$2(ScheduledMethodRunnable.java:124)
+	at io.micrometer.observation.Observation.observe(Observation.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:124)
+	at org.springframework.scheduling.config.Task$OutcomeTrackingRunnable.run(Task.java:85)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:96)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.base/java.lang.Thread.run(Unknown Source)
+2026-01-07 00:00:15.853 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing Take Profit for user igor.bialas@gmail.com on trade 216f85e8-2bc7-41fa-a87a-6437803d31d5
+2026-01-07 00:00:17.114 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Calculated PnL for SELL trade: asset=BTC, soldAmount=0.00215133, avgPurchasePrice=93074.36490244, sellPrice=93358.57000000, PnL=0.6114189525337548
+2026-01-07 00:00:17.121 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing SELL trade for user igor.bialas@gmail.com on pair BTCUSDC: baseAmount=0.00215133, quoteAmount=200.8448987784000000
+2026-01-07 00:00:17.123 ERROR [scheduling-1] c.s.s.trade.service.TradeService - Error executing StopLoss/TakeProfit for user igor.bialas@gmail.com trade 216f85e8-2bc7-41fa-a87a-6437803d31d5: Could not initialize proxy [com.stockviewer.stockapi.wallet.entity.Asset#ec94e654-0761-4264-b87b-aaf67c59ae2c] - no session
+org.hibernate.LazyInitializationException: Could not initialize proxy [com.stockviewer.stockapi.wallet.entity.Asset#ec94e654-0761-4264-b87b-aaf67c59ae2c] - no session
+	at org.hibernate.proxy.AbstractLazyInitializer.initialize(AbstractLazyInitializer.java:174)
+	at org.hibernate.proxy.AbstractLazyInitializer.getImplementation(AbstractLazyInitializer.java:328)
+	at org.hibernate.proxy.pojo.bytebuddy.ByteBuddyInterceptor.intercept(ByteBuddyInterceptor.java:44)
+	at org.hibernate.proxy.ProxyConfiguration$InterceptorDispatcher.intercept(ProxyConfiguration.java:102)
+	at com.stockviewer.stockapi.wallet.entity.Asset$HibernateProxy.getSymbol(Unknown Source)
+	at com.stockviewer.stockapi.wallet.mapper.OwnedAssetMapperImpl.ownedAssetAssetSymbol(OwnedAssetMapperImpl.java:40)
+	at com.stockviewer.stockapi.wallet.mapper.OwnedAssetMapperImpl.toDTO(OwnedAssetMapperImpl.java:25)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(Unknown Source)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(Unknown Source)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(Unknown Source)
+	at java.base/java.util.stream.ReferencePipeline.collect(Unknown Source)
+	at com.stockviewer.stockapi.wallet.service.WalletService.getOwnedAssetsByUser(WalletService.java:86)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:724)
+	at com.stockviewer.stockapi.wallet.service.WalletService$$SpringCGLIB$$0.getOwnedAssetsByUser(<generated>)
+	at com.stockviewer.stockapi.trade.service.TradeService.executeTradeForUser(TradeService.java:113)
+	at com.stockviewer.stockapi.trade.service.TradeService.executeTradeForUser(TradeService.java:64)
+	at com.stockviewer.stockapi.trade.service.TradeService.executeStopLossTakeProfit(TradeService.java:344)
+	at com.stockviewer.stockapi.trade.service.TradeExecutor.checkStopLossTakeProfit(TradeExecutor.java:32)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.runInternal(ScheduledMethodRunnable.java:130)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.lambda$run$2(ScheduledMethodRunnable.java:124)
+	at io.micrometer.observation.Observation.observe(Observation.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:124)
+	at org.springframework.scheduling.config.Task$OutcomeTrackingRunnable.run(Task.java:85)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:96)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.base/java.lang.Thread.run(Unknown Source)
+2026-01-07 00:00:17.125 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing Take Profit for user igor.bialas@gmail.com on trade 70efdc35-8ee2-491e-a4fa-6890ae79558c
+2026-01-07 00:00:17.993 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Calculated PnL for SELL trade: asset=BTC, soldAmount=0.00215139, avgPurchasePrice=93074.36490244, sellPrice=93358.57000000, PnL=0.6114360048396084
+2026-01-07 00:00:17.997 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing SELL trade for user igor.bialas@gmail.com on pair BTCUSDC: baseAmount=0.00215139, quoteAmount=200.8507154262000000
+2026-01-07 00:00:17.999 ERROR [scheduling-1] c.s.s.trade.service.TradeService - Error executing StopLoss/TakeProfit for user igor.bialas@gmail.com trade 70efdc35-8ee2-491e-a4fa-6890ae79558c: Could not initialize proxy [com.stockviewer.stockapi.wallet.entity.Asset#ec94e654-0761-4264-b87b-aaf67c59ae2c] - no session
+org.hibernate.LazyInitializationException: Could not initialize proxy [com.stockviewer.stockapi.wallet.entity.Asset#ec94e654-0761-4264-b87b-aaf67c59ae2c] - no session
+	at org.hibernate.proxy.AbstractLazyInitializer.initialize(AbstractLazyInitializer.java:174)
+	at org.hibernate.proxy.AbstractLazyInitializer.getImplementation(AbstractLazyInitializer.java:328)
+	at org.hibernate.proxy.pojo.bytebuddy.ByteBuddyInterceptor.intercept(ByteBuddyInterceptor.java:44)
+	at org.hibernate.proxy.ProxyConfiguration$InterceptorDispatcher.intercept(ProxyConfiguration.java:102)
+	at com.stockviewer.stockapi.wallet.entity.Asset$HibernateProxy.getSymbol(Unknown Source)
+	at com.stockviewer.stockapi.wallet.mapper.OwnedAssetMapperImpl.ownedAssetAssetSymbol(OwnedAssetMapperImpl.java:40)
+	at com.stockviewer.stockapi.wallet.mapper.OwnedAssetMapperImpl.toDTO(OwnedAssetMapperImpl.java:25)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(Unknown Source)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(Unknown Source)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(Unknown Source)
+	at java.base/java.util.stream.ReferencePipeline.collect(Unknown Source)
+	at com.stockviewer.stockapi.wallet.service.WalletService.getOwnedAssetsByUser(WalletService.java:86)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:724)
+	at com.stockviewer.stockapi.wallet.service.WalletService$$SpringCGLIB$$0.getOwnedAssetsByUser(<generated>)
+	at com.stockviewer.stockapi.trade.service.TradeService.executeTradeForUser(TradeService.java:113)
+	at com.stockviewer.stockapi.trade.service.TradeService.executeTradeForUser(TradeService.java:64)
+	at com.stockviewer.stockapi.trade.service.TradeService.executeStopLossTakeProfit(TradeService.java:344)
+	at com.stockviewer.stockapi.trade.service.TradeExecutor.checkStopLossTakeProfit(TradeExecutor.java:32)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.runInternal(ScheduledMethodRunnable.java:130)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.lambda$run$2(ScheduledMethodRunnable.java:124)
+	at io.micrometer.observation.Observation.observe(Observation.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:124)
+	at org.springframework.scheduling.config.Task$OutcomeTrackingRunnable.run(Task.java:85)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:96)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.base/java.lang.Thread.run(Unknown Source)
+2026-01-07 00:00:18.000 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing Take Profit for user igor.bialas@gmail.com on trade cee23f24-16a9-4d6a-b49e-fbbb0cd467f8
+2026-01-07 00:00:18.812 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Calculated PnL for SELL trade: asset=BTC, soldAmount=0.00215109, avgPurchasePrice=93074.36490244, sellPrice=93358.57000000, PnL=0.6113507433103404
+2026-01-07 00:00:18.818 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing SELL trade for user igor.bialas@gmail.com on pair BTCUSDC: baseAmount=0.00215109, quoteAmount=200.8226863413000000
+2026-01-07 00:00:18.820 ERROR [scheduling-1] c.s.s.trade.service.TradeService - Error executing StopLoss/TakeProfit for user igor.bialas@gmail.com trade cee23f24-16a9-4d6a-b49e-fbbb0cd467f8: Could not initialize proxy [com.stockviewer.stockapi.wallet.entity.Asset#ec94e654-0761-4264-b87b-aaf67c59ae2c] - no session
+org.hibernate.LazyInitializationException: Could not initialize proxy [com.stockviewer.stockapi.wallet.entity.Asset#ec94e654-0761-4264-b87b-aaf67c59ae2c] - no session
+	at org.hibernate.proxy.AbstractLazyInitializer.initialize(AbstractLazyInitializer.java:174)
+	at org.hibernate.proxy.AbstractLazyInitializer.getImplementation(AbstractLazyInitializer.java:328)
+	at org.hibernate.proxy.pojo.bytebuddy.ByteBuddyInterceptor.intercept(ByteBuddyInterceptor.java:44)
+	at org.hibernate.proxy.ProxyConfiguration$InterceptorDispatcher.intercept(ProxyConfiguration.java:102)
+	at com.stockviewer.stockapi.wallet.entity.Asset$HibernateProxy.getSymbol(Unknown Source)
+	at com.stockviewer.stockapi.wallet.mapper.OwnedAssetMapperImpl.ownedAssetAssetSymbol(OwnedAssetMapperImpl.java:40)
+	at com.stockviewer.stockapi.wallet.mapper.OwnedAssetMapperImpl.toDTO(OwnedAssetMapperImpl.java:25)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(Unknown Source)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(Unknown Source)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(Unknown Source)
+	at java.base/java.util.stream.ReferencePipeline.collect(Unknown Source)
+	at com.stockviewer.stockapi.wallet.service.WalletService.getOwnedAssetsByUser(WalletService.java:86)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:724)
+	at com.stockviewer.stockapi.wallet.service.WalletService$$SpringCGLIB$$0.getOwnedAssetsByUser(<generated>)
+	at com.stockviewer.stockapi.trade.service.TradeService.executeTradeForUser(TradeService.java:113)
+	at com.stockviewer.stockapi.trade.service.TradeService.executeTradeForUser(TradeService.java:64)
+	at com.stockviewer.stockapi.trade.service.TradeService.executeStopLossTakeProfit(TradeService.java:344)
+	at com.stockviewer.stockapi.trade.service.TradeExecutor.checkStopLossTakeProfit(TradeExecutor.java:32)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.runInternal(ScheduledMethodRunnable.java:130)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.lambda$run$2(ScheduledMethodRunnable.java:124)
+	at io.micrometer.observation.Observation.observe(Observation.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:124)
+	at org.springframework.scheduling.config.Task$OutcomeTrackingRunnable.run(Task.java:85)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:96)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.base/java.lang.Thread.run(Unknown Source)
+2026-01-07 00:00:18.821 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing Take Profit for user igor.bialas@gmail.com on trade 59cd3ced-60b9-447a-88a3-79e42ef4abf0
+2026-01-07 00:00:19.633 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Calculated PnL for SELL trade: asset=BTC, soldAmount=0.00215125, avgPurchasePrice=93074.36490244, sellPrice=93372.70000000, PnL=0.6417933786259500
+2026-01-07 00:00:19.638 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing SELL trade for user igor.bialas@gmail.com on pair BTCUSDC: baseAmount=0.00215125, quoteAmount=200.8381185000000000
+2026-01-07 00:00:19.641 ERROR [scheduling-1] c.s.s.trade.service.TradeService - Error executing StopLoss/TakeProfit for user igor.bialas@gmail.com trade 59cd3ced-60b9-447a-88a3-79e42ef4abf0: Could not initialize proxy [com.stockviewer.stockapi.wallet.entity.Asset#ec94e654-0761-4264-b87b-aaf67c59ae2c] - no session
+org.hibernate.LazyInitializationException: Could not initialize proxy [com.stockviewer.stockapi.wallet.entity.Asset#ec94e654-0761-4264-b87b-aaf67c59ae2c] - no session
+	at org.hibernate.proxy.AbstractLazyInitializer.initialize(AbstractLazyInitializer.java:174)
+	at org.hibernate.proxy.AbstractLazyInitializer.getImplementation(AbstractLazyInitializer.java:328)
+	at org.hibernate.proxy.pojo.bytebuddy.ByteBuddyInterceptor.intercept(ByteBuddyInterceptor.java:44)
+	at org.hibernate.proxy.ProxyConfiguration$InterceptorDispatcher.intercept(ProxyConfiguration.java:102)
+	at com.stockviewer.stockapi.wallet.entity.Asset$HibernateProxy.getSymbol(Unknown Source)
+	at com.stockviewer.stockapi.wallet.mapper.OwnedAssetMapperImpl.ownedAssetAssetSymbol(OwnedAssetMapperImpl.java:40)
+	at com.stockviewer.stockapi.wallet.mapper.OwnedAssetMapperImpl.toDTO(OwnedAssetMapperImpl.java:25)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(Unknown Source)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(Unknown Source)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(Unknown Source)
+	at java.base/java.util.stream.ReferencePipeline.collect(Unknown Source)
+	at com.stockviewer.stockapi.wallet.service.WalletService.getOwnedAssetsByUser(WalletService.java:86)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:724)
+	at com.stockviewer.stockapi.wallet.service.WalletService$$SpringCGLIB$$0.getOwnedAssetsByUser(<generated>)
+	at com.stockviewer.stockapi.trade.service.TradeService.executeTradeForUser(TradeService.java:113)
+	at com.stockviewer.stockapi.trade.service.TradeService.executeTradeForUser(TradeService.java:64)
+	at com.stockviewer.stockapi.trade.service.TradeService.executeStopLossTakeProfit(TradeService.java:344)
+	at com.stockviewer.stockapi.trade.service.TradeExecutor.checkStopLossTakeProfit(TradeExecutor.java:32)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.runInternal(ScheduledMethodRunnable.java:130)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.lambda$run$2(ScheduledMethodRunnable.java:124)
+	at io.micrometer.observation.Observation.observe(Observation.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:124)
+	at org.springframework.scheduling.config.Task$OutcomeTrackingRunnable.run(Task.java:85)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:96)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.base/java.lang.Thread.run(Unknown Source)
+2026-01-07 00:00:19.642 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing Take Profit for user igor.bialas@gmail.com on trade 0952a143-57ce-48d9-94e0-e1b8192aad03
+2026-01-07 00:00:20.455 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Calculated PnL for SELL trade: asset=BTC, soldAmount=0.00215121, avgPurchasePrice=93074.36490244, sellPrice=93375.96000000, PnL=0.6487943898220476
+2026-01-07 00:00:20.462 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing SELL trade for user igor.bialas@gmail.com on pair BTCUSDC: baseAmount=0.00215121, quoteAmount=200.8712989116000000
+2026-01-07 00:00:20.465 ERROR [scheduling-1] c.s.s.trade.service.TradeService - Error executing StopLoss/TakeProfit for user igor.bialas@gmail.com trade 0952a143-57ce-48d9-94e0-e1b8192aad03: Could not initialize proxy [com.stockviewer.stockapi.wallet.entity.Asset#ec94e654-0761-4264-b87b-aaf67c59ae2c] - no session
+org.hibernate.LazyInitializationException: Could not initialize proxy [com.stockviewer.stockapi.wallet.entity.Asset#ec94e654-0761-4264-b87b-aaf67c59ae2c] - no session
+	at org.hibernate.proxy.AbstractLazyInitializer.initialize(AbstractLazyInitializer.java:174)
+	at org.hibernate.proxy.AbstractLazyInitializer.getImplementation(AbstractLazyInitializer.java:328)
+	at org.hibernate.proxy.pojo.bytebuddy.ByteBuddyInterceptor.intercept(ByteBuddyInterceptor.java:44)
+	at org.hibernate.proxy.ProxyConfiguration$InterceptorDispatcher.intercept(ProxyConfiguration.java:102)
+	at com.stockviewer.stockapi.wallet.entity.Asset$HibernateProxy.getSymbol(Unknown Source)
+	at com.stockviewer.stockapi.wallet.mapper.OwnedAssetMapperImpl.ownedAssetAssetSymbol(OwnedAssetMapperImpl.java:40)
+	at com.stockviewer.stockapi.wallet.mapper.OwnedAssetMapperImpl.toDTO(OwnedAssetMapperImpl.java:25)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(Unknown Source)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(Unknown Source)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(Unknown Source)
+	at java.base/java.util.stream.ReferencePipeline.collect(Unknown Source)
+	at com.stockviewer.stockapi.wallet.service.WalletService.getOwnedAssetsByUser(WalletService.java:86)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:724)
+	at com.stockviewer.stockapi.wallet.service.WalletService$$SpringCGLIB$$0.getOwnedAssetsByUser(<generated>)
+	at com.stockviewer.stockapi.trade.service.TradeService.executeTradeForUser(TradeService.java:113)
+	at com.stockviewer.stockapi.trade.service.TradeService.executeTradeForUser(TradeService.java:64)
+	at com.stockviewer.stockapi.trade.service.TradeService.executeStopLossTakeProfit(TradeService.java:344)
+	at com.stockviewer.stockapi.trade.service.TradeExecutor.checkStopLossTakeProfit(TradeExecutor.java:32)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.runInternal(ScheduledMethodRunnable.java:130)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.lambda$run$2(ScheduledMethodRunnable.java:124)
+	at io.micrometer.observation.Observation.observe(Observation.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:124)
+	at org.springframework.scheduling.config.Task$OutcomeTrackingRunnable.run(Task.java:85)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:96)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.base/java.lang.Thread.run(Unknown Source)
+2026-01-07 00:00:20.476 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing Stop Loss / Take Profit for pair ETHBTC on candle 2026-01-06T22:59
+2026-01-07 00:00:20.476 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Found 0 trades with Stop Loss/Take Profit for user igor.bialas@gmail.com on pair ETHBTC
+2026-01-07 00:00:20.477 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing Stop Loss / Take Profit for pair SOLUSDC on candle 2026-01-06T22:59
+2026-01-07 00:00:20.477 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Found 0 trades with Stop Loss/Take Profit for user igor.bialas@gmail.com on pair SOLUSDC
+2026-01-07 00:00:20.477 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing Stop Loss / Take Profit for pair ETHUSDC on candle 2026-01-06T22:59
+2026-01-07 00:00:20.477 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Found 0 trades with Stop Loss/Take Profit for user igor.bialas@gmail.com on pair ETHUSDC
+2026-01-07 00:00:30.002 INFO  [scheduling-1] c.s.s.trade.service.TradeExecutor - [BTCUSDC] Executing trades for managed accounts...
+2026-01-07 00:00:30.004 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing trades for managed assets for pair BTCUSDC
+2026-01-07 00:00:30.004 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Found 1 users with managed assets for pair BTCUSDC
+2026-01-07 00:00:30.396 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Checking user igor.bialas@gmail.com for managed asset trades...
+2026-01-07 00:00:30.398 INFO  [scheduling-1] c.s.s.trade.service.TradeService - User igor.bialas@gmail.com wallet for pair BTCUSDC: baseAmount=0.01290929, quoteAmount=8827.74612827, totalValue=10033.4025549892000000
+2026-01-07 00:00:30.404 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing BUY trade for user 2770a1ad-3739-4f4e-9d47-8c290737be04 on pair BTCUSDC
+2026-01-07 00:00:32.438 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing BUY trade for user igor.bialas@gmail.com on pair BTCUSDC: baseAmount=0.00214861, quoteAmount=200.6680510997840000
+2026-01-07 00:00:32.440 ERROR [scheduling-1] c.s.s.trade.service.TradeService - Error processing managed asset trades for user igor.bialas@gmail.com: Could not initialize proxy [com.stockviewer.stockapi.wallet.entity.Asset#ec94e654-0761-4264-b87b-aaf67c59ae2c] - no session
+org.hibernate.LazyInitializationException: Could not initialize proxy [com.stockviewer.stockapi.wallet.entity.Asset#ec94e654-0761-4264-b87b-aaf67c59ae2c] - no session
+	at org.hibernate.proxy.AbstractLazyInitializer.initialize(AbstractLazyInitializer.java:174)
+	at org.hibernate.proxy.AbstractLazyInitializer.getImplementation(AbstractLazyInitializer.java:328)
+	at org.hibernate.proxy.pojo.bytebuddy.ByteBuddyInterceptor.intercept(ByteBuddyInterceptor.java:44)
+	at org.hibernate.proxy.ProxyConfiguration$InterceptorDispatcher.intercept(ProxyConfiguration.java:102)
+	at com.stockviewer.stockapi.wallet.entity.Asset$HibernateProxy.getSymbol(Unknown Source)
+	at com.stockviewer.stockapi.wallet.mapper.OwnedAssetMapperImpl.ownedAssetAssetSymbol(OwnedAssetMapperImpl.java:40)
+	at com.stockviewer.stockapi.wallet.mapper.OwnedAssetMapperImpl.toDTO(OwnedAssetMapperImpl.java:25)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(Unknown Source)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(Unknown Source)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(Unknown Source)
+	at java.base/java.util.stream.ReferencePipeline.collect(Unknown Source)
+	at com.stockviewer.stockapi.wallet.service.WalletService.getOwnedAssetsByUser(WalletService.java:86)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:724)
+	at com.stockviewer.stockapi.wallet.service.WalletService$$SpringCGLIB$$0.getOwnedAssetsByUser(<generated>)
+	at com.stockviewer.stockapi.trade.service.TradeService.executeTradeForUser(TradeService.java:113)
+	at com.stockviewer.stockapi.trade.service.TradeService.executeTradeForUser(TradeService.java:73)
+	at com.stockviewer.stockapi.trade.service.TradeService.executeTradeForManagedAssets(TradeService.java:172)
+	at com.stockviewer.stockapi.trade.service.TradeExecutor.executeTradesForManagedAssets(TradeExecutor.java:44)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.runInternal(ScheduledMethodRunnable.java:130)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.lambda$run$2(ScheduledMethodRunnable.java:124)
+	at io.micrometer.observation.Observation.observe(Observation.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:124)
+	at org.springframework.scheduling.config.Task$OutcomeTrackingRunnable.run(Task.java:85)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:96)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.base/java.lang.Thread.run(Unknown Source)
+2026-01-07 00:00:32.441 INFO  [scheduling-1] c.s.s.trade.service.TradeExecutor - [ETHBTC] Executing trades for managed accounts...
+2026-01-07 00:00:32.441 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing trades for managed assets for pair ETHBTC
+2026-01-07 00:00:32.441 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Found 0 users with managed assets for pair ETHBTC
+2026-01-07 00:00:32.839 INFO  [scheduling-1] c.s.s.trade.service.TradeExecutor - [SOLUSDC] Executing trades for managed accounts...
+2026-01-07 00:00:32.841 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing trades for managed assets for pair SOLUSDC
+2026-01-07 00:00:32.841 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Found 0 users with managed assets for pair SOLUSDC
+2026-01-07 00:00:33.252 INFO  [scheduling-1] c.s.s.trade.service.TradeExecutor - [ETHUSDC] Executing trades for managed accounts...
+2026-01-07 00:00:33.253 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing trades for managed assets for pair ETHUSDC
+2026-01-07 00:00:33.253 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Found 0 users with managed assets for pair ETHUSDC
+2026-01-07 00:01:00.001 INFO  [scheduling-1] c.s.s.w.s.WalletWorthSnapshotScheduler - Taking wallet worth snapshot for wallet from user: igor.bialas@gmail.com
+2026-01-07 00:01:02.354 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Received Message in group stockapi: ["2f01b4e2-4b49-4870-8a17-357104387152"]
+2026-01-07 00:01:02.362 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 243
+2026-01-07 00:01:02.362 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-07 00:01:02.367 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 243
+2026-01-07 00:01:02.367 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-07 00:01:02.372 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 243
+2026-01-07 00:01:02.372 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-07 00:01:02.373 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Saved Indicator Event in group stockapi
+2026-01-07 00:01:02.374 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Received Message in group stockapi: ["bd29241b-2f7a-4119-bee4-cf5f6a2af7ba"]
+2026-01-07 00:01:02.377 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 243
+2026-01-07 00:01:02.377 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-07 00:01:02.383 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 243
+2026-01-07 00:01:02.383 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-07 00:01:02.388 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 243
+2026-01-07 00:01:02.388 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-07 00:01:02.389 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Saved Indicator Event in group stockapi
+2026-01-07 00:01:02.390 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Received Message in group stockapi: ["fb12d613-f910-402d-ac1d-0c1fd76ec04b"]
+2026-01-07 00:01:02.394 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 243
+2026-01-07 00:01:02.394 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-07 00:01:02.398 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 243
+2026-01-07 00:01:02.399 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-07 00:01:02.403 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 243
+2026-01-07 00:01:02.403 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-07 00:01:02.404 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Saved Indicator Event in group stockapi
+2026-01-07 00:01:02.404 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Received Message in group stockapi: ["7e4d9cbe-0199-490e-8c83-a6ad0852bea9"]
+2026-01-07 00:01:02.408 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 243
+2026-01-07 00:01:02.408 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-07 00:01:02.413 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 243
+2026-01-07 00:01:02.413 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-07 00:01:02.419 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 243
+2026-01-07 00:01:02.419 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-07 00:01:02.420 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Saved Indicator Event in group stockapi
+2026-01-07 00:01:15.004 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing Stop Loss / Take Profit for pair BTCUSDC on candle 2026-01-06T23:00
+2026-01-07 00:01:15.005 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Found 19 trades with Stop Loss/Take Profit for user igor.bialas@gmail.com on pair BTCUSDC
+2026-01-07 00:01:15.006 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing Take Profit for user igor.bialas@gmail.com on trade a33f8de1-fcf7-4f7c-83c8-d97931cfb119
+2026-01-07 00:01:16.158 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Calculated PnL for SELL trade: asset=BTC, soldAmount=0.00215123, avgPurchasePrice=93119.83946885, sellPrice=93386.74000000, PnL=0.5741644296258145
+2026-01-07 00:01:16.164 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing SELL trade for user igor.bialas@gmail.com on pair BTCUSDC: baseAmount=0.00215123, quoteAmount=200.8963566902000000
+2026-01-07 00:01:16.166 ERROR [scheduling-1] c.s.s.trade.service.TradeService - Error executing StopLoss/TakeProfit for user igor.bialas@gmail.com trade a33f8de1-fcf7-4f7c-83c8-d97931cfb119: Could not initialize proxy [com.stockviewer.stockapi.wallet.entity.Asset#ec94e654-0761-4264-b87b-aaf67c59ae2c] - no session
+org.hibernate.LazyInitializationException: Could not initialize proxy [com.stockviewer.stockapi.wallet.entity.Asset#ec94e654-0761-4264-b87b-aaf67c59ae2c] - no session
+	at org.hibernate.proxy.AbstractLazyInitializer.initialize(AbstractLazyInitializer.java:174)
+	at org.hibernate.proxy.AbstractLazyInitializer.getImplementation(AbstractLazyInitializer.java:328)
+	at org.hibernate.proxy.pojo.bytebuddy.ByteBuddyInterceptor.intercept(ByteBuddyInterceptor.java:44)
+	at org.hibernate.proxy.ProxyConfiguration$InterceptorDispatcher.intercept(ProxyConfiguration.java:102)
+	at com.stockviewer.stockapi.wallet.entity.Asset$HibernateProxy.getSymbol(Unknown Source)
+	at com.stockviewer.stockapi.wallet.mapper.OwnedAssetMapperImpl.ownedAssetAssetSymbol(OwnedAssetMapperImpl.java:40)
+	at com.stockviewer.stockapi.wallet.mapper.OwnedAssetMapperImpl.toDTO(OwnedAssetMapperImpl.java:25)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(Unknown Source)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(Unknown Source)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(Unknown Source)
+	at java.base/java.util.stream.ReferencePipeline.collect(Unknown Source)
+	at com.stockviewer.stockapi.wallet.service.WalletService.getOwnedAssetsByUser(WalletService.java:86)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:724)
+	at com.stockviewer.stockapi.wallet.service.WalletService$$SpringCGLIB$$0.getOwnedAssetsByUser(<generated>)
+	at com.stockviewer.stockapi.trade.service.TradeService.executeTradeForUser(TradeService.java:113)
+	at com.stockviewer.stockapi.trade.service.TradeService.executeTradeForUser(TradeService.java:64)
+	at com.stockviewer.stockapi.trade.service.TradeService.executeStopLossTakeProfit(TradeService.java:344)
+	at com.stockviewer.stockapi.trade.service.TradeExecutor.checkStopLossTakeProfit(TradeExecutor.java:32)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.runInternal(ScheduledMethodRunnable.java:130)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.lambda$run$2(ScheduledMethodRunnable.java:124)
+	at io.micrometer.observation.Observation.observe(Observation.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:124)
+	at org.springframework.scheduling.config.Task$OutcomeTrackingRunnable.run(Task.java:85)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:96)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.base/java.lang.Thread.run(Unknown Source)
+2026-01-07 00:01:16.167 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing Take Profit for user igor.bialas@gmail.com on trade f2cb0b69-d274-4ef9-9114-ac020464ba05
+2026-01-07 00:01:16.978 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Calculated PnL for SELL trade: asset=BTC, soldAmount=0.00215134, avgPurchasePrice=93119.83946885, sellPrice=93386.74000000, PnL=0.5741937886842410
+2026-01-07 00:01:16.983 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing SELL trade for user igor.bialas@gmail.com on pair BTCUSDC: baseAmount=0.00215134, quoteAmount=200.9066292316000000
+2026-01-07 00:01:16.985 ERROR [scheduling-1] c.s.s.trade.service.TradeService - Error executing StopLoss/TakeProfit for user igor.bialas@gmail.com trade f2cb0b69-d274-4ef9-9114-ac020464ba05: Could not initialize proxy [com.stockviewer.stockapi.wallet.entity.Asset#ec94e654-0761-4264-b87b-aaf67c59ae2c] - no session
+org.hibernate.LazyInitializationException: Could not initialize proxy [com.stockviewer.stockapi.wallet.entity.Asset#ec94e654-0761-4264-b87b-aaf67c59ae2c] - no session
+	at org.hibernate.proxy.AbstractLazyInitializer.initialize(AbstractLazyInitializer.java:174)
+	at org.hibernate.proxy.AbstractLazyInitializer.getImplementation(AbstractLazyInitializer.java:328)
+	at org.hibernate.proxy.pojo.bytebuddy.ByteBuddyInterceptor.intercept(ByteBuddyInterceptor.java:44)
+	at org.hibernate.proxy.ProxyConfiguration$InterceptorDispatcher.intercept(ProxyConfiguration.java:102)
+	at com.stockviewer.stockapi.wallet.entity.Asset$HibernateProxy.getSymbol(Unknown Source)
+	at com.stockviewer.stockapi.wallet.mapper.OwnedAssetMapperImpl.ownedAssetAssetSymbol(OwnedAssetMapperImpl.java:40)
+	at com.stockviewer.stockapi.wallet.mapper.OwnedAssetMapperImpl.toDTO(OwnedAssetMapperImpl.java:25)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(Unknown Source)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(Unknown Source)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(Unknown Source)
+	at java.base/java.util.stream.ReferencePipeline.collect(Unknown Source)
+	at com.stockviewer.stockapi.wallet.service.WalletService.getOwnedAssetsByUser(WalletService.java:86)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:724)
+	at com.stockviewer.stockapi.wallet.service.WalletService$$SpringCGLIB$$0.getOwnedAssetsByUser(<generated>)
+	at com.stockviewer.stockapi.trade.service.TradeService.executeTradeForUser(TradeService.java:113)
+	at com.stockviewer.stockapi.trade.service.TradeService.executeTradeForUser(TradeService.java:64)
+	at com.stockviewer.stockapi.trade.service.TradeService.executeStopLossTakeProfit(TradeService.java:344)
+	at com.stockviewer.stockapi.trade.service.TradeExecutor.checkStopLossTakeProfit(TradeExecutor.java:32)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.runInternal(ScheduledMethodRunnable.java:130)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.lambda$run$2(ScheduledMethodRunnable.java:124)
+	at io.micrometer.observation.Observation.observe(Observation.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:124)
+	at org.springframework.scheduling.config.Task$OutcomeTrackingRunnable.run(Task.java:85)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:96)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.base/java.lang.Thread.run(Unknown Source)
+2026-01-07 00:01:16.987 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing Take Profit for user igor.bialas@gmail.com on trade 216f85e8-2bc7-41fa-a87a-6437803d31d5
+2026-01-07 00:01:18.357 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Calculated PnL for SELL trade: asset=BTC, soldAmount=0.00215133, avgPurchasePrice=93119.83946885, sellPrice=93386.74000000, PnL=0.5741911196789295
+2026-01-07 00:01:18.364 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing SELL trade for user igor.bialas@gmail.com on pair BTCUSDC: baseAmount=0.00215133, quoteAmount=200.9056953642000000
+2026-01-07 00:01:18.366 ERROR [scheduling-1] c.s.s.trade.service.TradeService - Error executing StopLoss/TakeProfit for user igor.bialas@gmail.com trade 216f85e8-2bc7-41fa-a87a-6437803d31d5: Could not initialize proxy [com.stockviewer.stockapi.wallet.entity.Asset#ec94e654-0761-4264-b87b-aaf67c59ae2c] - no session
+org.hibernate.LazyInitializationException: Could not initialize proxy [com.stockviewer.stockapi.wallet.entity.Asset#ec94e654-0761-4264-b87b-aaf67c59ae2c] - no session
+	at org.hibernate.proxy.AbstractLazyInitializer.initialize(AbstractLazyInitializer.java:174)
+	at org.hibernate.proxy.AbstractLazyInitializer.getImplementation(AbstractLazyInitializer.java:328)
+	at org.hibernate.proxy.pojo.bytebuddy.ByteBuddyInterceptor.intercept(ByteBuddyInterceptor.java:44)
+	at org.hibernate.proxy.ProxyConfiguration$InterceptorDispatcher.intercept(ProxyConfiguration.java:102)
+	at com.stockviewer.stockapi.wallet.entity.Asset$HibernateProxy.getSymbol(Unknown Source)
+	at com.stockviewer.stockapi.wallet.mapper.OwnedAssetMapperImpl.ownedAssetAssetSymbol(OwnedAssetMapperImpl.java:40)
+	at com.stockviewer.stockapi.wallet.mapper.OwnedAssetMapperImpl.toDTO(OwnedAssetMapperImpl.java:25)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(Unknown Source)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(Unknown Source)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(Unknown Source)
+	at java.base/java.util.stream.ReferencePipeline.collect(Unknown Source)
+	at com.stockviewer.stockapi.wallet.service.WalletService.getOwnedAssetsByUser(WalletService.java:86)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:724)
+	at com.stockviewer.stockapi.wallet.service.WalletService$$SpringCGLIB$$0.getOwnedAssetsByUser(<generated>)
+	at com.stockviewer.stockapi.trade.service.TradeService.executeTradeForUser(TradeService.java:113)
+	at com.stockviewer.stockapi.trade.service.TradeService.executeTradeForUser(TradeService.java:64)
+	at com.stockviewer.stockapi.trade.service.TradeService.executeStopLossTakeProfit(TradeService.java:344)
+	at com.stockviewer.stockapi.trade.service.TradeExecutor.checkStopLossTakeProfit(TradeExecutor.java:32)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.runInternal(ScheduledMethodRunnable.java:130)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.lambda$run$2(ScheduledMethodRunnable.java:124)
+	at io.micrometer.observation.Observation.observe(Observation.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:124)
+	at org.springframework.scheduling.config.Task$OutcomeTrackingRunnable.run(Task.java:85)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:96)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.base/java.lang.Thread.run(Unknown Source)
+2026-01-07 00:01:18.368 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing Take Profit for user igor.bialas@gmail.com on trade 70efdc35-8ee2-491e-a4fa-6890ae79558c
+2026-01-07 00:01:19.229 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Calculated PnL for SELL trade: asset=BTC, soldAmount=0.00215139, avgPurchasePrice=93119.83946885, sellPrice=93386.75000000, PnL=0.5742286476107985
+2026-01-07 00:01:19.235 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing SELL trade for user igor.bialas@gmail.com on pair BTCUSDC: baseAmount=0.00215139, quoteAmount=200.9112985686000000
+2026-01-07 00:01:19.237 ERROR [scheduling-1] c.s.s.trade.service.TradeService - Error executing StopLoss/TakeProfit for user igor.bialas@gmail.com trade 70efdc35-8ee2-491e-a4fa-6890ae79558c: Could not initialize proxy [com.stockviewer.stockapi.wallet.entity.Asset#ec94e654-0761-4264-b87b-aaf67c59ae2c] - no session
+org.hibernate.LazyInitializationException: Could not initialize proxy [com.stockviewer.stockapi.wallet.entity.Asset#ec94e654-0761-4264-b87b-aaf67c59ae2c] - no session
+	at org.hibernate.proxy.AbstractLazyInitializer.initialize(AbstractLazyInitializer.java:174)
+	at org.hibernate.proxy.AbstractLazyInitializer.getImplementation(AbstractLazyInitializer.java:328)
+	at org.hibernate.proxy.pojo.bytebuddy.ByteBuddyInterceptor.intercept(ByteBuddyInterceptor.java:44)
+	at org.hibernate.proxy.ProxyConfiguration$InterceptorDispatcher.intercept(ProxyConfiguration.java:102)
+	at com.stockviewer.stockapi.wallet.entity.Asset$HibernateProxy.getSymbol(Unknown Source)
+	at com.stockviewer.stockapi.wallet.mapper.OwnedAssetMapperImpl.ownedAssetAssetSymbol(OwnedAssetMapperImpl.java:40)
+	at com.stockviewer.stockapi.wallet.mapper.OwnedAssetMapperImpl.toDTO(OwnedAssetMapperImpl.java:25)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(Unknown Source)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(Unknown Source)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(Unknown Source)
+	at java.base/java.util.stream.ReferencePipeline.collect(Unknown Source)
+	at com.stockviewer.stockapi.wallet.service.WalletService.getOwnedAssetsByUser(WalletService.java:86)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:724)
+	at com.stockviewer.stockapi.wallet.service.WalletService$$SpringCGLIB$$0.getOwnedAssetsByUser(<generated>)
+	at com.stockviewer.stockapi.trade.service.TradeService.executeTradeForUser(TradeService.java:113)
+	at com.stockviewer.stockapi.trade.service.TradeService.executeTradeForUser(TradeService.java:64)
+	at com.stockviewer.stockapi.trade.service.TradeService.executeStopLossTakeProfit(TradeService.java:344)
+	at com.stockviewer.stockapi.trade.service.TradeExecutor.checkStopLossTakeProfit(TradeExecutor.java:32)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.runInternal(ScheduledMethodRunnable.java:130)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.lambda$run$2(ScheduledMethodRunnable.java:124)
+	at io.micrometer.observation.Observation.observe(Observation.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:124)
+	at org.springframework.scheduling.config.Task$OutcomeTrackingRunnable.run(Task.java:85)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:96)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.base/java.lang.Thread.run(Unknown Source)
+2026-01-07 00:01:19.238 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing Take Profit for user igor.bialas@gmail.com on trade cee23f24-16a9-4d6a-b49e-fbbb0cd467f8
+2026-01-07 00:01:20.051 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Calculated PnL for SELL trade: asset=BTC, soldAmount=0.00215109, avgPurchasePrice=93119.83946885, sellPrice=93386.75000000, PnL=0.5741485744514535
+2026-01-07 00:01:20.056 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing SELL trade for user igor.bialas@gmail.com on pair BTCUSDC: baseAmount=0.00215109, quoteAmount=200.8833040575000000
+2026-01-07 00:01:20.058 ERROR [scheduling-1] c.s.s.trade.service.TradeService - Error executing StopLoss/TakeProfit for user igor.bialas@gmail.com trade cee23f24-16a9-4d6a-b49e-fbbb0cd467f8: Could not initialize proxy [com.stockviewer.stockapi.wallet.entity.Asset#ec94e654-0761-4264-b87b-aaf67c59ae2c] - no session
+org.hibernate.LazyInitializationException: Could not initialize proxy [com.stockviewer.stockapi.wallet.entity.Asset#ec94e654-0761-4264-b87b-aaf67c59ae2c] - no session
+	at org.hibernate.proxy.AbstractLazyInitializer.initialize(AbstractLazyInitializer.java:174)
+	at org.hibernate.proxy.AbstractLazyInitializer.getImplementation(AbstractLazyInitializer.java:328)
+	at org.hibernate.proxy.pojo.bytebuddy.ByteBuddyInterceptor.intercept(ByteBuddyInterceptor.java:44)
+	at org.hibernate.proxy.ProxyConfiguration$InterceptorDispatcher.intercept(ProxyConfiguration.java:102)
+	at com.stockviewer.stockapi.wallet.entity.Asset$HibernateProxy.getSymbol(Unknown Source)
+	at com.stockviewer.stockapi.wallet.mapper.OwnedAssetMapperImpl.ownedAssetAssetSymbol(OwnedAssetMapperImpl.java:40)
+	at com.stockviewer.stockapi.wallet.mapper.OwnedAssetMapperImpl.toDTO(OwnedAssetMapperImpl.java:25)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(Unknown Source)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(Unknown Source)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(Unknown Source)
+	at java.base/java.util.stream.ReferencePipeline.collect(Unknown Source)
+	at com.stockviewer.stockapi.wallet.service.WalletService.getOwnedAssetsByUser(WalletService.java:86)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:724)
+	at com.stockviewer.stockapi.wallet.service.WalletService$$SpringCGLIB$$0.getOwnedAssetsByUser(<generated>)
+	at com.stockviewer.stockapi.trade.service.TradeService.executeTradeForUser(TradeService.java:113)
+	at com.stockviewer.stockapi.trade.service.TradeService.executeTradeForUser(TradeService.java:64)
+	at com.stockviewer.stockapi.trade.service.TradeService.executeStopLossTakeProfit(TradeService.java:344)
+	at com.stockviewer.stockapi.trade.service.TradeExecutor.checkStopLossTakeProfit(TradeExecutor.java:32)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.runInternal(ScheduledMethodRunnable.java:130)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.lambda$run$2(ScheduledMethodRunnable.java:124)
+	at io.micrometer.observation.Observation.observe(Observation.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:124)
+	at org.springframework.scheduling.config.Task$OutcomeTrackingRunnable.run(Task.java:85)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:96)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.base/java.lang.Thread.run(Unknown Source)
+2026-01-07 00:01:20.059 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing Take Profit for user igor.bialas@gmail.com on trade 59cd3ced-60b9-447a-88a3-79e42ef4abf0
+2026-01-07 00:01:21.380 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Calculated PnL for SELL trade: asset=BTC, soldAmount=0.00215125, avgPurchasePrice=93119.83946885, sellPrice=93386.75000000, PnL=0.5741912801364375
+2026-01-07 00:01:21.385 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing SELL trade for user igor.bialas@gmail.com on pair BTCUSDC: baseAmount=0.00215125, quoteAmount=200.8982459375000000
+2026-01-07 00:01:21.387 ERROR [scheduling-1] c.s.s.trade.service.TradeService - Error executing StopLoss/TakeProfit for user igor.bialas@gmail.com trade 59cd3ced-60b9-447a-88a3-79e42ef4abf0: Could not initialize proxy [com.stockviewer.stockapi.wallet.entity.Asset#ec94e654-0761-4264-b87b-aaf67c59ae2c] - no session
+org.hibernate.LazyInitializationException: Could not initialize proxy [com.stockviewer.stockapi.wallet.entity.Asset#ec94e654-0761-4264-b87b-aaf67c59ae2c] - no session
+	at org.hibernate.proxy.AbstractLazyInitializer.initialize(AbstractLazyInitializer.java:174)
+	at org.hibernate.proxy.AbstractLazyInitializer.getImplementation(AbstractLazyInitializer.java:328)
+	at org.hibernate.proxy.pojo.bytebuddy.ByteBuddyInterceptor.intercept(ByteBuddyInterceptor.java:44)
+	at org.hibernate.proxy.ProxyConfiguration$InterceptorDispatcher.intercept(ProxyConfiguration.java:102)
+	at com.stockviewer.stockapi.wallet.entity.Asset$HibernateProxy.getSymbol(Unknown Source)
+	at com.stockviewer.stockapi.wallet.mapper.OwnedAssetMapperImpl.ownedAssetAssetSymbol(OwnedAssetMapperImpl.java:40)
+	at com.stockviewer.stockapi.wallet.mapper.OwnedAssetMapperImpl.toDTO(OwnedAssetMapperImpl.java:25)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(Unknown Source)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(Unknown Source)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(Unknown Source)
+	at java.base/java.util.stream.ReferencePipeline.collect(Unknown Source)
+	at com.stockviewer.stockapi.wallet.service.WalletService.getOwnedAssetsByUser(WalletService.java:86)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:724)
+	at com.stockviewer.stockapi.wallet.service.WalletService$$SpringCGLIB$$0.getOwnedAssetsByUser(<generated>)
+	at com.stockviewer.stockapi.trade.service.TradeService.executeTradeForUser(TradeService.java:113)
+	at com.stockviewer.stockapi.trade.service.TradeService.executeTradeForUser(TradeService.java:64)
+	at com.stockviewer.stockapi.trade.service.TradeService.executeStopLossTakeProfit(TradeService.java:344)
+	at com.stockviewer.stockapi.trade.service.TradeExecutor.checkStopLossTakeProfit(TradeExecutor.java:32)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.runInternal(ScheduledMethodRunnable.java:130)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.lambda$run$2(ScheduledMethodRunnable.java:124)
+	at io.micrometer.observation.Observation.observe(Observation.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:124)
+	at org.springframework.scheduling.config.Task$OutcomeTrackingRunnable.run(Task.java:85)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:96)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.base/java.lang.Thread.run(Unknown Source)
+2026-01-07 00:01:21.388 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 0952a143-57ce-48d9-94e0-e1b8192aad03: insufficient owned amount (owned=0.00215027, needed=0.00215121)
+2026-01-07 00:01:21.389 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 54dc35e8-bb88-4934-94fa-6b86bc0eec69: insufficient owned amount (owned=0.00215027, needed=0.00215109)
+2026-01-07 00:01:21.390 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 41098300-926d-4e20-ae07-68245482b1f3: insufficient owned amount (owned=0.00215027, needed=0.00215106)
+2026-01-07 00:01:21.391 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 8a47c0c5-672f-4e8e-b32d-8bd6a9ac1206: insufficient owned amount (owned=0.00215027, needed=0.00215107)
+2026-01-07 00:01:21.393 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade bae60ea1-b168-4f45-8990-dda433a57346: insufficient owned amount (owned=0.00215027, needed=0.00215123)
+2026-01-07 00:01:21.393 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 9c621fdf-caf5-4a73-9642-34dc04117aea: insufficient owned amount (owned=0.00215027, needed=0.00215083)
+2026-01-07 00:01:21.394 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 10586423-b961-4d54-b300-ea190571948a: insufficient owned amount (owned=0.00215027, needed=0.00215093)
+2026-01-07 00:01:21.394 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 1296117a-5af9-4938-883d-903f36433184: insufficient owned amount (owned=0.00215027, needed=0.00215068)
+2026-01-07 00:01:21.396 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing Stop Loss / Take Profit for pair ETHBTC on candle 2026-01-06T23:00
+2026-01-07 00:01:21.396 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Found 0 trades with Stop Loss/Take Profit for user igor.bialas@gmail.com on pair ETHBTC
+2026-01-07 00:01:21.397 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing Stop Loss / Take Profit for pair SOLUSDC on candle 2026-01-06T23:00
+2026-01-07 00:01:21.397 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Found 0 trades with Stop Loss/Take Profit for user igor.bialas@gmail.com on pair SOLUSDC
+2026-01-07 00:01:21.397 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing Stop Loss / Take Profit for pair ETHUSDC on candle 2026-01-06T23:00
+2026-01-07 00:01:21.397 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Found 0 trades with Stop Loss/Take Profit for user igor.bialas@gmail.com on pair ETHUSDC
+2026-01-07 00:01:30.002 INFO  [scheduling-1] c.s.s.trade.service.TradeExecutor - [BTCUSDC] Executing trades for managed accounts...
+2026-01-07 00:01:30.002 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing trades for managed assets for pair BTCUSDC
+2026-01-07 00:01:30.002 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Found 1 users with managed assets for pair BTCUSDC
+2026-01-07 00:01:30.492 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Checking user igor.bialas@gmail.com for managed asset trades...
+2026-01-07 00:01:30.493 INFO  [scheduling-1] c.s.s.trade.service.TradeService - User igor.bialas@gmail.com wallet for pair BTCUSDC: baseAmount=0.00215027, quoteAmount=9832.47960702, totalValue=10033.2390495052000000
+2026-01-07 00:01:30.500 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing BUY trade for user 2770a1ad-3739-4f4e-9d47-8c290737be04 on pair BTCUSDC
+2026-01-07 00:01:31.728 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing BUY trade for user igor.bialas@gmail.com on pair BTCUSDC: baseAmount=0.00214930, quoteAmount=200.6647809901040000
+2026-01-07 00:01:31.729 ERROR [scheduling-1] c.s.s.trade.service.TradeService - Error processing managed asset trades for user igor.bialas@gmail.com: Could not initialize proxy [com.stockviewer.stockapi.wallet.entity.Asset#ec94e654-0761-4264-b87b-aaf67c59ae2c] - no session
+org.hibernate.LazyInitializationException: Could not initialize proxy [com.stockviewer.stockapi.wallet.entity.Asset#ec94e654-0761-4264-b87b-aaf67c59ae2c] - no session
+	at org.hibernate.proxy.AbstractLazyInitializer.initialize(AbstractLazyInitializer.java:174)
+	at org.hibernate.proxy.AbstractLazyInitializer.getImplementation(AbstractLazyInitializer.java:328)
+	at org.hibernate.proxy.pojo.bytebuddy.ByteBuddyInterceptor.intercept(ByteBuddyInterceptor.java:44)
+	at org.hibernate.proxy.ProxyConfiguration$InterceptorDispatcher.intercept(ProxyConfiguration.java:102)
+	at com.stockviewer.stockapi.wallet.entity.Asset$HibernateProxy.getSymbol(Unknown Source)
+	at com.stockviewer.stockapi.wallet.mapper.OwnedAssetMapperImpl.ownedAssetAssetSymbol(OwnedAssetMapperImpl.java:40)
+	at com.stockviewer.stockapi.wallet.mapper.OwnedAssetMapperImpl.toDTO(OwnedAssetMapperImpl.java:25)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(Unknown Source)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(Unknown Source)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(Unknown Source)
+	at java.base/java.util.stream.ReferencePipeline.collect(Unknown Source)
+	at com.stockviewer.stockapi.wallet.service.WalletService.getOwnedAssetsByUser(WalletService.java:86)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:724)
+	at com.stockviewer.stockapi.wallet.service.WalletService$$SpringCGLIB$$0.getOwnedAssetsByUser(<generated>)
+	at com.stockviewer.stockapi.trade.service.TradeService.executeTradeForUser(TradeService.java:113)
+	at com.stockviewer.stockapi.trade.service.TradeService.executeTradeForUser(TradeService.java:73)
+	at com.stockviewer.stockapi.trade.service.TradeService.executeTradeForManagedAssets(TradeService.java:172)
+	at com.stockviewer.stockapi.trade.service.TradeExecutor.executeTradesForManagedAssets(TradeExecutor.java:44)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.runInternal(ScheduledMethodRunnable.java:130)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.lambda$run$2(ScheduledMethodRunnable.java:124)
+	at io.micrometer.observation.Observation.observe(Observation.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:124)
+	at org.springframework.scheduling.config.Task$OutcomeTrackingRunnable.run(Task.java:85)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:96)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.base/java.lang.Thread.run(Unknown Source)
+2026-01-07 00:01:31.729 INFO  [scheduling-1] c.s.s.trade.service.TradeExecutor - [ETHBTC] Executing trades for managed accounts...
+2026-01-07 00:01:31.730 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing trades for managed assets for pair ETHBTC
+2026-01-07 00:01:31.730 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Found 0 users with managed assets for pair ETHBTC
+2026-01-07 00:01:32.142 INFO  [scheduling-1] c.s.s.trade.service.TradeExecutor - [SOLUSDC] Executing trades for managed accounts...
+2026-01-07 00:01:32.143 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing trades for managed assets for pair SOLUSDC
+2026-01-07 00:01:32.143 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Found 0 users with managed assets for pair SOLUSDC
+2026-01-07 00:01:32.540 INFO  [scheduling-1] c.s.s.trade.service.TradeExecutor - [ETHUSDC] Executing trades for managed accounts...
+2026-01-07 00:01:32.541 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing trades for managed assets for pair ETHUSDC
+2026-01-07 00:01:32.541 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Found 0 users with managed assets for pair ETHUSDC
+2026-01-07 00:02:00.001 INFO  [scheduling-1] c.s.s.w.s.WalletWorthSnapshotScheduler - Taking wallet worth snapshot for wallet from user: igor.bialas@gmail.com
+2026-01-07 00:02:02.457 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Received Message in group stockapi: ["16a58885-66c9-4244-82e6-37cfd73a063d"]
+2026-01-07 00:02:02.463 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 244
+2026-01-07 00:02:02.463 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-07 00:02:02.470 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 244
+2026-01-07 00:02:02.470 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-07 00:02:02.475 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 244
+2026-01-07 00:02:02.475 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-07 00:02:02.476 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Saved Indicator Event in group stockapi
+2026-01-07 00:02:02.477 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Received Message in group stockapi: ["5bdb2296-c9b9-4804-ac09-f1687fb1f8a8"]
+2026-01-07 00:02:02.481 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 244
+2026-01-07 00:02:02.481 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-07 00:02:02.486 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 244
+2026-01-07 00:02:02.486 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-07 00:02:02.497 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 244
+2026-01-07 00:02:02.497 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-07 00:02:02.498 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Saved Indicator Event in group stockapi
+2026-01-07 00:02:02.499 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Received Message in group stockapi: ["7fb22921-6e49-42a7-aa65-1cd649acf341"]
+2026-01-07 00:02:02.505 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 244
+2026-01-07 00:02:02.505 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-07 00:02:02.511 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 244
+2026-01-07 00:02:02.511 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-07 00:02:02.515 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 244
+2026-01-07 00:02:02.515 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-07 00:02:02.515 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Saved Indicator Event in group stockapi
+2026-01-07 00:02:02.516 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Received Message in group stockapi: ["7849566f-b492-4785-aae1-cb0d6f332764"]
+2026-01-07 00:02:02.520 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 244
+2026-01-07 00:02:02.520 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-07 00:02:02.524 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 244
+2026-01-07 00:02:02.524 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-07 00:02:02.529 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 244
+2026-01-07 00:02:02.529 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-07 00:02:02.530 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Saved Indicator Event in group stockapi
+2026-01-07 00:02:15.004 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing Stop Loss / Take Profit for pair BTCUSDC on candle 2026-01-06T23:01
+2026-01-07 00:02:15.005 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Found 20 trades with Stop Loss/Take Profit for user igor.bialas@gmail.com on pair BTCUSDC
+2026-01-07 00:02:15.009 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing Take Profit for user igor.bialas@gmail.com on trade a33f8de1-fcf7-4f7c-83c8-d97931cfb119
+2026-01-07 00:02:15.962 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Calculated PnL for SELL trade: asset=BTC, soldAmount=0.00215123, avgPurchasePrice=93237.56316950, sellPrice=93380.00000000, PnL=0.3064143828765150
+2026-01-07 00:02:15.969 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing SELL trade for user igor.bialas@gmail.com on pair BTCUSDC: baseAmount=0.00215123, quoteAmount=200.8818574000000000
+2026-01-07 00:02:15.971 ERROR [scheduling-1] c.s.s.trade.service.TradeService - Error executing StopLoss/TakeProfit for user igor.bialas@gmail.com trade a33f8de1-fcf7-4f7c-83c8-d97931cfb119: Could not initialize proxy [com.stockviewer.stockapi.wallet.entity.Asset#ec94e654-0761-4264-b87b-aaf67c59ae2c] - no session
+org.hibernate.LazyInitializationException: Could not initialize proxy [com.stockviewer.stockapi.wallet.entity.Asset#ec94e654-0761-4264-b87b-aaf67c59ae2c] - no session
+	at org.hibernate.proxy.AbstractLazyInitializer.initialize(AbstractLazyInitializer.java:174)
+	at org.hibernate.proxy.AbstractLazyInitializer.getImplementation(AbstractLazyInitializer.java:328)
+	at org.hibernate.proxy.pojo.bytebuddy.ByteBuddyInterceptor.intercept(ByteBuddyInterceptor.java:44)
+	at org.hibernate.proxy.ProxyConfiguration$InterceptorDispatcher.intercept(ProxyConfiguration.java:102)
+	at com.stockviewer.stockapi.wallet.entity.Asset$HibernateProxy.getSymbol(Unknown Source)
+	at com.stockviewer.stockapi.wallet.mapper.OwnedAssetMapperImpl.ownedAssetAssetSymbol(OwnedAssetMapperImpl.java:40)
+	at com.stockviewer.stockapi.wallet.mapper.OwnedAssetMapperImpl.toDTO(OwnedAssetMapperImpl.java:25)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(Unknown Source)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(Unknown Source)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(Unknown Source)
+	at java.base/java.util.stream.ReferencePipeline.collect(Unknown Source)
+	at com.stockviewer.stockapi.wallet.service.WalletService.getOwnedAssetsByUser(WalletService.java:86)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:724)
+	at com.stockviewer.stockapi.wallet.service.WalletService$$SpringCGLIB$$0.getOwnedAssetsByUser(<generated>)
+	at com.stockviewer.stockapi.trade.service.TradeService.executeTradeForUser(TradeService.java:113)
+	at com.stockviewer.stockapi.trade.service.TradeService.executeTradeForUser(TradeService.java:64)
+	at com.stockviewer.stockapi.trade.service.TradeService.executeStopLossTakeProfit(TradeService.java:344)
+	at com.stockviewer.stockapi.trade.service.TradeExecutor.checkStopLossTakeProfit(TradeExecutor.java:32)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.runInternal(ScheduledMethodRunnable.java:130)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.lambda$run$2(ScheduledMethodRunnable.java:124)
+	at io.micrometer.observation.Observation.observe(Observation.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:124)
+	at org.springframework.scheduling.config.Task$OutcomeTrackingRunnable.run(Task.java:85)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:96)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.base/java.lang.Thread.run(Unknown Source)
+2026-01-07 00:02:15.972 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade f2cb0b69-d274-4ef9-9114-ac020464ba05: insufficient owned amount (owned=0.00214834, needed=0.00215134)
+2026-01-07 00:02:15.974 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 216f85e8-2bc7-41fa-a87a-6437803d31d5: insufficient owned amount (owned=0.00214834, needed=0.00215133)
+2026-01-07 00:02:15.975 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 70efdc35-8ee2-491e-a4fa-6890ae79558c: insufficient owned amount (owned=0.00214834, needed=0.00215139)
+2026-01-07 00:02:15.976 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade cee23f24-16a9-4d6a-b49e-fbbb0cd467f8: insufficient owned amount (owned=0.00214834, needed=0.00215109)
+2026-01-07 00:02:15.976 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 59cd3ced-60b9-447a-88a3-79e42ef4abf0: insufficient owned amount (owned=0.00214834, needed=0.00215125)
+2026-01-07 00:02:15.977 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 0952a143-57ce-48d9-94e0-e1b8192aad03: insufficient owned amount (owned=0.00214834, needed=0.00215121)
+2026-01-07 00:02:15.981 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade bae60ea1-b168-4f45-8990-dda433a57346: insufficient owned amount (owned=0.00214834, needed=0.00215123)
+2026-01-07 00:02:15.985 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing Stop Loss / Take Profit for pair ETHBTC on candle 2026-01-06T23:01
+2026-01-07 00:02:15.986 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Found 0 trades with Stop Loss/Take Profit for user igor.bialas@gmail.com on pair ETHBTC
+2026-01-07 00:02:15.986 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing Stop Loss / Take Profit for pair SOLUSDC on candle 2026-01-06T23:01
+2026-01-07 00:02:15.986 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Found 0 trades with Stop Loss/Take Profit for user igor.bialas@gmail.com on pair SOLUSDC
+2026-01-07 00:02:15.987 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing Stop Loss / Take Profit for pair ETHUSDC on candle 2026-01-06T23:01
+2026-01-07 00:02:15.987 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Found 0 trades with Stop Loss/Take Profit for user igor.bialas@gmail.com on pair ETHUSDC
+2026-01-07 00:02:30.002 INFO  [scheduling-1] c.s.s.trade.service.TradeExecutor - [BTCUSDC] Executing trades for managed accounts...
+2026-01-07 00:02:30.003 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing trades for managed assets for pair BTCUSDC
+2026-01-07 00:02:30.003 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Found 1 users with managed assets for pair BTCUSDC
+2026-01-07 00:02:30.911 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Checking user igor.bialas@gmail.com for managed asset trades...
+2026-01-07 00:02:30.912 INFO  [scheduling-1] c.s.s.trade.service.TradeService - User igor.bialas@gmail.com wallet for pair BTCUSDC: baseAmount=0.00214834, quoteAmount=9832.69668343, totalValue=10033.3086941134000000
+2026-01-07 00:02:30.919 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing BUY trade for user 2770a1ad-3739-4f4e-9d47-8c290737be04 on pair BTCUSDC
+2026-01-07 00:02:32.146 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing BUY trade for user igor.bialas@gmail.com on pair BTCUSDC: baseAmount=0.00214892, quoteAmount=200.6661738822680000
+2026-01-07 00:02:32.148 ERROR [scheduling-1] c.s.s.trade.service.TradeService - Error processing managed asset trades for user igor.bialas@gmail.com: Could not initialize proxy [com.stockviewer.stockapi.wallet.entity.Asset#ec94e654-0761-4264-b87b-aaf67c59ae2c] - no session
+org.hibernate.LazyInitializationException: Could not initialize proxy [com.stockviewer.stockapi.wallet.entity.Asset#ec94e654-0761-4264-b87b-aaf67c59ae2c] - no session
+	at org.hibernate.proxy.AbstractLazyInitializer.initialize(AbstractLazyInitializer.java:174)
+	at org.hibernate.proxy.AbstractLazyInitializer.getImplementation(AbstractLazyInitializer.java:328)
+	at org.hibernate.proxy.pojo.bytebuddy.ByteBuddyInterceptor.intercept(ByteBuddyInterceptor.java:44)
+	at org.hibernate.proxy.ProxyConfiguration$InterceptorDispatcher.intercept(ProxyConfiguration.java:102)
+	at com.stockviewer.stockapi.wallet.entity.Asset$HibernateProxy.getSymbol(Unknown Source)
+	at com.stockviewer.stockapi.wallet.mapper.OwnedAssetMapperImpl.ownedAssetAssetSymbol(OwnedAssetMapperImpl.java:40)
+	at com.stockviewer.stockapi.wallet.mapper.OwnedAssetMapperImpl.toDTO(OwnedAssetMapperImpl.java:25)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(Unknown Source)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(Unknown Source)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(Unknown Source)
+	at java.base/java.util.stream.ReferencePipeline.collect(Unknown Source)
+	at com.stockviewer.stockapi.wallet.service.WalletService.getOwnedAssetsByUser(WalletService.java:86)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:724)
+	at com.stockviewer.stockapi.wallet.service.WalletService$$SpringCGLIB$$0.getOwnedAssetsByUser(<generated>)
+	at com.stockviewer.stockapi.trade.service.TradeService.executeTradeForUser(TradeService.java:113)
+	at com.stockviewer.stockapi.trade.service.TradeService.executeTradeForUser(TradeService.java:73)
+	at com.stockviewer.stockapi.trade.service.TradeService.executeTradeForManagedAssets(TradeService.java:172)
+	at com.stockviewer.stockapi.trade.service.TradeExecutor.executeTradesForManagedAssets(TradeExecutor.java:44)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.runInternal(ScheduledMethodRunnable.java:130)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.lambda$run$2(ScheduledMethodRunnable.java:124)
+	at io.micrometer.observation.Observation.observe(Observation.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:124)
+	at org.springframework.scheduling.config.Task$OutcomeTrackingRunnable.run(Task.java:85)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:96)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.base/java.lang.Thread.run(Unknown Source)
+2026-01-07 00:02:32.148 INFO  [scheduling-1] c.s.s.trade.service.TradeExecutor - [ETHBTC] Executing trades for managed accounts...
+2026-01-07 00:02:32.149 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing trades for managed assets for pair ETHBTC
+2026-01-07 00:02:32.149 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Found 0 users with managed assets for pair ETHBTC
+2026-01-07 00:02:32.558 INFO  [scheduling-1] c.s.s.trade.service.TradeExecutor - [SOLUSDC] Executing trades for managed accounts...
+2026-01-07 00:02:32.559 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing trades for managed assets for pair SOLUSDC
+2026-01-07 00:02:32.559 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Found 0 users with managed assets for pair SOLUSDC
+2026-01-07 00:02:33.060 INFO  [scheduling-1] c.s.s.trade.service.TradeExecutor - [ETHUSDC] Executing trades for managed accounts...
+2026-01-07 00:02:33.061 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing trades for managed assets for pair ETHUSDC
+2026-01-07 00:02:33.061 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Found 0 users with managed assets for pair ETHUSDC
+2026-01-07 00:03:00.001 INFO  [scheduling-1] c.s.s.w.s.WalletWorthSnapshotScheduler - Taking wallet worth snapshot for wallet from user: igor.bialas@gmail.com
+2026-01-07 00:03:02.363 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Received Message in group stockapi: ["886c2501-1ca1-4ff5-9245-55e80acbbbcd"]
+2026-01-07 00:03:02.369 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 245
+2026-01-07 00:03:02.369 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-07 00:03:02.374 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 245
+2026-01-07 00:03:02.374 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-07 00:03:02.378 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 245
+2026-01-07 00:03:02.378 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-07 00:03:02.379 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Saved Indicator Event in group stockapi
+2026-01-07 00:03:02.379 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Received Message in group stockapi: ["bdb9edc5-f11f-497c-9e1e-103ba3412147"]
+2026-01-07 00:03:02.383 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 245
+2026-01-07 00:03:02.383 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-07 00:03:02.388 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 245
+2026-01-07 00:03:02.388 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-07 00:03:02.393 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 245
+2026-01-07 00:03:02.393 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-07 00:03:02.394 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Saved Indicator Event in group stockapi
+2026-01-07 00:03:02.394 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Received Message in group stockapi: ["cce32913-ff30-41ac-9546-265f57e04f5f"]
+2026-01-07 00:03:02.398 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 245
+2026-01-07 00:03:02.398 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-07 00:03:02.403 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 245
+2026-01-07 00:03:02.403 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-07 00:03:02.408 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 245
+2026-01-07 00:03:02.408 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-07 00:03:02.409 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Saved Indicator Event in group stockapi
+2026-01-07 00:03:02.410 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Received Message in group stockapi: ["73b7d87e-ca23-4789-8a03-b74462676117"]
+2026-01-07 00:03:02.413 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 245
+2026-01-07 00:03:02.413 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-07 00:03:02.419 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 245
+2026-01-07 00:03:02.419 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-07 00:03:02.426 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 245
+2026-01-07 00:03:02.426 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-07 00:03:02.428 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Saved Indicator Event in group stockapi
+2026-01-07 00:03:15.003 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing Stop Loss / Take Profit for pair BTCUSDC on candle 2026-01-06T23:02
+2026-01-07 00:03:15.004 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Found 21 trades with Stop Loss/Take Profit for user igor.bialas@gmail.com on pair BTCUSDC
+2026-01-07 00:03:15.006 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing Take Profit for user igor.bialas@gmail.com on trade a33f8de1-fcf7-4f7c-83c8-d97931cfb119
+2026-01-07 00:03:16.787 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Calculated PnL for SELL trade: asset=BTC, soldAmount=0.00215123, avgPurchasePrice=93308.79619775, sellPrice=93407.99000000, PnL=0.2133886832142675
+2026-01-07 00:03:16.793 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing SELL trade for user igor.bialas@gmail.com on pair BTCUSDC: baseAmount=0.00215123, quoteAmount=200.9420703277000000
+2026-01-07 00:03:16.795 ERROR [scheduling-1] c.s.s.trade.service.TradeService - Error executing StopLoss/TakeProfit for user igor.bialas@gmail.com trade a33f8de1-fcf7-4f7c-83c8-d97931cfb119: Could not initialize proxy [com.stockviewer.stockapi.wallet.entity.Asset#ec94e654-0761-4264-b87b-aaf67c59ae2c] - no session
+org.hibernate.LazyInitializationException: Could not initialize proxy [com.stockviewer.stockapi.wallet.entity.Asset#ec94e654-0761-4264-b87b-aaf67c59ae2c] - no session
+	at org.hibernate.proxy.AbstractLazyInitializer.initialize(AbstractLazyInitializer.java:174)
+	at org.hibernate.proxy.AbstractLazyInitializer.getImplementation(AbstractLazyInitializer.java:328)
+	at org.hibernate.proxy.pojo.bytebuddy.ByteBuddyInterceptor.intercept(ByteBuddyInterceptor.java:44)
+	at org.hibernate.proxy.ProxyConfiguration$InterceptorDispatcher.intercept(ProxyConfiguration.java:102)
+	at com.stockviewer.stockapi.wallet.entity.Asset$HibernateProxy.getSymbol(Unknown Source)
+	at com.stockviewer.stockapi.wallet.mapper.OwnedAssetMapperImpl.ownedAssetAssetSymbol(OwnedAssetMapperImpl.java:40)
+	at com.stockviewer.stockapi.wallet.mapper.OwnedAssetMapperImpl.toDTO(OwnedAssetMapperImpl.java:25)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(Unknown Source)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(Unknown Source)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(Unknown Source)
+	at java.base/java.util.stream.ReferencePipeline.collect(Unknown Source)
+	at com.stockviewer.stockapi.wallet.service.WalletService.getOwnedAssetsByUser(WalletService.java:86)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:724)
+	at com.stockviewer.stockapi.wallet.service.WalletService$$SpringCGLIB$$0.getOwnedAssetsByUser(<generated>)
+	at com.stockviewer.stockapi.trade.service.TradeService.executeTradeForUser(TradeService.java:113)
+	at com.stockviewer.stockapi.trade.service.TradeService.executeTradeForUser(TradeService.java:64)
+	at com.stockviewer.stockapi.trade.service.TradeService.executeStopLossTakeProfit(TradeService.java:344)
+	at com.stockviewer.stockapi.trade.service.TradeExecutor.checkStopLossTakeProfit(TradeExecutor.java:32)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.runInternal(ScheduledMethodRunnable.java:130)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.lambda$run$2(ScheduledMethodRunnable.java:124)
+	at io.micrometer.observation.Observation.observe(Observation.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:124)
+	at org.springframework.scheduling.config.Task$OutcomeTrackingRunnable.run(Task.java:85)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:96)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.base/java.lang.Thread.run(Unknown Source)
+2026-01-07 00:03:16.796 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade f2cb0b69-d274-4ef9-9114-ac020464ba05: insufficient owned amount (owned=0.00214603, needed=0.00215134)
+2026-01-07 00:03:16.797 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 216f85e8-2bc7-41fa-a87a-6437803d31d5: insufficient owned amount (owned=0.00214603, needed=0.00215133)
+2026-01-07 00:03:16.797 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 70efdc35-8ee2-491e-a4fa-6890ae79558c: insufficient owned amount (owned=0.00214603, needed=0.00215139)
+2026-01-07 00:03:16.798 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade cee23f24-16a9-4d6a-b49e-fbbb0cd467f8: insufficient owned amount (owned=0.00214603, needed=0.00215109)
+2026-01-07 00:03:16.799 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 59cd3ced-60b9-447a-88a3-79e42ef4abf0: insufficient owned amount (owned=0.00214603, needed=0.00215125)
+2026-01-07 00:03:16.799 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 0952a143-57ce-48d9-94e0-e1b8192aad03: insufficient owned amount (owned=0.00214603, needed=0.00215121)
+2026-01-07 00:03:16.801 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade bae60ea1-b168-4f45-8990-dda433a57346: insufficient owned amount (owned=0.00214603, needed=0.00215123)
+2026-01-07 00:03:16.808 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing Stop Loss / Take Profit for pair ETHBTC on candle 2026-01-06T23:02
+2026-01-07 00:03:16.809 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Found 0 trades with Stop Loss/Take Profit for user igor.bialas@gmail.com on pair ETHBTC
+2026-01-07 00:03:16.810 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing Stop Loss / Take Profit for pair SOLUSDC on candle 2026-01-06T23:02
+2026-01-07 00:03:16.810 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Found 0 trades with Stop Loss/Take Profit for user igor.bialas@gmail.com on pair SOLUSDC
+2026-01-07 00:03:16.811 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing Stop Loss / Take Profit for pair ETHUSDC on candle 2026-01-06T23:02
+2026-01-07 00:03:16.811 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Found 0 trades with Stop Loss/Take Profit for user igor.bialas@gmail.com on pair ETHUSDC
+2026-01-07 00:03:30.004 INFO  [scheduling-1] c.s.s.trade.service.TradeExecutor - [BTCUSDC] Executing trades for managed accounts...
+2026-01-07 00:03:30.005 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing trades for managed assets for pair BTCUSDC
+2026-01-07 00:03:30.005 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Found 1 users with managed assets for pair BTCUSDC
+2026-01-07 00:03:30.418 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Checking user igor.bialas@gmail.com for managed asset trades...
+2026-01-07 00:03:30.420 INFO  [scheduling-1] c.s.s.trade.service.TradeService - User igor.bialas@gmail.com wallet for pair BTCUSDC: baseAmount=0.00214603, quoteAmount=9832.97257988, totalValue=10033.4032192203000000
+2026-01-07 00:03:30.431 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing BUY trade for user 2770a1ad-3739-4f4e-9d47-8c290737be04 on pair BTCUSDC
+2026-01-07 00:03:31.662 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing BUY trade for user igor.bialas@gmail.com on pair BTCUSDC: baseAmount=0.00214857, quoteAmount=200.6680643844060000
+2026-01-07 00:03:31.666 ERROR [scheduling-1] c.s.s.trade.service.TradeService - Error processing managed asset trades for user igor.bialas@gmail.com: Could not initialize proxy [com.stockviewer.stockapi.wallet.entity.Asset#ec94e654-0761-4264-b87b-aaf67c59ae2c] - no session
+org.hibernate.LazyInitializationException: Could not initialize proxy [com.stockviewer.stockapi.wallet.entity.Asset#ec94e654-0761-4264-b87b-aaf67c59ae2c] - no session
+	at org.hibernate.proxy.AbstractLazyInitializer.initialize(AbstractLazyInitializer.java:174)
+	at org.hibernate.proxy.AbstractLazyInitializer.getImplementation(AbstractLazyInitializer.java:328)
+	at org.hibernate.proxy.pojo.bytebuddy.ByteBuddyInterceptor.intercept(ByteBuddyInterceptor.java:44)
+	at org.hibernate.proxy.ProxyConfiguration$InterceptorDispatcher.intercept(ProxyConfiguration.java:102)
+	at com.stockviewer.stockapi.wallet.entity.Asset$HibernateProxy.getSymbol(Unknown Source)
+	at com.stockviewer.stockapi.wallet.mapper.OwnedAssetMapperImpl.ownedAssetAssetSymbol(OwnedAssetMapperImpl.java:40)
+	at com.stockviewer.stockapi.wallet.mapper.OwnedAssetMapperImpl.toDTO(OwnedAssetMapperImpl.java:25)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(Unknown Source)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(Unknown Source)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(Unknown Source)
+	at java.base/java.util.stream.ReferencePipeline.collect(Unknown Source)
+	at com.stockviewer.stockapi.wallet.service.WalletService.getOwnedAssetsByUser(WalletService.java:86)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:724)
+	at com.stockviewer.stockapi.wallet.service.WalletService$$SpringCGLIB$$0.getOwnedAssetsByUser(<generated>)
+	at com.stockviewer.stockapi.trade.service.TradeService.executeTradeForUser(TradeService.java:113)
+	at com.stockviewer.stockapi.trade.service.TradeService.executeTradeForUser(TradeService.java:73)
+	at com.stockviewer.stockapi.trade.service.TradeService.executeTradeForManagedAssets(TradeService.java:172)
+	at com.stockviewer.stockapi.trade.service.TradeExecutor.executeTradesForManagedAssets(TradeExecutor.java:44)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.runInternal(ScheduledMethodRunnable.java:130)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.lambda$run$2(ScheduledMethodRunnable.java:124)
+	at io.micrometer.observation.Observation.observe(Observation.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:124)
+	at org.springframework.scheduling.config.Task$OutcomeTrackingRunnable.run(Task.java:85)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:96)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.base/java.lang.Thread.run(Unknown Source)
+2026-01-07 00:03:31.666 INFO  [scheduling-1] c.s.s.trade.service.TradeExecutor - [ETHBTC] Executing trades for managed accounts...
+2026-01-07 00:03:31.667 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing trades for managed assets for pair ETHBTC
+2026-01-07 00:03:31.667 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Found 0 users with managed assets for pair ETHBTC
+2026-01-07 00:03:32.059 INFO  [scheduling-1] c.s.s.trade.service.TradeExecutor - [SOLUSDC] Executing trades for managed accounts...
+2026-01-07 00:03:32.060 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing trades for managed assets for pair SOLUSDC
+2026-01-07 00:03:32.061 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Found 0 users with managed assets for pair SOLUSDC
+2026-01-07 00:03:32.467 INFO  [scheduling-1] c.s.s.trade.service.TradeExecutor - [ETHUSDC] Executing trades for managed accounts...
+2026-01-07 00:03:32.468 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing trades for managed assets for pair ETHUSDC
+2026-01-07 00:03:32.468 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Found 0 users with managed assets for pair ETHUSDC
+2026-01-07 00:04:00.001 INFO  [scheduling-1] c.s.s.w.s.WalletWorthSnapshotScheduler - Taking wallet worth snapshot for wallet from user: igor.bialas@gmail.com
+2026-01-07 00:04:02.380 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Received Message in group stockapi: ["028308b9-7669-463e-9301-685ed8fbade7"]
+2026-01-07 00:04:02.390 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 246
+2026-01-07 00:04:02.390 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-07 00:04:02.400 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 246
+2026-01-07 00:04:02.400 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-07 00:04:02.409 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 246
+2026-01-07 00:04:02.409 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-07 00:04:02.411 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Saved Indicator Event in group stockapi
+2026-01-07 00:04:02.412 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Received Message in group stockapi: ["ec8bc2e6-ac08-4e54-814c-56ce389e69e3"]
+2026-01-07 00:04:02.422 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 246
+2026-01-07 00:04:02.422 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-07 00:04:02.433 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 246
+2026-01-07 00:04:02.433 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-07 00:04:02.442 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 246
+2026-01-07 00:04:02.442 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-07 00:04:02.444 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Saved Indicator Event in group stockapi
+2026-01-07 00:04:02.446 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Received Message in group stockapi: ["0ffcc671-0228-48c3-8e3e-6ed262934c5a"]
+2026-01-07 00:04:02.454 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 246
+2026-01-07 00:04:02.454 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-07 00:04:02.463 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 246
+2026-01-07 00:04:02.464 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-07 00:04:02.473 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 246
+2026-01-07 00:04:02.473 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-07 00:04:02.474 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Saved Indicator Event in group stockapi
+2026-01-07 00:04:02.474 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Received Message in group stockapi: ["84d932e5-cc10-47f3-8fe2-1f3f68f0a0ac"]
+2026-01-07 00:04:02.483 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 246
+2026-01-07 00:04:02.483 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-07 00:04:02.495 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 246
+2026-01-07 00:04:02.495 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-07 00:04:02.505 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 246
+2026-01-07 00:04:02.505 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-07 00:04:02.507 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Saved Indicator Event in group stockapi
+2026-01-07 00:04:15.007 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing Stop Loss / Take Profit for pair BTCUSDC on candle 2026-01-06T23:03
+2026-01-07 00:04:15.008 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Found 22 trades with Stop Loss/Take Profit for user igor.bialas@gmail.com on pair BTCUSDC
+2026-01-07 00:04:15.010 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing Take Profit for user igor.bialas@gmail.com on trade a33f8de1-fcf7-4f7c-83c8-d97931cfb119
+2026-01-07 00:04:15.876 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Calculated PnL for SELL trade: asset=BTC, soldAmount=0.00215123, avgPurchasePrice=93351.42329536, sellPrice=93417.38000000, PnL=0.1418880417227072
+2026-01-07 00:04:15.885 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing SELL trade for user igor.bialas@gmail.com on pair BTCUSDC: baseAmount=0.00215123, quoteAmount=200.9622703774000000
+2026-01-07 00:04:15.889 ERROR [scheduling-1] c.s.s.trade.service.TradeService - Error executing StopLoss/TakeProfit for user igor.bialas@gmail.com trade a33f8de1-fcf7-4f7c-83c8-d97931cfb119: Could not initialize proxy [com.stockviewer.stockapi.wallet.entity.Asset#ec94e654-0761-4264-b87b-aaf67c59ae2c] - no session
+org.hibernate.LazyInitializationException: Could not initialize proxy [com.stockviewer.stockapi.wallet.entity.Asset#ec94e654-0761-4264-b87b-aaf67c59ae2c] - no session
+	at org.hibernate.proxy.AbstractLazyInitializer.initialize(AbstractLazyInitializer.java:174)
+	at org.hibernate.proxy.AbstractLazyInitializer.getImplementation(AbstractLazyInitializer.java:328)
+	at org.hibernate.proxy.pojo.bytebuddy.ByteBuddyInterceptor.intercept(ByteBuddyInterceptor.java:44)
+	at org.hibernate.proxy.ProxyConfiguration$InterceptorDispatcher.intercept(ProxyConfiguration.java:102)
+	at com.stockviewer.stockapi.wallet.entity.Asset$HibernateProxy.getSymbol(Unknown Source)
+	at com.stockviewer.stockapi.wallet.mapper.OwnedAssetMapperImpl.ownedAssetAssetSymbol(OwnedAssetMapperImpl.java:40)
+	at com.stockviewer.stockapi.wallet.mapper.OwnedAssetMapperImpl.toDTO(OwnedAssetMapperImpl.java:25)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(Unknown Source)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(Unknown Source)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(Unknown Source)
+	at java.base/java.util.stream.ReferencePipeline.collect(Unknown Source)
+	at com.stockviewer.stockapi.wallet.service.WalletService.getOwnedAssetsByUser(WalletService.java:86)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:724)
+	at com.stockviewer.stockapi.wallet.service.WalletService$$SpringCGLIB$$0.getOwnedAssetsByUser(<generated>)
+	at com.stockviewer.stockapi.trade.service.TradeService.executeTradeForUser(TradeService.java:113)
+	at com.stockviewer.stockapi.trade.service.TradeService.executeTradeForUser(TradeService.java:64)
+	at com.stockviewer.stockapi.trade.service.TradeService.executeStopLossTakeProfit(TradeService.java:344)
+	at com.stockviewer.stockapi.trade.service.TradeExecutor.checkStopLossTakeProfit(TradeExecutor.java:32)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.runInternal(ScheduledMethodRunnable.java:130)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.lambda$run$2(ScheduledMethodRunnable.java:124)
+	at io.micrometer.observation.Observation.observe(Observation.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:124)
+	at org.springframework.scheduling.config.Task$OutcomeTrackingRunnable.run(Task.java:85)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:96)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.base/java.lang.Thread.run(Unknown Source)
+2026-01-07 00:04:15.891 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade f2cb0b69-d274-4ef9-9114-ac020464ba05: insufficient owned amount (owned=0.00214337, needed=0.00215134)
+2026-01-07 00:04:15.893 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 216f85e8-2bc7-41fa-a87a-6437803d31d5: insufficient owned amount (owned=0.00214337, needed=0.00215133)
+2026-01-07 00:04:15.895 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 70efdc35-8ee2-491e-a4fa-6890ae79558c: insufficient owned amount (owned=0.00214337, needed=0.00215139)
+2026-01-07 00:04:15.896 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade cee23f24-16a9-4d6a-b49e-fbbb0cd467f8: insufficient owned amount (owned=0.00214337, needed=0.00215109)
+2026-01-07 00:04:15.897 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 59cd3ced-60b9-447a-88a3-79e42ef4abf0: insufficient owned amount (owned=0.00214337, needed=0.00215125)
+2026-01-07 00:04:15.897 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 0952a143-57ce-48d9-94e0-e1b8192aad03: insufficient owned amount (owned=0.00214337, needed=0.00215121)
+2026-01-07 00:04:15.903 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade bae60ea1-b168-4f45-8990-dda433a57346: insufficient owned amount (owned=0.00214337, needed=0.00215123)
+2026-01-07 00:04:15.904 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 10586423-b961-4d54-b300-ea190571948a: insufficient owned amount (owned=0.00214337, needed=0.00215093)
+2026-01-07 00:04:15.916 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing Stop Loss / Take Profit for pair ETHBTC on candle 2026-01-06T23:03
+2026-01-07 00:04:15.916 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Found 0 trades with Stop Loss/Take Profit for user igor.bialas@gmail.com on pair ETHBTC
+2026-01-07 00:04:15.918 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing Stop Loss / Take Profit for pair SOLUSDC on candle 2026-01-06T23:03
+2026-01-07 00:04:15.918 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Found 0 trades with Stop Loss/Take Profit for user igor.bialas@gmail.com on pair SOLUSDC
+2026-01-07 00:04:15.919 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing Stop Loss / Take Profit for pair ETHUSDC on candle 2026-01-06T23:03
+2026-01-07 00:04:15.919 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Found 0 trades with Stop Loss/Take Profit for user igor.bialas@gmail.com on pair ETHUSDC
+2026-01-07 00:04:30.003 INFO  [scheduling-1] c.s.s.trade.service.TradeExecutor - [BTCUSDC] Executing trades for managed accounts...
+2026-01-07 00:04:30.004 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing trades for managed assets for pair BTCUSDC
+2026-01-07 00:04:30.005 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Found 1 users with managed assets for pair BTCUSDC
+2026-01-07 00:04:30.423 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Checking user igor.bialas@gmail.com for managed asset trades...
+2026-01-07 00:04:30.425 INFO  [scheduling-1] c.s.s.trade.service.TradeService - User igor.bialas@gmail.com wallet for pair BTCUSDC: baseAmount=0.00214337, quoteAmount=9833.26678588, totalValue=10033.5368057026000000
+2026-01-07 00:04:30.435 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing BUY trade for user 2770a1ad-3739-4f4e-9d47-8c290737be04 on pair BTCUSDC
+2026-01-07 00:04:32.267 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing BUY trade for user igor.bialas@gmail.com on pair BTCUSDC: baseAmount=0.00214766, quoteAmount=200.6707361140520000
+2026-01-07 00:04:32.271 ERROR [scheduling-1] c.s.s.trade.service.TradeService - Error processing managed asset trades for user igor.bialas@gmail.com: Could not initialize proxy [com.stockviewer.stockapi.wallet.entity.Asset#ec94e654-0761-4264-b87b-aaf67c59ae2c] - no session
+org.hibernate.LazyInitializationException: Could not initialize proxy [com.stockviewer.stockapi.wallet.entity.Asset#ec94e654-0761-4264-b87b-aaf67c59ae2c] - no session
+	at org.hibernate.proxy.AbstractLazyInitializer.initialize(AbstractLazyInitializer.java:174)
+	at org.hibernate.proxy.AbstractLazyInitializer.getImplementation(AbstractLazyInitializer.java:328)
+	at org.hibernate.proxy.pojo.bytebuddy.ByteBuddyInterceptor.intercept(ByteBuddyInterceptor.java:44)
+	at org.hibernate.proxy.ProxyConfiguration$InterceptorDispatcher.intercept(ProxyConfiguration.java:102)
+	at com.stockviewer.stockapi.wallet.entity.Asset$HibernateProxy.getSymbol(Unknown Source)
+	at com.stockviewer.stockapi.wallet.mapper.OwnedAssetMapperImpl.ownedAssetAssetSymbol(OwnedAssetMapperImpl.java:40)
+	at com.stockviewer.stockapi.wallet.mapper.OwnedAssetMapperImpl.toDTO(OwnedAssetMapperImpl.java:25)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(Unknown Source)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(Unknown Source)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(Unknown Source)
+	at java.base/java.util.stream.ReferencePipeline.collect(Unknown Source)
+	at com.stockviewer.stockapi.wallet.service.WalletService.getOwnedAssetsByUser(WalletService.java:86)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:724)
+	at com.stockviewer.stockapi.wallet.service.WalletService$$SpringCGLIB$$0.getOwnedAssetsByUser(<generated>)
+	at com.stockviewer.stockapi.trade.service.TradeService.executeTradeForUser(TradeService.java:113)
+	at com.stockviewer.stockapi.trade.service.TradeService.executeTradeForUser(TradeService.java:73)
+	at com.stockviewer.stockapi.trade.service.TradeService.executeTradeForManagedAssets(TradeService.java:172)
+	at com.stockviewer.stockapi.trade.service.TradeExecutor.executeTradesForManagedAssets(TradeExecutor.java:44)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.runInternal(ScheduledMethodRunnable.java:130)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.lambda$run$2(ScheduledMethodRunnable.java:124)
+	at io.micrometer.observation.Observation.observe(Observation.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:124)
+	at org.springframework.scheduling.config.Task$OutcomeTrackingRunnable.run(Task.java:85)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:96)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.base/java.lang.Thread.run(Unknown Source)
+2026-01-07 00:04:32.272 INFO  [scheduling-1] c.s.s.trade.service.TradeExecutor - [ETHBTC] Executing trades for managed accounts...
+2026-01-07 00:04:32.273 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing trades for managed assets for pair ETHBTC
+2026-01-07 00:04:32.273 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Found 0 users with managed assets for pair ETHBTC
+2026-01-07 00:04:32.768 INFO  [scheduling-1] c.s.s.trade.service.TradeExecutor - [SOLUSDC] Executing trades for managed accounts...
+2026-01-07 00:04:32.770 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing trades for managed assets for pair SOLUSDC
+2026-01-07 00:04:32.770 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Found 0 users with managed assets for pair SOLUSDC
+2026-01-07 00:04:33.177 INFO  [scheduling-1] c.s.s.trade.service.TradeExecutor - [ETHUSDC] Executing trades for managed accounts...
+2026-01-07 00:04:33.178 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing trades for managed assets for pair ETHUSDC
+2026-01-07 00:04:33.178 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Found 0 users with managed assets for pair ETHUSDC
+2026-01-07 00:05:00.002 INFO  [scheduling-1] c.s.s.w.s.WalletWorthSnapshotScheduler - Taking wallet worth snapshot for wallet from user: igor.bialas@gmail.com
+2026-01-07 00:05:02.590 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Received Message in group stockapi: ["9ab92f17-5432-45be-8e07-10b98dfb3407"]
+2026-01-07 00:05:02.600 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 247
+2026-01-07 00:05:02.601 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-07 00:05:02.611 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 247
+2026-01-07 00:05:02.611 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-07 00:05:02.620 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 247
+2026-01-07 00:05:02.620 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-07 00:05:02.623 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Saved Indicator Event in group stockapi
+2026-01-07 00:05:02.687 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Received Message in group stockapi: ["d77cb6ad-68e6-4986-9763-d9d5d4ad09b7"]
+2026-01-07 00:05:02.696 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 247
+2026-01-07 00:05:02.696 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-07 00:05:02.705 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 247
+2026-01-07 00:05:02.705 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-07 00:05:02.715 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 247
+2026-01-07 00:05:02.715 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-07 00:05:02.717 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Saved Indicator Event in group stockapi
+2026-01-07 00:05:02.719 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Received Message in group stockapi: ["0e7492c0-396f-4d88-890e-5b4cc461c998"]
+2026-01-07 00:05:02.729 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 247
+2026-01-07 00:05:02.729 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-07 00:05:02.740 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 247
+2026-01-07 00:05:02.740 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-07 00:05:02.753 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 247
+2026-01-07 00:05:02.753 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-07 00:05:02.756 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Saved Indicator Event in group stockapi
+2026-01-07 00:05:02.758 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Received Message in group stockapi: ["12cddea6-fd3c-421a-8110-790cb2ee869c"]
+2026-01-07 00:05:02.771 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 247
+2026-01-07 00:05:02.771 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-07 00:05:02.781 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 247
+2026-01-07 00:05:02.781 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-07 00:05:02.795 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 247
+2026-01-07 00:05:02.795 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-07 00:05:02.797 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Saved Indicator Event in group stockapi
+2026-01-07 00:05:15.005 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing Stop Loss / Take Profit for pair BTCUSDC on candle 2026-01-06T23:04
+2026-01-07 00:05:15.006 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Found 23 trades with Stop Loss/Take Profit for user igor.bialas@gmail.com on pair BTCUSDC
+2026-01-07 00:05:15.008 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing Take Profit for user igor.bialas@gmail.com on trade a33f8de1-fcf7-4f7c-83c8-d97931cfb119
+2026-01-07 00:05:16.706 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Calculated PnL for SELL trade: asset=BTC, soldAmount=0.00215123, avgPurchasePrice=93395.25042052, sellPrice=93443.00000000, PnL=0.1027203278647604
+2026-01-07 00:05:16.715 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing SELL trade for user igor.bialas@gmail.com on pair BTCUSDC: baseAmount=0.00215123, quoteAmount=201.0234943832000000
+2026-01-07 00:05:16.718 ERROR [scheduling-1] c.s.s.trade.service.TradeService - Error executing StopLoss/TakeProfit for user igor.bialas@gmail.com trade a33f8de1-fcf7-4f7c-83c8-d97931cfb119: Could not initialize proxy [com.stockviewer.stockapi.wallet.entity.Asset#ec94e654-0761-4264-b87b-aaf67c59ae2c] - no session
+org.hibernate.LazyInitializationException: Could not initialize proxy [com.stockviewer.stockapi.wallet.entity.Asset#ec94e654-0761-4264-b87b-aaf67c59ae2c] - no session
+	at org.hibernate.proxy.AbstractLazyInitializer.initialize(AbstractLazyInitializer.java:174)
+	at org.hibernate.proxy.AbstractLazyInitializer.getImplementation(AbstractLazyInitializer.java:328)
+	at org.hibernate.proxy.pojo.bytebuddy.ByteBuddyInterceptor.intercept(ByteBuddyInterceptor.java:44)
+	at org.hibernate.proxy.ProxyConfiguration$InterceptorDispatcher.intercept(ProxyConfiguration.java:102)
+	at com.stockviewer.stockapi.wallet.entity.Asset$HibernateProxy.getSymbol(Unknown Source)
+	at com.stockviewer.stockapi.wallet.mapper.OwnedAssetMapperImpl.ownedAssetAssetSymbol(OwnedAssetMapperImpl.java:40)
+	at com.stockviewer.stockapi.wallet.mapper.OwnedAssetMapperImpl.toDTO(OwnedAssetMapperImpl.java:25)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(Unknown Source)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(Unknown Source)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(Unknown Source)
+	at java.base/java.util.stream.ReferencePipeline.collect(Unknown Source)
+	at com.stockviewer.stockapi.wallet.service.WalletService.getOwnedAssetsByUser(WalletService.java:86)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:724)
+	at com.stockviewer.stockapi.wallet.service.WalletService$$SpringCGLIB$$0.getOwnedAssetsByUser(<generated>)
+	at com.stockviewer.stockapi.trade.service.TradeService.executeTradeForUser(TradeService.java:113)
+	at com.stockviewer.stockapi.trade.service.TradeService.executeTradeForUser(TradeService.java:64)
+	at com.stockviewer.stockapi.trade.service.TradeService.executeStopLossTakeProfit(TradeService.java:344)
+	at com.stockviewer.stockapi.trade.service.TradeExecutor.checkStopLossTakeProfit(TradeExecutor.java:32)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.runInternal(ScheduledMethodRunnable.java:130)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.lambda$run$2(ScheduledMethodRunnable.java:124)
+	at io.micrometer.observation.Observation.observe(Observation.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:124)
+	at org.springframework.scheduling.config.Task$OutcomeTrackingRunnable.run(Task.java:85)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:96)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.base/java.lang.Thread.run(Unknown Source)
+2026-01-07 00:05:16.720 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade f2cb0b69-d274-4ef9-9114-ac020464ba05: insufficient owned amount (owned=0.00213980, needed=0.00215134)
+2026-01-07 00:05:16.721 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 216f85e8-2bc7-41fa-a87a-6437803d31d5: insufficient owned amount (owned=0.00213980, needed=0.00215133)
+2026-01-07 00:05:16.722 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 70efdc35-8ee2-491e-a4fa-6890ae79558c: insufficient owned amount (owned=0.00213980, needed=0.00215139)
+2026-01-07 00:05:16.722 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade cee23f24-16a9-4d6a-b49e-fbbb0cd467f8: insufficient owned amount (owned=0.00213980, needed=0.00215109)
+2026-01-07 00:05:16.723 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 59cd3ced-60b9-447a-88a3-79e42ef4abf0: insufficient owned amount (owned=0.00213980, needed=0.00215125)
+2026-01-07 00:05:16.725 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 0952a143-57ce-48d9-94e0-e1b8192aad03: insufficient owned amount (owned=0.00213980, needed=0.00215121)
+2026-01-07 00:05:16.726 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 54dc35e8-bb88-4934-94fa-6b86bc0eec69: insufficient owned amount (owned=0.00213980, needed=0.00215109)
+2026-01-07 00:05:16.727 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 41098300-926d-4e20-ae07-68245482b1f3: insufficient owned amount (owned=0.00213980, needed=0.00215106)
+2026-01-07 00:05:16.729 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 8a47c0c5-672f-4e8e-b32d-8bd6a9ac1206: insufficient owned amount (owned=0.00213980, needed=0.00215107)
+2026-01-07 00:05:16.731 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade bae60ea1-b168-4f45-8990-dda433a57346: insufficient owned amount (owned=0.00213980, needed=0.00215123)
+2026-01-07 00:05:16.733 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 9c621fdf-caf5-4a73-9642-34dc04117aea: insufficient owned amount (owned=0.00213980, needed=0.00215083)
+2026-01-07 00:05:16.734 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 10586423-b961-4d54-b300-ea190571948a: insufficient owned amount (owned=0.00213980, needed=0.00215093)
+2026-01-07 00:05:16.735 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 1296117a-5af9-4938-883d-903f36433184: insufficient owned amount (owned=0.00213980, needed=0.00215068)
+2026-01-07 00:05:16.736 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade c4ef44fa-af8d-4cbc-b494-734a186df5b0: insufficient owned amount (owned=0.00213980, needed=0.00215038)
+2026-01-07 00:05:16.739 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 13996216-8d83-43d6-b2d4-98ffb8d048e1: insufficient owned amount (owned=0.00213980, needed=0.00215065)
+2026-01-07 00:05:16.744 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing Stop Loss / Take Profit for pair ETHBTC on candle 2026-01-06T23:04
+2026-01-07 00:05:16.744 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Found 0 trades with Stop Loss/Take Profit for user igor.bialas@gmail.com on pair ETHBTC
+2026-01-07 00:05:16.745 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing Stop Loss / Take Profit for pair SOLUSDC on candle 2026-01-06T23:04
+2026-01-07 00:05:16.746 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Found 0 trades with Stop Loss/Take Profit for user igor.bialas@gmail.com on pair SOLUSDC
+2026-01-07 00:05:16.747 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing Stop Loss / Take Profit for pair ETHUSDC on candle 2026-01-06T23:04
+2026-01-07 00:05:16.747 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Found 0 trades with Stop Loss/Take Profit for user igor.bialas@gmail.com on pair ETHUSDC
+2026-01-07 00:05:30.003 INFO  [scheduling-1] c.s.s.trade.service.TradeExecutor - [BTCUSDC] Executing trades for managed accounts...
+2026-01-07 00:05:30.004 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing trades for managed assets for pair BTCUSDC
+2026-01-07 00:05:30.005 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Found 1 users with managed assets for pair BTCUSDC
+2026-01-07 00:05:30.421 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Checking user igor.bialas@gmail.com for managed asset trades...
+2026-01-07 00:05:30.422 INFO  [scheduling-1] c.s.s.trade.service.TradeService - User igor.bialas@gmail.com wallet for pair BTCUSDC: baseAmount=0.00213980, quoteAmount=9833.61954415, totalValue=10033.5694318980000000
+2026-01-07 00:05:30.431 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing BUY trade for user 2770a1ad-3739-4f4e-9d47-8c290737be04 on pair BTCUSDC
+2026-01-07 00:05:31.659 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing BUY trade for user igor.bialas@gmail.com on pair BTCUSDC: baseAmount=0.00214752, quoteAmount=200.6713886379600000
+2026-01-07 00:05:31.664 ERROR [scheduling-1] c.s.s.trade.service.TradeService - Error processing managed asset trades for user igor.bialas@gmail.com: Could not initialize proxy [com.stockviewer.stockapi.wallet.entity.Asset#ec94e654-0761-4264-b87b-aaf67c59ae2c] - no session
+org.hibernate.LazyInitializationException: Could not initialize proxy [com.stockviewer.stockapi.wallet.entity.Asset#ec94e654-0761-4264-b87b-aaf67c59ae2c] - no session
+	at org.hibernate.proxy.AbstractLazyInitializer.initialize(AbstractLazyInitializer.java:174)
+	at org.hibernate.proxy.AbstractLazyInitializer.getImplementation(AbstractLazyInitializer.java:328)
+	at org.hibernate.proxy.pojo.bytebuddy.ByteBuddyInterceptor.intercept(ByteBuddyInterceptor.java:44)
+	at org.hibernate.proxy.ProxyConfiguration$InterceptorDispatcher.intercept(ProxyConfiguration.java:102)
+	at com.stockviewer.stockapi.wallet.entity.Asset$HibernateProxy.getSymbol(Unknown Source)
+	at com.stockviewer.stockapi.wallet.mapper.OwnedAssetMapperImpl.ownedAssetAssetSymbol(OwnedAssetMapperImpl.java:40)
+	at com.stockviewer.stockapi.wallet.mapper.OwnedAssetMapperImpl.toDTO(OwnedAssetMapperImpl.java:25)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(Unknown Source)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(Unknown Source)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(Unknown Source)
+	at java.base/java.util.stream.ReferencePipeline.collect(Unknown Source)
+	at com.stockviewer.stockapi.wallet.service.WalletService.getOwnedAssetsByUser(WalletService.java:86)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:724)
+	at com.stockviewer.stockapi.wallet.service.WalletService$$SpringCGLIB$$0.getOwnedAssetsByUser(<generated>)
+	at com.stockviewer.stockapi.trade.service.TradeService.executeTradeForUser(TradeService.java:113)
+	at com.stockviewer.stockapi.trade.service.TradeService.executeTradeForUser(TradeService.java:73)
+	at com.stockviewer.stockapi.trade.service.TradeService.executeTradeForManagedAssets(TradeService.java:172)
+	at com.stockviewer.stockapi.trade.service.TradeExecutor.executeTradesForManagedAssets(TradeExecutor.java:44)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.runInternal(ScheduledMethodRunnable.java:130)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.lambda$run$2(ScheduledMethodRunnable.java:124)
+	at io.micrometer.observation.Observation.observe(Observation.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:124)
+	at org.springframework.scheduling.config.Task$OutcomeTrackingRunnable.run(Task.java:85)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:96)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.base/java.lang.Thread.run(Unknown Source)
+2026-01-07 00:05:31.665 INFO  [scheduling-1] c.s.s.trade.service.TradeExecutor - [ETHBTC] Executing trades for managed accounts...
+2026-01-07 00:05:31.666 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing trades for managed assets for pair ETHBTC
+2026-01-07 00:05:31.666 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Found 0 users with managed assets for pair ETHBTC
+2026-01-07 00:05:32.069 INFO  [scheduling-1] c.s.s.trade.service.TradeExecutor - [SOLUSDC] Executing trades for managed accounts...
+2026-01-07 00:05:32.071 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing trades for managed assets for pair SOLUSDC
+2026-01-07 00:05:32.071 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Found 0 users with managed assets for pair SOLUSDC
+2026-01-07 00:05:32.468 INFO  [scheduling-1] c.s.s.trade.service.TradeExecutor - [ETHUSDC] Executing trades for managed accounts...
+2026-01-07 00:05:32.470 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing trades for managed assets for pair ETHUSDC
+2026-01-07 00:05:32.470 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Found 0 users with managed assets for pair ETHUSDC
+2026-01-07 00:06:00.003 INFO  [scheduling-1] c.s.s.w.s.WalletWorthSnapshotScheduler - Taking wallet worth snapshot for wallet from user: igor.bialas@gmail.com
+2026-01-07 00:06:02.390 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Received Message in group stockapi: ["bc157442-7538-4e3e-b2e2-652a0b7d8043"]
+2026-01-07 00:06:02.400 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 248
+2026-01-07 00:06:02.400 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-07 00:06:02.409 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 248
+2026-01-07 00:06:02.410 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-07 00:06:02.420 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 248
+2026-01-07 00:06:02.420 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-07 00:06:02.422 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Saved Indicator Event in group stockapi
+2026-01-07 00:06:02.424 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Received Message in group stockapi: ["d7e361ee-4e5a-4256-9104-8f3fcdd1cd81"]
+2026-01-07 00:06:02.434 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 248
+2026-01-07 00:06:02.434 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-07 00:06:02.443 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 248
+2026-01-07 00:06:02.443 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-07 00:06:02.453 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 248
+2026-01-07 00:06:02.453 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-07 00:06:02.455 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Saved Indicator Event in group stockapi
+2026-01-07 00:06:02.456 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Received Message in group stockapi: ["641ac2f8-6b29-4d81-a3a7-cf224e5f54d5"]
+2026-01-07 00:06:02.468 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 248
+2026-01-07 00:06:02.468 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-07 00:06:02.480 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 248
+2026-01-07 00:06:02.480 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-07 00:06:02.488 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 248
+2026-01-07 00:06:02.489 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-07 00:06:02.494 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Saved Indicator Event in group stockapi
+2026-01-07 00:06:02.494 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Received Message in group stockapi: ["00f52beb-2892-45f6-abc1-e0b513547ae6"]
+2026-01-07 00:06:02.504 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 248
+2026-01-07 00:06:02.504 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-07 00:06:02.512 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 248
+2026-01-07 00:06:02.513 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-07 00:06:02.521 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - Number of candles retrieved for BarSeries: 248
+2026-01-07 00:06:02.521 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorCalculator - List of candles:
+2026-01-07 00:06:02.523 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] c.s.s.indicators.IndicatorListener - Saved Indicator Event in group stockapi
+2026-01-07 00:06:15.003 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing Stop Loss / Take Profit for pair BTCUSDC on candle 2026-01-06T23:05
+2026-01-07 00:06:15.004 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Found 24 trades with Stop Loss/Take Profit for user igor.bialas@gmail.com on pair BTCUSDC
+2026-01-07 00:06:15.006 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing Take Profit for user igor.bialas@gmail.com on trade a33f8de1-fcf7-4f7c-83c8-d97931cfb119
+2026-01-07 00:06:15.804 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Calculated PnL for SELL trade: asset=BTC, soldAmount=0.00215123, avgPurchasePrice=93419.29843469, sellPrice=93418.46000000, PnL=-0.0018036658581687
+2026-01-07 00:06:15.813 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing SELL trade for user igor.bialas@gmail.com on pair BTCUSDC: baseAmount=0.00215123, quoteAmount=200.9645937058000000
+2026-01-07 00:06:15.816 ERROR [scheduling-1] c.s.s.trade.service.TradeService - Error executing StopLoss/TakeProfit for user igor.bialas@gmail.com trade a33f8de1-fcf7-4f7c-83c8-d97931cfb119: Could not initialize proxy [com.stockviewer.stockapi.wallet.entity.Asset#ec94e654-0761-4264-b87b-aaf67c59ae2c] - no session
+org.hibernate.LazyInitializationException: Could not initialize proxy [com.stockviewer.stockapi.wallet.entity.Asset#ec94e654-0761-4264-b87b-aaf67c59ae2c] - no session
+	at org.hibernate.proxy.AbstractLazyInitializer.initialize(AbstractLazyInitializer.java:174)
+	at org.hibernate.proxy.AbstractLazyInitializer.getImplementation(AbstractLazyInitializer.java:328)
+	at org.hibernate.proxy.pojo.bytebuddy.ByteBuddyInterceptor.intercept(ByteBuddyInterceptor.java:44)
+	at org.hibernate.proxy.ProxyConfiguration$InterceptorDispatcher.intercept(ProxyConfiguration.java:102)
+	at com.stockviewer.stockapi.wallet.entity.Asset$HibernateProxy.getSymbol(Unknown Source)
+	at com.stockviewer.stockapi.wallet.mapper.OwnedAssetMapperImpl.ownedAssetAssetSymbol(OwnedAssetMapperImpl.java:40)
+	at com.stockviewer.stockapi.wallet.mapper.OwnedAssetMapperImpl.toDTO(OwnedAssetMapperImpl.java:25)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(Unknown Source)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(Unknown Source)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(Unknown Source)
+	at java.base/java.util.stream.ReferencePipeline.collect(Unknown Source)
+	at com.stockviewer.stockapi.wallet.service.WalletService.getOwnedAssetsByUser(WalletService.java:86)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:724)
+	at com.stockviewer.stockapi.wallet.service.WalletService$$SpringCGLIB$$0.getOwnedAssetsByUser(<generated>)
+	at com.stockviewer.stockapi.trade.service.TradeService.executeTradeForUser(TradeService.java:113)
+	at com.stockviewer.stockapi.trade.service.TradeService.executeTradeForUser(TradeService.java:64)
+	at com.stockviewer.stockapi.trade.service.TradeService.executeStopLossTakeProfit(TradeService.java:344)
+	at com.stockviewer.stockapi.trade.service.TradeExecutor.checkStopLossTakeProfit(TradeExecutor.java:32)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.runInternal(ScheduledMethodRunnable.java:130)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.lambda$run$2(ScheduledMethodRunnable.java:124)
+	at io.micrometer.observation.Observation.observe(Observation.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:124)
+	at org.springframework.scheduling.config.Task$OutcomeTrackingRunnable.run(Task.java:85)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:96)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.base/java.lang.Thread.run(Unknown Source)
+2026-01-07 00:06:15.818 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade f2cb0b69-d274-4ef9-9114-ac020464ba05: insufficient owned amount (owned=0.00213609, needed=0.00215134)
+2026-01-07 00:06:15.820 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 216f85e8-2bc7-41fa-a87a-6437803d31d5: insufficient owned amount (owned=0.00213609, needed=0.00215133)
+2026-01-07 00:06:15.822 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 70efdc35-8ee2-491e-a4fa-6890ae79558c: insufficient owned amount (owned=0.00213609, needed=0.00215139)
+2026-01-07 00:06:15.823 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade cee23f24-16a9-4d6a-b49e-fbbb0cd467f8: insufficient owned amount (owned=0.00213609, needed=0.00215109)
+2026-01-07 00:06:15.825 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 59cd3ced-60b9-447a-88a3-79e42ef4abf0: insufficient owned amount (owned=0.00213609, needed=0.00215125)
+2026-01-07 00:06:15.826 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 0952a143-57ce-48d9-94e0-e1b8192aad03: insufficient owned amount (owned=0.00213609, needed=0.00215121)
+2026-01-07 00:06:15.828 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 54dc35e8-bb88-4934-94fa-6b86bc0eec69: insufficient owned amount (owned=0.00213609, needed=0.00215109)
+2026-01-07 00:06:15.830 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 41098300-926d-4e20-ae07-68245482b1f3: insufficient owned amount (owned=0.00213609, needed=0.00215106)
+2026-01-07 00:06:15.832 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 8a47c0c5-672f-4e8e-b32d-8bd6a9ac1206: insufficient owned amount (owned=0.00213609, needed=0.00215107)
+2026-01-07 00:06:15.834 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade bae60ea1-b168-4f45-8990-dda433a57346: insufficient owned amount (owned=0.00213609, needed=0.00215123)
+2026-01-07 00:06:15.836 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 9c621fdf-caf5-4a73-9642-34dc04117aea: insufficient owned amount (owned=0.00213609, needed=0.00215083)
+2026-01-07 00:06:15.837 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 10586423-b961-4d54-b300-ea190571948a: insufficient owned amount (owned=0.00213609, needed=0.00215093)
+2026-01-07 00:06:15.839 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 1296117a-5af9-4938-883d-903f36433184: insufficient owned amount (owned=0.00213609, needed=0.00215068)
+2026-01-07 00:06:15.844 WARN  [scheduling-1] c.s.s.trade.service.TradeService - Skipping Take Profit for user igor.bialas@gmail.com on trade 13996216-8d83-43d6-b2d4-98ffb8d048e1: insufficient owned amount (owned=0.00213609, needed=0.00215065)
+2026-01-07 00:06:15.851 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing Stop Loss / Take Profit for pair ETHBTC on candle 2026-01-06T23:05
+2026-01-07 00:06:15.851 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Found 0 trades with Stop Loss/Take Profit for user igor.bialas@gmail.com on pair ETHBTC
+2026-01-07 00:06:15.852 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing Stop Loss / Take Profit for pair SOLUSDC on candle 2026-01-06T23:05
+2026-01-07 00:06:15.852 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Found 0 trades with Stop Loss/Take Profit for user igor.bialas@gmail.com on pair SOLUSDC
+2026-01-07 00:06:15.853 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing Stop Loss / Take Profit for pair ETHUSDC on candle 2026-01-06T23:05
+2026-01-07 00:06:15.854 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Found 0 trades with Stop Loss/Take Profit for user igor.bialas@gmail.com on pair ETHUSDC
+2026-01-07 00:06:30.002 INFO  [scheduling-1] c.s.s.trade.service.TradeExecutor - [BTCUSDC] Executing trades for managed accounts...
+2026-01-07 00:06:30.003 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing trades for managed assets for pair BTCUSDC
+2026-01-07 00:06:30.003 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Found 1 users with managed assets for pair BTCUSDC
+2026-01-07 00:06:30.429 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Checking user igor.bialas@gmail.com for managed asset trades...
+2026-01-07 00:06:30.431 INFO  [scheduling-1] c.s.s.trade.service.TradeService - User igor.bialas@gmail.com wallet for pair BTCUSDC: baseAmount=0.00213609, quoteAmount=9833.91274922, totalValue=10033.4363717600000000
+2026-01-07 00:06:30.442 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing BUY trade for user 2770a1ad-3739-4f4e-9d47-8c290737be04 on pair BTCUSDC
+2026-01-07 00:06:32.587 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing BUY trade for user igor.bialas@gmail.com on pair BTCUSDC: baseAmount=0.00214835, quoteAmount=200.6687274352000000
+2026-01-07 00:06:32.591 ERROR [scheduling-1] c.s.s.trade.service.TradeService - Error processing managed asset trades for user igor.bialas@gmail.com: Could not initialize proxy [com.stockviewer.stockapi.wallet.entity.Asset#ec94e654-0761-4264-b87b-aaf67c59ae2c] - no session
+org.hibernate.LazyInitializationException: Could not initialize proxy [com.stockviewer.stockapi.wallet.entity.Asset#ec94e654-0761-4264-b87b-aaf67c59ae2c] - no session
+	at org.hibernate.proxy.AbstractLazyInitializer.initialize(AbstractLazyInitializer.java:174)
+	at org.hibernate.proxy.AbstractLazyInitializer.getImplementation(AbstractLazyInitializer.java:328)
+	at org.hibernate.proxy.pojo.bytebuddy.ByteBuddyInterceptor.intercept(ByteBuddyInterceptor.java:44)
+	at org.hibernate.proxy.ProxyConfiguration$InterceptorDispatcher.intercept(ProxyConfiguration.java:102)
+	at com.stockviewer.stockapi.wallet.entity.Asset$HibernateProxy.getSymbol(Unknown Source)
+	at com.stockviewer.stockapi.wallet.mapper.OwnedAssetMapperImpl.ownedAssetAssetSymbol(OwnedAssetMapperImpl.java:40)
+	at com.stockviewer.stockapi.wallet.mapper.OwnedAssetMapperImpl.toDTO(OwnedAssetMapperImpl.java:25)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(Unknown Source)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(Unknown Source)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(Unknown Source)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(Unknown Source)
+	at java.base/java.util.stream.ReferencePipeline.collect(Unknown Source)
+	at com.stockviewer.stockapi.wallet.service.WalletService.getOwnedAssetsByUser(WalletService.java:86)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:724)
+	at com.stockviewer.stockapi.wallet.service.WalletService$$SpringCGLIB$$0.getOwnedAssetsByUser(<generated>)
+	at com.stockviewer.stockapi.trade.service.TradeService.executeTradeForUser(TradeService.java:113)
+	at com.stockviewer.stockapi.trade.service.TradeService.executeTradeForUser(TradeService.java:73)
+	at com.stockviewer.stockapi.trade.service.TradeService.executeTradeForManagedAssets(TradeService.java:172)
+	at com.stockviewer.stockapi.trade.service.TradeExecutor.executeTradesForManagedAssets(TradeExecutor.java:44)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.runInternal(ScheduledMethodRunnable.java:130)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.lambda$run$2(ScheduledMethodRunnable.java:124)
+	at io.micrometer.observation.Observation.observe(Observation.java:498)
+	at org.springframework.scheduling.support.ScheduledMethodRunnable.run(ScheduledMethodRunnable.java:124)
+	at org.springframework.scheduling.config.Task$OutcomeTrackingRunnable.run(Task.java:85)
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54)
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:96)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+	at java.base/java.util.concurrent.FutureTask.run(Unknown Source)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.base/java.lang.Thread.run(Unknown Source)
+2026-01-07 00:06:32.591 INFO  [scheduling-1] c.s.s.trade.service.TradeExecutor - [ETHBTC] Executing trades for managed accounts...
+2026-01-07 00:06:32.592 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing trades for managed assets for pair ETHBTC
+2026-01-07 00:06:32.592 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Found 0 users with managed assets for pair ETHBTC
+2026-01-07 00:06:33.090 INFO  [scheduling-1] c.s.s.trade.service.TradeExecutor - [SOLUSDC] Executing trades for managed accounts...
+2026-01-07 00:06:33.092 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing trades for managed assets for pair SOLUSDC
+2026-01-07 00:06:33.092 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Found 0 users with managed assets for pair SOLUSDC
+2026-01-07 00:06:33.499 INFO  [scheduling-1] c.s.s.trade.service.TradeExecutor - [ETHUSDC] Executing trades for managed accounts...
+2026-01-07 00:06:33.500 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Executing trades for managed assets for pair ETHUSDC
+2026-01-07 00:06:33.500 INFO  [scheduling-1] c.s.s.trade.service.TradeService - Found 0 users with managed assets for pair ETHUSDC
+2026-01-07 00:06:45.486 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.i.ConsumerRebalanceListenerInvoker - [Consumer clientId=consumer-stockapi-1, groupId=stockapi] Revoke previously assigned partitions indicator_events-0
+2026-01-07 00:06:45.487 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer - stockapi: partitions revoked: [indicator_events-0]
+2026-01-07 00:06:45.487 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-stockapi-1, groupId=stockapi] Member consumer-stockapi-1-29f2db3e-796b-4ac2-9c4e-e07199225676 sending LeaveGroup request to coordinator kafka:9092 (id: 2147483646 rack: null) due to the consumer unsubscribed from all topics
+2026-01-07 00:06:45.488 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-stockapi-1, groupId=stockapi] Resetting generation and member id due to: consumer pro-actively leaving the group
+2026-01-07 00:06:45.488 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-stockapi-1, groupId=stockapi] Request joining group due to: consumer pro-actively leaving the group
+2026-01-07 00:06:45.488 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.i.LegacyKafkaConsumer - [Consumer clientId=consumer-stockapi-1, groupId=stockapi] Unsubscribed all topics or patterns and assigned partitions
+2026-01-07 00:06:45.490 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-stockapi-1, groupId=stockapi] Resetting generation and member id due to: consumer pro-actively leaving the group
+2026-01-07 00:06:45.490 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.k.c.c.i.ConsumerCoordinator - [Consumer clientId=consumer-stockapi-1, groupId=stockapi] Request joining group due to: consumer pro-actively leaving the group
+2026-01-07 00:06:45.580 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.kafka.common.metrics.Metrics - Metrics scheduler closed
+2026-01-07 00:06:45.580 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.metrics.JmxReporter
+2026-01-07 00:06:45.580 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.kafka.common.metrics.Metrics - Closing reporter org.apache.kafka.common.telemetry.internals.ClientTelemetryReporter
+2026-01-07 00:06:45.580 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.kafka.common.metrics.Metrics - Metrics reporters closed
+2026-01-07 00:06:45.588 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.a.kafka.common.utils.AppInfoParser - App info kafka.consumer for consumer-stockapi-1 unregistered
+2026-01-07 00:06:45.589 INFO  [org.springframework.kafka.KafkaListenerEndpointContainer#0-0-C-1] o.s.k.l.KafkaMessageListenerContainer - stockapi: Consumer stopped
+2026-01-07 00:06:45.591 INFO  [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-01-07 00:06:45.595 INFO  [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-01-07 00:06:45.608 INFO  [SpringApplicationShutdownHook] o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-01-07 00:06:45.610 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2026-01-07 00:06:45.612 INFO  [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.

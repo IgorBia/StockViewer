@@ -35,4 +35,7 @@ public class OwnedAsset {
 
     @Column(name = "amount", nullable = false)
     private BigDecimal amount;
+
+    @Column(name = "avg_price", nullable = false)
+    private BigDecimal avgPrice;
 }

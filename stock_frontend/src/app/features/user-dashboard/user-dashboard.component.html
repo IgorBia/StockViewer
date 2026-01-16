@@ -3,8 +3,11 @@
     <section class="ud-public">
       <app-public-dashboard [showAuthControl]="false"></app-public-dashboard>
     </section>
-    <aside class="ud-watchlist">
-      <watchlist></watchlist>
+    <aside class="ud-sidebar">
+      <top-bar></top-bar>
+      <watchlist class="watchlist"></watchlist>
+      <asset-list class="asset-list"></asset-list>
+      <app-trade class="app-trade"></app-trade>
     </aside>
   </main>
 </div>

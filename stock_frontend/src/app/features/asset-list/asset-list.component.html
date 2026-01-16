@@ -1,0 +1,39 @@
+<div class="asset-list">
+  <!-- base and quote assets are in two columns with their name and amount -->
+      <ul class="base-quote-list">
+        <li>
+          <div class="base-asset-name"><strong>{{ baseAssetName }}</strong></div>
+          <div class="quote-asset-name"><strong>{{ quoteAssetName }}</strong></div>
+        </li>
+        <li>
+          <div class="base-asset-amount">{{ baseAssetAmount }}</div>
+          <div class="quote-asset-amount">{{ quoteAssetAmount }}</div>
+        </li>
+      </ul>
+
+
+      <h3>Other assets</h3>
+
+      <div *ngIf="(walletService.loading$ | async)" class="loading">Loading...</div>
+
+      <ng-container *ngIf="!(walletService.loading$ | async)">
+        <div class="list-inner">
+          <ul *ngIf="(filteredAssets$ | async) as assets">
+            <li>
+              <div class="asset-name"><strong>Name</strong></div>
+              <div class="asset-amount"><strong>Amount</strong></div>
+              <div class="asset-usd"><strong>USD Value</strong></div>
+            </li>
+            <li *ngFor="let a of assets">
+              <div class="asset-name">{{ a.name }}</div>
+              <div class="asset-amount">{{ a.amount }}</div>
+              <div class="asset-usd">$ {{ a.usdValue | number:'1.2-2' }}</div>
+            </li>
+          </ul>
+        </div>
+        <div *ngIf="filteredAssets$ | async as assets; else noAssets" class="empty"></div>
+        <ng-template #noAssets>
+          <div class="empty">No assets in wallet</div>
+        </ng-template>
+      </ng-container>
+</div>

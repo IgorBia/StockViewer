@@ -12,10 +12,11 @@ func main() {
 	log.InitLogger()
 	db, err := config.GetDataBase()
 
+
 	if err == nil {
 		internal.SetupDB(db)
-		internal.EnsureDataIntegrity(db)
-		internal.BuildRoutines(db, internal.ScheduleCandleUpdates)
+		internal.EnsureDataIntegrity(db, config.GetAppConfig())
+		internal.BuildRoutines(db, internal.ScheduleCandleUpdates, config.GetAppConfig())
 	}
 
 	select {}

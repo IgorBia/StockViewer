@@ -4,8 +4,11 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import com.stockviewer.stockapi.wallet.entity.Wallet;
 import java.util.UUID;
+import com.stockviewer.stockapi.wallet.entity.OwnedAsset;
+import java.util.List;
 
 @Repository
 public interface WalletRepository extends JpaRepository<Wallet, UUID> {
     java.util.Optional<Wallet> findByUser(com.stockviewer.stockapi.user.entity.User user);
+
 }

@@ -77,6 +77,14 @@ public class IndicatorCalculator {
     private BarSeries getBarSeries(String seriesName, Candle candle){
         List<Candle> candles = candleService.getCandlesBySymbolAndTimeframe(candle.getPair().getSymbol(), candle.getTimeframe());
 
+        logger.info("Number of candles retrieved for BarSeries: {}", candles.size());
+        logger.info("List of candles:");
+        int i = 0;
+        for (Candle c : candles) {
+            // logger.info("Open: {}, Close: {}, High: {}, Low: {}, OpenTime: {}, CloseTime: {}", c.getOpen(), c.getClose(), c.getHigh(), c.getLow(), c.getTimestamp(), c.getCloseTime());   
+            i++;
+            if(i>=10) break; // Log only first 10 candles to avoid excessive logging
+        }
         BarSeries series = new BaseBarSeries(seriesName);
 
         for (Candle c : candles) {

@@ -1,0 +1,44 @@
+<div class="trade-history-backdrop" (click)="close()">
+  <div class="trade-history-modal" (click)="$event.stopPropagation()" role="dialog" aria-modal="true">
+    <header class="modal-header">
+      <h1>Trade History</h1>
+      <button class="close-btn" (click)="close()">×</button>
+    </header>
+
+    <section class="trade-history-section">
+      <div *ngIf="(tradeHistoryService.loading$ | async)" class="loading">Loading...</div>
+
+      <ng-container *ngIf="!(tradeHistoryService.loading$ | async)">
+        <table *ngIf="(tradeHistoryService.sortedTradeHistory$ | async) as trades; else noTrades" class="trade-table">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Symbol</th>
+              <th>Side</th>
+              <th>Base Amount</th>
+              <th>Price (USD)</th>
+              <th>Total (USD)</th>
+              <th>PNL</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let trade of trades">
+              <td>{{ trade.timestamp | date:'short' }}</td>
+              <td>{{ trade.pairSymbol }}</td>
+              <td [class.buy]="trade.transactionType === 'BUY'" [class.sell]="trade.transactionType === 'SELL'">{{ trade.transactionType | titlecase }}</td>
+              <td>{{ trade.baseAmount }} {{ trade.pairSymbol.substring(0, 3) }}</td>
+              <td>$ {{ trade.price | number:'1.2-2' }}</td>
+              <td>$ {{ (trade.baseAmount * trade.price) | number:'1.2-2' }}</td>
+              <td [class.positive]="trade.pnl >= 0" [class.negative]="trade.pnl < 0" [ngClass]="{'empty-pnl': trade.pnl === null || trade.pnl === undefined}"> 
+                $ {{ trade.pnl | number:'1.2-2' }}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <ng-template #noTrades>
+          <div class="empty">No trades found</div>
+        </ng-template>
+      </ng-container>
+    </section>
+  </div>
+</div>

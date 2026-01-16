@@ -3,22 +3,23 @@ package internal
 import (
 	"encoding/json"
 	"errors"
+	"fmt"
 	"io"
 	"net/http"
 	"net/url"
 	"time"
-	"fmt"
 
 	"github.com/igorbia/stock_scheduler_service/model"
 	log "github.com/sirupsen/logrus"
 )
 
 type FetchConfig struct {
-	BaseURL  string
-	Symbol   string
-	Interval string
+	BaseURL   string
+	Symbol    string
+	Interval  string
 	Open_Time *time.Time
-	Limit	int
+	Timezone  string
+	Limit     int
 }
 
 func buildURL(base string, symbol string, interval string, openTime *time.Time, limit int) (*url.URL, error) {
@@ -60,9 +61,12 @@ func fetchCandleData(cfg FetchConfig) []model.Candle {
 	if cfg.BaseURL == "" {
 		cfg.BaseURL = "https://api.binance.com/api/v3/klines"
 	}
+	if cfg.Timezone == "" {
+		cfg.Timezone = "UTC"
+	}
 	var apiURL *url.URL
 	var err error
-	if( cfg.Open_Time != nil ){
+	if cfg.Open_Time != nil {
 		apiURL, err = buildURL(cfg.BaseURL, cfg.Symbol, cfg.Interval, cfg.Open_Time, cfg.Limit)
 	} else {
 		apiURL, err = buildURL(cfg.BaseURL, cfg.Symbol, cfg.Interval, nil, cfg.Limit)

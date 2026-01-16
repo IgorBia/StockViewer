@@ -8,9 +8,14 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import com.stockviewer.stockapi.trade.entity.Trade;
+import com.stockviewer.stockapi.candle.entity.Pair;
 import com.stockviewer.stockapi.user.entity.User;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
 @Repository
 public interface TradeRepository extends JpaRepository<Trade, UUID> {
     Optional<List<Trade>> findAllByUser(User user);
+    @Query("SELECT t FROM Trade t WHERE t.user = :user AND t.pair = :pair AND (t.stopLoss IS NOT NULL OR t.takeProfit IS NOT NULL)")
+    List<Trade> findAllWithStopOrTakeForUserAndPair(@Param("user") User user, @Param("pair") Pair pair);
 }

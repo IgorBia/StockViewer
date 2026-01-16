@@ -3,9 +3,8 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {WatchlistService} from './watchlist.service'
 import { Watchlist } from './watchlist';
-import { AuthService } from '../../core/auth/auth.service';
-import { Router } from '@angular/router';
 import { ChartService } from '../../shared/chart/chart.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'watchlist',
@@ -21,10 +20,9 @@ export class WatchlistComponent {
 
   constructor(
     private watchlistService: WatchlistService,
-    private chartService: ChartService,
+    public chartService: ChartService,
     private cd: ChangeDetectorRef,
     private ngZone: NgZone,
-    private auth: AuthService,
     private router: Router
   ) {}
 
@@ -55,7 +53,6 @@ export class WatchlistComponent {
           this.loading = false;
           if (err && err.status === 401) {
             this.error = 'Not authenticated — please log in';
-            // don't auto-redirect, just show message
           } else if (err && err.status === 0) {
             this.error = 'Network error / server unreachable';
           } else {
@@ -72,12 +69,47 @@ export class WatchlistComponent {
   }
   
   add(){
-    this.watchlistService.addItemToWatchlist(this.chartService.getSymbol());
-    this.loadWatchlists();
+    const symbol = this.chartService.getSymbol();
+    if (!symbol) return;
+    this.loading = true;
+    this.watchlistService.addItemToWatchlist(symbol).subscribe({
+      next: () => {
+        this.loadWatchlists();
+      },
+      error: (err) => {
+        console.error('[Watchlist] failed to add item', err);
+        this.ngZone.run(() => {
+          this.loading = false;
+          this.error = err?.error?.message || 'Failed to add item to watchlist';
+          this.cd.detectChanges();
+        });
+      }
+    });
   }
 
-  logout(): void {
-  this.auth.logout();
-  this.router.navigate(['/']);
+  removeFromWatchlist(event: MouseEvent, watchlistId: string, symbol: string) {
+    console.log('[Watchlist] removeFromWatchlist', watchlistId, symbol);
+    if (!watchlistId || !symbol) return;
+
+    // prevent default context menu and stop propagation
+    event.preventDefault(); // prevent default context menu
+    event.stopPropagation(); // stop propagation to avoid triggering other click events
+
+    if (!watchlistId || !symbol) return;
+
+    this.loading = true;
+    this.watchlistService.removeItemFromWatchlist(watchlistId, symbol).subscribe({
+      next: () => {
+        this.loadWatchlists();
+      },
+      error: (err) => {
+        console.error('[Watchlist] failed to remove item', err);
+        this.ngZone.run(() => {
+          this.loading = false;
+          this.error = err?.error?.message || 'Failed to remove item from watchlist';
+          this.cd.detectChanges();
+        });
+      }
+    });
   }
 }

@@ -26,7 +26,7 @@ func insertCandleData(db *sql.DB, data []model.Candle, interval string, symbol s
 	pairId, err := getPairId(db, symbol)
 	if err != nil {
 		log.WithError(err).Error("Failed to get pair_id")
-		return nil, nil
+		return nil, err
 	}
 
 	tx, err := db.Begin()
@@ -35,21 +35,9 @@ func insertCandleData(db *sql.DB, data []model.Candle, interval string, symbol s
 		return nil, err
 	}
 
-	stmt, err := tx.Prepare(query)
-	if err != nil {
-		log.WithError(err).Error("Failed to prepare statement")
-		return nil, err
-	}
-	defer func(stmt *sql.Stmt) {
-		err := stmt.Close()
-		if err != nil {
-			log.WithError(err).Error("Failed to close statement")
-		}
-	}(stmt)
-
 	for _, c := range data {
 		var id uuid.UUID
-		err := db.QueryRow(query,
+		err := tx.QueryRow(query,
 			pairId, c.OpenTime, c.Open, c.High, c.Low, c.Close, c.Volume, c.CloseTime,
 			c.QuoteVolume, c.Trades, c.TakerBaseVol, c.TakerQuoteVol, interval,
 		).Scan(&id)

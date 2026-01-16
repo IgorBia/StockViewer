@@ -3,7 +3,9 @@ package com.stockviewer.stockapi.candle.service;
 import com.stockviewer.stockapi.candle.dto.CandleDTO;
 import com.stockviewer.stockapi.candle.entity.Candle;
 import com.stockviewer.stockapi.candle.entity.Pair;
+import com.stockviewer.stockapi.candle.dto.PairDTO;
 import com.stockviewer.stockapi.candle.mapper.CandleMapper;
+import com.stockviewer.stockapi.candle.mapper.PairMapper;
 import com.stockviewer.stockapi.candle.repository.CandleRepository;
 import com.stockviewer.stockapi.candle.repository.PairRepository;
 import com.stockviewer.stockapi.exception.ResourceNotFoundException;
@@ -23,13 +25,15 @@ public class CandleService {
     private final CandleRepository candleRepository;
     private final PairRepository pairRepository;
     private final CandleMapper candleMapper;
+    private final PairMapper pairMapper;
     private final CandleConfig candleConfig;
 
-    public CandleService(CandleRepository candleRepository, CandleMapper candleMapper, CandleConfig candleConfig, PairRepository pairRepository) {
+    public CandleService(CandleRepository candleRepository, CandleMapper candleMapper, CandleConfig candleConfig, PairRepository pairRepository, PairMapper pairMapper) {
         this.candleRepository = candleRepository;
         this.candleMapper = candleMapper;
         this.candleConfig = candleConfig;
         this.pairRepository = pairRepository;
+        this.pairMapper = pairMapper;
     }
 
     public List<CandleDTO> getAllCandleDTOs() {
@@ -87,6 +91,10 @@ public class CandleService {
             throw new ResourceNotFoundException("Failed to get pair data for symbol: " + symbol);
         }
     }
+
+    public List<Pair> getAllPairs() {
+        return pairRepository.findAll();
+    }
     
     public BigDecimal getTicker(String symbol) {
         try{ 
@@ -94,5 +102,35 @@ public class CandleService {
         } catch (Exception e) {
             throw new ResourceNotFoundException("Failed to get ticker price for symbol: " + symbol);
         }
+    }
+
+    public PairDTO getPairInfoBySymbol(String symbol) {
+        Pair pair = getPair(symbol);
+        if (pair == null) {
+            throw new ResourceNotFoundException("Pair not found for symbol: " + symbol);
+        }
+        return pairMapper.toDTO(pair);
+    }
+
+    public Pair getPairbyRiskTolerance(int riskTolerance) {
+        try{
+            return pairRepository.findFirstByRiskTolerance(riskTolerance);
+        } catch (Exception e) {
+            throw new ResourceNotFoundException("Failed to get pair data for risk tolerance: " + riskTolerance);
+        }
+    }
+
+    public String findBaseAssetSymbolById(UUID pairId) {
+        try{
+            return pairRepository.findBaseAssetSymbolById(pairId);
+        } catch (Exception e) {
+            throw new ResourceNotFoundException("Failed to get base asset symbol for pair id: " + pairId);
+        }
+    }
+
+    public Candle getLatestCandleForPair(Pair pair, String timeframe) {
+        validateTimeFrame(timeframe);
+        Optional<Candle> candleOpt = candleRepository.findTopByPairAndTimeframeOrderByTimestampDesc(pair, timeframe); 
+        return candleOpt.orElseThrow(() -> new ResourceNotFoundException("Candle not found for pair: " + pair.getSymbol() + " and timeframe: " + timeframe));
     }
 }

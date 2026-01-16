@@ -3,18 +3,16 @@ package internal
 import (
 	"database/sql"
 	"time"
+	"github.com/igorbia/stock_scheduler_service/config"
 )
 
 type SchedulerFunc func(db *sql.DB, symbol, interval string, duration time.Duration)
 
-func BuildRoutines(db *sql.DB, scheduler SchedulerFunc) {
+func BuildRoutines(db *sql.DB, scheduler SchedulerFunc, appConfig config.AppConfig) {
 
-	SupportedSymbols := []string{"ETHUSDC", "BTCUSDC", "SOLUSDC", "ETHBTC"}
-
-	for _, symbol := range SupportedSymbols {
-		go scheduler(db, symbol, "15m", 15*time.Minute)
-		go scheduler(db, symbol, "1h", 1*time.Hour)
-		go scheduler(db, symbol, "4h", 4*time.Hour)
-		go scheduler(db, symbol, "1d", 24*time.Hour)
-	}
+    for _, symbol := range appConfig.Symbols {
+        for _, interval := range appConfig.Intervals {
+            go scheduler(db, symbol, interval, appConfig.Durations[interval])
+        }
+    }
 }

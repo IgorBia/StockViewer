@@ -22,6 +22,7 @@
 .chart-area {
   position: relative;
   width: 100%;
+  height: 80%;
   flex: 1;
   z-index: 0;
 }
@@ -30,8 +31,8 @@
 .macd-area {
   position: relative;
   width: 100%;
-  height: 200px;
-  flex: 0 0 200px;
+  height: 20%;
+  flex: 0 0 20%;
   z-index: 0;
   border-top: 1px solid rgba(255,255,255,0.06);
 }
@@ -86,6 +87,14 @@
 .chart-area canvas {
   width: 100% !important;
   position: absolute;
+  height: 100% !important;
+  inset: 0;
+  z-index: 0;
+}
+
+.tv-lightweight-charts {
+  position: absolute;
+  width: 100% !important;
   inset: 0;
   z-index: 0;
 }

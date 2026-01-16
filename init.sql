@@ -55,8 +55,17 @@ CREATE TABLE user_management.owned_asset (
     wallet_id UUID NOT NULL,
     asset_id UUID NOT NULL,
     amount DECIMAL(18,8) NOT NULL,
+    avg_price DECIMAL(18,8),
     FOREIGN KEY (wallet_id) REFERENCES wallet(wallet_id) ON DELETE CASCADE,
     FOREIGN KEY (asset_id) REFERENCES asset(asset_id) ON DELETE CASCADE
+);
+
+CREATE TABLE user_management.wallet_worth_snapshot (
+    snapshot_id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+    wallet_id UUID NOT NULL,
+    timestamp TIMESTAMP NOT NULL,
+    total_worth_usd DECIMAL(18,8) NOT NULL,
+    FOREIGN KEY (wallet_id) REFERENCES wallet(wallet_id) ON DELETE CASCADE
 );
 
 CREATE TABLE stock_data.pair (
@@ -66,16 +75,17 @@ CREATE TABLE stock_data.pair (
     quote_asset_id UUID NOT NULL,
     market VARCHAR(10) NOT NULL,
     exchange VARCHAR(15) NOT NULL,
+    risk_tolerance INT NOT NULL,
     FOREIGN KEY (base_asset_id) REFERENCES asset(asset_id) ON DELETE CASCADE,
     FOREIGN KEY (quote_asset_id) REFERENCES asset(asset_id) ON DELETE CASCADE
 );
 
-INSERT INTO stock_data.pair (symbol, base_asset_id, quote_asset_id, market, exchange)
+INSERT INTO stock_data.pair (symbol, base_asset_id, quote_asset_id, market, exchange, risk_tolerance)
 VALUES
-    ('BTCUSDC', (SELECT asset_id FROM asset WHERE symbol = 'BTC'), (SELECT asset_id FROM asset WHERE symbol = 'USDC'), 'Spot', 'Binance'),
-    ('ETHUSDC', (SELECT asset_id FROM asset WHERE symbol = 'ETH'), (SELECT asset_id FROM asset WHERE symbol = 'USDC'), 'Spot', 'Binance'),
-    ('ETHBTC', (SELECT asset_id FROM asset WHERE symbol = 'ETH'), (SELECT asset_id FROM asset WHERE symbol = 'BTC'), 'Spot', 'Binance'),
-    ('SOLUSDC', (SELECT asset_id FROM asset WHERE symbol = 'SOL'), (SELECT asset_id FROM asset WHERE symbol = 'USDC'), 'Spot', 'Binance');
+    ('BTCUSDC', (SELECT asset_id FROM asset WHERE symbol = 'BTC'), (SELECT asset_id FROM asset WHERE symbol = 'USDC'), 'Spot', 'Binance', 1),
+    ('ETHBTC', (SELECT asset_id FROM asset WHERE symbol = 'ETH'), (SELECT asset_id FROM asset WHERE symbol = 'BTC'), 'Spot', 'Binance', 99),
+    ('SOLUSDC', (SELECT asset_id FROM asset WHERE symbol = 'SOL'), (SELECT asset_id FROM asset WHERE symbol = 'USDC'), 'Spot', 'Binance', 3),
+    ('ETHUSDC', (SELECT asset_id FROM asset WHERE symbol = 'ETH'), (SELECT asset_id FROM asset WHERE symbol = 'USDC'), 'Spot', 'Binance', 2);
 
 
 CREATE TABLE user_management.trade (
@@ -86,7 +96,10 @@ CREATE TABLE user_management.trade (
     price DECIMAL(18,8) NOT NULL,
     transaction_type VARCHAR(10) NOT NULL,
     base_amount DECIMAL(18,8) NOT NULL,
-    quote_amount DECIMAL(18,8) NOT NULL,        
+    quote_amount DECIMAL(18,8) NOT NULL,    
+    stop_loss DECIMAL(18,8),
+    take_profit DECIMAL(18,8),
+    pnl DECIMAL(18,8),    
     FOREIGN KEY (user_id) REFERENCES app_user(user_id) ON DELETE CASCADE,
     FOREIGN KEY (pair_id) REFERENCES pair(pair_id) ON DELETE CASCADE
 );
@@ -105,7 +118,7 @@ CREATE TABLE stock_data.candle (
     trades INT NOT NULL,
     taker_base_vol DECIMAL(18,8) NOT NULL,
     taker_quote_vol DECIMAL(18,8) NOT NULL,
-    timeframe VARCHAR(10) NOT NULL,
+    timeframe VARCHAR(3) NOT NULL,
     CONSTRAINT uniq_candle UNIQUE (pair_id, timeframe, close_time),
     FOREIGN KEY (pair_id) REFERENCES pair(pair_id) ON DELETE CASCADE
 );
@@ -130,3 +143,4 @@ CREATE TABLE user_management.watchlist_item (
     pair_id UUID NOT NULL REFERENCES pair(pair_id) ON DELETE CASCADE,
     PRIMARY KEY (watchlist_id, pair_id)
 );
+

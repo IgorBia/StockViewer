@@ -1,0 +1,223 @@
+:host {
+  display: block;
+  width: 100%;
+  min-height: 0;
+}
+
+.trade-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%; 
+  min-height: 0;
+  background: #001226;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  box-sizing: border-box;
+  color: #dbeafe;
+}
+
+.trade-header h3 {
+  margin: 0;
+  white-space: nowrap;    
+  font-weight: 700;
+}
+
+.trade-container {
+  max-width: 100%;
+  min-width: 0;
+}
+
+.trade-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;       
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: nowrap;        
+}
+
+.side-toggle-group {
+  display: flex;
+  flex-direction: row;
+  gap: 0; 
+  margin-bottom: 0.75rem;
+}
+
+.side-toggle {
+  flex: 1 1 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0.85rem 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid rgba(255,255,255,0.06);
+  background: rgba(255,255,255,0.02);
+  color: #f8fafc;
+  transition: background .15s ease, transform .06s ease;
+}
+
+.side-toggle:active {
+  transform: translateY(1px);
+}
+
+.side-toggle:first-child {
+  border-radius: 12px;
+}
+
+.side-toggle:last-child {
+  border-radius: 12px;
+}
+
+.side-toggle.active {
+  background: linear-gradient(180deg, rgba(212,175,55,0.12), rgba(212,175,55,0.06));
+  border-color: rgba(212,175,55,0.95);
+  color: #fff;
+}
+
+.amount-label {
+  margin-top: auto;
+  display: block;
+  width: 100%;
+}
+
+.amount-input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.9rem 1rem;
+  font-size: 1.05rem;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.06);
+  background: rgba(255,255,255,0.02);
+  color: #eef2ff;
+  outline: none;
+}
+
+.amount-input::placeholder {
+  color: rgba(235,235,235,0.45);
+  font-weight: 500;
+}
+
+.slider-row { display:flex; gap:0.5rem; align-items:center; }
+.slider-row input[type="range"] { flex:1; }
+.percent-label { width: 60px; text-align:right; font-weight:600; }
+
+.trade-actions {
+  margin-top: 0.9rem;
+}
+
+.execute-btn {
+  width: 100%;
+  display: inline-block;
+  padding: 0.9rem 1rem;
+  font-size: 1.05rem;
+  margin-top: auto;
+  border-radius: 12px;
+  background: #ffffff; 
+  color: #111827; 
+  border: 2px solid #d4af37; 
+  font-weight: 700;
+  cursor: pointer;
+  transition: box-shadow .12s ease, transform .06s ease;
+}
+
+.execute-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.execute-btn:not(:disabled):active {
+  transform: translateY(1px);
+}
+
+.trade-message {
+  margin-top: 0.6rem;
+  color: #ffd6a5;
+}
+
+
+.trade-container > * + * {
+  margin-top: 1rem;
+}
+
+form > * + * {
+  margin-top: 1rem;
+  height: auto;
+}
+
+.trade-container, .trade-container * {
+  box-sizing: border-box;
+}
+
+.side-toggle, .amount-input, .execute-btn, .trade-actions {
+  min-width: 0; 
+  max-width: 100%;
+}
+
+
+/* Responsive tweaks */
+@media (max-width: 720px) {
+  .side-toggle-group {
+    flex-direction: column; 
+    gap: 0.5rem;
+  }
+
+  .side-toggle:first-child, .side-toggle:last-child {
+    border-radius: 10px;
+    border-right: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .amount-input, .execute-btn {
+    font-size: 1rem;
+    padding: 0.7rem 0.85rem;
+  }
+}
+
+@media (min-width: 721px) and (max-width: 1400px) {
+  .side-toggle { padding: 0.7rem 0.6rem; }
+  .amount-input { padding: 0.8rem 0.9rem; }
+}
+
+.trade-container, .trade-container * {
+  word-break: break-word;
+}
+
+.btn-trade-history {
+  all: unset;
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  width: 38px;
+  height: 38px;
+  color: #B68308;      /* icon color via currentColor */
+  cursor: pointer;
+}
+
+/* hover / focus */
+.btn-trade-history:hover,
+.btn-trade-history:focus {
+  transform: translateY(-1px);
+  outline: none;
+}
+
+/* if you want an outlined/ghost style */
+.btn-trade-history.ghost {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.06);
+  color: #dbeafe;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  height: 1px; width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+  border: 0; padding: 0; margin: -1px;
+}

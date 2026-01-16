@@ -5,6 +5,7 @@ import com.stockviewer.stockapi.candle.dto.CandleResponse;
 import com.stockviewer.stockapi.candle.service.CandleService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import com.stockviewer.stockapi.candle.dto.PairDTO;
 
 @RestController
 @RequestMapping("candles")
@@ -36,5 +37,12 @@ public class CandleController {
         return ResponseEntity
                 .status(200)
                 .body(candleService.getActualCandleData(symbol, timeframe));
+    }
+
+    @GetMapping("/{symbol}/info")
+    public ResponseEntity<PairDTO> getPairInfoBySymbol(@PathVariable String symbol) {
+        return ResponseEntity
+                .status(200)
+                .body(candleService.getPairInfoBySymbol(symbol));
     }
 }

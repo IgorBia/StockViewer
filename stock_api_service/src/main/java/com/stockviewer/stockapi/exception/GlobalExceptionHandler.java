@@ -5,6 +5,7 @@ import org.slf4j.LoggerFactory;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.BadCredentialsException;
+import org.springframework.security.access.AccessDeniedException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
@@ -66,4 +67,22 @@ public class GlobalExceptionHandler {
                         List.of(new FieldErrorDTO("Duplicate record", ex.getMessage()))
                 ));
     }
+
+    @ExceptionHandler(InsufficientFundsException.class)
+    public ResponseEntity<ErrorResponse> handleInsufficientFundsException(InsufficientFundsException ex) {
+        return ResponseEntity
+                .status(400)
+                .body(new ErrorResponse(
+                        "400",
+                        List.of(new FieldErrorDTO("Insufficient funds", ex.getMessage()))));
+    }
+
+    @ExceptionHandler(AccessDeniedException.class)
+        public ResponseEntity<ErrorResponse> handleAccessDeniedException(AccessDeniedException ex) {
+                return ResponseEntity
+                        .status(403)
+                        .body(new ErrorResponse(
+                                "403",
+                                List.of(new FieldErrorDTO("Forbidden", ex.getMessage()))));
+        }
 }

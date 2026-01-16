@@ -3,29 +3,20 @@ package internal
 import (
 	"net/http"
 	"net/http/httptest"
-	"net/url"
 	"testing"
-)
+	"time"
 
-type Candle struct {
-	Time      int64  `json:"time"`
-	Open      string `json:"open"`
-	Close     string `json:"close"`
-	High      string `json:"high"`
-	Low       string `json:"low"`
-	Volume    string `json:"volume"`
-	CloseTime int64  `json:"closeTime"`
-}
+	"github.com/igorbia/stock_scheduler_service/model"
+)
 
 func TestBuildURL(t *testing.T) {
 	tests := []struct {
-		name        string
-		base        string
-		symbol      string
-		interval    string
-		expectNil   bool
-		expectErr   bool
-		expectedURL *url.URL
+		name      string
+		base      string
+		symbol    string
+		interval  string
+		expectNil bool
+		expectErr bool
 	}{
 		{
 			name:      "Normal case",
@@ -34,12 +25,6 @@ func TestBuildURL(t *testing.T) {
 			interval:  "1m",
 			expectNil: false,
 			expectErr: false,
-			expectedURL: &url.URL{
-				Scheme:   "https",
-				Host:     "api.binance.com",
-				Path:     "/api/v3/klines",
-				RawQuery: "interval=1m&limit=1&symbol=BTCUSDT",
-			},
 		},
 		{
 			name:      "Empty base",
@@ -47,7 +32,7 @@ func TestBuildURL(t *testing.T) {
 			symbol:    "BTCUSDT",
 			interval:  "1m",
 			expectNil: true,
-			expectErr: false,
+			expectErr: true,
 		},
 		{
 			name:      "Empty symbol",
@@ -55,7 +40,7 @@ func TestBuildURL(t *testing.T) {
 			symbol:    "",
 			interval:  "1m",
 			expectNil: true,
-			expectErr: false,
+			expectErr: true,
 		},
 		{
 			name:      "Empty interval",
@@ -63,7 +48,7 @@ func TestBuildURL(t *testing.T) {
 			symbol:    "BTCUSDT",
 			interval:  "",
 			expectNil: true,
-			expectErr: false,
+			expectErr: true,
 		},
 		{
 			name:      "All empty",
@@ -71,27 +56,43 @@ func TestBuildURL(t *testing.T) {
 			symbol:    "",
 			interval:  "",
 			expectNil: true,
-			expectErr: false,
+			expectErr: true,
 		},
 	}
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			// Execute the buildURL function
-			resultURL, err := buildURL(tt.base, tt.symbol, tt.interval)
+			resultURL, err := buildURL(tt.base, tt.symbol, tt.interval, nil, 1)
 
 			if tt.expectNil {
 				if resultURL != nil {
 					t.Errorf("Expected nil URL, got %v", resultURL)
 				}
-				if err != nil && !tt.expectErr {
-					t.Errorf("Expected no error, got %v", err)
+				if err == nil && tt.expectErr {
+					t.Errorf("Expected an error, got nil")
 				}
 			} else {
 				if resultURL == nil {
-					t.Errorf("Expected non-nil URL, got nil")
-				} else if resultURL.String() != tt.expectedURL.String() {
-					t.Errorf("Expected URL %v, got %v", tt.expectedURL, resultURL)
+					t.Fatalf("Expected non-nil URL, got nil")
+				}
+				if resultURL.Scheme != "https" {
+					t.Errorf("Expected scheme https, got %s", resultURL.Scheme)
+				}
+				if resultURL.Host != "api.binance.com" {
+					t.Errorf("Expected host api.binance.com, got %s", resultURL.Host)
+				}
+				if resultURL.Path != "/api/v3/klines" {
+					t.Errorf("Expected path /api/v3/klines, got %s", resultURL.Path)
+				}
+				q := resultURL.Query()
+				if q.Get("symbol") != "BTCUSDT" {
+					t.Errorf("Expected symbol=BTCUSDT, got %s", q.Get("symbol"))
+				}
+				if q.Get("interval") != "1m" {
+					t.Errorf("Expected interval=1m, got %s", q.Get("interval"))
+				}
+				if q.Get("limit") != "1" {
+					t.Errorf("Expected limit=1, got %s", q.Get("limit"))
 				}
 			}
 		})
@@ -103,24 +104,25 @@ func TestFetchCandleData(t *testing.T) {
 		name         string
 		mockResponse string
 		config       FetchConfig
-		expected     Candle
+		expected     model.Candle
 		expectEmpty  bool
 	}{
 		{
-			name:         "Valid candle data",
-			mockResponse: `[ [1620990000000, "60000", "60500", "61000", "59500", "1000", 1620993599999, "60000", "500", "0", "0", "0"] ]`,
+			name: "Valid candle data",
+			mockResponse: `[ [1620990000000, "60000", "61000", "59500", "60500", "1000", 1620993599999, "60000000", 500, "0", "0", "0"] ]`,
 			config: FetchConfig{
 				Symbol:   "BTCUSDT",
 				Interval: "1m",
+				Limit:    1,
 			},
-			expected: Candle{
-				Time:      1620990000000,
+			expected: model.Candle{
+				OpenTime:  time.UnixMilli(1620990000000).UTC().Format(time.RFC3339),
 				Open:      "60000",
 				Close:     "60500",
 				High:      "61000",
 				Low:       "59500",
 				Volume:    "1000",
-				CloseTime: 1620993599999,
+				CloseTime: time.UnixMilli(1620993599999).UTC().Format(time.RFC3339),
 			},
 			expectEmpty: false,
 		},
@@ -130,6 +132,7 @@ func TestFetchCandleData(t *testing.T) {
 			config: FetchConfig{
 				Symbol:   "BTCUSDT",
 				Interval: "1m",
+				Limit:    1,
 			},
 			expectEmpty: true,
 		},
@@ -161,18 +164,27 @@ func TestFetchCandleData(t *testing.T) {
 			}
 
 			k := klines[0]
-			actual := Candle{
-				Time:      int64(k[0].(float64)),
-				Open:      k[1].(string),
-				Close:     k[2].(string),
-				High:      k[3].(string),
-				Low:       k[4].(string),
-				Volume:    k[5].(string),
-				CloseTime: int64(k[6].(float64)),
-			}
 
-			if actual != tt.expected {
-				t.Errorf("Expected %+v, got %+v", tt.expected, actual)
+			if k.OpenTime != tt.expected.OpenTime {
+				t.Errorf("OpenTime mismatch: expected %s got %s", tt.expected.OpenTime, k.OpenTime)
+			}
+			if k.Open != tt.expected.Open {
+				t.Errorf("Open mismatch: expected %s got %s", tt.expected.Open, k.Open)
+			}
+			if k.Close != tt.expected.Close {
+				t.Errorf("Close mismatch: expected %s got %s", tt.expected.Close, k.Close)
+			}
+			if k.High != tt.expected.High {
+				t.Errorf("High mismatch: expected %s got %s", tt.expected.High, k.High)
+			}
+			if k.Low != tt.expected.Low {
+				t.Errorf("Low mismatch: expected %s got %s", tt.expected.Low, k.Low)
+			}
+			if k.Volume != tt.expected.Volume {
+				t.Errorf("Volume mismatch: expected %s got %s", tt.expected.Volume, k.Volume)
+			}
+			if k.CloseTime != tt.expected.CloseTime {
+				t.Errorf("CloseTime mismatch: expected %s got %s", tt.expected.CloseTime, k.CloseTime)
 			}
 		})
 	}

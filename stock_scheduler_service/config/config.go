@@ -5,11 +5,18 @@ import (
 	"fmt"
 	"os"
 	"strings"
+	"time"
 
 	"github.com/joho/godotenv"
 	_ "github.com/lib/pq"
 	log "github.com/sirupsen/logrus"
 )
+
+type AppConfig struct {
+	Symbols   []string
+	Intervals []string
+	Durations map[string]time.Duration
+}
 
 func GetDataBase() (*sql.DB, error) {
 	envVars, err := getRequiredEnvVars()
@@ -62,4 +69,23 @@ func getRequiredEnvVars() (map[string]string, error) {
 	}
 
 	return envVars, nil
+}
+
+func GetAppConfig() AppConfig {
+	supportedSymbols := []string{"ETHUSDC", "BTCUSDC", "SOLUSDC", "ETHBTC"}
+
+    supportedIntervals := []string{"1m", "1h", "4h", "1d"}
+    durations := map[string]time.Duration{
+        "1m": time.Minute,
+        "1h": time.Hour,
+        "4h": 4 * time.Hour,
+        "1d": 24 * time.Hour,
+    }
+
+	appConfig := AppConfig{
+		Symbols:   supportedSymbols,
+		Intervals: supportedIntervals,
+		Durations: durations,
+	}
+	return appConfig
 }

@@ -4,6 +4,7 @@ import (
 	"database/sql"
 	"testing"
 	"time"
+	"github.com/igorbia/stock_scheduler_service/config"
 )
 
 func TestBuildRoutines(t *testing.T) {
@@ -36,6 +37,8 @@ func TestBuildRoutines(t *testing.T) {
 		duration time.Duration
 	}
 
+	
+
 	mockScheduler := func(db *sql.DB, symbol, interval string, duration time.Duration) {
 		actualCalls = append(actualCalls, struct {
 			symbol   string
@@ -44,16 +47,55 @@ func TestBuildRoutines(t *testing.T) {
 		}{symbol, interval, duration})
 	}
 
-	BuildRoutines(nil, mockScheduler)
+	appConfig := config.AppConfig{
+		Symbols:   []string{"ETHUSDC", "BTCUSDC", "SOLUSDC", "ETHBTC"},
+		Intervals: []string{"15m", "1h", "4h", "1d"},
+		Durations: map[string]time.Duration{
+			"15m": 15 * time.Minute,
+			"1h":  1 * time.Hour,
+			"4h":  4 * time.Hour,
+			"1d":  24 * time.Hour,
+		},
+	}
+
+	// Call BuildRoutines with the mock scheduler
+
+	BuildRoutines(nil, mockScheduler, appConfig)
+
+	deadline := time.Now().Add(200 * time.Millisecond)
+	for len(actualCalls) < len(expectedCalls) && time.Now().Before(deadline) {
+		time.Sleep(5 * time.Millisecond)
+	}
 
 	if len(actualCalls) != len(expectedCalls) {
 		t.Fatalf("Expected %d calls, but got %d", len(expectedCalls), len(actualCalls))
 	}
 
-	for i, expected := range expectedCalls {
-		actual := actualCalls[i]
-		if actual != expected {
-			t.Errorf("Call %d mismatch. Expected %+v, got %+v", i, expected, actual)
+	// Compare as sets (order-independent): map key = symbol|interval -> duration
+	expectedMap := make(map[string]time.Duration)
+	for _, e := range expectedCalls {
+		key := e.symbol + "|" + e.interval
+		expectedMap[key] = e.duration
+	}
+
+	actualMap := make(map[string]time.Duration)
+	for _, a := range actualCalls {
+		key := a.symbol + "|" + a.interval
+		actualMap[key] = a.duration
+	}
+
+	if len(actualMap) != len(expectedMap) {
+		t.Fatalf("Expected %d unique calls, but got %d", len(expectedMap), len(actualMap))
+	}
+
+	for k, ed := range expectedMap {
+		ad, ok := actualMap[k]
+		if !ok {
+			t.Errorf("Missing expected call: %s", k)
+			continue
+		}
+		if ad != ed {
+			t.Errorf("Duration mismatch for %s: expected %v, got %v", k, ed, ad)
 		}
 	}
 }

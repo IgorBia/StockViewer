@@ -4,6 +4,7 @@ package com.stockviewer.stockapi.candle.service;
 import com.stockviewer.stockapi.candle.dto.CandleDTO;
 import com.stockviewer.stockapi.candle.entity.Candle;
 import com.stockviewer.stockapi.candle.mapper.CandleMapper;
+import com.stockviewer.stockapi.candle.mapper.PairMapper;
 import org.mapstruct.factory.Mappers;
 import com.stockviewer.stockapi.candle.repository.CandleRepository;
 import com.stockviewer.stockapi.candle.repository.PairRepository;
@@ -18,6 +19,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.time.ZoneOffset;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertAll;
@@ -34,6 +36,7 @@ public class CandleServiceTest {
     @Mock PairRepository pairRepository;
 
     CandleMapper candleMapper = Mappers.getMapper(CandleMapper.class);
+    PairMapper pairMapper = Mappers.getMapper(PairMapper.class);
 
     private CandleConfig candleConfig;
 
@@ -41,7 +44,7 @@ public class CandleServiceTest {
 
     @BeforeEach
     void setUp() {
-        candleService = new CandleService(candleRepository, candleMapper, candleConfig, pairRepository);
+        candleService = new CandleService(candleRepository, candleMapper, candleConfig, pairRepository, pairMapper);
     }
 
     private List<Candle> getSampleCandleList() {
@@ -61,7 +64,10 @@ public class CandleServiceTest {
                 () -> {
                     Candle firstExpected = expected.getFirst();
                     CandleDTO firstActual = actual.getFirst();
-                    assertEquals(firstExpected.getTimestamp(), firstActual.timestamp());
+                    assertEquals(
+                        firstExpected.getTimestamp().atOffset(ZoneOffset.UTC).toInstant(),
+                        firstActual.timestamp().toInstant()
+                    );
                     assertEquals(firstExpected.getOpen(), firstActual.open());
                     assertEquals(firstExpected.getHigh(), firstActual.high());
                     assertEquals(firstExpected.getLow(), firstActual.low());

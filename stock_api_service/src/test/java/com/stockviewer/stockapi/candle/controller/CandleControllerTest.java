@@ -20,7 +20,8 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 
 
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
+import java.time.ZoneOffset;
 import java.util.List;
 
 import static org.mockito.ArgumentMatchers.any;
@@ -51,7 +52,7 @@ class CandleControllerTest {
 
     private List<CandleDTO> getSampleCandleDTOList() {
         CandleDTO candleDto = new CandleDTO(
-                LocalDateTime.of(2025, 5, 22, 12, 0), // timestamp
+                OffsetDateTime.of(2025, 9, 1, 0, 0, 0, 0, ZoneOffset.UTC), // timestamp
                 null, // closeTime
                 new BigDecimal("2513.24"), // open
                 new BigDecimal("2512.04"), // close

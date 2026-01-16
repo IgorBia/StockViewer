@@ -1,0 +1,19 @@
+.wallet-worth-chart {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.chart-wrapper {
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+canvas {
+  width: 100%;
+  height: 15vh;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 8px;
+  box-sizing: border-box;
+  display: block;
+}

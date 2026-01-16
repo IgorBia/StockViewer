@@ -1,0 +1,44 @@
+:host { display:block; }
+
+.wallet-pie {
+  width: 100%;
+  max-width: 380px;             
+  height: clamp(180px, 28vw, 360px); 
+  padding: 0.6rem;
+  position: relative;          
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wallet-pie canvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}
+
+.wallet-pie .center-label {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  pointer-events: none;
+  color: #f8f8f8;
+}
+.wallet-pie .center-label .value {
+  font-weight: 800;
+  font-size: 1rem;
+  letter-spacing: 0.2px;
+}
+.wallet-pie .center-label .label {
+  font-size: 0.75rem;
+  color: #9fb1c9;
+}
+
+@media (max-width: 520px) {
+  .wallet-pie {
+    max-width: 320px;
+    height: clamp(160px, 40vw, 280px);
+  }
+}

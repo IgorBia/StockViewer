@@ -31,7 +31,6 @@ export class PublicDashboardComponent implements OnInit, OnDestroy {
   onSearch() {
     console.log('Wyszukano:', this.searchQuery);
     this.chartService.setSymbol(this.searchQuery);
-    // TODO: logika pobierania danych wykresu
   }
 
   onLoginClick() {

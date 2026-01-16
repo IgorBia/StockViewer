@@ -1,0 +1,18 @@
+<div class="topbar">
+	<div class="wallet-info">
+		<button type="button" class="wallet-btn" (click)="isWalletOpen = true">Balance: ${{ (walletService.totalUsd$ | async) | number:'1.2-2' }}</button>
+	</div>
+	<div class="user-info">
+		<span class="user-email">{{ userEmail }}</span>
+		    <button class="btn-logout" type="button" aria-label="Wyloguj" (click)="logout()">
+            	<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+                	<rect x="2.5" y="3.5" width="11" height="17" rx="1.2" stroke="currentColor" stroke-width="1.4" fill="none"/>
+                	<path d="M15 12h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                	<path d="M18 9l3 3-3 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span class="visually-hidden">Wyloguj</span>
+        </button>
+	</div>
+
+	<app-wallet-overview *ngIf="isWalletOpen" (closed)="isWalletOpen = false"></app-wallet-overview>
+</div>

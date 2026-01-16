@@ -10,6 +10,7 @@ import lombok.Setter;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.UUID;
+import java.util.List;
 
 @Entity
 @Setter
@@ -33,7 +34,9 @@ public class Wallet {
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
 
-    @JsonIgnore
+    @OneToMany(mappedBy = "wallet", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<WalletWorthSnapshot> worthSnapshots;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "managed_asset_id", nullable = false)
     private Asset managedAsset;

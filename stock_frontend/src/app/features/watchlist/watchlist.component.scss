@@ -13,42 +13,6 @@
   margin-bottom: 0.5rem;
 }
 
-.visually-hidden {
-  position: absolute !important;
-  height: 1px; width: 1px;
-  overflow: hidden;
-  clip: rect(1px, 1px, 1px, 1px);
-  white-space: nowrap;
-  border: 0; padding: 0; margin: -1px;
-}
-
-/* force only .btn-logout styles for icon button */
-.watchlist-header .btn-logout {
-  all: unset;
-  box-sizing: border-box;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 38px;
-  height: 38px;
-  color: #B68308;;      /* icon color via currentColor */
-  cursor: pointer;
-}
-
-/* hover / focus */
-.watchlist-header .btn-logout:hover,
-.watchlist-header .btn-logout:focus {
-  transform: translateY(-1px);
-  outline: none;
-}
-
-/* if you want an outlined/ghost style */
-.watchlist-header .btn-logout.ghost {
-  background: transparent;
-  border: 1px solid rgba(255,255,255,0.06);
-  color: #dbeafe;
-}
-
 .watchlist-container {
   display: flex;
   flex-direction: column;
@@ -69,7 +33,6 @@
   overflow: auto;
 }
 
-/* --- added: two buttons per row grid --- */
 .watchlist-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -77,14 +40,12 @@
   align-items: start;
 }
 
-/* make buttons fill the grid cell */
 .watchlist-grid button {
   display: block;
   width: 100%;
   box-sizing: border-box;
 }
 
-// ...existing code...
 button {
   position: relative;
   aspect-ratio: 1;
@@ -96,17 +57,14 @@ button {
   border-radius: 8px;
   cursor: pointer;
   z-index: 2;
-  /* allow the blurred border to spill slightly if you want glow outside */
   overflow: hidden;
 }
 
-/* blurred ring that acts as border */
 button::before {
   content: "";
   position: absolute;
   inset: 0;
   border-radius: inherit;
-  /* create a solid ring then blur it */
   box-shadow: 0 0 0 8px #000D1B;
   filter: blur(8px);
   pointer-events: none;
