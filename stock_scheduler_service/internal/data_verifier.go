@@ -23,7 +23,12 @@ func EnsureDataIntegrity(db *sql.DB, appConfig config.AppConfig) {
 
 	for _, symbol := range appConfig.Symbols {
 		for _, interval := range appConfig.Intervals {
-			go ensureDataIntegrityForSymbolAndInterval(db, symbol, interval, appConfig.Durations[interval])
+			d, ok := appConfig.Durations[interval]
+			if !ok || d <= 0 {
+				log.Warnf("Skipping integrity check for %s %s: missing or non-positive duration", symbol, interval)
+				continue
+			}
+			go ensureDataIntegrityForSymbolAndInterval(db, symbol, interval, d)
 		}
 	}
 }

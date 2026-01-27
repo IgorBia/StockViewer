@@ -15,7 +15,7 @@
   </div>
 
   <div class="auth-section" *ngIf="showAuthControl">
-    <button (click)="showAuth = true">Open Auth</button>
+    <button (click)="showAuth = true">Zaloguj/Zarejestruj</button>
     <app-auth *ngIf="showAuth" (closed)="showAuth = false"></app-auth>
   </div>
 </div>

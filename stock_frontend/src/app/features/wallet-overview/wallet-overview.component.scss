@@ -131,10 +131,17 @@ pie-chart {
 }
 
 .managed-control {
-  display:flex;
-  gap:0.5rem;
-  align-items:center;
-  margin-top:0.5rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
+	margin-top: 0.5rem;
+}
+
+.managed-actions {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
 }
 .btn-manage {
   background:#0f766e;

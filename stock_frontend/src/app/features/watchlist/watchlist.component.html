@@ -1,11 +1,11 @@
 <div class="watchlist-container">
     <div class="watchlist-header">
-        <h3>Watchlists</h3>
+        <h3>Lista obserwowanych</h3>
     </div>
 
     <div *ngIf="error" class="error">{{ error }}</div>
     <!-- <div *ngIf="loading" class="watchlist-list">Loading...</div> -->
-    <div *ngIf="!loading && watchlists.length === 0">No watchlists</div>
+    <div *ngIf="!loading && watchlists.length === 0">Brak list</div>
 
     <div *ngFor="let wl of watchlists" class="watchlist">
         <div class="watchlist-grid">
@@ -14,7 +14,7 @@
                 *ngFor="let item of wl.watchlistItems"
                 type="button"
                 (click)="selectSymbol(item.symbol)"
-                aria-label="Select {{ item.symbol }}"
+                aria-label="Wybierz {{ item.symbol }}"
                 (contextmenu)="removeFromWatchlist($event, wl.name, item.symbol)"
             >
                 {{ item.symbol }}

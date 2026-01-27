@@ -4,7 +4,7 @@
   </div>
 
   <div class="chart-overlay interval-buttons" role="toolbar" aria-label="Chart intervals">
-    <button (click)="changeInterval('1m')" [class.active]="chartService.getInterval() === '1m'">1m</button>
+    <button (click)="changeInterval('15m')" [class.active]="chartService.getInterval() === '15m'">15m</button>
     <button (click)="changeInterval('1h')"  [class.active]="chartService.getInterval() === '1h'">1h</button>
     <button (click)="changeInterval('4h')"  [class.active]="chartService.getInterval() === '4h'">4h</button>
     <button (click)="changeInterval('1d')"  [class.active]="chartService.getInterval() === '1d'">1d</button>

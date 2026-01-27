@@ -10,6 +10,10 @@ import (
 )
 
 func publishCandleEvent(brokers []string, topic string, payload []uuid.UUID) error {
+	// nothing to publish
+	if len(payload) == 0 {
+		return nil
+	}
 	p, err := kafka.NewProducer(&kafka.ConfigMap{
 		"bootstrap.servers": strings.Join(brokers, ","),
 	})

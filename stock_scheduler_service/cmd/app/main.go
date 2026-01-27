@@ -14,7 +14,7 @@ func main() {
 
 
 	if err == nil {
-		internal.SetupDB(db)
+		internal.SetupDB(db, config.GetAppConfig())
 		internal.EnsureDataIntegrity(db, config.GetAppConfig())
 		internal.BuildRoutines(db, internal.ScheduleCandleUpdates, config.GetAppConfig())
 	}

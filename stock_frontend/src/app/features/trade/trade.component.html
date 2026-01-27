@@ -1,27 +1,27 @@
 <div class="trade-container">
   <div class="trade-header">
-    <h3>Trade</h3>
-    <button class="btn-trade-history" type="button" aria-label="Trade History" (click)="isTradeHistoryOpen = true">
+    <h3>Handel</h3>
+    <button class="btn-trade-history" type="button" aria-label="Historia" (click)="isTradeHistoryOpen = true">
             	<svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
                   <path d="M12 2a10 10 0 1 0 10 10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
                   <path d="M12 6v6l4 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
-            <span class="visually-hidden">Trade History</span>
+            <span class="visually-hidden">Historia</span>
       </button>
   </div>
 
   <form [formGroup]="form" (ngSubmit)="submit()">
     <div class="trade-row side-toggle-group">
       <button type="button" class="side-toggle buy" [class.active]="form.value['side'] === 'buy'" (click)="form.controls['side'].setValue('buy')">
-        Buy
+        Kup
       </button>
       <button type="button" class="side-toggle sell" [class.active]="form.value['side'] === 'sell'" (click)="form.controls['side'].setValue('sell')">
-        Sell
+        Sprzedaj
       </button>
     </div>
     <div class="trade-row">
       <label class="amount-label">
-        <input class="amount-input" type="number" step="any" formControlName="amount" [placeholder]="'Amount in ' + (currentSymbol || 'asset')" />
+        <input class="amount-input" type="number" step="any" formControlName="amount" [placeholder]="'Ilość w ' + (currentSymbol || 'aktyw')"/>
       </label>
     </div>
 
@@ -31,7 +31,7 @@
     </div>
 
     <div class="trade-actions">
-      <button type="submit" class="execute-btn" [disabled]="submitting || !currentSymbol">Execute</button>
+      <button type="submit" class="execute-btn" [disabled]="submitting || !currentSymbol">Wykonaj</button>
     </div>
   </form>
 

@@ -37,7 +37,7 @@ public class TradeExecutor {
     // }
 
     // this method has to iterate over all pairs
-    @Scheduled(cron = "30 * * * * *") // Every minute at second 30
+    @Scheduled(cron = "30 */15 * * * *") // Every 15 minutes at second 30
     public void executeTradesForManagedAssets() {
         for (Pair pair : candleService.getAllPairs()) {
             logger.info("[" + pair.getSymbol() + "] Executing trades for managed accounts...");

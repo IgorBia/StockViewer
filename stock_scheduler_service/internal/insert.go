@@ -42,6 +42,10 @@ func insertCandleData(db *sql.DB, data []model.Candle, interval string, symbol s
 			c.QuoteVolume, c.Trades, c.TakerBaseVol, c.TakerQuoteVol, interval,
 		).Scan(&id)
 		if err != nil {
+			if err == sql.ErrNoRows {
+				// row already exists (ON CONFLICT DO NOTHING triggered) — skip silently
+				continue
+			}
 			_ = tx.Rollback()
 			log.WithFields(log.Fields{
 				"pair_id":   pairId,

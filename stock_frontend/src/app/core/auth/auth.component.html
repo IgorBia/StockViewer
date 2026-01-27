@@ -2,31 +2,31 @@
   <div class="auth-container" (click)="$event.stopPropagation()">
     <!-- <button class="close-btn" (click)="close()">X</button> -->
     <div class="toggle">
-      <button (click)="toggleMode()" [disabled]="isLogin">Login</button>
-      <button (click)="toggleMode()" [disabled]="!isLogin">Register</button>
+      <button (click)="toggleMode()" [disabled]="isLogin">Zaloguj się</button>
+      <button (click)="toggleMode()" [disabled]="!isLogin">Zarejestruj się</button>
     </div>
 
     <form *ngIf="isLogin" [formGroup]="loginForm" (ngSubmit)="submitLogin()">
-      <label>Email</label>
-      <input formControlName="email" placeholder="Enter email">
+      <label>Adres e-mail</label>
+      <input formControlName="email" placeholder="Wprowadź adres e-mail">
 
-      <label>Password</label>
-      <input type="password" formControlName="password" placeholder="Enter password">
+      <label>Hasło</label>
+      <input type="password" formControlName="password" placeholder="Wprowadź hasło">
 
-      <button type="submit">Login</button>
+      <button type="submit">Zaloguj</button>
     </form>
 
     <form *ngIf="!isLogin" [formGroup]="registerForm" (ngSubmit)="submitRegister()">
-      <label>Email</label>
-      <input formControlName="email" placeholder="Enter email">
+      <label>Adres e-mail</label>
+      <input formControlName="email" placeholder="Wprowadź adres e-mail">
 
-      <label>Password</label>
-      <input type="password" formControlName="password" placeholder="Enter password">
+      <label>Hasło</label>
+      <input type="password" formControlName="password" placeholder="Wprowadź hasło">
 
-      <label>Confirm Password</label>
-      <input type="password" formControlName="confirmPassword" placeholder="Confirm password">
+      <label>Potwierdź hasło</label>
+      <input type="password" formControlName="confirmPassword" placeholder="Potwierdź hasło">
 
-      <button type="submit">Register</button>
+      <button type="submit">Zarejestruj</button>
     </form>
 
     <div *ngIf="error" class="error">{{ error }}</div>

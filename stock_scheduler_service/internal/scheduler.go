@@ -9,7 +9,12 @@ import (
 )
 
 func ScheduleCandleUpdates(db *sql.DB, symbol string, interval string, duration time.Duration) {
-	ticker := alignedTicker(duration)
+    if duration <= 0 {
+        log.WithFields(log.Fields{"symbol": symbol, "interval": interval}).Warn("Skipping schedule: non-positive duration")
+        return
+    }
+
+    ticker := alignedTicker(duration)
 
 	go func() {
 		for {
@@ -22,6 +27,9 @@ func ScheduleCandleUpdates(db *sql.DB, symbol string, interval string, duration 
 }
 
 func alignedTicker(duration time.Duration) *time.Ticker {
+    if duration <= 0 {
+        panic("alignedTicker called with non-positive duration")
+    }
 	now := time.Now()
 	next := now.Truncate(duration).Add(duration)
 	time.Sleep(time.Until(next.Add(2 * time.Second)))

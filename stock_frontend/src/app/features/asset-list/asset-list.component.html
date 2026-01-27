@@ -12,17 +12,17 @@
       </ul>
 
 
-      <h3>Other assets</h3>
+      <h3>Inne aktywa</h3>
 
-      <div *ngIf="(walletService.loading$ | async)" class="loading">Loading...</div>
+      <div *ngIf="(walletService.loading$ | async)" class="loading">Ładowanie...</div>
 
       <ng-container *ngIf="!(walletService.loading$ | async)">
         <div class="list-inner">
           <ul *ngIf="(filteredAssets$ | async) as assets">
             <li>
-              <div class="asset-name"><strong>Name</strong></div>
-              <div class="asset-amount"><strong>Amount</strong></div>
-              <div class="asset-usd"><strong>USD Value</strong></div>
+              <div class="asset-name"><strong>Nazwa</strong></div>
+              <div class="asset-amount"><strong>Ilość</strong></div>
+              <div class="asset-usd"><strong>Wartość w USD</strong></div>
             </li>
             <li *ngFor="let a of assets">
               <div class="asset-name">{{ a.name }}</div>
@@ -33,7 +33,7 @@
         </div>
         <div *ngIf="filteredAssets$ | async as assets; else noAssets" class="empty"></div>
         <ng-template #noAssets>
-          <div class="empty">No assets in wallet</div>
+          <div class="empty">Brak aktywów w portfelu</div>
         </ng-template>
       </ng-container>
 </div>

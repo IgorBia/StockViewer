@@ -54,6 +54,12 @@ public class UserService {
     }
 
     public User setManagedAsset(int riskTolerance) {
+        if(riskTolerance == 0) {
+            logger.info("Disabling managed asset for risk tolerance 0");
+            User user = getUserFromContext();
+            user.getWallets().forEach(wallet -> wallet.setManagedAsset(null));
+            return userRepository.save(user);
+        }
         Pair pair = candleService.getPairbyRiskTolerance(riskTolerance);
         if(pair == null) {
             throw new ResourceNotFoundException("Pair not found for symbol: " + riskTolerance);

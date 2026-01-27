@@ -131,7 +131,7 @@ private syncVisibleLogicalRange(fromChart: IChartApi, toChart: IChartApi | undef
   }
 
   this.syncingVisibleRange = true;
-  const offset = -2; 
+  const offset = -11; 
 
   const rawFrom = Number(logicalRange.from);
   const rawTo = Number(logicalRange.to);
@@ -171,7 +171,7 @@ buildMACDChart() {
     layout: { background: { color: '#000D1B' }, textColor: '#d1d4dc' },
     grid: { vertLines: { color: '#001226' }, horzLines: { color: '#001226' } },
     rightPriceScale: { visible: true, borderColor: '#001226' },
-    timeScale: { visible: false, borderColor: '#001226', timeVisible: true, secondsVisible: false, rightOffset: -10, barSpacing: 10 },
+    timeScale: { visible: false, borderColor: '#001226', timeVisible: true, secondsVisible: false, rightOffset: -11, barSpacing: 10 },
   });
   this.macdChart.applyOptions({
   handleScroll: {

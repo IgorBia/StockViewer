@@ -1,23 +1,23 @@
 <div class="trade-history-backdrop" (click)="close()">
   <div class="trade-history-modal" (click)="$event.stopPropagation()" role="dialog" aria-modal="true">
     <header class="modal-header">
-      <h1>Trade History</h1>
+      <h1>Historia transakcji</h1>
       <button class="close-btn" (click)="close()">×</button>
     </header>
 
     <section class="trade-history-section">
-      <div *ngIf="(tradeHistoryService.loading$ | async)" class="loading">Loading...</div>
+      <div *ngIf="(tradeHistoryService.loading$ | async)" class="loading">Ładowanie...</div>
 
       <ng-container *ngIf="!(tradeHistoryService.loading$ | async)">
         <table *ngIf="(tradeHistoryService.sortedTradeHistory$ | async) as trades; else noTrades" class="trade-table">
           <thead>
             <tr>
-              <th>Date</th>
+              <th>Data</th>
               <th>Symbol</th>
-              <th>Side</th>
-              <th>Base Amount</th>
-              <th>Price (USD)</th>
-              <th>Total (USD)</th>
+              <th>Strona</th>
+              <th>Ilość aktywa bazowego</th>
+              <th>Cena (USD)</th>
+              <th>Razem (USD)</th>
               <th>PNL</th>
             </tr>
           </thead>
@@ -36,7 +36,7 @@
           </tbody>
         </table>
         <ng-template #noTrades>
-          <div class="empty">No trades found</div>
+          <div class="empty">Brak transakcji</div>
         </ng-template>
       </ng-container>
     </section>

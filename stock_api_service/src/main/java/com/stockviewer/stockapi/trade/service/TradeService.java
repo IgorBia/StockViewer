@@ -279,7 +279,7 @@ private boolean validateSufficientAssets(Wallet wallet, String assetSymbol, BigD
     
 
     private boolean buySignalForPair(String pairSymbol) {
-        List<CandleDTO> candles = candleService.getCandlesDTOBySymbolAndTimeframe(pairSymbol, "1m");
+        List<CandleDTO> candles = candleService.getCandlesDTOBySymbolAndTimeframe(pairSymbol, "15m");
         if (candles == null || candles.size() < 2) {
             logger.warn("Not enough candles for pair {} to evaluate buy signal (need >=2)", pairSymbol);
             return false;
@@ -304,7 +304,7 @@ private boolean validateSufficientAssets(Wallet wallet, String assetSymbol, BigD
     }
 
     private boolean sellSignalForPair(String pairSymbol) {
-        List<CandleDTO> candles = candleService.getCandlesDTOBySymbolAndTimeframe(pairSymbol, "1m");
+        List<CandleDTO> candles = candleService.getCandlesDTOBySymbolAndTimeframe(pairSymbol, "15m");
         if (candles == null || candles.size() < 2) {
             logger.warn("Not enough candles for pair {} to evaluate sell signal (need >=2)", pairSymbol);
             return false;

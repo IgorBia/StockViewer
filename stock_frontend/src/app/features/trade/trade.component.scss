@@ -1,14 +1,18 @@
 :host {
-  display: block;
+  display: flex;
+  flex-direction: column;
   width: 100%;
+  height: 100%;
   min-height: 0;
 }
+
 
 .trade-container {
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 100%; 
+  /* take available space from host */
+  flex: 1 1 auto;
   min-height: 0;
   background: #001226;
   border: 1px solid rgba(255,255,255,0.1);
@@ -107,7 +111,7 @@
 .percent-label { width: 60px; text-align:right; font-weight:600; }
 
 .trade-actions {
-  margin-top: 0.9rem;
+  margin-top: auto;
 }
 
 .execute-btn {
@@ -144,18 +148,23 @@
   margin-top: 1rem;
 }
 
-form > * + * {
-  margin-top: 1rem;
-  height: auto;
+/* Ensure the form inside the trade container fills available vertical space */
+.trade-container > form {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  min-height: 0;
 }
 
 .trade-container, .trade-container * {
   box-sizing: border-box;
 }
 
-.side-toggle, .amount-input, .execute-btn, .trade-actions {
+.side-toggle, .slider-row, .amount-input {
   min-width: 0; 
   max-width: 100%;
+  // gap between rows
+  margin-top: 0.5rem;
 }
 
 

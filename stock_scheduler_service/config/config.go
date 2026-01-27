@@ -74,13 +74,13 @@ func getRequiredEnvVars() (map[string]string, error) {
 func GetAppConfig() AppConfig {
 	supportedSymbols := []string{"ETHUSDC", "BTCUSDC", "SOLUSDC", "ETHBTC"}
 
-    supportedIntervals := []string{"1m", "1h", "4h", "1d"}
-    durations := map[string]time.Duration{
-        "1m": time.Minute,
-        "1h": time.Hour,
-        "4h": 4 * time.Hour,
-        "1d": 24 * time.Hour,
-    }
+	supportedIntervals := []string{"15m", "1h", "4h", "1d"}
+	durations := map[string]time.Duration{
+		"15m": 15 * time.Minute,
+		"1h":  time.Hour,
+		"4h":  4 * time.Hour,
+		"1d":  24 * time.Hour,
+	}
 
 	appConfig := AppConfig{
 		Symbols:   supportedSymbols,

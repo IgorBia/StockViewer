@@ -2,25 +2,29 @@
   <div class="wallet-modal" (click)="$event.stopPropagation()" role="dialog" aria-modal="true">
 
     <header class="modal-header">
-      <h1>Wallet Overview</h1>
+      <h1>Podsumowanie portfela</h1>
       <button class="close-btn" (click)="close()">×</button>
     </header>
 
     <div class="managed-control">
-      <label for="risk-select">Auto‑trade (Risk):</label>
-      <select id="risk-select" [(ngModel)]="selectedRisk" aria-label="Select risk tolerance">
-        <option *ngFor="let r of riskOptions" [value]="r.value">{{ r.label }}</option>
-      </select>
+      <label for="risk-select">Automatyczny handel (profil ryzyka)</label>
+      <div class="managed-actions">
+        <select id="risk-select" [(ngModel)]="selectedRisk" aria-label="Wybierz profil ryzyka">
+          <option *ngFor="let r of riskOptions" [ngValue]="r.value">{{ r.label }}</option>
+        </select>
 
-      <button class="btn-manage" (click)="enableManaged()" [disabled]="loadingManaged">
-        {{ loadingManaged ? 'Applying...' : 'Enable Auto‑trade' }}
-      </button>
+        <button class="btn-manage" (click)="enableManaged()" [disabled]="loadingManaged">
+          {{ loadingManaged
+              ? 'Zastosowywanie...'
+              : (selectedRisk === 0 ? 'Wyłącz automatyczny handel' : 'Zastosuj profil ryzyka') }}
+        </button>
+      </div>
     </div>
 
 
     <section class="summary">
       <div class="row">
-        <div class="label">Total (USDC)</div>
+        <div class="label">Łączna wartość (USDC)</div>
         <div class="value">
           {{ (walletService.totalUsd$ | async) | number:'1.2-2' }}
         </div>
@@ -28,7 +32,7 @@
 
       <ng-container *ngIf="walletService.percentChange$ | async as pct">
       <div class="row">
-        <div class="label">Change vs 10,000 USDC</div>
+        <div class="label">Zmiana względem początkowej wartości</div>
         <div class="value" [class.positive]="pct >= 0" [class.negative]="pct < 0">
         {{ pct | number:'1.2-2' }}%
         </div>
@@ -36,8 +40,8 @@
       </ng-container>
 
       <div class="row">
-        <div class="label">ROI</div>
-        <div class="value">{{ (walletService.roi$ | async) | number:'1.2-2' }}</div>
+        <div class="label">Udział gotówki</div>
+        <div class="value">{{ (walletService.cashShare$ | async) | percent:'1.2-2' }}</div>
       </div>
 
       <div class="wallet-worth-chart">
@@ -53,25 +57,33 @@
         <ng-container *ngIf="!(walletService.loading$ | async)">
           <ul *ngIf="(walletService.assets$ | async) as assets">
             <li>
-              <div class="label"><strong>Name</strong></div>
-              <div class="label"><strong>Amount</strong></div>
-              <div class="label"><strong>USD Value</strong></div>
-              <div class="label"><strong>Profit/Loss</strong></div>
-              <div class="label"><strong>Actions</strong></div>
+              <div class="label"><strong>Nazwa</strong></div>
+              <div class="label"><strong>Ilość</strong></div>
+              <div class="label"><strong>Wartość w USD</strong></div>
+              <div class="label"><strong>Zysk/Strata</strong></div>
+              <div class="label"><strong>Akcje</strong></div>
             </li>
             <li *ngFor="let a of assets">
               <div class="asset-name">{{ a.name }}</div>
               <div class="asset-amount">{{ a.amount }}</div>
               <div class="asset-usd">$ {{ a.usdValue | number:'1.2-2' }} </div>
-              <div class="asset-pnl" [class.positive]="a.pnl >= 0" [class.negative]="a.pnl < 0">
-                $ {{ a.pnl | number:'1.2-2' }}
+              <div
+                class="asset-pnl"
+                [class.positive]="a.name !== 'USDC' && a.pnl >= 0"
+                [class.negative]="a.name !== 'USDC' && a.pnl < 0"
+                [class.neutral]="a.name === 'USDC'"
+              >
+                <ng-container *ngIf="a.name !== 'USDC'; else noPnl">
+                  $ {{ a.pnl | number:'1.2-2' }}
+                </ng-container>
+                <ng-template #noPnl></ng-template>
               </div>
-              <button class="close-position-btn" (click)="closePosition(a.name, a.amount)">Close position</button>
+              <button class="close-position-btn" (click)="closePosition(a.name, a.amount)">Zamknij pozycję</button>
             </li>
           </ul>
           <div *ngIf="walletService.assets$ | async as assets; else noAssets" class="empty"></div>
           <ng-template #noAssets>
-            <div class="empty">No assets in wallet</div>
+            <div class="empty">Brak aktywów w portfelu</div>
           </ng-template>
         </ng-container>
       </main>

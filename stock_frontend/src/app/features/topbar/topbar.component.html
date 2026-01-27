@@ -1,6 +1,6 @@
 <div class="topbar">
 	<div class="wallet-info">
-		<button type="button" class="wallet-btn" (click)="isWalletOpen = true">Balance: ${{ (walletService.totalUsd$ | async) | number:'1.2-2' }}</button>
+		<button type="button" class="wallet-btn" (click)="isWalletOpen = true">Saldo: ${{ (walletService.totalUsd$ | async) | number:'1.2-2' }}</button>
 	</div>
 	<div class="user-info">
 		<span class="user-email">{{ userEmail }}</span>

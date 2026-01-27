@@ -34,8 +34,8 @@ export class WalletService {
   private _percentChange = new BehaviorSubject<number>(0);
   readonly percentChange$ = this._percentChange.asObservable();
 
-  private _roi = new BehaviorSubject<number>(0);
-  readonly roi$ = this._roi.asObservable();
+  private _cashShare = new BehaviorSubject<number>(0); // fraction of portfolio in USDC
+  readonly cashShare$ = this._cashShare.asObservable();
 
   // dodatkowo getters jeśli chcesz sync access
   get assetsSnapshot() { return this._assets.value; }
@@ -59,24 +59,31 @@ export class WalletService {
       let total = 0;
       const list: Array<{ name: string; amount: number; usdValue: number, pnl: number }> = [];
 
+      let usdcUsd = 0;
+
       for (const a of (owned || []) as OwnedAsset[]) {
         const price = await this.getPriceForAsset(a.name);
         const usdValue = (a.amount || 0) * (price || 0);
         const pnl = usdValue - ((a.amount || 0) * (a.avgPrice || 0));
         list.push({ name: a.name, amount: a.amount, usdValue, pnl });
         total += usdValue;
+
+        if ((a.name || '').toUpperCase() === 'USDC') {
+          usdcUsd = usdValue;
+        }
       }
 
       this._assets.next(list);
       this._totalUsd.next(total);
       this._percentChange.next(this.initialUsd === 0 ? 0 : ((total - this.initialUsd) / this.initialUsd) * 100);
-      this._roi.next(total / this.initialUsd - 1);
+      const share = total > 0 ? usdcUsd / total : 0;
+      this._cashShare.next(share);
     } catch (err) {
       console.error('[WalletOverview] failed to load wallet', err);
       this._assets.next([]);
       this._totalUsd.next(0);
       this._percentChange.next(0);
-      this._roi.next(0);
+      this._cashShare.next(0);
     } finally {
       this._loading.next(false);
     }

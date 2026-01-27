@@ -4,20 +4,23 @@ import (
 	"database/sql"
 	log "github.com/sirupsen/logrus"
 	"time"
+	"github.com/igorbia/stock_scheduler_service/config"
 )
 
-func SetupDB(db *sql.DB) {
+func SetupDB(db *sql.DB, appConfig config.AppConfig) {
 	log.Info("Checking data pressence")
-	SupportedSymbols := []string{"ETHUSDC", "BTCUSDC", "SOLUSDC", "ETHBTC"}
 
-	for _, symbol := range SupportedSymbols {
-		injectDataForSymbolAndInterval(db, symbol, "1m", 1*time.Minute)
-		injectDataForSymbolAndInterval(db, symbol, "1h", 1*time.Hour)
-		injectDataForSymbolAndInterval(db, symbol, "4h", 4*time.Hour)
-		injectDataForSymbolAndInterval(db, symbol, "1d", 24*time.Hour)
-	}
+    for _, symbol := range appConfig.Symbols {
+        for _, interval := range appConfig.Intervals {
+            d, ok := appConfig.Durations[interval]
+            if !ok || d <= 0 {
+                log.Warnf("Skipping inject for %s %s: missing or non-positive duration", symbol, interval)
+                continue
+            }
+            go injectDataForSymbolAndInterval(db, symbol, interval, d)
+        }
+    }
 }
-
 func injectDataForSymbolAndInterval(db *sql.DB, symbol string, interval string, duration time.Duration) {
 	oldestCandleTime := getOldestCandleOpenTime(duration)
 	if !isCandlePresent(db, symbol, interval, oldestCandleTime) {

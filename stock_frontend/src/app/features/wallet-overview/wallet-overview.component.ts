@@ -20,10 +20,11 @@ export class WalletOverviewComponent implements OnInit {
 	selectedRisk = 1;
 	loadingManaged = false;
 	riskOptions = [
-	{ value: 1, label: 'Conservative' },
-	{ value: 2, label: 'Moderate' },
-	{ value: 3, label: 'Aggressive' },
-	{ value: 99, label: 'Experimental' }
+	{ value: 0, label: 'Wyłączony' },
+	{ value: 1, label: 'Konserwatywny' },
+	{ value: 2, label: 'Umiarkowany' },
+	{ value: 3, label: 'Agresywny' },
+	{ value: 99, label: 'Eksperymentalny' }
 	];
 
   constructor(private cd: ChangeDetectorRef, public walletService: WalletService) {}
