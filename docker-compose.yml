@@ -11,7 +11,7 @@ services:
     ports:
       - "${DB_PORT:-5432}:${DB_PORT:-5432}"
     healthcheck:
-      test: [ "CMD", "pg_isready", "-U", "${DB_USER:-user}", "-d", "${DB_NAME:-stockviewer}" ]
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER:-user} -d $${POSTGRES_DB:-stockviewer}"]
       interval: 5s
       timeout: 5s
       retries: 5
