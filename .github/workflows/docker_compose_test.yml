@@ -21,8 +21,22 @@ jobs:
           echo "DB_HOST=postgres" >> .env
           echo "DB_PORT=5432" >> .env
           echo "DB_USER=user" >> .env
+          echo "POSTGRES_USER=user" >> .env
           echo "DB_PASSWORD=password" >> .env
+          echo "POSTGRES_PASSWORD=password" >> .env
           echo "DB_NAME=stockviewer" >> .env
+          echo "POSTGRES_DB=stockviewer" >> .env
+          echo "KAFKA_PROCESS_ROLES=broker,controller" >> .env
+          echo "KAFKA_NODE_ID=1" >> .env
+          echo "KAFKA_CONTROLLER_QUORUM_VOTERS=1@kafka:9094" >> .env
+          echo "KAFKA_CONTROLLER_LISTENER_NAMES=CONTROLLER" >> .env
+          echo "KAFKA_LISTENERS=PLAINTEXT://:9092,CONTROLLER://:9094" >> .env
+          echo "KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://kafka:9092" >> .env
+          echo "KAFKA_INTER_BROKER_LISTENER_NAME=PLAINTEXT" >> .env
+          echo "KAFKA_LISTENER_SECURITY_PROTOCOL_MAP=PLAINTEXT:PLAINTEXT,CONTROLLER:PLAINTEXT" >> .env
+          echo "KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR=1" >> .env
+          echo "KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR=1" >> .env
+          echo "KAFKA_TRANSACTION_STATE_LOG_MIN_ISR=1" >> .env
 
       - name: Docker Compose Up with Build
         run: |
