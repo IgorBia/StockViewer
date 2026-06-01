@@ -1,0 +1,9 @@
+
+# 2026-03-24 19:48:55.336437
++No
+
+# 2026-03-24 19:55:32.186542
++Make a documentation file for ai agents so they understand what are we doing. It should contain information about that every new service should be dockerized, documented in documentation folder and every valuable constraint you can find in this repo
+
+# 2026-03-24 20:01:41.152627
++Wait, its documentation for you. not developers that use agents. its for the context, plus i want you to make a file in documentation folder that emphasises agents' understanding of project's best practises

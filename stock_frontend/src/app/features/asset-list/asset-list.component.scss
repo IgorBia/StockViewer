@@ -6,7 +6,7 @@
 }
 
 .base-asset-name, .quote-asset-name { //center
-  font-size: xx-large;
+  font-size: var(--font-xl);
   font-weight: 700;
   color: #B68308;
   min-width: 0;
@@ -14,6 +14,7 @@
 }
 
 .base-asset-amount, .quote-asset-amount { //center 
+  font-size: var(--font-lg);
   font-weight: 600;
   color: #e6eef8;
   min-width: 0;
@@ -45,6 +46,20 @@
   min-width: 0;
   background: #001226;
   border: 1px solid rgba(255,255,255,0.1);
+
+@media (max-width: 720px) {
+  .base-asset-name, .quote-asset-name {
+    font-size: calc(var(--font-lg) * 1.05);
+  }
+
+  .base-asset-amount, .quote-asset-amount {
+    font-size: var(--font-base);
+  }
+
+  h3 {
+    margin-top: 1.25rem;
+  }
+}
   border-radius: 8px;
   padding: 1rem;
   box-shadow: 0 4px 12px rgba(0,0,0,0.4);
@@ -66,7 +81,7 @@ h3 {
 }
 
 .list-inner {
-  width: 100%;
+  font-size: var(--font-xl);
   overflow-y: auto;
   min-width: 0;
 }
@@ -74,10 +89,7 @@ h3 {
 .asset-list li {
   display: flex;
   justify-content: space-between;
-  padding: 0.5rem 0;
-  font-weight: bold;
-  border-radius: 12px;
-  border-bottom: 1px solid rgba(255,255,255,0.03);
+  font-size: var(--font-lg);
   min-width: 0;
 }
 

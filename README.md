@@ -5,103 +5,60 @@
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-15+-4169E1?style=flat-square&logo=postgresql)
 ![License](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)
 
-Lightweight asset market viewer for visualizing candlestick charts and paper trading.
+Full-stack, event-driven stock analytics and paper-trading platform with an Angular UI, Spring Boot API, and Go scheduler.
 
+## Highlights
 
-## Table of Contents
+- **Event-driven pipeline:** Go scheduler pulls Binance OHLC data, persists to PostgreSQL, and publishes Kafka events consumed by Spring to calculate MACD, EMA9, and MACD signal indicators.
+- **Secure REST API:** JWT auth with endpoints for users, candles, trades, wallets, and watchlists.
+- **Trading workflow:** Paper trades with wallet tracking and trade history.
+- **Production-style setup:** Docker Compose orchestration with Nginx serving the frontend.
 
-- [Overview](#overview)
-- [Installation](#installation)
-- [Features](#features)
-- [Project Structure](#project-structure)
-- [Documentation](#documentation)
+## Core workflow
 
+- Go scheduler ingests market data and emits indicator events through Kafka.
+- Spring Boot API persists and aggregates candle data, indicators, and user portfolio state.
+- Angular UI renders charts, watchlists, and trading actions via the REST API.
 
-## Overview
+## Architecture
 
-**StockViewer** is a modular, cross-language application (Java and Go) designed for efficient visualization of market data and strategy prototyping. The project enables users to render candlestick charts and practice trading in a risk-free environment. 
+| Component | Tech | Responsibility |
+| --- | --- | --- |
+| Frontend | Angular 20, TypeScript, lightweight-charts, Chart.js | Candlestick charts, watchlists, and trading UI |
+| API service | Spring Boot 3.4, Java 21 | Auth, candle data, trades, wallets, indicators, watchlists |
+| Scheduler service | Go 1.21 | Scheduled market data ingestion and Kafka event publishing |
+| Data & messaging | PostgreSQL 15, Kafka 3.7 | Persistence and indicator event pipeline |
 
-## Installation
+![Architecture diagram](documentation/diagrams/Product_Architecture.png.png)
 
-### Using Docker Compose
+## Quick start (Docker Compose)
 
-1. Make sure you have Docker & docker-compose installed.
+Docker is the only requirement for running the full stack locally (no local JDK/Go/Node toolchains needed).
 
-2. Create a .env file with enviromental variables e.g. (or copy .env-example):
-
-    ```
-    DB_HOST=postgres
-    DB_PORT=5432
-    DB_USER=user
-    POSTGRES_USER=user
-    DB_PASSWORD=password
-    POSTGRES_DB=stockviewer
-    DB_NAME=stockviewer
-    POSTGRES_PASSWORD=password
-    JWT_SECRET=esESFSEFESfesfsefSEFSEFSEFSef425245543544ji24j4j242ngK1kn12nfkeafn53342iiSFESfijakkna32532jjsEEEsjesesjjoojimni
-    
-    KAFKA_ENABLE_KRAFT=yes
-    KAFKA_CFG_PROCESS_ROLES=broker,controller
-    KAFKA_CFG_NODE_ID=1
-    KAFKA_CFG_CONTROLLER_QUORUM_VOTERS=1@kafka:9094
-    KAFKA_CFG_CONTROLLER_LISTENER_NAMES=CONTROLLER
-    KAFKA_KRAFT_METADATA_DIR=/bitnami/kafka/data/kraft
-    
-    KAFKA_CFG_LISTENERS=PLAINTEXT://:9092,CONTROLLER://:9094
-    KAFKA_CFG_ADVERTISED_LISTENERS=PLAINTEXT://kafka:9092
-    KAFKA_CFG_INTER_BROKER_LISTENER_NAME=PLAINTEXT
-    KAFKA_CFG_LISTENER_SECURITY_PROTOCOL_MAP=PLAINTEXT:PLAINTEXT,CONTROLLER:PLAINTEXT
-    
-    KAFKA_CFG_OFFSETS_TOPIC_REPLICATION_FACTOR=1
-    KAFKA_CFG_TRANSACTION_STATE_LOG_REPLICATION_FACTOR=1
-    KAFKA_CFG_TRANSACTION_STATE_LOG_MIN_ISR=1
-    
-    KAFKA_CREATE_TOPICS=indicator_events1:1
-    ```
-
-3. Run:
+1. Copy environment defaults and adjust secrets as needed:
+   ```bash
+   cp .env_example .env
+   ```
+2. Run:
    ```bash
    docker compose up --build -d
    ```
+3. Open the UI at `http://localhost/` and the API at `http://localhost:8080/` (direct) or `http://localhost/api/v1/` via the Nginx reverse proxy.
 
-## Features
+## API documentation
 
-- **Candlestick Chart Visualization:**  
-  Interactive charts for market analysis.
+- OpenAPI spec: `documentation/resources/endpoints.yaml`
 
-- **Paper Trading:**  
-  Execute simulated trades to test strategies without financial risk.
+## Project structure
 
-- **Asset watchlist:**  
-  Keep your favourite assets close by adding them to the watchlist and seeing them on the main page.
-
-## Project Structure
-
-The project contains following parts:
-  
-  | Technology | Description |
-|-----------|-------------|
-| ![Java](https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white) ⁺ ![Spring](https://img.shields.io/badge/Spring-6DB33F?style=flat-square&logo=spring&logoColor=white) | REST API |
-| ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white) | Relational Database |
-| ![Go](https://img.shields.io/badge/Go-00ADD8?style=flat-square&logo=go&logoColor=white) | DB maintenance service |
-
-
-#### Diagram:
-
-  ![image](https://github.com/user-attachments/assets/54f757fd-a5fc-4d15-994e-2468d11fab6b)
+- `stock_frontend/` — Angular application
+- `stock_api_service/` — Spring Boot REST API
+- `stock_scheduler_service/` — Go scheduler and data ingestion
+- `documentation/` — requirements, mockups, endpoints, and diagrams
+- `docker-compose.yml` — local orchestration
 
 ## Documentation
 
- Full documentation is available in documentation folder, it contains:
-  - UML diagrams
-
-  - ERD diagram
-
-  - Requirements
-
-  - Mockup
-
-  - Endpoints
-
-  - SQL schema script
-  
+- `documentation/requirements.md` — functional and non-functional requirements
+- `documentation/resources/schema.sql` — database schema
+- `documentation/resources/endpoints.yaml` — API spec

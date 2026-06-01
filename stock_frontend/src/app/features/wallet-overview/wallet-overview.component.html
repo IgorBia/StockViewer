@@ -78,7 +78,9 @@
                 </ng-container>
                 <ng-template #noPnl></ng-template>
               </div>
-              <button class="close-position-btn" (click)="closePosition(a.name, a.amount)">Zamknij pozycję</button>
+              <div class="asset-actions">
+                <button class="close-position-btn" (click)="closePosition(a.name, a.amount)">Zamknij pozycję</button>
+              </div>
             </li>
           </ul>
           <div *ngIf="walletService.assets$ | async as assets; else noAssets" class="empty"></div>

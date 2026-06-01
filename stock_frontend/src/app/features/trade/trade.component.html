@@ -19,17 +19,18 @@
         Sprzedaj
       </button>
     </div>
-    <div class="trade-row">
-      <label class="amount-label">
-        <input class="amount-input" type="number" step="any" formControlName="amount" [placeholder]="'Ilość w ' + (currentSymbol || 'aktyw')"/>
-      </label>
-    </div>
+    <div class="trade-input">
+      <div class="trade-row">
+        <label class="amount-label">
+          <input class="amount-input" type="number" step="any" formControlName="amount" [placeholder]="'Ilość w ' + (currentSymbol || 'aktyw')"/>
+        </label>
+      </div>
 
-    <div class="trade-row slider-row">
-      <input type="range" min="0" max="100" step="0.1" formControlName="percent" />
-      <div class="percent-label">{{ form.value.percent | number:'1.2-2' }}%</div>
+      <div class="trade-row slider-row">
+        <input type="range" min="0" max="100" step="0.1" formControlName="percent" />
+        <div class="percent-label">{{ form.value.percent | number:'1.2-2' }}%</div>
+      </div>
     </div>
-
     <div class="trade-actions">
       <button type="submit" class="execute-btn" [disabled]="submitting || !currentSymbol">Wykonaj</button>
     </div>

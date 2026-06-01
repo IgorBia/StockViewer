@@ -28,11 +28,11 @@
 }
 .wallet-pie .center-label .value {
   font-weight: 800;
-  font-size: 1rem;
+  font-size: var(--font-base);
   letter-spacing: 0.2px;
 }
 .wallet-pie .center-label .label {
-  font-size: 0.75rem;
+  font-size: calc(var(--font-sm) * 0.9);
   color: #9fb1c9;
 }
 

@@ -3,7 +3,6 @@ FROM node:22 AS build
 WORKDIR /app
 COPY package*.json ./
 RUN npm ci --legacy-peer-deps
-RUN npm install npm@latest -g
 COPY . .
 RUN npm run build -- --project stock_frontend --configuration development --optimization=false --source-map=true
 

@@ -1,3 +1,51 @@
+/* Typografia bazowa ze skalowaniem zależnym od szerokości ekranu */
+:root {
+  --font-base: 11px;
+  --font-sm: 10px;
+  --font-lg: 14px;
+  --font-xl: 18px;
+}
+
+/* Skalowanie dla Full HD (~1920px) */
+@media (min-width: 1600px) {
+  :root {
+    --font-base: 12px;
+    --font-sm: 11px;
+    --font-lg: 16px;
+    --font-xl: 20px;
+  }
+}
+
+/* Skalowanie dla 2K/QHD (~2560px) */
+@media (min-width: 2400px) {
+  :root {
+    --font-base: 13px;
+    --font-sm: 12px;
+    --font-lg: 17px;
+    --font-xl: 22px;
+  }
+}
+
+/* Skalowanie dla 4K (~3840px) */
+@media (min-width: 3200px) {
+  :root {
+    --font-base: 14px;
+    --font-sm: 13px;
+    --font-lg: 18px;
+    --font-xl: 24px;
+  }
+}
+
+/* Małe ekrany / mobile */
+@media (max-width: 720px) {
+  :root {
+    --font-base: 10px;
+    --font-sm: 9px;
+    --font-lg: 12px;
+    --font-xl: 15px;
+  }
+}
+
 html, body, app-root {
   height: 100%;
   margin: 0;
@@ -11,6 +59,9 @@ body {
   background-color: #000D1B; 
   color: #d1d4dc; 
   margin: 0;
+  overflow: hidden;
+  font-size: var(--font-base);
+  line-height: 1.4;
 }
 
 app-root {
@@ -18,10 +69,16 @@ app-root {
   flex-direction: column;
   flex: 1 0 auto;
   min-height: 100vh;
-  /* center children vertically and horizontally so dashboard appears centered */
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: stretch;
+  width: 100%;
+  overflow: hidden;
 }
+
+h1, .h1 { font-size: var(--font-xl); margin: 0; }
+h2, .h2 { font-size: var(--font-lg); margin: 0; }
+h3, .h3 { font-size: calc(var(--font-base) * 1.1); margin: 0; }
+small, .text-sm { font-size: var(--font-sm); }
 
 app-user-dashboard {
   width: 100%;

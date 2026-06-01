@@ -1,167 +1,290 @@
 openapi: 3.0.3
 info:
-  title: StockViewer
+  title: StockViewer API
   version: 1.0.0
-  description: API for data analysis, trades and logging.
+  description: REST API for authentication, candles, watchlists, trades, and wallets.
 servers:
-  - url: http://localhost:8080/api
+  - url: http://localhost/api/v1
+
+security:
+  - bearerAuth: []
 
 paths:
-  /auth/login:
-    post:
-      summary: Log in user
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                email:
-                  type: string
-                password:
-                  type: string
-      responses:
-        '200':
-          description: Logged in successfully
-        '401':
-          description: Authentication error
-          
-  /auth/register:
+  /users/register:
     post:
       summary: Register user
+      security: []
       requestBody:
         required: true
         content:
           application/json:
             schema:
-              type: object
-              properties:
-                email:
-                  type: string
-                  example: user
-                password:
-                  type: string
-                  example: password
-                walletValue:
-                  type: number
-                  example: 1000.00
+              $ref: '#/components/schemas/UserCredentials'
       responses:
         '201':
           description: Registered successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MessageResponse'
         '400':
-          description: Bad input
+          description: Validation error
+
+  /users/login:
+    post:
+      summary: Log in user
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserCredentials'
+      responses:
+        '202':
+          description: Logged in successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LoginResponse'
         '401':
           description: Authentication error
 
-  /stocks/{symbol}/historical:
+  /candles/all:
     get:
-      summary: Fetch historical data
+      summary: Get all candles
+      security: []
+      responses:
+        '200':
+          description: Candle list
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CandleResponse'
+
+  /candles/{symbol}/{timeframe}:
+    get:
+      summary: Get candles by symbol and timeframe
+      security: []
       parameters:
         - in: path
           name: symbol
           required: true
           schema:
             type: string
-            example: AAPL
-        - in: query
-          name: startDate
-          schema:
-            type: string
-            format: date
-            example: 2024-01-01
-        - in: query
-          name: endDate
-          schema:
-            type: string
-            format: date
-            example: 2024-12-31
-      responses:
-        '200':
-          description: Historical data
-
-  /trades:
-    post:
-      summary: Add new trade
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                pair:
-                  type: string
-                  example: BTC/USD
-                price:
-                  type: number
-                  format: float
-                  example: 27500.50
-                amount:
-                  type: number
-                  format: float
-                  example: 0.5
-                side:
-                  type: string
-                  enum: [buy, sell]
-                  example: buy
-      responses:
-        '201':
-          description: Trade added successfully
-        '400':
-          description: Bad input
-        '401':
-          description: Unauthorized access
-          
-  /trades/history:
-    get:
-      summary: Fetch trade history
-      responses:
-        '200':
-          description: History fetched successfully
-        '400':
-          description: Bad input
-        '401':
-          description: Unauthorized access
-          
-  /wishlist:
-    post:
-      summary: Add new pair to watchlist
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                pair:
-                  type: string
-                  example: BTCUSD
-      responses:
-        '201':
-          description: Pair added successfully
-        '400':
-          description: Bad input
-        '401':
-          description: Unauthorized access
-          
-  /wishlist/{pair}:
-    delete:
-      summary: Delete a pair from watchlist
-      parameters:
+            example: BTCUSDT
         - in: path
-          name: pair
+          name: timeframe
           required: true
           schema:
             type: string
-            example: BTCUSD
+            example: 1h
       responses:
         '200':
-          description: Pair deleted successfully
-        '400':
-          description: Bad input
-        '401':
-          description: Unauthorized access
+          description: Candle list
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CandleResponse'
+
+  /candles/{symbol}/{timeframe}/refresh:
+    get:
+      summary: Fetch latest candle for symbol and timeframe
+      security: []
+      parameters:
+        - in: path
+          name: symbol
+          required: true
+          schema:
+            type: string
+            example: BTCUSDT
+        - in: path
+          name: timeframe
+          required: true
+          schema:
+            type: string
+            example: 1h
+      responses:
+        '200':
+          description: Latest candle
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CandleDTO'
+
+  /candles/{symbol}/info:
+    get:
+      summary: Get pair metadata by symbol
+      security: []
+      parameters:
+        - in: path
+          name: symbol
+          required: true
+          schema:
+            type: string
+            example: BTCUSDT
+      responses:
+        '200':
+          description: Pair metadata
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PairDTO'
+
+  /trade/execute:
+    post:
+      summary: Execute a trade
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TradeRequest'
+      responses:
+        '200':
+          description: Trade executed
+
+  /trade/history:
+    get:
+      summary: Get trade history for current user
+      responses:
+        '200':
+          description: Trade history
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TradeDTO'
+
+  /trade/setManagedAsset:
+    post:
+      summary: Set managed asset preferences
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ManagedAssetDTO'
+      responses:
+        '200':
+          description: Managed asset updated
+
+  /watchlist/all:
+    get:
+      summary: Get watchlists for current user
+      responses:
+        '200':
+          description: Watchlists
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/WatchlistResponse'
+
+  /watchlist:
+    post:
+      summary: Create watchlist
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WatchlistRequest'
+      responses:
+        '201':
+          description: Watchlist created
+    delete:
+      summary: Delete watchlist
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WatchlistRequest'
+      responses:
+        '204':
+          description: Watchlist deleted
+    patch:
+      summary: Rename watchlist
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WatchlistPatchRequest'
+      responses:
+        '204':
+          description: Watchlist updated
+
+  /watchlist/item:
+    post:
+      summary: Add item to watchlist
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WatchlistItemRequest'
+      responses:
+        '204':
+          description: Watchlist item added
+    delete:
+      summary: Remove item from watchlist
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/WatchlistItemRequest'
+      responses:
+        '204':
+          description: Watchlist item removed
+
+  /wallet:
+    get:
+      summary: Get wallet assets
+      responses:
+        '200':
+          description: Wallet assets
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/OwnedAssetDTO'
+
+  /wallet/{symbol}:
+    get:
+      summary: Get owned asset by symbol
+      parameters:
+        - in: path
+          name: symbol
+          required: true
+          schema:
+            type: string
+            example: BTC
+      responses:
+        '200':
+          description: Owned asset
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OwnedAssetDTO'
+
+  /wallet/snapshots:
+    get:
+      summary: Get wallet worth snapshots
+      responses:
+        '200':
+          description: Wallet worth history
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/WalletWorthSnapshot'
 
 components:
   securitySchemes:
@@ -169,3 +292,210 @@ components:
       type: http
       scheme: bearer
       bearerFormat: JWT
+  schemas:
+    MessageResponse:
+      type: object
+      properties:
+        message:
+          type: string
+          example: User registered successfully
+    UserCredentials:
+      type: object
+      required: [email, password]
+      properties:
+        email:
+          type: string
+          example: user@example.com
+        password:
+          type: string
+          example: P4ssword123
+    LoginResponse:
+      type: object
+      properties:
+        message:
+          type: string
+        accessToken:
+          type: string
+        tokenType:
+          type: string
+          example: Bearer
+        userDetails:
+          $ref: '#/components/schemas/UserDetails'
+    UserDetails:
+      type: object
+      properties:
+        email:
+          type: string
+        watchlists:
+          type: array
+          items:
+            $ref: '#/components/schemas/WatchlistResponse'
+    WatchlistResponse:
+      type: object
+      properties:
+        name:
+          type: string
+        watchlistItems:
+          type: array
+          items:
+            $ref: '#/components/schemas/WatchlistItemResponse'
+    WatchlistItemResponse:
+      type: object
+      properties:
+        symbol:
+          type: string
+    WatchlistRequest:
+      type: object
+      required: [name]
+      properties:
+        name:
+          type: string
+          example: Favorites
+    WatchlistPatchRequest:
+      type: object
+      required: [oldName, newName]
+      properties:
+        oldName:
+          type: string
+          example: Favorites
+        newName:
+          type: string
+          example: Long Term
+    WatchlistItemRequest:
+      type: object
+      required: [symbol, watchlistName]
+      properties:
+        symbol:
+          type: string
+          example: BTCUSDT
+        watchlistName:
+          type: string
+          example: Favorites
+    TradeRequest:
+      type: object
+      required: [pairSymbol, amount, transactionType]
+      properties:
+        pairSymbol:
+          type: string
+          example: BTCUSDT
+        amount:
+          type: number
+          example: 0.5
+        transactionType:
+          type: string
+          enum: [BUY, SELL]
+        stopLoss:
+          type: number
+          example: 25000
+        takeProfit:
+          type: number
+          example: 30000
+    TradeDTO:
+      type: object
+      properties:
+        pairSymbol:
+          type: string
+        transactionType:
+          type: string
+          enum: [BUY, SELL]
+        timestamp:
+          type: string
+          format: date-time
+        baseAmount:
+          type: number
+        quoteAmount:
+          type: number
+        price:
+          type: number
+        pnl:
+          type: number
+    ManagedAssetDTO:
+      type: object
+      required: [riskTolerance]
+      properties:
+        riskTolerance:
+          type: integer
+          example: 3
+    OwnedAssetDTO:
+      type: object
+      properties:
+        name:
+          type: string
+        amount:
+          type: number
+        avgPrice:
+          type: number
+    WalletWorthSnapshot:
+      type: object
+      properties:
+        snapshotId:
+          type: string
+          format: uuid
+        timestamp:
+          type: string
+          format: date-time
+        totalWorthUsd:
+          type: number
+    CandleResponse:
+      type: object
+      properties:
+        candles:
+          type: array
+          items:
+            $ref: '#/components/schemas/CandleDTO'
+    CandleDTO:
+      type: object
+      properties:
+        timestamp:
+          type: string
+          format: date-time
+        closeTime:
+          type: string
+          format: date-time
+        open:
+          type: number
+        close:
+          type: number
+        high:
+          type: number
+        low:
+          type: number
+        volume:
+          type: number
+        indicators:
+          type: array
+          items:
+            $ref: '#/components/schemas/IndicatorDTO'
+    IndicatorDTO:
+      type: object
+      properties:
+        name:
+          type: string
+        value:
+          type: number
+    PairDTO:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        symbol:
+          type: string
+        baseAsset:
+          $ref: '#/components/schemas/Asset'
+        quoteAsset:
+          $ref: '#/components/schemas/Asset'
+        market:
+          type: string
+        exchange:
+          type: string
+    Asset:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        symbol:
+          type: string
+        displayName:
+          type: string

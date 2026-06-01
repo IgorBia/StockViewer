@@ -33,12 +33,13 @@
 
 .modal-header h3 {
     margin: 0;
+    font-size: var(--font-lg);
 }
 
 .close-btn {
     background: transparent;
     border: none;
-    font-size: 1.6rem;
+    font-size: var(--font-xl);
     color: #dbeafe;
     cursor: pointer;
 }
