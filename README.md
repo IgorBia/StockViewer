@@ -58,14 +58,14 @@ Docker is the only requirement for running the full stack locally (no local JDK/
 
 ## Project structure
 
-- `stock_frontend/` — Angular application
-- `stock_api_service/` — Spring Boot REST API
-- `stock_scheduler_service/` — Go scheduler and data ingestion
-- `documentation/` — requirements, mockups, endpoints, and diagrams
-- `docker-compose.yml` — local orchestration
+- [stock_frontend/](./stock_frontend) — Angular application
+- [stock_api_service/](./stock_api_service) — Spring Boot REST API
+- [stock_scheduler_service/](./stock_scheduler_service) — Go scheduler and data ingestion
+- [documentation/](./documentation) — requirements, mockups, endpoints, and diagrams
+- [docker-compose.yml](./docker-compose.yml) — local orchestration
 
 ## Documentation
 
-- `documentation/requirements.md` — functional and non-functional requirements
-- `documentation/resources/schema.sql` — database schema
-- `documentation/resources/endpoints.yaml` — API spec
+- [Requirements](./documentation/requirements.md) 
+- [Database Schema](./documentation/resources/schema.sql) 
+- [API Specification](./documentation/resources/endpoints.yaml)
