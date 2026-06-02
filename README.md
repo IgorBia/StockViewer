@@ -14,6 +14,13 @@ Full-stack, event-driven stock analytics and paper-trading platform with an Angu
 - **Trading workflow:** Paper trades with wallet tracking and trade history.
 - **Production-style setup:** Docker Compose orchestration with Nginx serving the frontend.
 
+  <img width="2820" height="1702" alt="image" src="https://github.com/user-attachments/assets/2738309c-3f1d-4a94-a8ab-618c9bf03a45" />
+  <img width="1571" height="1228" alt="image" src="https://github.com/user-attachments/assets/17f70845-a8a1-4f63-8be9-f434a9bd40c1" />
+
+
+  
+
+
 ## Core workflow
 
 - Go scheduler ingests market data and emits indicator events through Kafka.
