@@ -67,5 +67,6 @@ Docker is the only requirement for running the full stack locally (no local JDK/
 ## Documentation
 
 - [Requirements](./documentation/requirements.md) 
-- [Database Schema](./documentation/resources/schema.sql) 
+- [Database Schema](./documentation/resources/schema.sql)
+- [ERD Diagram](./documentation/diagrams/ERD_DB_Diagram.png)
 - [API Specification](./documentation/resources/endpoints.yaml)
